@@ -1,0 +1,9 @@
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\bin\Debug\netstandard2.0\eKino.Model.deps.json
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\bin\Debug\netstandard2.0\eKino.Model.dll
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\bin\Debug\netstandard2.0\eKino.Model.pdb
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csproj.CoreCompileInputs.cache
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.AssemblyInfoInputs.cache
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.AssemblyInfo.cs
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.dll
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.pdb
+C:\Users\A1\source\repos\eKino.Model\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csprojAssemblyReference.cache

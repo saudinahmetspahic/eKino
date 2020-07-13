@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "eKino.WinUI/1.0.0": {
+        "runtime": {
+          "eKino.WinUI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "eKino.WinUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

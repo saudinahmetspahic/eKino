@@ -1,0 +1,13 @@
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\bin\Debug\netcoreapp3.1\eKino.WinUI.exe
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\bin\Debug\netcoreapp3.1\eKino.WinUI.deps.json
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\bin\Debug\netcoreapp3.1\eKino.WinUI.runtimeconfig.json
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\bin\Debug\netcoreapp3.1\eKino.WinUI.runtimeconfig.dev.json
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\bin\Debug\netcoreapp3.1\eKino.WinUI.dll
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\bin\Debug\netcoreapp3.1\eKino.WinUI.pdb
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.csprojAssemblyReference.cache
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.csproj.CoreCompileInputs.cache
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.AssemblyInfoInputs.cache
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.AssemblyInfo.cs
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.dll
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.pdb
+C:\Users\A1\source\repos\eKino.Model\eKino.Desktop\obj\Debug\netcoreapp3.1\eKino.WinUI.genruntimeconfig.cache
