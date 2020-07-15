@@ -1,4 +1,4 @@
-﻿using eKino.API.Models;
+﻿using eKino.API.Database;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

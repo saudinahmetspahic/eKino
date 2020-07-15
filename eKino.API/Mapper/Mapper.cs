@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using eKino.API.Database;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eKino.Model.Requests;
 
 namespace eKino.API.Mapper
 {
@@ -11,7 +13,8 @@ namespace eKino.API.Mapper
     {
         public Mapper()
         {
-            CreateMap<API.Models.Film, Model.Film>().ReverseMap();
+            CreateMap<API.Database.Film, Model.Film>().ReverseMap();
+            CreateMap<API.Database.Film, FilmInsertRequest>().ReverseMap();
         }
     }
 }

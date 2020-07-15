@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using eKino.API.Models;
+using eKino.API.Database;
 using eKino.API.Services;
+using eKino.Model.Requests;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace eKino.API.Controllers
 {
+
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class FilmController : Controller
     {
         private IFilmService _service = null;
@@ -28,14 +30,33 @@ namespace eKino.API.Controllers
             return _mapper.Map<IEnumerable<Model.Film>>(_service.Get());
         }
 
+        [HttpGet("{id}")]
+        public Model.Film GetById(int id)
+        {
+            return _service.GetById(id);
+        }
+
+        [HttpGet("PoNazivu")]
+        public IEnumerable<Model.Film> GetByNaziv(string naziv)
+        {
+            return _service.GetByNaziv(naziv);
+        }
+
+
+        [HttpGet("PoZanru")]
+        public IEnumerable<Model.Film> GetByZanr(string zanr)
+        {
+            return _service.GetByZanr(zanr);
+        }
+
         [HttpPost]
-        public void Post(Model.Film film)
+        public void Add(Model.Film film)
         {
             _service.Add(film);
         }
 
         [HttpPut("{id}")]
-        public Model.Film Update(int id, Model.Film film)
+        public Model.Film Update(int id, FilmInsertRequest film)
         {
             return _service.Update(id, film);
         }

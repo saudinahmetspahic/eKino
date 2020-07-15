@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using eKino.API.EF;
 using eKino.Model;
-//using eKino.API.Models;
+//using eKino.API.Database;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eKino.Model.Requests;
 
 namespace eKino.API.Services
 {
@@ -20,15 +21,26 @@ namespace eKino.API.Services
             _mapper = mapper;
         }
 
-        public IEnumerable<Film> Get()
+        public IEnumerable<Model.Film> Get()
         {
            
             return _mapper.Map<IEnumerable<Film>>(_context.Film.ToList());
         }
 
-        public Film GetById(int id)
+        public IEnumerable<Model.Film> GetByNaziv(string naziv)
         {
-            return _mapper.Map<Film>(_context.Film.SingleOrDefault(w => w.Id == id));
+            return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.Naziv == naziv));
+        }
+
+        public IEnumerable<Film> GetByZanr(string zanr)
+        {
+            var zanrID = _context.Zanr.Where(w => w.NazivZanra == zanr).Select(s => s.Id).SingleOrDefault();
+            return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.ZanrId == zanrID));
+        }
+
+        public Model.Film GetById(int id)
+        {
+            return _mapper.Map<Model.Film>(_context.Film.SingleOrDefault(w => w.Id == id));
         }
 
         public bool Remove(int id)
@@ -43,19 +55,21 @@ namespace eKino.API.Services
             return false;
         }
 
-        public void Add(Film film)
+        public void Add(Model.Film film)
         {
-            _context.Film.Add(_mapper.Map<Models.Film>(film));
+            _context.Film.Add(_mapper.Map<Database.Film>(film));
             _context.SaveChanges();
         }
 
-        public Film Update(int id, Film film)
+        public Model.Film Update(int id, FilmInsertRequest film)
         {
-            var f = _mapper.Map<Film>(_context.Film.SingleOrDefault(w => w.Id == id));
-            f = film;
-            _context.Film.Update(_mapper.Map<Models.Film>(f));
+            var entity = _mapper.Map<Database.Film>(film);
+            entity.Id = id;
+            _context.Film.Update(entity);
             _context.SaveChanges();
-            return f;
+            return _mapper.Map<Model.Film>(entity);
         }
+
+       
     }
 }

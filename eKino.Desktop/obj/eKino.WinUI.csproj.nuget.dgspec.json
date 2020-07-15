@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A1\\source\\repos\\eKino.Model\\eKino.Desktop\\eKino.WinUI.csproj": {}
+    "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Desktop\\eKino.WinUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A1\\source\\repos\\eKino.Model\\eKino.Desktop\\eKino.WinUI.csproj": {
+    "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Desktop\\eKino.WinUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A1\\source\\repos\\eKino.Model\\eKino.Desktop\\eKino.WinUI.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Desktop\\eKino.WinUI.csproj",
         "projectName": "eKino.WinUI",
-        "projectPath": "C:\\Users\\A1\\source\\repos\\eKino.Model\\eKino.Desktop\\eKino.WinUI.csproj",
-        "packagesPath": "C:\\Users\\A1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A1\\source\\repos\\eKino.Model\\eKino.Desktop\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Desktop\\eKino.WinUI.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Desktop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\A1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -42,6 +41,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -60,7 +65,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
