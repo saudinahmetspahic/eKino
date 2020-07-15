@@ -8,8 +8,8 @@ namespace eKino.Model
     {
         public int Id { get; set; }
         public string Naziv { get; set; }
-        public string Tip { get; set; }
-        public string Zanr { get; set; }
+        public int TipId { get; set; }
+        public int ZanrId { get; set; }
         public string Opis { get; set; }
         public DateTime DatumIzlaska { get; set; }
     }

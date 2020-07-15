@@ -56,7 +56,7 @@ namespace eKino.API.Services
         }
 
         public void Add(Model.Film film)
-        {
+        {          
             _context.Film.Add(_mapper.Map<Database.Film>(film));
             _context.SaveChanges();
         }
