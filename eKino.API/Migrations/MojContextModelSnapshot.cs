@@ -417,7 +417,7 @@ namespace eKino.API.Migrations
                     b.ToTable("Zaposlenik");
                 });
 
-            modelBuilder.Entity("eKino.API.Database.Korisnik", b =>
+            modelBuilder.Entity("eKino.API.Database.KorisnikController", b =>
                 {
                     b.HasBaseType("eKino.API.Database.Osoba");
 
@@ -433,7 +433,7 @@ namespace eKino.API.Migrations
                     b.Property<byte[]>("Slika")
                         .HasColumnType("varbinary(max)");
 
-                    b.HasDiscriminator().HasValue("Korisnik");
+                    b.HasDiscriminator().HasValue("KorisnikController");
                 });
 
             modelBuilder.Entity("eKino.API.Database.Dvorana", b =>
@@ -513,7 +513,7 @@ namespace eKino.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eKino.API.Database.Korisnik", "Komentator")
+                    b.HasOne("eKino.API.Database.KorisnikController", "Komentator")
                         .WithMany()
                         .HasForeignKey("KomentatorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -522,7 +522,7 @@ namespace eKino.API.Migrations
 
             modelBuilder.Entity("eKino.API.Database.KorisnikPaket", b =>
                 {
-                    b.HasOne("eKino.API.Database.Korisnik", "Korisnik")
+                    b.HasOne("eKino.API.Database.KorisnikController", "KorisnikController")
                         .WithMany()
                         .HasForeignKey("KorisnikId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -543,7 +543,7 @@ namespace eKino.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eKino.API.Database.Korisnik", "Komentator")
+                    b.HasOne("eKino.API.Database.KorisnikController", "Komentator")
                         .WithMany()
                         .HasForeignKey("KomentatorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -590,7 +590,7 @@ namespace eKino.API.Migrations
 
             modelBuilder.Entity("eKino.API.Database.Rezervacija", b =>
                 {
-                    b.HasOne("eKino.API.Database.Korisnik", "Kupac")
+                    b.HasOne("eKino.API.Database.KorisnikController", "Kupac")
                         .WithMany()
                         .HasForeignKey("KupacId");
 

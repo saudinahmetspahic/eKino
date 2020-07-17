@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EGLxGfPAYNFdKJnTIcedsFffbUEhgjOVGHmm7Qv2O78C7lwTxlvFFzOCGNIxhhGubpsDFCpbYlrnDU+8Jrt/3g==",
+  "dgSpecHash": "grHh5I68fbAQeJIswfggiilSUoy6t72P/5fA4aBnFeyIu82+Nf5kofeeyaS6CDXdpFx/1GdPnU9HVtTh/h/ykg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\A1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

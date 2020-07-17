@@ -14,7 +14,7 @@ namespace eKino.API.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    public class FilmController : Controller
+    public class FilmController : ControllerBase
     {
         private IFilmService _service = null;
         private IMapper _mapper = null;
