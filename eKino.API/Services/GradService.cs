@@ -1,4 +1,5 @@
-﻿using eKino.API.Database;
+﻿using AutoMapper;
+using eKino.API.Database;
 using eKino.API.EF;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,17 @@ namespace eKino.API.Services
     public class GradService : IGradService
     {
         private readonly MojContext _context = null;
-        public GradService(MojContext context)
+        private readonly IMapper _mapper = null;
+        public GradService(MojContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public void Add(Grad grad)
         {
             _context.Grad.Add(grad);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Grad> Get()

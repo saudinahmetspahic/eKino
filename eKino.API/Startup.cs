@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace eKino.API
 {
@@ -29,6 +29,8 @@ namespace eKino.API
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IFilmService, FilmService>();
+            services.AddScoped<IGradService, GradService>();
+            services.AddScoped<IKorisnikService, KorisnikService>();
             
             services.AddDbContext<MojContext>(option => option.UseSqlServer(Configuration.GetConnectionString("connectionString")));
         }

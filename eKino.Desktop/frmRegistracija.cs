@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace eKino.Desktop
 {
@@ -20,18 +21,9 @@ namespace eKino.Desktop
             InitializeComponent();
         }
 
-        private void bttnRegistrujSe_Click(object sender, EventArgs e)
+        private async void bttnRegistrujSe_Click(object sender, EventArgs e)
         {
-            var _gradApiService = new ApiService("Grad");
-            var grad = _gradApiService.GetByName<Grad>(txtGrad.Text);
-            if (grad == null)
-            {
-                grad = new Grad
-                {
-                    Naziv = txtGrad.Text
-                };
-                _gradApiService.Add(grad);
-            }
+            var gId = (int)cbGrad.SelectedValue;
             var korisnik = new Korisnik
             {
                 DatumRegistracije = DateTime.Now,
@@ -41,10 +33,18 @@ namespace eKino.Desktop
                 Ime = txtIme.Text,
                 Prezime = txtPrezime.Text,
                 Biografija = "Dopuni",
-                GradId = grad.Id
+                GradId = gId
             };
             _korisnikApiService.Add(korisnik);
-            MessageBox.Show("Uspijesno ste se registrovali na sistem");
+            var dodaniKorisnik = await _korisnikApiService.GetByIme<Korisnik>(txtIme.Text);
+            if (dodaniKorisnik != null)
+            {
+                MessageBox.Show("Uspijesno ste se registrovali na sistem");
+            }
+            else
+            {
+                MessageBox.Show("Neuspijesna registracija");
+            }
             var loginForma = new frmIndex();
             loginForma.Show();
         }

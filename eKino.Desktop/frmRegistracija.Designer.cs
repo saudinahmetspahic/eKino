@@ -1,4 +1,9 @@
-﻿namespace eKino.Desktop
+﻿using eKino.Model;
+using eKino.WinUI;
+using System.Collections.Generic;
+using static System.Windows.Forms.AxHost;
+
+namespace eKino.Desktop
 {
     partial class frmRegistracija
     {
@@ -42,8 +47,8 @@
             this.txtSifra = new System.Windows.Forms.TextBox();
             this.labSifra = new System.Windows.Forms.Label();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
-            this.txtGrad = new System.Windows.Forms.TextBox();
             this.labGrad = new System.Windows.Forms.Label();
+            this.cbGrad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,13 +175,6 @@
             this.dtpDatumRodjenja.Size = new System.Drawing.Size(323, 22);
             this.dtpDatumRodjenja.TabIndex = 14;
             // 
-            // txtGrad
-            // 
-            this.txtGrad.Location = new System.Drawing.Point(443, 300);
-            this.txtGrad.Name = "txtGrad";
-            this.txtGrad.Size = new System.Drawing.Size(323, 22);
-            this.txtGrad.TabIndex = 16;
-            // 
             // labGrad
             // 
             this.labGrad.AutoSize = true;
@@ -187,12 +185,29 @@
             this.labGrad.TabIndex = 15;
             this.labGrad.Text = "Grad";
             // 
+            // cbGrad
+            // 
+            this.cbGrad.FormattingEnabled = true;
+            this.cbGrad.Location = new System.Drawing.Point(443, 300);
+            this.cbGrad.Name = "cbGrad";
+            this.cbGrad.Size = new System.Drawing.Size(323, 24);
+            this.cbGrad.TabIndex = 16;
+            var _gradoviService = new ApiService("Grad");
+            var _gradovi = _gradoviService.Get<IEnumerable<Grad>>();
+            this.cbGrad.DataSource = _gradovi;
+            this.cbGrad.DisplayMember = "Naziv";
+            this.cbGrad.ValueMember = "Id";
+            //foreach (var grad in _gradovi)
+            //{
+            //    this.cbGrad.Items.Add(grad.Naziv);
+            //}
+            // 
             // frmRegistracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtGrad);
+            this.Controls.Add(this.cbGrad);
             this.Controls.Add(this.labGrad);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtSifra);
@@ -232,7 +247,7 @@
         private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.Label labSifra;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
-        private System.Windows.Forms.TextBox txtGrad;
         private System.Windows.Forms.Label labGrad;
+        private System.Windows.Forms.ComboBox cbGrad;
     }
 }

@@ -92,10 +92,6 @@ C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\ne
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
@@ -114,9 +110,6 @@ C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\ne
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csprojAssemblyReference.cache
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.AssemblyInfoInputs.cache
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.AssemblyInfo.cs
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csproj.CoreCompileInputs.cache
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.RazorTargetAssemblyInfo.cache
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csproj.CopyComplete
 C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\staticwebassets\eKino.API.StaticWebAssets.Manifest.cache
@@ -187,3 +180,10 @@ C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\ne
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.dll
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.pdb
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.genruntimeconfig.cache
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cache

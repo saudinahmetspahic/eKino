@@ -5,6 +5,7 @@ using Flurl.Util;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace eKino.WinUI
 {
@@ -16,10 +17,9 @@ namespace eKino.WinUI
             _route = route; 
         }
 
-        public bool Add<T>(T x)
+        public void Add<T>(T x)
         {
-            var result = $"{Settings.Default.ApiUrl}/{_route}".PostJsonAsync(x);
-            return result.IsCompleted;
+            $"{Settings.Default.ApiUrl}/{_route}".PostJsonAsync(x);
         }
 
         public T Get<T>()
@@ -29,6 +29,12 @@ namespace eKino.WinUI
             return result.Result;
         }
 
+        public async Task<T> GetByIme<T>(string ime)
+        {
+            var result = await $"{Settings.Default.ApiUrl}/{_route}/PoImenu/{ime}".GetJsonAsync<T>();
+            return result;
+        }
+        
         public T GetByName<T>(string naziv)
         {
             var result = $"{Settings.Default.ApiUrl}/{_route}/PoNazivu/{naziv}".GetJsonAsync<T>();

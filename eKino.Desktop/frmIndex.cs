@@ -24,7 +24,7 @@ namespace eKino.Desktop
         {
             var ime = txtKorisnickoIme.Text;
             ApiService _korisnikApiService = new ApiService("Korisnik");
-            var korisnik = _korisnikApiService.GetByName<Korisnik>(ime);
+            var korisnik = _korisnikApiService.GetByIme<Korisnik>(ime);
             if(korisnik != null)
             {
                 MessageBox.Show("Uspijesno ste se logirali");

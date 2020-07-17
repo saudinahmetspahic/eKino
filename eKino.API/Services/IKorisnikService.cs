@@ -8,11 +8,11 @@ namespace eKino.API.Services
 {
     public interface IKorisnikService
     {
-        public IEnumerable<Korisnik> Get();
-        public Korisnik GetById(int id);
+        public IEnumerable<Model.Korisnik> Get();
+        public Model.Korisnik GetById(int id);
         public Model.Korisnik GetByIme(string ime);
-        public void Add(Korisnik korisnik);
-        public Korisnik Update(int id, Korisnik korisnik);
+        public void Add(Model.Korisnik korisnik);
+        public Model.Korisnik Update(int id, Model.Korisnik korisnik);
         public bool Remove(int id);
     }
 }

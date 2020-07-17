@@ -15,6 +15,8 @@ namespace eKino.API.Mapper
         {
             CreateMap<API.Database.Film, Model.Film>().ReverseMap();
             CreateMap<API.Database.Film, FilmInsertRequest>().ReverseMap();
+
+            CreateMap<API.Database.Korisnik, Model.Korisnik>().ReverseMap();
         }
     }
 }

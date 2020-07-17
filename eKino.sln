@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B7D72803-5965-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eKino.API", "eKino.API\eKino.API.csproj", "{0EEBEBD1-9CFB-4F34-9FCA-6F96B03EC63F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eKino.WinUI", "eKino.WinUI\eKino.WinUI.csproj", "{DA1B0AF6-C443-4BA2-ABB1-99A6FEB802F0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eKino.Desktop", "eKino.Desktop\eKino.Desktop.csproj", "{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}"
 EndProject
 Global
@@ -27,10 +25,6 @@ Global
 		{0EEBEBD1-9CFB-4F34-9FCA-6F96B03EC63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EEBEBD1-9CFB-4F34-9FCA-6F96B03EC63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EEBEBD1-9CFB-4F34-9FCA-6F96B03EC63F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA1B0AF6-C443-4BA2-ABB1-99A6FEB802F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA1B0AF6-C443-4BA2-ABB1-99A6FEB802F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA1B0AF6-C443-4BA2-ABB1-99A6FEB802F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA1B0AF6-C443-4BA2-ABB1-99A6FEB802F0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,7 +34,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DA1B0AF6-C443-4BA2-ABB1-99A6FEB802F0} = {B7D72803-5965-4BC9-8D49-605F9A7C15CF}
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88} = {B7D72803-5965-4BC9-8D49-605F9A7C15CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

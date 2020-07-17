@@ -12,26 +12,27 @@ namespace eKino.API.Services
     {
         private readonly MojContext _context = null;
         private readonly IMapper _mapper = null;
-        KorisnikService(MojContext context, IMapper mapper)
+        public KorisnikService(MojContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
 
-        public void Add(Korisnik korisnik)
+        public void Add(Model.Korisnik korisnik)
         {
-            _context.Korisnik.Add(korisnik);
+            _context.Korisnik.Add(_mapper.Map<Korisnik>(korisnik));
+            _context.SaveChanges();
         }
 
-        public IEnumerable<Korisnik> Get()
+        public IEnumerable<Model.Korisnik> Get()
         {
-            return _context.Korisnik.ToList();
+            return _mapper.Map<IEnumerable<Model.Korisnik>>(_context.Korisnik.ToList());
         }
 
-        public Korisnik GetById(int id)
+        public Model.Korisnik GetById(int id)
         {
-            return _context.Korisnik.SingleOrDefault(w => w.Id == id);
+            return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Id == id));
         }
 
         public Model.Korisnik GetByIme(string ime)
@@ -51,14 +52,14 @@ namespace eKino.API.Services
             return false;
         }
 
-        public Korisnik Update(int id, Korisnik korisnik)
+        public Model.Korisnik Update(int id, Model.Korisnik korisnik)
         {
             var k = _context.Korisnik.SingleOrDefault(w => w.Id == id);
             if(k != null)
             {
-                k = korisnik;                
+                k = _mapper.Map<Database.Korisnik>(korisnik);                
                 _context.SaveChanges();
-                return k;
+                return _mapper.Map<Model.Korisnik>(k);
             }
             return korisnik;
         }

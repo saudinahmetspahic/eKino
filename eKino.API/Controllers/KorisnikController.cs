@@ -21,19 +21,19 @@ namespace eKino.API.Controllers
 
         // GET: api/<KorisnikController>
         [HttpGet]
-        public IEnumerable<Database.Korisnik> Get()
+        public IEnumerable<Model.Korisnik> Get()
         {
             return _service.Get();
         }
 
         // GET api/<KorisnikController>/5
         [HttpGet("{id}")]
-        public Database.Korisnik Get(int id)
+        public Model.Korisnik Get(int id)
         {
             return _service.GetById(id);
         }
 
-        [HttpGet("PoNazivu")]
+        [HttpGet("PoImenu/{naziv}")]
         public Model.Korisnik GetByIme(string naziv)
         {
             return _service.GetByIme(naziv);
@@ -41,14 +41,14 @@ namespace eKino.API.Controllers
 
         // POST api/<KorisnikController>
         [HttpPost]
-        public void Post(Database.Korisnik korisnik)
+        public void Post(Model.Korisnik korisnik)
         {
             _service.Add(korisnik);
         }
 
         // PUT api/<KorisnikController>/5
         [HttpPut("{id}")]
-        public Database.Korisnik Put(int id, Database.Korisnik korisnik)
+        public Model.Korisnik Put(int id, Model.Korisnik korisnik)
         {
             return _service.Update(id, korisnik);
         }

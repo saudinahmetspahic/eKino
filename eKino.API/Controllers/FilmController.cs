@@ -36,14 +36,14 @@ namespace eKino.API.Controllers
             return _service.GetById(id);
         }
 
-        [HttpGet("PoNazivu")]
+        [HttpGet("PoNazivu/{naziv}")]
         public IEnumerable<Model.Film> GetByNaziv(string naziv)
         {
             return _service.GetByNaziv(naziv);
         }
 
 
-        [HttpGet("PoZanru")]
+        [HttpGet("PoZanru/{zanr}")]
         public IEnumerable<Model.Film> GetByZanr(string zanr)
         {
             return _service.GetByZanr(zanr);

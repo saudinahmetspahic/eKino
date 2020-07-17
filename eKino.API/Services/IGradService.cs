@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    interface IGradService
+    public interface IGradService
     {
-        IEnumerable<Grad> Get();
-        Grad GetByNaziv(string naziv);
-        Grad GetById(int id);
-
-        void Add(Grad grad);
-
-        Grad Update(int id, Grad grad);
-
-        bool Remove(int id);
+        public IEnumerable<Grad> Get();
+        public Grad GetByNaziv(string naziv);
+        public Grad GetById(int id);
+        public void Add(Grad grad);
+        public Grad Update(int id, Grad grad);
+        public bool Remove(int id);
     }
 }
