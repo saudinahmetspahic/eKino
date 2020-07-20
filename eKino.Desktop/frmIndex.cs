@@ -20,14 +20,15 @@ namespace eKino.Desktop
             InitializeComponent();
         }
 
-        private void bttnLogin_Click(object sender, EventArgs e)
+        private async void bttnLogin_Click(object sender, EventArgs e)
         {
             var ime = txtKorisnickoIme.Text;
             ApiService _korisnikApiService = new ApiService("Korisnik");
-            var korisnik = _korisnikApiService.GetByIme<Korisnik>(ime);
+            var korisnik = await _korisnikApiService.GetByIme<Korisnik>(ime);
             if(korisnik != null)
             {
                 MessageBox.Show("Uspijesno ste se logirali");
+
             } 
             else
             {

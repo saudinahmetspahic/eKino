@@ -115,3 +115,6 @@ C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debu
 C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.csproj.CopyComplete
 C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.exe
 C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.pdb
+C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmPocetna.resources
+C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmFilmDodaj.resources
+C:\Users\PC\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmFileBrowser.resources

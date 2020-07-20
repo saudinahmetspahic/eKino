@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj": {}
+    "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj": {
+    "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
         "projectName": "eKino.API",
-        "projectPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
+        "projectPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
-                "projectPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj"
+              "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
+                "projectPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
+    "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
         "projectName": "eKino.Model",
-        "projectPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+        "projectPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

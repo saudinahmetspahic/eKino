@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
@@ -15,7 +16,7 @@ namespace eKino.Desktop
 {
     public partial class frmRegistracija : Form
     {
-        private readonly ApiService _korisnikApiService = new ApiService("Korisnik");
+        private ApiService _korisnikApiService = new ApiService("Korisnik");
         public frmRegistracija()
         {
             InitializeComponent();
@@ -36,7 +37,8 @@ namespace eKino.Desktop
                 GradId = gId
             };
             _korisnikApiService.Add(korisnik);
-            var dodaniKorisnik = await _korisnikApiService.GetByIme<Korisnik>(txtIme.Text);
+            Thread.Sleep(3000);
+            var dodaniKorisnik = await _korisnikApiService.GetByIme<Korisnik>(txtIme.Text.ToString());
             if (dodaniKorisnik != null)
             {
                 MessageBox.Show("Uspijesno ste se registrovali na sistem");

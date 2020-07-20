@@ -31,8 +31,8 @@ namespace eKino.WinUI
 
         public async Task<T> GetByIme<T>(string ime)
         {
-            var result = await $"{Settings.Default.ApiUrl}/{_route}/PoImenu/{ime}".GetJsonAsync<T>();
-            return result;
+            var result = $"{Settings.Default.ApiUrl}/{_route}/PoImenu/{ime}";
+            return await result.GetJsonAsync<T>();
         }
         
         public T GetByName<T>(string naziv)
