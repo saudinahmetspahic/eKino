@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {}
+    "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
+    "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+        "projectUniqueName": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
         "projectName": "eKino.Model",
-        "projectPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\obj\\",
+        "projectPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+        "packagesPath": "C:\\Users\\A1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\A1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -59,7 +60,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

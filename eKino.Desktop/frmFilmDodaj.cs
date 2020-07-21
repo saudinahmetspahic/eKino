@@ -20,36 +20,13 @@ namespace eKino.Desktop
 
         private void txtFilm_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Odaberi putanju" })
+            using (OpenFileDialog fbd = new OpenFileDialog())
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    txtFilm.Text = fbd.SelectedPath;
-                    //txtPathOutput.Text = fbd.SelectedPath;
-                    //Path = fbd.SelectedPath;
-                    //foreach (var item in Directory.GetFiles(fbd.SelectedPath))
-                    //{
-                    //    imgList.Images.Add(System.Drawing.Icon.ExtractAssociatedIcon(item));
-                    //    FileInfo fi = new FileInfo(item);
-                    //    ListFiles.Add(fi.FullName);
-                    //    lviewPretrega.Items.Add(fi.Name, imgList.Images.Count - 1);
-                    //}
+                    txtFilm.Text = fbd.FileName;
                 }
             }
-
-
-            //var frmFileBrowser = new frmFileBrowser();
-            //frmFileBrowser.Show();
-            //var path = frmFileBrowser.GetPath();
-            //txtFilm.Text = path;
-        }
-        public void SetPath(string path)
-        {
-
-        }
-        private void txtFilm_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

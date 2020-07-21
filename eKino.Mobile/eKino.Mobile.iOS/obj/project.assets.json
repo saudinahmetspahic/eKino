@@ -1045,24 +1045,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {},
+    "C:\\Users\\A1\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
       "projectName": "eKino.Mobile.iOS",
-      "projectPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\obj\\",
+      "projectPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
+      "packagesPath": "C:\\Users\\A1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\A1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1076,8 +1076,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj": {
-              "projectPath": "C:\\Users\\PC\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj"
+            "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj": {
+              "projectPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj"
             }
           }
         }
