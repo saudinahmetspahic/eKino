@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fYeSW6bMW8dKTgqdJoi7vAo4YaPdvunyQqLY2ZETdOLu48SeLLyjrvxdITlYDf052eJkyWV8YZZOFDiu7pcJHA==",
+  "dgSpecHash": "nDOG8q10qzDlmH9KUr7ZGZEUEkXblhkwdIIHJQiFnLWLVn901xHsGMM1DfW0ZAKONzJj69aWhKNVPyir+4os4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\A1\\.nuget\\packages\\octane.xam.videoplayer\\3.1.0\\octane.xam.videoplayer.3.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -99,7 +100,8 @@
     "C:\\Users\\A1\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\A1\\.nuget\\packages\\xamarin.forms\\4.0.0.497661\\xamarin.forms.4.0.0.497661.nupkg.sha512"
   ],
   "logs": []
 }

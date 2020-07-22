@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "acTxZegzq8hj3JYEAq0ZcvCSJUAt+ZHXjp5FJz7XPJFwppXqIZoDCFZQ9CnMhNHikHJeJOlu0ADryl19YCIfoQ==",
+  "dgSpecHash": "+WjENVUdLgAjRv0Wkh43T6igMLXDyMaRXERwvZPSu4A61wtSOd1EZ31qDiZaqq5VfLw/Q3aJ8omWaQwG5B7VDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.UWP\\eKino.Mobile.UWP.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\A1\\.nuget\\packages\\microsoft.netcore.universalwindowsplatform\\6.1.9\\microsoft.netcore.universalwindowsplatform.6.1.9.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\microsoft.ui.xaml\\2.3.191211002\\microsoft.ui.xaml.2.3.191211002.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\A1\\.nuget\\packages\\octane.xam.videoplayer\\3.1.0\\octane.xam.videoplayer.3.1.0.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.1.9\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.1.9.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\runtime.win10-arm.microsoft.net.native.compiler\\2.1.8\\runtime.win10-arm.microsoft.net.native.compiler.2.1.8.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.1.8\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.1.8.nupkg.sha512",

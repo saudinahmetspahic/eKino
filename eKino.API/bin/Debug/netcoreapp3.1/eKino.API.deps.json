@@ -28,6 +28,7 @@
           "Microsoft.EntityFrameworkCore": "3.1.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.5",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.5",
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Swashbuckle.AspNetCore": "5.5.0",
           "eKino.Model": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -666,6 +667,20 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1298,7 +1313,31 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Xamarin.Forms/4.0.0.497661": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.0.0.146"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.0.0.146"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.0.0.146"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {},
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {}
+        }
+      },
       "eKino.Model/1.0.0": {
+        "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0"
+        },
         "runtime": {
           "eKino.Model.dll": {}
         },
@@ -3138,6 +3177,13 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
+    "Octane.Xam.VideoPlayer/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JFjIeDBrmv1cX8B/N7vuaz2DM75hxufRbfPQVoVNkjp+j/9964lwcIyY6tfZwS3OW2INoPih6snjXG+PdlM6aw==",
+      "path": "octane.xam.videoplayer/3.1.0",
+      "hashPath": "octane.xam.videoplayer.3.1.0.nupkg.sha512"
+    },
     "runtime.native.System/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3599,6 +3645,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Xamarin.Forms/4.0.0.497661": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j2dTUhcgdqb3TwFaSWnkbKwD8rgSQtEoYiW/e+sKRV24BTxMdYp24oEKIXDBvLXjlkv8Lr+DNKBrycu1gfkI2Q==",
+      "path": "xamarin.forms/4.0.0.497661",
+      "hashPath": "xamarin.forms.4.0.0.497661.nupkg.sha512"
     },
     "eKino.Model/1.0.0": {
       "type": "project",

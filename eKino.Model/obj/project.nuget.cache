@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EGLxGfPAYNFdKJnTIcedsFffbUEhgjOVGHmm7Qv2O78C7lwTxlvFFzOCGNIxhhGubpsDFCpbYlrnDU+8Jrt/3g==",
+  "dgSpecHash": "s/SpDi2EO1o8CyLB09o5ZeevFZSXBBcAqxFOPHxkY5WvMgBg684O0txKqUu6JQJzslMoLs0rYtKKVbmNTuhcLg==",
   "success": true,
   "projectFilePath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\A1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\A1\\.nuget\\packages\\octane.xam.videoplayer\\3.1.0\\octane.xam.videoplayer.3.1.0.nupkg.sha512",
+    "C:\\Users\\A1\\.nuget\\packages\\xamarin.forms\\4.0.0.497661\\xamarin.forms.4.0.0.497661.nupkg.sha512"
   ],
   "logs": []
 }

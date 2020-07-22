@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "onaByeoRljSJEyfbx9sbmjx5imefMz+W/xCcG0jY/WwdcIz0W5PkEG/uurZafWS3IKDEYyaH3wKV2mKe7TwqrQ==",
+  "dgSpecHash": "1td2ILNC0BxDc0CIov2AebnHN4WjxY8boY/4Hdt0m5DC5mg4C8Inq8V8LWVnIWWvQprGRUaaCHoYNCPOqk9D9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\A1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\A1\\.nuget\\packages\\octane.xam.videoplayer\\3.1.0\\octane.xam.videoplayer.3.1.0.nupkg.sha512",
     "C:\\Users\\A1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"

@@ -225,6 +225,20 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -370,6 +384,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -604,6 +619,20 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -914,6 +943,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -1148,6 +1178,20 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
         }
       },
       "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.1.9": {
@@ -1459,6 +1503,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -1694,6 +1739,20 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -1825,6 +1884,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -2059,6 +2119,20 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -2369,6 +2443,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -2603,6 +2678,20 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -2914,6 +3003,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -3148,6 +3238,20 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -3458,6 +3562,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -3692,6 +3797,20 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Octane.Xam.VideoPlayer/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.497661"
+        },
+        "compile": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll": {},
+          "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -4003,6 +4122,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Octane.Xam.VideoPlayer": "3.1.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -4552,6 +4672,31 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Octane.Xam.VideoPlayer/3.1.0": {
+      "sha512": "JFjIeDBrmv1cX8B/N7vuaz2DM75hxufRbfPQVoVNkjp+j/9964lwcIyY6tfZwS3OW2INoPih6snjXG+PdlM6aw==",
+      "type": "package",
+      "path": "octane.xam.videoplayer/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.Android.dll",
+        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.Android.xml",
+        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.dll",
+        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.xml",
+        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.dll",
+        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.iOS.dll",
+        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.iOS.xml",
+        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.xml",
+        "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.dll",
+        "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.xml",
+        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll",
+        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.xml",
+        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll",
+        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.xml",
+        "octane.xam.videoplayer.3.1.0.nupkg.sha512",
+        "octane.xam.videoplayer.nuspec"
       ]
     },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.1.9": {
@@ -8165,6 +8310,7 @@
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.1.9",
+      "Octane.Xam.VideoPlayer >= 3.1.0",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.5.0.495",
       "eKino.Mobile >= 1.0.0"
@@ -8217,6 +8363,10 @@
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.1.9, )"
+          },
+          "Octane.Xam.VideoPlayer": {
+            "target": "Package",
+            "version": "[3.1.0, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

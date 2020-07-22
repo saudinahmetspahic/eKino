@@ -31,8 +31,8 @@ C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mob
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.AssemblyInfoInputs.cache
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.AssemblyInfo.cs
-C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.csproj.CoreCompileInputs.cache
-C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.dll
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\ref\eKino.Mobile.dll
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.pdb
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.csproj.CoreCompileInputs.cache
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\XamlC.stamp

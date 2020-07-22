@@ -237,3 +237,13 @@ C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debu
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.csproj.CopyComplete
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.exe
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.pdb
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Octane.Xamarin.Forms.VideoPlayer.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Octane.Xamarin.Forms.VideoPlayer.xml
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\XamlC.stamp
