@@ -2,18 +2,39 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
-      "Octane.Xam.VideoPlayer/3.1.0": {
+      "LibVLCSharp/3.4.6": {
         "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "4.0.0.497661"
-        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
         "compile": {
-          "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.Android.dll": {},
-          "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+          "lib/monoandroid81/LibVLCSharp.Android.AWindow.dll": {},
+          "lib/monoandroid81/LibVLCSharp.dll": {}
         },
         "runtime": {
-          "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.Android.dll": {},
-          "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+          "lib/monoandroid81/LibVLCSharp.Android.AWindow.dll": {},
+          "lib/monoandroid81/LibVLCSharp.dll": {}
+        }
+      },
+      "LibVLCSharp.Forms/3.4.6": {
+        "type": "package",
+        "dependencies": {
+          "LibVLCSharp": "3.4.6",
+          "Xamarin.Forms": "3.2.0.871581"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid81/LibVLCSharp.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid81/LibVLCSharp.Forms.dll": {}
+        },
+        "resource": {
+          "lib/monoandroid81/fr/LibVLCSharp.Forms.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -23,6 +44,12 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "VideoLAN.LibVLC.Android/3.2.0": {
+        "type": "package",
+        "build": {
+          "build/VideoLAN.LibVLC.Android.targets": {}
         }
       },
       "Xamarin.Android.Arch.Core.Common/1.1.1.3": {
@@ -818,7 +845,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Octane.Xam.VideoPlayer": "3.1.0",
+          "LibVLCSharp": "3.4.6",
+          "LibVLCSharp.Forms": "3.4.6",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -832,29 +860,69 @@
     }
   },
   "libraries": {
-    "Octane.Xam.VideoPlayer/3.1.0": {
-      "sha512": "JFjIeDBrmv1cX8B/N7vuaz2DM75hxufRbfPQVoVNkjp+j/9964lwcIyY6tfZwS3OW2INoPih6snjXG+PdlM6aw==",
+    "LibVLCSharp/3.4.6": {
+      "sha512": "lr55WPizbXnMLZwZZwSoFNrEzsaJ2nh6KtSbnwfJAT0zOizuFuMK7JcsGEQacNkr/HWfVj3bbLVxHMZbuQgdjg==",
       "type": "package",
-      "path": "octane.xam.videoplayer/3.1.0",
+      "path": "libvlcsharp/3.4.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.Android.dll",
-        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.Android.xml",
-        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.dll",
-        "lib/MonoAndroid81/Octane.Xamarin.Forms.VideoPlayer.xml",
-        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.dll",
-        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.iOS.dll",
-        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.iOS.xml",
-        "lib/Xamarin.iOS10/Octane.Xamarin.Forms.VideoPlayer.xml",
-        "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.dll",
-        "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.xml",
-        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.dll",
-        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.UWP.xml",
-        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.dll",
-        "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.xml",
-        "octane.xam.videoplayer.3.1.0.nupkg.sha512",
-        "octane.xam.videoplayer.nuspec"
+        "icon.png",
+        "lib/monoandroid81/LibVLCSharp.Android.AWindow.dll",
+        "lib/monoandroid81/LibVLCSharp.dll",
+        "lib/monoandroid81/LibVLCSharp.xml",
+        "lib/net40/LibVLCSharp.dll",
+        "lib/net40/LibVLCSharp.xml",
+        "lib/net471/LibVLCSharp.dll",
+        "lib/net471/LibVLCSharp.xml",
+        "lib/netstandard1.1/LibVLCSharp.dll",
+        "lib/netstandard1.1/LibVLCSharp.xml",
+        "lib/netstandard2.0/LibVLCSharp.dll",
+        "lib/netstandard2.0/LibVLCSharp.xml",
+        "lib/netstandard2.1/LibVLCSharp.dll",
+        "lib/netstandard2.1/LibVLCSharp.xml",
+        "lib/uap10.0.16299/LibVLCSharp.dll",
+        "lib/uap10.0.16299/LibVLCSharp.pri",
+        "lib/uap10.0.16299/LibVLCSharp.xml",
+        "lib/uap10.0.16299/LibVLCSharp/LibVLCSharp.xr.xml",
+        "lib/uap10.0.16299/LibVLCSharp/Themes/Generic.xaml",
+        "lib/uap10.0/LibVLCSharp.dll",
+        "lib/uap10.0/LibVLCSharp.pri",
+        "lib/uap10.0/LibVLCSharp.xml",
+        "lib/uap10.0/LibVLCSharp/LibVLCSharp.xr.xml",
+        "lib/uap10.0/LibVLCSharp/Themes/Generic.xaml",
+        "lib/xamarinios10/LibVLCSharp.dll",
+        "lib/xamarinios10/LibVLCSharp.xml",
+        "lib/xamarinmac20/LibVLCSharp.dll",
+        "lib/xamarinmac20/LibVLCSharp.xml",
+        "lib/xamarintvos10/LibVLCSharp.dll",
+        "lib/xamarintvos10/LibVLCSharp.xml",
+        "libvlcsharp.3.4.6.nupkg.sha512",
+        "libvlcsharp.nuspec"
+      ]
+    },
+    "LibVLCSharp.Forms/3.4.6": {
+      "sha512": "x5bRUxMcjQ1y5bQjWcmJI2hy9zyGl71YOGzNFahzTHnrVfugkCBLmHPJiI0jGeUSqQiFX9vhUPv874cAzvXkKg==",
+      "type": "package",
+      "path": "libvlcsharp.forms/3.4.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/monoandroid81/LibVLCSharp.Forms.dll",
+        "lib/monoandroid81/LibVLCSharp.Forms.xml",
+        "lib/monoandroid81/fr/LibVLCSharp.Forms.resources.dll",
+        "lib/netstandard2.0/LibVLCSharp.Forms.dll",
+        "lib/netstandard2.0/LibVLCSharp.Forms.xml",
+        "lib/netstandard2.0/fr/LibVLCSharp.Forms.resources.dll",
+        "lib/xamarinios10/LibVLCSharp.Forms.dll",
+        "lib/xamarinios10/LibVLCSharp.Forms.xml",
+        "lib/xamarinios10/fr/LibVLCSharp.Forms.resources.dll",
+        "lib/xamarinmac20/LibVLCSharp.Forms.dll",
+        "lib/xamarinmac20/LibVLCSharp.Forms.xml",
+        "lib/xamarinmac20/fr/LibVLCSharp.Forms.resources.dll",
+        "libvlcsharp.forms.3.4.6.nupkg.sha512",
+        "libvlcsharp.forms.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -902,6 +970,26 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "VideoLAN.LibVLC.Android/3.2.0": {
+      "sha512": "PPdFhXKCFQZRvx4F2O56eLtRvRJ6DaHY3PjJPpQrAF2XU/UhUp+NzkK6AzhjsyiGvZMpU5OFQFXM9QDTJ996OQ==",
+      "type": "package",
+      "path": "videolan.libvlc.android/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/VideoLAN.LibVLC.Android.targets",
+        "build/android-armv7/libc++_shared.so",
+        "build/android-armv7/libvlc.so",
+        "build/android-armv8/libc++_shared.so",
+        "build/android-armv8/libvlc.so",
+        "build/android-x86/libc++_shared.so",
+        "build/android-x86/libvlc.so",
+        "build/android-x86_64/libc++_shared.so",
+        "build/android-x86_64/libvlc.so",
+        "videolan.libvlc.android.3.2.0.nupkg.sha512",
+        "videolan.libvlc.android.nuspec"
       ]
     },
     "Xamarin.Android.Arch.Core.Common/1.1.1.3": {
@@ -2003,31 +2091,33 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
-      "Octane.Xam.VideoPlayer >= 3.1.0",
+      "LibVLCSharp >= 3.4.6",
+      "LibVLCSharp.Forms >= 3.4.6",
+      "VideoLAN.LibVLC.Android >= 3.2.0",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.5.0.495",
       "eKino.Mobile >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\A1\\.nuget\\packages\\": {},
+    "C:\\Users\\saudi\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
+      "projectUniqueName": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
       "projectName": "eKino.Mobile.Android",
-      "projectPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
-      "packagesPath": "C:\\Users\\A1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\obj\\",
+      "projectPath": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
+      "packagesPath": "C:\\Users\\saudi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\A1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\saudi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2041,8 +2131,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj": {
-              "projectPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj"
+            "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj": {
+              "projectPath": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj"
             }
           }
         }
@@ -2051,9 +2141,17 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
-          "Octane.Xam.VideoPlayer": {
+          "LibVLCSharp": {
             "target": "Package",
-            "version": "[3.1.0, )"
+            "version": "[3.4.6, )"
+          },
+          "LibVLCSharp.Forms": {
+            "target": "Package",
+            "version": "[3.4.6, )"
+          },
+          "VideoLAN.LibVLC.Android": {
+            "target": "Package",
+            "version": "[3.2.0, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

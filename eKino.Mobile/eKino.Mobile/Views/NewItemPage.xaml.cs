@@ -5,6 +5,10 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using eKino.Mobile.Models;
+using LibVLCSharp.Shared;
+using System.IO;
+using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.CompilerServices;
 
 namespace eKino.Mobile.Views
 {
@@ -14,7 +18,7 @@ namespace eKino.Mobile.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
-
+        public LibVLC _libvlc { get; set; }
         public NewItemPage()
         {
             InitializeComponent();
@@ -26,6 +30,14 @@ namespace eKino.Mobile.Views
             };
 
             BindingContext = this;
+
+            Core.Initialize();
+            _libvlc = new LibVLC();
+            
+            var link = "https://ia601403.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4";
+            var media = new Media(_libvlc, link, FromType.FromLocation);
+            myvideo.MediaPlayer = new MediaPlayer(media) { EnableHardwareDecoding = true };
+            myvideo.MediaPlayer.Play();
         }
 
         async void Save_Clicked(object sender, EventArgs e)

@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
+using AutoMapper;
+using eKino.API.Database;
 using eKino.API.Services;
+using eKino.Model;
+using eKino.Model.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace eKino.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class KorisnikController : ControllerBase
@@ -21,9 +28,9 @@ namespace eKino.API.Controllers
 
         // GET: api/<KorisnikController>
         [HttpGet]
-        public IEnumerable<Model.Korisnik> Get()
+        public List<Model.Korisnik> Get([FromQuery]KorisnikSearchRequest request)
         {
-            return _service.Get();
+            return _service.Get(request);
         }
 
         // GET api/<KorisnikController>/5
@@ -33,22 +40,34 @@ namespace eKino.API.Controllers
             return _service.GetById(id);
         }
 
-        [HttpGet("PoImenu/{naziv}")]
-        public Model.Korisnik GetByIme(string naziv)
+        [HttpGet("PoEmailu/{email}")]
+        public Model.Korisnik GetByEmail(string email)
         {
-            return _service.GetByIme(naziv);
+            return _service.GetByEmail(email);
+        }
+
+        [HttpGet("PoImenu/{ime}")]
+        public Model.Korisnik GetByIme(string ime)
+        {
+            return _service.GetByIme(ime);
+        }
+
+        [HttpGet("PoPrezimenu/{prezime}")]
+        public Model.Korisnik GetByPrezime(string prezime)
+        {
+            return _service.GetByIme(prezime);
         }
 
         // POST api/<KorisnikController>
         [HttpPost]
-        public void Post(Model.Korisnik korisnik)
+        public void Post(KorisnikInsertRequest korisnik)
         {
             _service.Add(korisnik);
         }
 
         // PUT api/<KorisnikController>/5
         [HttpPut("{id}")]
-        public Model.Korisnik Put(int id, Model.Korisnik korisnik)
+        public Model.Korisnik Put(int id, KorisnikInsertRequest korisnik)
         {
             return _service.Update(id, korisnik);
         }

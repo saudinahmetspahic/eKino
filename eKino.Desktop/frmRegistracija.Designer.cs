@@ -1,5 +1,5 @@
 ﻿using eKino.Model;
-using eKino.WinUI;
+using eKino.Desktop;
 using System.Collections.Generic;
 using static System.Windows.Forms.AxHost;
 
@@ -33,6 +33,7 @@ namespace eKino.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistracija));
             this.bttnRegistrujSe = new System.Windows.Forms.Button();
             this.labIme = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
@@ -42,21 +43,23 @@ namespace eKino.Desktop
             this.labDatumRodjenja = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.labEmail = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbSlika = new System.Windows.Forms.PictureBox();
             this.txtSifra = new System.Windows.Forms.TextBox();
             this.labSifra = new System.Windows.Forms.Label();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.labGrad = new System.Windows.Forms.Label();
             this.cbGrad = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtSifraPotvrda = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bttnLogin = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnRegistrujSe
             // 
-            this.bttnRegistrujSe.Location = new System.Drawing.Point(610, 384);
+            this.bttnRegistrujSe.Location = new System.Drawing.Point(443, 376);
             this.bttnRegistrujSe.Name = "bttnRegistrujSe";
-            this.bttnRegistrujSe.Size = new System.Drawing.Size(161, 36);
+            this.bttnRegistrujSe.Size = new System.Drawing.Size(323, 36);
             this.bttnRegistrujSe.TabIndex = 0;
             this.bttnRegistrujSe.Text = "Registruj se";
             this.bttnRegistrujSe.UseVisualStyleBackColor = true;
@@ -133,28 +136,22 @@ namespace eKino.Desktop
             this.labEmail.TabIndex = 8;
             this.labEmail.Text = "Email";
             // 
-            // label1
+            // pbSlika
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(439, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Slika";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(443, 75);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(323, 146);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.pbSlika.Image = ((System.Drawing.Image)(resources.GetObject("pbSlika.Image")));
+            this.pbSlika.InitialImage = null;
+            this.pbSlika.Location = new System.Drawing.Point(443, 75);
+            this.pbSlika.Name = "pbSlika";
+            this.pbSlika.Size = new System.Drawing.Size(323, 186);
+            this.pbSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSlika.TabIndex = 11;
+            this.pbSlika.TabStop = false;
             // 
             // txtSifra
             // 
-            this.txtSifra.Location = new System.Drawing.Point(32, 383);
+            this.txtSifra.Location = new System.Drawing.Point(32, 376);
             this.txtSifra.Name = "txtSifra";
+            this.txtSifra.PasswordChar = '*';
             this.txtSifra.Size = new System.Drawing.Size(323, 22);
             this.txtSifra.TabIndex = 13;
             // 
@@ -162,7 +159,7 @@ namespace eKino.Desktop
             // 
             this.labSifra.AutoSize = true;
             this.labSifra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSifra.Location = new System.Drawing.Point(28, 360);
+            this.labSifra.Location = new System.Drawing.Point(28, 353);
             this.labSifra.Name = "labSifra";
             this.labSifra.Size = new System.Drawing.Size(44, 20);
             this.labSifra.TabIndex = 12;
@@ -187,33 +184,56 @@ namespace eKino.Desktop
             // 
             // cbGrad
             // 
+            this.cbGrad.DisplayMember = "Naziv";
             this.cbGrad.FormattingEnabled = true;
             this.cbGrad.Location = new System.Drawing.Point(443, 300);
             this.cbGrad.Name = "cbGrad";
             this.cbGrad.Size = new System.Drawing.Size(323, 24);
             this.cbGrad.TabIndex = 16;
-            var _gradoviService = new ApiService("Grad");
-            var _gradovi = _gradoviService.Get<IEnumerable<Grad>>();
-            this.cbGrad.DataSource = _gradovi;
-            this.cbGrad.DisplayMember = "Naziv";
             this.cbGrad.ValueMember = "Id";
-            //foreach (var grad in _gradovi)
-            //{
-            //    this.cbGrad.Items.Add(grad.Naziv);
-            //}
+            // 
+            // txtSifraPotvrda
+            // 
+            this.txtSifraPotvrda.Location = new System.Drawing.Point(32, 451);
+            this.txtSifraPotvrda.Name = "txtSifraPotvrda";
+            this.txtSifraPotvrda.PasswordChar = '*';
+            this.txtSifraPotvrda.Size = new System.Drawing.Size(323, 22);
+            this.txtSifraPotvrda.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 428);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Potvrda lozinke";
+            // 
+            // bttnLogin
+            // 
+            this.bttnLogin.Location = new System.Drawing.Point(443, 437);
+            this.bttnLogin.Name = "bttnLogin";
+            this.bttnLogin.Size = new System.Drawing.Size(323, 36);
+            this.bttnLogin.TabIndex = 19;
+            this.bttnLogin.Text = "Logiraj se";
+            this.bttnLogin.UseVisualStyleBackColor = true;
+            this.bttnLogin.Click += new System.EventHandler(this.bttnLogin_Click);
             // 
             // frmRegistracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 515);
+            this.Controls.Add(this.bttnLogin);
+            this.Controls.Add(this.txtSifraPotvrda);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbGrad);
             this.Controls.Add(this.labGrad);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtSifra);
             this.Controls.Add(this.labSifra);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbSlika);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.labEmail);
             this.Controls.Add(this.labDatumRodjenja);
@@ -225,7 +245,8 @@ namespace eKino.Desktop
             this.Controls.Add(this.bttnRegistrujSe);
             this.Name = "frmRegistracija";
             this.Text = "frmRegistracija";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmRegistracija_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,12 +263,14 @@ namespace eKino.Desktop
         private System.Windows.Forms.Label labDatumRodjenja;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label labEmail;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbSlika;
         private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.Label labSifra;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.Label labGrad;
         private System.Windows.Forms.ComboBox cbGrad;
+        private System.Windows.Forms.TextBox txtSifraPotvrda;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button bttnLogin;
     }
 }

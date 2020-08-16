@@ -4,13 +4,13 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
-            xmlns:views="clr-namespace:eKino.Mobile.Views"
-            x:Class="eKino.Mobile.Views.MainPage">
+            xmlns:views="clr-namespace:eKino.Mobile.Views" xmlns:shared="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
+                  x:Class="eKino.Mobile.Views.MainPage">
 
     <MasterDetailPage.Master>
         <views:MenuPage />
     </MasterDetailPage.Master>
-
+   
     <MasterDetailPage.Detail>
         <NavigationPage>
             <NavigationPage.Icon>
@@ -24,4 +24,5 @@
         </NavigationPage>
     </MasterDetailPage.Detail>
     
+
 </MasterDetailPage>

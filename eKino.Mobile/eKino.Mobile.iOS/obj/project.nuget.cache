@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lgnAZQFMBaTg96F3E1bcJl6FhEEXQobNwwphrThwUfEKmVWddF0nn0hzYUFj1+8p6E8pfPcUzRg8u1bqxU8WhQ==",
+  "dgSpecHash": "iLNQyhVjAdb6BsplwbloGK7oA9dHwZNqyZjslg92F5VNvUxOcmbpyfyM2JFNpp9+ny9zrsLydvxcF06ww1BjJQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
+  "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\A1\\.nuget\\packages\\octane.xam.videoplayer\\3.1.0\\octane.xam.videoplayer.3.1.0.nupkg.sha512",
-    "C:\\Users\\A1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp.forms\\3.4.6\\libvlcsharp.forms.3.4.6.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\videolan.libvlc.ios\\3.3.10\\videolan.libvlc.ios.3.3.10.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
   ],

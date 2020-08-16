@@ -35,6 +35,11 @@ namespace eKino.API.EF
             // kompozitni kljuc
             modelBuilder.Entity<ProjekcijaDvorana>()
                 .HasKey(c => new { c.ProjekcijaId, c.DvoranaId });
+
+            // kompozitni kljuc
+            modelBuilder.Entity<KomentarReakcija>()
+                .HasKey(c => new { c.KomentarId, c.KorisnikId });
+
         }
 
         public DbSet<Dvorana> Dvorana { get; set; }
@@ -44,10 +49,11 @@ namespace eKino.API.EF
         public DbSet<FilmScenaristi> FilmScenaristi { get; set; }
         public DbSet<Grad> Grad { get; set; }
         public DbSet<Komentar> Komentar { get; set; }
+        public DbSet<KomentarReakcija> KomentarReakcija { get; set; }
         public DbSet<Ocijena> Ocijena { get; set; }
         public DbSet<Osoba> Osoba { get; set; }
         public DbSet<Korisnik> Korisnik { get; set; }
-        public DbSet<KorisnikPaket> OsobaPaket { get; set; }
+        public DbSet<KorisnikPaket> KorisnikPaket { get; set; }
         public DbSet<Paket> Paket { get; set; }
         public DbSet<ProdukcijskaKuca> ProdukcijskaKuca { get; set; }
         public DbSet<Projekcija> Projekcija { get; set; }
@@ -56,6 +62,8 @@ namespace eKino.API.EF
         public DbSet<Tip> Tip { get; set; }
         public DbSet<Zanr> Zanr { get; set; }
         public DbSet<Zaposlenik> Zaposlenik { get; set; }
+        public DbSet<Uloga> Uloga { get; set; }
+
 
 
     }

@@ -1,17 +1,22 @@
-﻿using System;
+﻿using eKino.Model;
+using eKino.Desktop;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace eKino.Desktop
 {
     public partial class frmPocetna : Form
     {
+        private ApiService _korisnikApiService = new ApiService("Korisnik");
         private bool DropDownListeSakrivene;
         public frmPocetna()
         {
@@ -93,6 +98,12 @@ namespace eKino.Desktop
             var frmFilmDodaj = new frmFilmDodaj();
             frmFilmDodaj.Show();
         }
+
+        private void rpbAvatar_Click(object sender, EventArgs e)
+        {
+            frmAccountInfo frm = new frmAccountInfo();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
- 

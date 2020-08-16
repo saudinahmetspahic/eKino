@@ -6,12 +6,12 @@ using AutoMapper;
 using eKino.API.Database;
 using eKino.API.Services;
 using eKino.Model.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace eKino.API.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class FilmController : ControllerBase

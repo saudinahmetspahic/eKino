@@ -1,13 +1,15 @@
 using AutoMapper;
+using eKino.API.Database;
 using eKino.API.EF;
 using eKino.API.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 
 namespace eKino.API
 {
@@ -25,13 +27,51 @@ namespace eKino.API
         {
             services.AddControllers();
 
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "eKino API", Version = "v1" });
+
+                // basic auth swagger
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Authorization header using the Bearer scheme."
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "basic"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+            });
+
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IFilmService, FilmService>();
             services.AddScoped<IGradService, GradService>();
             services.AddScoped<IKorisnikService, KorisnikService>();
-            
+            services.AddScoped<IUlogaService, UlogaService>();
+            services.AddScoped<IOcijenaService, OcijenaService>();
+            services.AddScoped<IPaketService, PaketService>();
+            services.AddScoped<IRezervacijaService, RezervacijaService>();
+            services.AddScoped<IKomentarService, KomentarService>();
+            services.AddScoped<IKomentarReakcijaService, KomentarReakcijaService>();
+
             services.AddDbContext<MojContext>(option => option.UseSqlServer(Configuration.GetConnectionString("connectionString")));
         }
 
@@ -52,16 +92,19 @@ namespace eKino.API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                
+
             });
         }
     }

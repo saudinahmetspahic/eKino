@@ -1,5 +1,7 @@
 FormsViewGroup
-Octane.Xamarin.Forms.VideoPlayer.Android
+LibVLCSharp.Android.AWindow
+LibVLCSharp
+LibVLCSharp.Forms
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common

@@ -164,6 +164,67 @@ namespace eKino.API.Migrations
                     b.ToTable("Komentar");
                 });
 
+            modelBuilder.Entity("eKino.API.Database.KomentarReakcija", b =>
+                {
+                    b.Property<int>("KomentarId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("KorisnikId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Reakcija")
+                        .HasColumnType("int");
+
+                    b.HasKey("KomentarId", "KorisnikId");
+
+                    b.HasIndex("KorisnikId");
+
+                    b.ToTable("KomentarReakcija");
+                });
+
+            modelBuilder.Entity("eKino.API.Database.Korisnik", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DatumRegistracije")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DatumRodjenja")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GradId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LozinkaHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LozinkaSalt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Prezime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UlogaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GradId");
+
+                    b.HasIndex("UlogaId");
+
+                    b.ToTable("Korisnik");
+                });
+
             modelBuilder.Entity("eKino.API.Database.KorisnikPaket", b =>
                 {
                     b.Property<int>("KorisnikId")
@@ -176,7 +237,7 @@ namespace eKino.API.Migrations
 
                     b.HasIndex("PaketId");
 
-                    b.ToTable("OsobaPaket");
+                    b.ToTable("KorisnikPaket");
                 });
 
             modelBuilder.Entity("eKino.API.Database.Ocijena", b =>
@@ -220,10 +281,6 @@ namespace eKino.API.Migrations
                     b.Property<DateTime>("DatumRodjenja")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("GradId")
                         .HasColumnType("int");
 
@@ -238,8 +295,6 @@ namespace eKino.API.Migrations
                     b.HasIndex("GradId");
 
                     b.ToTable("Osoba");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Osoba");
                 });
 
             modelBuilder.Entity("eKino.API.Database.Paket", b =>
@@ -373,6 +428,21 @@ namespace eKino.API.Migrations
                     b.ToTable("Tip");
                 });
 
+            modelBuilder.Entity("eKino.API.Database.Uloga", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NazivUloge")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Uloga");
+                });
+
             modelBuilder.Entity("eKino.API.Database.Zanr", b =>
                 {
                     b.Property<int>("Id")
@@ -415,25 +485,6 @@ namespace eKino.API.Migrations
                     b.HasIndex("DvoranaId");
 
                     b.ToTable("Zaposlenik");
-                });
-
-            modelBuilder.Entity("eKino.API.Database.KorisnikController", b =>
-                {
-                    b.HasBaseType("eKino.API.Database.Osoba");
-
-                    b.Property<DateTime>("DatumRegistracije")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Lozinka")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Slika")
-                        .HasColumnType("varbinary(max)");
-
-                    b.HasDiscriminator().HasValue("KorisnikController");
                 });
 
             modelBuilder.Entity("eKino.API.Database.Dvorana", b =>
@@ -513,16 +564,46 @@ namespace eKino.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eKino.API.Database.KorisnikController", "Komentator")
+                    b.HasOne("eKino.API.Database.Korisnik", "Komentator")
                         .WithMany()
                         .HasForeignKey("KomentatorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("eKino.API.Database.KomentarReakcija", b =>
+                {
+                    b.HasOne("eKino.API.Database.Komentar", "Komentar")
+                        .WithMany()
+                        .HasForeignKey("KomentarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eKino.API.Database.Korisnik", "Korisnik")
+                        .WithMany()
+                        .HasForeignKey("KorisnikId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("eKino.API.Database.Korisnik", b =>
+                {
+                    b.HasOne("eKino.API.Database.Grad", "Grad")
+                        .WithMany()
+                        .HasForeignKey("GradId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eKino.API.Database.Uloga", "Uloga")
+                        .WithMany()
+                        .HasForeignKey("UlogaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("eKino.API.Database.KorisnikPaket", b =>
                 {
-                    b.HasOne("eKino.API.Database.KorisnikController", "KorisnikController")
+                    b.HasOne("eKino.API.Database.Korisnik", "Korisnik")
                         .WithMany()
                         .HasForeignKey("KorisnikId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -543,7 +624,7 @@ namespace eKino.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eKino.API.Database.KorisnikController", "Komentator")
+                    b.HasOne("eKino.API.Database.Korisnik", "Komentator")
                         .WithMany()
                         .HasForeignKey("KomentatorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -590,7 +671,7 @@ namespace eKino.API.Migrations
 
             modelBuilder.Entity("eKino.API.Database.Rezervacija", b =>
                 {
-                    b.HasOne("eKino.API.Database.KorisnikController", "Kupac")
+                    b.HasOne("eKino.API.Database.Korisnik", "Kupac")
                         .WithMany()
                         .HasForeignKey("KupacId");
 

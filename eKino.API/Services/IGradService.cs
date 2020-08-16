@@ -8,11 +8,11 @@ namespace eKino.API.Services
 {
     public interface IGradService
     {
-        public IEnumerable<Grad> Get();
-        public Grad GetByNaziv(string naziv);
-        public Grad GetById(int id);
-        public void Add(Grad grad);
-        public Grad Update(int id, Grad grad);
+        public List<Model.Grad> Get();
+        public Model.Grad GetByNaziv(string naziv);
+        public Model.Grad GetById(int id);
+        public void Add(Model.Grad grad);
+        public Model.Grad Update(int id, Model.Grad grad);
         public bool Remove(int id);
     }
 }

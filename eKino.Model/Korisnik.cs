@@ -10,11 +10,13 @@ namespace eKino.Model
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public DateTime DatumRodjenja { get; set; }
-        public string Biografija { get; set; }
-        public int? GradId { get; set; }
         public DateTime DatumRegistracije { get; set; }
         public string Email { get; set; }
-        public string Lozinka { get; set; }
-        public byte[] Slika { get; set; }
+
+        public int UlogaId { get; set; }
+        public Uloga Uloga { get; set; }
+
+        public int GradId { get; set; }
+        public Grad Grad { get; set; }
     }
 }

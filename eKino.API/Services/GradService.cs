@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eKino.API.Database;
 using eKino.API.EF;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,25 +19,25 @@ namespace eKino.API.Services
             _mapper = mapper;
         }
 
-        public void Add(Grad grad)
+        public void Add(Model.Grad grad)
         {
-            _context.Grad.Add(grad);
+            _context.Grad.Add(_mapper.Map<Database.Grad>(grad));
             _context.SaveChanges();
         }
 
-        public IEnumerable<Grad> Get()
+        public List<Model.Grad> Get()
         {
-            return _context.Grad.ToList();
+            return _mapper.Map<List<Model.Grad>>(_context.Grad.ToList());
         }
 
-        public Grad GetById(int id)
+        public Model.Grad GetById(int id)
         {
-            return _context.Grad.SingleOrDefault(w => w.Id == id);
+            return _mapper.Map<Model.Grad>(_context.Grad.SingleOrDefault(w => w.Id == id));
         }
 
-        public Grad GetByNaziv(string naziv)
+        public Model.Grad GetByNaziv(string naziv)
         {
-            return _context.Grad.SingleOrDefault(w => w.Naziv == naziv);
+            return _mapper.Map<Model.Grad>(_context.Grad.SingleOrDefault(w => w.Naziv == naziv));
         }
 
         public bool Remove(int id)
@@ -51,14 +52,14 @@ namespace eKino.API.Services
             return false;
         }
 
-        public Grad Update(int id, Grad grad)
+        public Model.Grad Update(int id, Model.Grad grad)
         {
             var g = _context.Grad.SingleOrDefault(w => w.Id == id);
             if(g != null)
             {
-                g = grad;
+                g = _mapper.Map<Database.Grad>(grad);
                 _context.SaveChanges();
-                return g;
+                return _mapper.Map<Model.Grad>(g);
             }
             return grad;
         }

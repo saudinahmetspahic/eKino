@@ -34,7 +34,7 @@
             this.bttnFilmovi = new System.Windows.Forms.Button();
             this.bttnPaketi = new System.Windows.Forms.Button();
             this.bttnProjekcije = new System.Windows.Forms.Button();
-            this.roundPictureBox2 = new eKino.Desktop.RoundPictureBox();
+            this.rpbAvatar = new eKino.Desktop.RoundPictureBox();
             this.roundPictureBox1 = new eKino.Desktop.RoundPictureBox();
             this.labeKino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,7 +48,7 @@
             this.bttnFilmDodaj = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tblMeni.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpbAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlPaketiDropDownLista.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.panel1.Controls.Add(this.tblMeni);
-            this.panel1.Controls.Add(this.roundPictureBox2);
+            this.panel1.Controls.Add(this.rpbAvatar);
             this.panel1.Controls.Add(this.roundPictureBox1);
             this.panel1.Controls.Add(this.labeKino);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -140,19 +140,21 @@
             this.bttnProjekcije.Text = "Projekcije";
             this.bttnProjekcije.UseVisualStyleBackColor = false;
             // 
-            // roundPictureBox2
+            // rpbAvatar
             // 
-            this.roundPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.roundPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureBox2.Image")));
-            this.roundPictureBox2.Location = new System.Drawing.Point(709, 3);
-            this.roundPictureBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.roundPictureBox2.MaximumSize = new System.Drawing.Size(90, 90);
-            this.roundPictureBox2.MinimumSize = new System.Drawing.Size(90, 90);
-            this.roundPictureBox2.Name = "roundPictureBox2";
-            this.roundPictureBox2.Size = new System.Drawing.Size(90, 90);
-            this.roundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundPictureBox2.TabIndex = 1;
-            this.roundPictureBox2.TabStop = false;
+            this.rpbAvatar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rpbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("rpbAvatar.Image")));
+            this.rpbAvatar.Location = new System.Drawing.Point(709, 3);
+            this.rpbAvatar.Margin = new System.Windows.Forms.Padding(5);
+            this.rpbAvatar.MaximumSize = new System.Drawing.Size(90, 90);
+            this.rpbAvatar.MinimumSize = new System.Drawing.Size(90, 90);
+            this.rpbAvatar.Name = "rpbAvatar";
+            this.rpbAvatar.Padding = new System.Windows.Forms.Padding(1);
+            this.rpbAvatar.Size = new System.Drawing.Size(90, 90);
+            this.rpbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rpbAvatar.TabIndex = 1;
+            this.rpbAvatar.TabStop = false;
+            this.rpbAvatar.Click += new System.EventHandler(this.rpbAvatar_Click);
             // 
             // roundPictureBox1
             // 
@@ -292,7 +294,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tblMeni.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlPaketiDropDownLista.ResumeLayout(false);
@@ -305,7 +307,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labeKino;
-        private RoundPictureBox roundPictureBox2;
+        private RoundPictureBox rpbAvatar;
         private RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.Button bttnPaketi;
         private System.Windows.Forms.Button bttnProjekcije;

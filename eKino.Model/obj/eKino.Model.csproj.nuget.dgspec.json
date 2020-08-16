@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {}
+    "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
+    "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+        "projectUniqueName": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
         "projectName": "eKino.Model",
-        "projectPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
-        "packagesPath": "C:\\Users\\A1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A1\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\obj\\",
+        "projectPath": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+        "packagesPath": "C:\\Users\\saudi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\saudi\\Source\\Repos\\RS2-Seminarski\\eKino.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\A1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\saudi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -43,15 +42,27 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "LibVLCSharp": {
+              "target": "Package",
+              "version": "[3.4.6, )"
+            },
+            "LibVLCSharp.Forms": {
+              "target": "Package",
+              "version": "[3.4.6, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
-            "Octane.Xam.VideoPlayer": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[12.0.2, )"
             }
           },
           "imports": [
