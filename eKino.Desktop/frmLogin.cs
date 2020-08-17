@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eKino.Model.Requests;
 
 namespace eKino.Desktop
 {
@@ -26,7 +27,10 @@ namespace eKino.Desktop
             ApiService.Sifra = txtSifra.Text;
             try
             {
-                var r = _apiService.Get<List<Korisnik>>();
+                //var r = _apiService.Get<List<Korisnik>>();
+                var r = _apiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
+                if (r == null)
+                    throw new ApplicationException();
                 frmPocetna frm = new frmPocetna();
                 frm.Show();
                 this.Hide();

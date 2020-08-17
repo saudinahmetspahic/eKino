@@ -184,7 +184,6 @@ C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\ne
 C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\PC\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Octane.Xamarin.Forms.VideoPlayer.dll
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Xamarin.Forms.Core.dll
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Xamarin.Forms.Platform.dll
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Xamarin.Forms.Xaml.dll
@@ -258,3 +257,10 @@ C:\Users\saudi\Source\Repos\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swa
 C:\Users\saudi\Source\Repos\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\saudi\Source\Repos\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\saudi\Source\Repos\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\LibVLCSharp.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\LibVLCSharp.Forms.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\fr\LibVLCSharp.Forms.resources.dll

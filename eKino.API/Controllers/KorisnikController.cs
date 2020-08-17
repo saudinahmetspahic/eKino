@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eKino.API.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class KorisnikController : ControllerBase
