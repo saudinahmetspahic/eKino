@@ -1,6 +1,8 @@
 ﻿using eKino.API.Services;
 using eKino.Model;
+using eKino.Model.Requests;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Server.IIS.Core;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -15,14 +17,14 @@ namespace eKino.API
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private readonly IKorisnikService _userService;
+        private readonly ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest> _userService;
 
         public BasicAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
             ISystemClock clock,
-            IKorisnikService userService)
+            ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest> userService)
             : base(options, logger, encoder, clock)
         {
             _userService = userService;

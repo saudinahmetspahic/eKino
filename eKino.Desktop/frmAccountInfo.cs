@@ -54,9 +54,9 @@ namespace eKino.Desktop
                 lblImePrezime.Text = k.Ime + " " + k.Prezime;
                 lblDatumRegistracije.Text = k.DatumRegistracije.ToString("dd-MM-yyyy");
                 var search = new KorisnikPaketSearchRequest { KorisnikId = k.Id };
-                lblPaket.Text = _paketService.Get<List<Paket>>(search).FirstOrDefault()?.Opis??"-";
-                lblBrojOcijena.Text = (_ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { KorisnikId = k.Id })?.Count??0).ToString();
-                lblBrojRezervacija.Text = (_rezervacijaService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id })?.Count??0).ToString();
+                lblPaket.Text = _paketService.Get<List<Paket>>(search).FirstOrDefault()?.Opis ?? "-";
+                lblBrojOcijena.Text = _ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
+                lblBrojRezervacija.Text = _rezervacijaService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
                 var komentari = _komentarService.Get<List<Komentar>>(new KomentarSerchRequest { KomentatorId = k.Id });
                 var maxReakcija = 0;
                 string kom = "";

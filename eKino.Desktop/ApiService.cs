@@ -40,7 +40,8 @@ namespace eKino.Desktop
                 {
                     s += "?";
                     s += search.ToQueryString();
-                } 
+                }
+                        
 
                 Task<T> result;
                 if(auth)
@@ -48,7 +49,8 @@ namespace eKino.Desktop
                 else
                     result = s.GetJsonAsync<T>();
 
-                return result.Result;
+                var r = result.Result;
+                return r;
             }
             catch (FlurlHttpException ex)
             {
@@ -60,6 +62,11 @@ namespace eKino.Desktop
                 {
                     MessageBox.Show("Forbidden.", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                throw;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Unknown error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
         }

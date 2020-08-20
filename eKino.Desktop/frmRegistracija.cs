@@ -65,7 +65,7 @@ namespace eKino.Desktop
             }
         }
 
-        private void frmRegistracija_Load(object sender, EventArgs e)
+        private async void frmRegistracija_Load(object sender, EventArgs e)
         {
             var lista = _gradApiService.Get<List<Grad>>(false);
             lista.Insert(0, new Grad { Id = 0, Naziv = "Odaberi" });

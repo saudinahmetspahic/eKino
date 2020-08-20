@@ -13,14 +13,17 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class KorisnikService : IKorisnikService
+    public class KorisnikService 
+        :
+        BaseCRUDService<Model.Korisnik, KorisnikSearchRequest, Database.Korisnik, KorisnikInsertRequest, KorisnikInsertRequest>,
+        IKorisnikService
     {
-        private readonly MojContext _context = null;
-        private readonly IMapper _mapper = null;
-        public KorisnikService(MojContext context, IMapper mapper)
+        //private readonly MojContext _context = null;
+        //private readonly IMapper _mapper = null;
+        public KorisnikService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
+            //_context = context;
+            //_mapper = mapper;
         }
 
 
@@ -40,7 +43,7 @@ namespace eKino.API.Services
             _context.SaveChanges();
         }
 
-        public Model.Korisnik Authenticate(KorisnikLoginRequest request)
+        public override Model.Korisnik Authenticate(KorisnikLoginRequest request)
         {
             var korisnik = _context.Korisnik.Include(i => i.Uloga).FirstOrDefault(x => x.Email == request.Email);
 
@@ -78,7 +81,7 @@ namespace eKino.API.Services
             return Convert.ToBase64String(inArray);
         }
 
-        public List<Model.Korisnik> Get(KorisnikSearchRequest request)
+        public override List<Model.Korisnik> Get(KorisnikSearchRequest request)
         {
             var query = _context.Korisnik.AsQueryable();
 
@@ -91,10 +94,10 @@ namespace eKino.API.Services
             return _mapper.Map<List<Model.Korisnik>>(result);
         }
 
-        public Model.Korisnik GetById(int id)
-        {
-            return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Id == id));
-        }
+        //public Model.Korisnik GetById(int id)
+        //{
+        //    return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Id == id));
+        //}
 
         public Model.Korisnik GetByEmail(string email)
         {
@@ -111,24 +114,24 @@ namespace eKino.API.Services
             return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Prezime == prezime));
         }
 
-        public bool Remove(int id)
-        {
-            var korisnik = _context.Korisnik.SingleOrDefault(w => w.Id == id);
-            if(korisnik != null)
-            {
-                _context.Korisnik.Remove(korisnik);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
+        //public bool Remove(int id)
+        //{
+        //    var korisnik = _context.Korisnik.SingleOrDefault(w => w.Id == id);
+        //    if(korisnik != null)
+        //    {
+        //        _context.Korisnik.Remove(korisnik);
+        //        _context.SaveChanges();
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
-        public Model.Korisnik Update(int id, KorisnikInsertRequest korisnik)
+        public override Model.Korisnik Update(int id, KorisnikInsertRequest korisnik)
         {
             var k = _context.Korisnik.SingleOrDefault(w => w.Id == id);
-            if(k != null)
+            if (k != null)
             {
-                if(!string.IsNullOrEmpty(korisnik.Password))
+                if (!string.IsNullOrEmpty(korisnik.Password))
                 {
                     var salt = GenerateSalt();
                     var hash = GenerateHash(salt, korisnik.Password);
@@ -141,7 +144,7 @@ namespace eKino.API.Services
                 k.GradId = korisnik.GradId;
                 k.UlogaId = korisnik.UlogaId;
                 k.DatumRodjenja = korisnik.DatumRodjenja;
-                _context.Korisnik.Update(k);      
+                _context.Korisnik.Update(k);
                 _context.SaveChanges();
             }
             return _mapper.Map<Model.Korisnik>(k);

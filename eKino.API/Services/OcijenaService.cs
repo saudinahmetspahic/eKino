@@ -9,18 +9,13 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class OcijenaService : IOcijenaService
+    public class OcijenaService : BaseService<Ocijena, OcijenaSearchRequest, Database.Ocijena>, IOcijenaService
     {
-        private readonly MojContext _context;
-        private readonly IMapper _mapper;
-
-        public OcijenaService(MojContext context, IMapper mapper)
+        public OcijenaService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public List<Ocijena> Get(OcijenaSearchRequest search)
+        public override List<Ocijena> Get(OcijenaSearchRequest search)
         {
             var query = _context.Ocijena.AsQueryable();
 
@@ -32,5 +27,6 @@ namespace eKino.API.Services
             var result = query.ToList();
             return _mapper.Map<List<Model.Ocijena>>(result);
         }
+
     }
 }

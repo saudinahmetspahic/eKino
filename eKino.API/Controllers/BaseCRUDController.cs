@@ -27,5 +27,11 @@ namespace eKino.API.Controllers
         {
             _service.Update(id, request);
         }
+           
+        [HttpDelete("{id}")]
+        public bool Remove(int id)
+        {
+            return _service.Remove(id);
+        }
     }
 }

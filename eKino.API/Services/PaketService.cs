@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eKino.API.Database;
 using eKino.API.EF;
 using eKino.Model.Requests;
 using Microsoft.EntityFrameworkCore;
@@ -9,18 +10,14 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class PaketService : IPaketService
+    public class PaketService : BaseService<Model.Paket, KorisnikPaketSearchRequest, Database.Paket>, IPaketService
     {
-        private readonly MojContext _context;
-        private readonly IMapper _mapper;
 
-        public PaketService(MojContext context, IMapper mapper)
+        public PaketService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public List<Model.Paket> Get(KorisnikPaketSearchRequest search)
+        public override List<Model.Paket> Get(KorisnikPaketSearchRequest search)
         {
             var query = _context.KorisnikPaket.AsQueryable();
 
@@ -37,5 +34,6 @@ namespace eKino.API.Services
             var result = query.ToList();
             return _mapper.Map<List<Model.Paket>>(result);
         }
+
     }
 }

@@ -14,14 +14,14 @@ namespace eKino.API.Controllers
     [ApiController]
     public class OcijenaController : BaseController<Model.Ocijena, OcijenaSearchRequest> //ControllerBase
     {
-        //private readonly IService<Model.Ocijena, OcijenaSearchRequest> _service = null;
+       // private readonly IService<Model.Ocijena, OcijenaSearchRequest> _service = null;
         public OcijenaController(IService<Model.Ocijena, OcijenaSearchRequest> service) : base(service)
         {
-           // _service = service;
+           //_service = service;
         }
 
         //[HttpGet]
-        //public List<Model.Ocijena> Get([FromQuery]OcijenaSearchRequest request)
+        //public List<Model.Ocijena> Get([FromQuery] OcijenaSearchRequest request)
         //{
         //    return _service.Get(request);
         //}

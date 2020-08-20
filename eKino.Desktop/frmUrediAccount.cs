@@ -47,26 +47,26 @@ namespace eKino.Desktop
             _korisnik = k;
             if (k != null)
             {
-                txtIme.Text = k.Ime;
-                txtPrezime.Text = k.Prezime;
-                txtEmail.Text = k.Email;
-                var gradLista = _gradService.Get<List<Grad>>();
+                txtIme.Text = _korisnik.Ime;
+                txtPrezime.Text = _korisnik.Prezime;
+                txtEmail.Text = _korisnik.Email;
+                var gradLista = _gradService.Get<List<Grad>>(null);
                 gradLista.Insert(0, new Grad { Id = 0, Naziv = "Odaberi grad" });
                 cbxGrad.DataSource = gradLista;
                 cbxGrad.DisplayMember = "Naziv";
                 cbxGrad.ValueMember = "Id";
-                var grad = gradLista.Where(w => w.Id == k.GradId).Select(s => s.Naziv).FirstOrDefault();
+                var grad = gradLista.Where(w => w.Id == _korisnik.GradId).Select(s => s.Naziv).FirstOrDefault();
                 var index = cbxGrad.FindString(grad);
                 cbxGrad.SelectedIndex = index;
-                var ulogaLista = _ulogaService.Get<List<Uloga>>();
+                var ulogaLista = _ulogaService.Get<List<Uloga>>(null);
                 ulogaLista.Insert(0, new Uloga { Id = 0, NazivUloge = "Odaberi ulogu" });
                 cbxUloga.DataSource = ulogaLista;
                 cbxUloga.DisplayMember = "NazivUloge";
                 cbxUloga.ValueMember = "Id";
-                var uloga = ulogaLista.Where(w => w.Id == k.UlogaId).Select(s => s.NazivUloge).FirstOrDefault();
+                var uloga = ulogaLista.Where(w => w.Id == _korisnik.UlogaId).Select(s => s.NazivUloge).FirstOrDefault();
                 var indexU = cbxUloga.FindString(uloga);
                 cbxUloga.SelectedIndex = indexU;
-                dtpDatumRodjenja.Value = k.DatumRodjenja;
+                dtpDatumRodjenja.Value = _korisnik.DatumRodjenja;
             }
             else
             {
@@ -100,7 +100,13 @@ namespace eKino.Desktop
                 Password = txtLozinka.Text,
                 PasswordPotvrda = txtLozinkaPotvrda.Text
             });
-
+            if (!string.IsNullOrEmpty(txtLozinka.Text))
+            {
+                frmLogin frmL = new frmLogin();
+                frmL.Show();
+                this.Hide();
+                return;
+            }
             frmPocetna frm = new frmPocetna();
             frm.Show();
             this.Hide();

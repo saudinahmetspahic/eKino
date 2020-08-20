@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eKino.Model.Requests;
+using Flurl.Http;
 
 namespace eKino.Desktop
 {
@@ -27,18 +28,17 @@ namespace eKino.Desktop
             ApiService.Sifra = txtSifra.Text;
             try
             {
-                //var r = _apiService.Get<List<Korisnik>>();
+                //var r = _apiService.Get<List<Korisnik>>(null);
                 var r = _apiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
-                if (r == null)
-                    throw new ApplicationException();
-                frmPocetna frm = new frmPocetna();
-                frm.Show();
-                this.Hide();
+                if (r.Count == 1)
+                {
+                    frmPocetna frm = new frmPocetna();
+                    frm.Show();
+                    this.Hide();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Greska: Problem sa autentifikacijom.\n" + ex.Message);
-                this.Focus();
             }
         }
 
@@ -46,7 +46,7 @@ namespace eKino.Desktop
         {
             frmRegistracija forma = new frmRegistracija();
             forma.Show();
-            //Close();
+            Hide();
         }
     }
 }
