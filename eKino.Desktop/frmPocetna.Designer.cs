@@ -33,24 +33,21 @@
             this.tblMeni = new System.Windows.Forms.TableLayoutPanel();
             this.bttnFilmovi = new System.Windows.Forms.Button();
             this.bttnPaketi = new System.Windows.Forms.Button();
-            this.bttnProjekcije = new System.Windows.Forms.Button();
+            this.bttnRezervacije = new System.Windows.Forms.Button();
             this.rpbAvatar = new eKino.Desktop.RoundPictureBox();
             this.roundPictureBox1 = new eKino.Desktop.RoundPictureBox();
             this.labeKino = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPaketiDropDownLista = new System.Windows.Forms.Panel();
-            this.bttnPaketIzbrisi = new System.Windows.Forms.Button();
             this.bttnPaketAktuelno = new System.Windows.Forms.Button();
             this.bttnPaketDodaj = new System.Windows.Forms.Button();
             this.pnlFilmoviDropDownLista = new System.Windows.Forms.Panel();
-            this.bttnFilmIzbrisi = new System.Windows.Forms.Button();
             this.bttnFilmAktuelno = new System.Windows.Forms.Button();
             this.bttnFilmDodaj = new System.Windows.Forms.Button();
+            this.pnlPozadina = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tblMeni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rpbAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlPaketiDropDownLista.SuspendLayout();
             this.pnlFilmoviDropDownLista.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +66,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.panel1.Size = new System.Drawing.Size(804, 100);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tblMeni
             // 
@@ -79,7 +77,7 @@
             this.tblMeni.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblMeni.Controls.Add(this.bttnFilmovi, 2, 0);
             this.tblMeni.Controls.Add(this.bttnPaketi, 0, 0);
-            this.tblMeni.Controls.Add(this.bttnProjekcije, 1, 0);
+            this.tblMeni.Controls.Add(this.bttnRezervacije, 1, 0);
             this.tblMeni.Location = new System.Drawing.Point(127, 32);
             this.tblMeni.Name = "tblMeni";
             this.tblMeni.RowCount = 1;
@@ -123,22 +121,23 @@
             this.bttnPaketi.UseVisualStyleBackColor = false;
             this.bttnPaketi.Click += new System.EventHandler(this.bttnPaketi_Click);
             // 
-            // bttnProjekcije
+            // bttnRezervacije
             // 
-            this.bttnProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bttnRezervacije.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttnProjekcije.BackColor = System.Drawing.Color.White;
-            this.bttnProjekcije.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bttnProjekcije.FlatAppearance.BorderSize = 2;
-            this.bttnProjekcije.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttnProjekcije.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnProjekcije.Location = new System.Drawing.Point(190, 3);
-            this.bttnProjekcije.Name = "bttnProjekcije";
-            this.bttnProjekcije.Size = new System.Drawing.Size(182, 49);
-            this.bttnProjekcije.TabIndex = 4;
-            this.bttnProjekcije.Text = "Projekcije";
-            this.bttnProjekcije.UseVisualStyleBackColor = false;
+            this.bttnRezervacije.BackColor = System.Drawing.Color.White;
+            this.bttnRezervacije.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bttnRezervacije.FlatAppearance.BorderSize = 2;
+            this.bttnRezervacije.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnRezervacije.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnRezervacije.Location = new System.Drawing.Point(190, 3);
+            this.bttnRezervacije.Name = "bttnRezervacije";
+            this.bttnRezervacije.Size = new System.Drawing.Size(182, 49);
+            this.bttnRezervacije.TabIndex = 4;
+            this.bttnRezervacije.Text = "Rezervacije";
+            this.bttnRezervacije.UseVisualStyleBackColor = false;
+            this.bttnRezervacije.Click += new System.EventHandler(this.bttnRezervacije_Click);
             // 
             // rpbAvatar
             // 
@@ -165,6 +164,7 @@
             this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundPictureBox1.TabIndex = 3;
             this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
             // 
             // labeKino
             // 
@@ -176,56 +176,34 @@
             this.labeKino.TabIndex = 0;
             this.labeKino.Text = "eKino";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(804, 363);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlPaketiDropDownLista
             // 
             this.pnlPaketiDropDownLista.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPaketiDropDownLista.Controls.Add(this.bttnPaketIzbrisi);
             this.pnlPaketiDropDownLista.Controls.Add(this.bttnPaketAktuelno);
             this.pnlPaketiDropDownLista.Controls.Add(this.bttnPaketDodaj);
             this.pnlPaketiDropDownLista.Location = new System.Drawing.Point(130, 84);
             this.pnlPaketiDropDownLista.Name = "pnlPaketiDropDownLista";
-            this.pnlPaketiDropDownLista.Size = new System.Drawing.Size(181, 104);
+            this.pnlPaketiDropDownLista.Size = new System.Drawing.Size(181, 69);
             this.pnlPaketiDropDownLista.TabIndex = 5;
             this.pnlPaketiDropDownLista.Visible = false;
-            // 
-            // bttnPaketIzbrisi
-            // 
-            this.bttnPaketIzbrisi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bttnPaketIzbrisi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bttnPaketIzbrisi.Location = new System.Drawing.Point(0, -1);
-            this.bttnPaketIzbrisi.Name = "bttnPaketIzbrisi";
-            this.bttnPaketIzbrisi.Size = new System.Drawing.Size(181, 35);
-            this.bttnPaketIzbrisi.TabIndex = 8;
-            this.bttnPaketIzbrisi.Text = "Izbrisi";
-            this.bttnPaketIzbrisi.UseVisualStyleBackColor = false;
             // 
             // bttnPaketAktuelno
             // 
             this.bttnPaketAktuelno.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bttnPaketAktuelno.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bttnPaketAktuelno.Location = new System.Drawing.Point(0, 34);
+            this.bttnPaketAktuelno.Location = new System.Drawing.Point(0, -1);
             this.bttnPaketAktuelno.Name = "bttnPaketAktuelno";
             this.bttnPaketAktuelno.Size = new System.Drawing.Size(181, 35);
             this.bttnPaketAktuelno.TabIndex = 7;
             this.bttnPaketAktuelno.Text = "Aktuelno";
             this.bttnPaketAktuelno.UseVisualStyleBackColor = false;
+            this.bttnPaketAktuelno.Click += new System.EventHandler(this.bttnPaketAktuelno_Click);
             // 
             // bttnPaketDodaj
             // 
             this.bttnPaketDodaj.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bttnPaketDodaj.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bttnPaketDodaj.Location = new System.Drawing.Point(0, 69);
+            this.bttnPaketDodaj.Location = new System.Drawing.Point(0, 34);
             this.bttnPaketDodaj.Name = "bttnPaketDodaj";
             this.bttnPaketDodaj.Size = new System.Drawing.Size(181, 35);
             this.bttnPaketDodaj.TabIndex = 6;
@@ -235,42 +213,31 @@
             // pnlFilmoviDropDownLista
             // 
             this.pnlFilmoviDropDownLista.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFilmoviDropDownLista.Controls.Add(this.bttnFilmIzbrisi);
             this.pnlFilmoviDropDownLista.Controls.Add(this.bttnFilmAktuelno);
             this.pnlFilmoviDropDownLista.Controls.Add(this.bttnFilmDodaj);
             this.pnlFilmoviDropDownLista.Location = new System.Drawing.Point(505, 84);
             this.pnlFilmoviDropDownLista.Name = "pnlFilmoviDropDownLista";
-            this.pnlFilmoviDropDownLista.Size = new System.Drawing.Size(182, 104);
+            this.pnlFilmoviDropDownLista.Size = new System.Drawing.Size(182, 69);
             this.pnlFilmoviDropDownLista.TabIndex = 9;
             this.pnlFilmoviDropDownLista.Visible = false;
-            // 
-            // bttnFilmIzbrisi
-            // 
-            this.bttnFilmIzbrisi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bttnFilmIzbrisi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bttnFilmIzbrisi.Location = new System.Drawing.Point(0, -1);
-            this.bttnFilmIzbrisi.Name = "bttnFilmIzbrisi";
-            this.bttnFilmIzbrisi.Size = new System.Drawing.Size(182, 35);
-            this.bttnFilmIzbrisi.TabIndex = 8;
-            this.bttnFilmIzbrisi.Text = "Izbrisi";
-            this.bttnFilmIzbrisi.UseVisualStyleBackColor = false;
             // 
             // bttnFilmAktuelno
             // 
             this.bttnFilmAktuelno.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bttnFilmAktuelno.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bttnFilmAktuelno.Location = new System.Drawing.Point(0, 34);
+            this.bttnFilmAktuelno.Location = new System.Drawing.Point(0, -1);
             this.bttnFilmAktuelno.Name = "bttnFilmAktuelno";
             this.bttnFilmAktuelno.Size = new System.Drawing.Size(182, 35);
             this.bttnFilmAktuelno.TabIndex = 7;
             this.bttnFilmAktuelno.Text = "Aktuelno";
             this.bttnFilmAktuelno.UseVisualStyleBackColor = false;
+            this.bttnFilmAktuelno.Click += new System.EventHandler(this.bttnFilmAktuelno_Click);
             // 
             // bttnFilmDodaj
             // 
             this.bttnFilmDodaj.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bttnFilmDodaj.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bttnFilmDodaj.Location = new System.Drawing.Point(0, 69);
+            this.bttnFilmDodaj.Location = new System.Drawing.Point(0, 34);
             this.bttnFilmDodaj.Name = "bttnFilmDodaj";
             this.bttnFilmDodaj.Size = new System.Drawing.Size(182, 35);
             this.bttnFilmDodaj.TabIndex = 6;
@@ -278,25 +245,37 @@
             this.bttnFilmDodaj.UseVisualStyleBackColor = false;
             this.bttnFilmDodaj.Click += new System.EventHandler(this.bttnFilmDodaj_Click);
             // 
+            // pnlPozadina
+            // 
+            this.pnlPozadina.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPozadina.BackgroundImage")));
+            this.pnlPozadina.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlPozadina.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPozadina.Location = new System.Drawing.Point(0, 0);
+            this.pnlPozadina.Name = "pnlPozadina";
+            this.pnlPozadina.Size = new System.Drawing.Size(804, 464);
+            this.pnlPozadina.TabIndex = 11;
+            // 
             // frmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(804, 463);
+            this.ClientSize = new System.Drawing.Size(804, 464);
             this.Controls.Add(this.pnlFilmoviDropDownLista);
             this.Controls.Add(this.pnlPaketiDropDownLista);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPozadina);
+            this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "frmPocetna";
             this.Text = "Pocetna";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Click += new System.EventHandler(this.frmPocetna_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tblMeni.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rpbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlPaketiDropDownLista.ResumeLayout(false);
             this.pnlFilmoviDropDownLista.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -310,17 +289,15 @@
         private RoundPictureBox rpbAvatar;
         private RoundPictureBox roundPictureBox1;
         private System.Windows.Forms.Button bttnPaketi;
-        private System.Windows.Forms.Button bttnProjekcije;
+        private System.Windows.Forms.Button bttnRezervacije;
         private System.Windows.Forms.Button bttnFilmovi;
         private System.Windows.Forms.TableLayoutPanel tblMeni;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlPaketiDropDownLista;
-        private System.Windows.Forms.Button bttnPaketIzbrisi;
         private System.Windows.Forms.Button bttnPaketAktuelno;
         private System.Windows.Forms.Button bttnPaketDodaj;
         private System.Windows.Forms.Panel pnlFilmoviDropDownLista;
-        private System.Windows.Forms.Button bttnFilmIzbrisi;
         private System.Windows.Forms.Button bttnFilmAktuelno;
         private System.Windows.Forms.Button bttnFilmDodaj;
+        private System.Windows.Forms.Panel pnlPozadina;
     }
 }

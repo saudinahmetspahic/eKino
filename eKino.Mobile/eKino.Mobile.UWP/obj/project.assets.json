@@ -367,6 +367,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -451,6 +460,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -1003,6 +1013,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -1076,6 +1095,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -1629,6 +1649,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -1702,6 +1731,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -2079,6 +2109,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -2149,6 +2188,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -2701,6 +2741,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -2774,6 +2823,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -3327,6 +3377,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -3400,6 +3459,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -3952,6 +4012,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -4025,6 +4094,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -4578,6 +4648,15 @@
           "lib/uap10.0/SharpDX.DXGI.dll": {}
         }
       },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -4651,6 +4730,7 @@
         "dependencies": {
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
+          "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.5.0.495"
         },
@@ -8537,6 +8617,45 @@
         "sharpdx.dxgi.nuspec"
       ]
     },
+    "System.Drawing.Common/4.7.0": {
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+      "type": "package",
+      "path": "system.drawing.common/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.7.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Numerics.Vectors/4.5.0": {
       "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "type": "package",
@@ -8996,6 +9115,7 @@
       "LibVLCSharp >= 3.4.6",
       "LibVLCSharp.Forms >= 3.4.6",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.1.9",
+      "System.Drawing.Common >= 4.7.0",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.5.0.495",
       "eKino.Mobile >= 1.0.0"
@@ -9056,6 +9176,10 @@
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.1.9, )"
+          },
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[4.7.0, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

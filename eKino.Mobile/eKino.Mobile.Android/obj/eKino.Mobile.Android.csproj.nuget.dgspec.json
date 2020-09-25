@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[3.4.6, )"
             },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
             "VideoLAN.LibVLC.Android": {
               "target": "Package",
               "version": "[3.2.0, )"
@@ -118,6 +122,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
@@ -137,7 +145,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

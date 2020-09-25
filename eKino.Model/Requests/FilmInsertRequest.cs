@@ -10,6 +10,8 @@ namespace eKino.Model.Requests
         public string Naziv { get; set; }
         public string Opis { get; set; }
         public DateTime DatumIzlaska { get; set; }
+        public string Link { get; set; }
+        public byte[] Slika { get; set; }
         public int TipId { get; set; }
         public int ZanrId { get; set; }
     }

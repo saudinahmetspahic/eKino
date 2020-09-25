@@ -11,21 +11,24 @@ using eKino.Model.Requests;
 
 namespace eKino.API.Services
 {
-    public class FilmService : IFilmService
+    public class FilmService 
+        : 
+        BaseCRUDService<Model.Film, FilmSearchRequest, Database.Film, FilmInsertRequest, FilmInsertRequest>,
+        IFilmService
     {
-        private readonly MojContext _context = null;
-        private IMapper _mapper = null;
-        public FilmService(MojContext context, IMapper mapper)
+        //private readonly MojContext _context = null;
+        //private IMapper _mapper = null;
+        public FilmService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
+            //_context = context;
+            //_mapper = mapper;
         }
 
-        public IEnumerable<Model.Film> Get()
-        {
+        //public IEnumerable<Model.Film> Get()
+        //{
            
-            return _mapper.Map<IEnumerable<Film>>(_context.Film.ToList());
-        }
+        //    return _mapper.Map<IEnumerable<Film>>(_context.Film.ToList());
+        //}
 
         public IEnumerable<Model.Film> GetByNaziv(string naziv)
         {
@@ -38,37 +41,37 @@ namespace eKino.API.Services
             return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.ZanrId == zanrID));
         }
 
-        public Model.Film GetById(int id)
-        {
-            return _mapper.Map<Model.Film>(_context.Film.SingleOrDefault(w => w.Id == id));
-        }
+        //public Model.Film GetById(int id)
+        //{
+        //    return _mapper.Map<Model.Film>(_context.Film.SingleOrDefault(w => w.Id == id));
+        //}
 
-        public bool Remove(int id)
-        {
-            var film = _context.Film.SingleOrDefault(w => w.Id == id);
-            if (film != null)
-            {
-                _context.Film.Remove(film);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
+        //public bool Remove(int id)
+        //{
+        //    var film = _context.Film.SingleOrDefault(w => w.Id == id);
+        //    if (film != null)
+        //    {
+        //        _context.Film.Remove(film);
+        //        _context.SaveChanges();
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
-        public void Add(Model.Film film)
-        {          
-            _context.Film.Add(_mapper.Map<Database.Film>(film));
-            _context.SaveChanges();
-        }
+        //public void Add(Model.Film film)
+        //{          
+        //    _context.Film.Add(_mapper.Map<Database.Film>(film));
+        //    _context.SaveChanges();
+        //}
 
-        public Model.Film Update(int id, FilmInsertRequest film)
-        {
-            var entity = _mapper.Map<Database.Film>(film);
-            entity.Id = id;
-            _context.Film.Update(entity);
-            _context.SaveChanges();
-            return _mapper.Map<Model.Film>(entity);
-        }
+        //public Model.Film Update(int id, FilmInsertRequest film)
+        //{
+        //    var entity = _mapper.Map<Database.Film>(film);
+        //    entity.Id = id;
+        //    _context.Film.Update(entity);
+        //    _context.SaveChanges();
+        //    return _mapper.Map<Model.Film>(entity);
+        //}
 
        
     }

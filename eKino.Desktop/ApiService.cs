@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
-
+using System.Xml.Schema;
 
 namespace eKino.Desktop
 {
@@ -26,9 +26,30 @@ namespace eKino.Desktop
             _route = route;
         }
 
-        public void Add<T>(T x)
+        public T Add<T>(T x)
         {
-            $"{Settings.Default.ApiUrl}/{_route}".WithBasicAuth(Email, Sifra).PostJsonAsync(x);
+            //$"{Settings.Default.ApiUrl}/{_route}".WithBasicAuth(Email, Sifra).PostJsonAsync(x);
+
+            try
+            {
+                var url = $"{Properties.Settings.Default.ApiUrl}/{_route}";
+
+                var result = url.WithBasicAuth(Email, Sifra).PostJsonAsync(x).ReceiveJson<T>();
+
+                return result.Result;
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = ex.GetResponseJsonAsync<Dictionary<string, string[]>>().Result;
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
+                MessageBox.Show(stringBuilder.ToString(), "Greska", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return default(T);
+            }
         }
 
         public T Get<T>(object search = null, bool auth = true) // async pravi probleme
@@ -73,7 +94,7 @@ namespace eKino.Desktop
 
         public T GetById<T>(int Id)
         {
-            var result = $"{Settings.Default.ApiUrl}/{_route}/Id/{Id}";
+            var result = $"{Settings.Default.ApiUrl}/{_route}/{Id}";
             return result.WithBasicAuth(Email, Sifra).GetJsonAsync<T>().Result;
         }
 
@@ -106,6 +127,11 @@ namespace eKino.Desktop
         {
             var result = $"{Settings.Default.ApiUrl}/{_route}/PoNazivu/{naziv}";
             return result.WithBasicAuth(Email, Sifra).GetJsonAsync<T>().Result;
+        }
+
+        public void Remove(int Id)
+        {
+            $"{Settings.Default.ApiUrl}/{_route}/{Id}".WithBasicAuth(Email, Sifra).DeleteAsync();
         }
     }
 }

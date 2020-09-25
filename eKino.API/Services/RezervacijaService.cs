@@ -9,18 +9,13 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class RezervacijaService : IRezervacijaService
+    public class RezervacijaService : BaseCRUDService<Model.Rezervacija, RezervacijaSearchRequest, Database.Rezervacija, RezervacijaInsertRequest, RezervacijaInsertRequest>
     {
-        private readonly MojContext _context;
-        private readonly IMapper _mapper;
-
-        public RezervacijaService(MojContext context, IMapper mapper)
+        public RezervacijaService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public List<Rezervacija> Get(RezervacijaSearchRequest search)
+        public override List<Rezervacija> Get(RezervacijaSearchRequest search)
         {
             var query = _context.Rezervacija.AsQueryable();
 

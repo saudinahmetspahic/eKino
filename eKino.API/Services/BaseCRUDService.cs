@@ -38,6 +38,7 @@ namespace eKino.API.Services
             if(x != null)
             {
                 _context.Set<TDatabase>().Remove(x);
+                _context.SaveChanges();
                 return true;
             }
             return false;

@@ -64,6 +64,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.7.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
@@ -100,17 +103,35 @@
     <Compile Include="frmAccountInfo.Designer.cs">
       <DependentUpon>frmAccountInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFilmDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFilmDetalji.Designer.cs">
+      <DependentUpon>frmFilmDetalji.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFilmDodaj.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFilmDodaj.Designer.cs">
       <DependentUpon>frmFilmDodaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFilmPregled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFilmPregled.Designer.cs">
+      <DependentUpon>frmFilmPregled.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaketPregled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaketPregled.Designer.cs">
+      <DependentUpon>frmPaketPregled.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistracija.cs">
       <SubType>Form</SubType>
@@ -123,6 +144,12 @@
     </Compile>
     <Compile Include="frmPocetna.Designer.cs">
       <DependentUpon>frmPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRezervacijaPregled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezervacijaPregled.Designer.cs">
+      <DependentUpon>frmRezervacijaPregled.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUrediAccount.cs">
       <SubType>Form</SubType>
@@ -138,17 +165,29 @@
     <EmbeddedResource Include="frmAccountInfo.resx">
       <DependentUpon>frmAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFilmDetalji.resx">
+      <DependentUpon>frmFilmDetalji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFilmDodaj.resx">
       <DependentUpon>frmFilmDodaj.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFilmPregled.resx">
+      <DependentUpon>frmFilmPregled.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaketPregled.resx">
+      <DependentUpon>frmPaketPregled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistracija.resx">
       <DependentUpon>frmRegistracija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPocetna.resx">
       <DependentUpon>frmPocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRezervacijaPregled.resx">
+      <DependentUpon>frmRezervacijaPregled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUrediAccount.resx">
       <DependentUpon>frmUrediAccount.cs</DependentUpon>

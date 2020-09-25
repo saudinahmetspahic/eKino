@@ -12,5 +12,6 @@ namespace eKino.Model
         public int ZanrId { get; set; }
         public string Opis { get; set; }
         public DateTime DatumIzlaska { get; set; }
+        public byte[] Slika { get; set; }
     }
 }

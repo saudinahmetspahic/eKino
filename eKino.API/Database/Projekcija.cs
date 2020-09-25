@@ -14,5 +14,9 @@ namespace eKino.API.Database
         [ForeignKey(nameof(FilmId))]
         public int FilmId { get; set; }
         public virtual Film Film { get; set; }
+
+        [ForeignKey(nameof(DvoranaId))]
+        public int DvoranaId { get; set; }
+        public virtual Dvorana Dvorana { get; set; }
     }
 }

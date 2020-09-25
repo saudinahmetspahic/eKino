@@ -25,20 +25,6 @@ namespace eKino.Desktop
             InitializeComponent();
         }
 
-        private void rpbAvatar_Click(object sender, EventArgs e)
-        {
-            frmAccountInfo frm = new frmAccountInfo();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void roundPictureBox1_Click(object sender, EventArgs e)
-        {
-            frmPocetna frm = new frmPocetna();
-            frm.Show();
-            this.Hide();
-        }
-
         private void frmUrediAccount_Load(object sender, EventArgs e)
         {
             var req = new KorisnikSearchRequest { Email = ApiService.Email };

@@ -28,7 +28,6 @@ namespace eKino.Desktop
             ApiService.Sifra = txtSifra.Text;
             try
             {
-                //var r = _apiService.Get<List<Korisnik>>(null);
                 var r = _apiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
                 if (r.Count == 1)
                 {
@@ -46,7 +45,7 @@ namespace eKino.Desktop
         {
             frmRegistracija forma = new frmRegistracija();
             forma.Show();
-            Hide();
+            this.Hide();
         }
     }
 }

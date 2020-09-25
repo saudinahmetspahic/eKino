@@ -6,7 +6,8 @@ namespace eKino.Model
 {
     public class Ocijena
     {
-        public int Ocijena1 { get; set; }
+        public int Id { get; set; }
+        public int DataOcijena { get; set; }
         public string Komentar { get; set; }
 
         public int KomentatorId { get; set; }

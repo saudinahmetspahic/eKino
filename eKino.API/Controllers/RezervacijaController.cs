@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eKino.API.Services;
+using eKino.Model;
 using eKino.Model.Requests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,19 +12,10 @@ namespace eKino.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RezervacijaController : ControllerBase
+    public class RezervacijaController : BaseCRUDController<Model.Rezervacija, RezervacijaSearchRequest, RezervacijaInsertRequest, RezervacijaInsertRequest>
     {
-        private readonly IRezervacijaService _rezervacijaService;
-
-        public RezervacijaController(IRezervacijaService rezervacijaService)
+        public RezervacijaController(ICRUDService<Rezervacija, RezervacijaSearchRequest, RezervacijaInsertRequest, RezervacijaInsertRequest> service) : base(service)
         {
-            _rezervacijaService = rezervacijaService;
-        }
-
-        [HttpGet]
-        public List<Model.Rezervacija> Get([FromQuery]RezervacijaSearchRequest search)
-        {
-            return _rezervacijaService.Get(search);
         }
     }
 }

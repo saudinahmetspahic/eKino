@@ -30,7 +30,7 @@ namespace eKino.API.Controllers
             return _ulogaApiService.GetByName(name);
         }
 
-        [HttpGet("Id/{Id}")]
+        [HttpGet("{Id}")]
         public Model.Uloga GetById(int Id)
         {
             return _ulogaApiService.GetById(Id);

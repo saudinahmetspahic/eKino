@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6XdePyf0iOeOj1xDR8Xgq4esUKbmgGljb/lMB99gXbH+ZljesrEqACKY0PTBBnWQZWNeJFZqaQCvTjHzCMgMXg==",
+  "dgSpecHash": "H34CI56nv0HtNigx+RZDjZA05PsNvH9T/wfdjISN4M9tgV3i+s97an5YwD7gSqf2OiM/J4aKV8Lq6DmfUGZx9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp.forms\\3.4.6\\libvlcsharp.forms.3.4.6.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\videolan.libvlc.android\\3.2.0\\videolan.libvlc.android.3.2.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
@@ -45,8 +46,8 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,10 +1,14 @@
-﻿using System;
+﻿using eKino.Model.Helper;
+using eKino.Model;
+using eKino.Model.Requests;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,20 +17,99 @@ namespace eKino.Desktop
 {
     public partial class frmFilmDodaj : Form
     {
+        private readonly ApiService _filmService = new ApiService("Film");
+        private readonly ApiService _projekcijaService = new ApiService("Projekcija");
+        private readonly ApiService _zanrService = new ApiService("Zanr");
+        private readonly ApiService _tipService = new ApiService("Tip");
+        private readonly ApiService _dvoranaService = new ApiService("Dvorana");
+
+       // private byte[] _slika;
+        //C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\Images\imgInitial.jpg
         public frmFilmDodaj()
         {
             InitializeComponent();
+
+           // _slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(@".\eKino.Model\Images\imgInitial.jpg"), "jpg");
         }
 
-        private void txtFilm_Click(object sender, EventArgs e)
+        private void bttnDodaj_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog fbd = new OpenFileDialog())
+
+            byte[] slika = null;
+            if(!string.IsNullOrEmpty(txtSlikaNaziv.Text))
+                slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(txtSlikaNaziv.Text), ".jpg");
+            else
+                slika = ImageHelper.GetImage("imgInitial.jpg");
+
+            var film = new FilmInsertRequest
             {
-                if (fbd.ShowDialog() == DialogResult.OK)
+                DatumIzlaska = dtpDatumIzlaska.Value,
+                Naziv = txtNazivFilma.Text,
+                Opis = txtOpis.Text,
+                TipId = cbxVrsta.SelectedIndex,
+                ZanrId = cbxZanr.SelectedIndex,
+                Link = txtLink.Text,
+                Slika = slika
+            };
+            _filmService.Add(film);
+
+            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) && !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) && cbxDvorana.SelectedIndex != 0)
+            {
+                var projekcija = new ProjekcijaInsertRequest
                 {
-                    txtFilm.Text = fbd.FileName;
+                    DatumProjekcije = dtpDatumProjekcije.Value,
+                    CijenaUlaznice = double.Parse(txtProjekcijaCijenaUlaznice.Text),
+                    FilmId = film.Id,
+                    Opis = "Film: " + film.Naziv + " Opis: " + film.Opis,
+                    DvoranaId = cbxDvorana.SelectedIndex
+                };
+                _projekcijaService.Add(projekcija);
+            }
+
+            var form = new frmPocetna();
+            form.Show();
+            this.MdiParent.Close();
+            this.Close();
+        }
+
+        private void frmFilmDodaj_Load(object sender, EventArgs e)
+        {
+            var zanrovi = _zanrService.Get<List<Zanr>>();
+            zanrovi.Insert(0, new Zanr { Id = 0, NazivZanra = "Odaberi zanr" });
+            cbxZanr.DataSource = zanrovi;
+            cbxZanr.DisplayMember = "NazivZanra";
+            cbxZanr.ValueMember = "Id";
+
+            var tipovi = _tipService.Get<List<Tip>>();
+            tipovi.Insert(0, new Tip { Id = 0, NazivTipa = "Odaberi tip" });
+            cbxVrsta.DataSource = tipovi;
+            cbxVrsta.DisplayMember = "NazivTipa";
+            cbxVrsta.ValueMember = "Id";
+
+            var dvorane = _dvoranaService.Get<List<Dvorana>>();
+            dvorane.Insert(0, new Dvorana { Id = 0, Naziv = "Odaberi dvoranu" });
+            cbxDvorana.DataSource = dvorane;
+            cbxDvorana.DisplayMember = "Naziv";
+            cbxDvorana.ValueMember = "Id";
+        }
+
+        private void bttnSlikaDodaj_Click(object sender, EventArgs e)
+        {
+            var d = new OpenFileDialog();
+            if (d.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    txtSlikaNaziv.Text = d.FileName;
+                    //var sr = new StreamReader(d.FileName);
+                    //_slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(sr.ReadToEnd()), "jpg");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Eror: Slika nije u ispravnom formatu.");
                 }
             }
         }
+
     }
 }

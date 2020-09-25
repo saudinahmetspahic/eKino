@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nC7V3bp2zzb1MvT9zh8UmM6vkJIFy3+ru25l7J5eekB5ZMyAcD8aRfREnj+NSP6Yq5s9nmKTsNEXZnCXTr1MLw==",
+  "dgSpecHash": "1WDCa30uP8I3+WLGgafbU2awAqyeJzBL0roeM3bs+w6OopvngCky74wY8CG6KvLrM9iG+MRZoNvPHbTKPTvaOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\saudi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",

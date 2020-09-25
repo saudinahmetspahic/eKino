@@ -12,19 +12,10 @@ namespace eKino.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PaketController : BaseController<Model.Paket, KorisnikPaketSearchRequest> //: ControllerBase
+    public class PaketController : BaseCRUDController<Model.Paket, PaketSearchRequest, PaketInsertRequest, PaketInsertRequest>
     {
-      // public readonly IPaketService _service;
-
-        public PaketController(IService<Model.Paket, KorisnikPaketSearchRequest> service) : base(service)
+        public PaketController(ICRUDService<Model.Paket, PaketSearchRequest, PaketInsertRequest, PaketInsertRequest> service) : base(service)
         {
-            //_service = service;
         }
-
-        //[HttpGet]
-        //public List<Model.Paket> Get([FromQuery]KorisnikPaketSearchRequest search)
-        //{
-        //    return _service.Get(search);
-        //}
     }
 }

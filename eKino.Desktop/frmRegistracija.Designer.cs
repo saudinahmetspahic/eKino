@@ -185,6 +185,7 @@ namespace eKino.Desktop
             // cbGrad
             // 
             this.cbGrad.DisplayMember = "Naziv";
+            this.cbGrad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbGrad.FormattingEnabled = true;
             this.cbGrad.Location = new System.Drawing.Point(443, 300);
             this.cbGrad.Name = "cbGrad";

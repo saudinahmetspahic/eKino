@@ -18,12 +18,9 @@ namespace eKino.API.Services
         BaseCRUDService<Model.Korisnik, KorisnikSearchRequest, Database.Korisnik, KorisnikInsertRequest, KorisnikInsertRequest>,
         IKorisnikService
     {
-        //private readonly MojContext _context = null;
-        //private readonly IMapper _mapper = null;
+      
         public KorisnikService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            //_context = context;
-            //_mapper = mapper;
         }
 
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class OcijenaService : BaseService<Ocijena, OcijenaSearchRequest, Database.Ocijena>, IOcijenaService
+    public class OcijenaService : BaseCRUDService<Model.Ocijena, OcijenaSearchRequest, Database.Ocijena, OcijenaInsertRequest, OcijenaInsertRequest>, IOcijenaService
     {
         public OcijenaService(MojContext context, IMapper mapper) : base(context, mapper)
         {
@@ -19,11 +19,14 @@ namespace eKino.API.Services
         {
             var query = _context.Ocijena.AsQueryable();
 
-            if(search?.KorisnikId != null)
+            if(search.KorisnikId != 0)
             {
                 query = query.Where(w => w.KomentatorId == search.KorisnikId);
             }
-
+            if(search.FilmId != 0)
+            {
+                query = query.Where(w => w.FilmId == search.FilmId);
+            }
             var result = query.ToList();
             return _mapper.Map<List<Model.Ocijena>>(result);
         }

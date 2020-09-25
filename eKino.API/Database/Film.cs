@@ -18,5 +18,8 @@ namespace eKino.API.Database
         [ForeignKey(nameof(ZanrId))]
         public int ZanrId { get; set; }
         public virtual Zanr Zanr { get; set; }
+
+        public string Link { get; set; }
+        public byte[] Slika { get; set; }
     }
 }

@@ -82,6 +82,7 @@
             this.txtSifra.Location = new System.Drawing.Point(67, 163);
             this.txtSifra.Multiline = true;
             this.txtSifra.Name = "txtSifra";
+            this.txtSifra.PasswordChar = '*';
             this.txtSifra.Size = new System.Drawing.Size(509, 28);
             this.txtSifra.TabIndex = 4;
             // 

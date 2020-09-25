@@ -14,26 +14,12 @@ namespace eKino.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class FilmController : ControllerBase
+    public class FilmController : BaseCRUDController<Model.Film, FilmSearchRequest, FilmInsertRequest, FilmInsertRequest>
     {
-        private IFilmService _service = null;
-        private IMapper _mapper = null;
-        public FilmController(IFilmService service, IMapper mapper)
+        private IFilmService _service;
+        public FilmController(ICRUDService<Model.Film, FilmSearchRequest, FilmInsertRequest, FilmInsertRequest> service, IMapper mapper, IFilmService ser) : base(service)
         {
-            _service = service;
-            _mapper = mapper;
-        }
-
-        [HttpGet]
-        public IEnumerable<Model.Film> Get()
-        {
-            return _mapper.Map<IEnumerable<Model.Film>>(_service.Get());
-        }
-
-        [HttpGet("{id}")]
-        public Model.Film GetById(int id)
-        {
-            return _service.GetById(id);
+            _service = ser;
         }
 
         [HttpGet("PoNazivu/{naziv}")]
@@ -49,22 +35,5 @@ namespace eKino.API.Controllers
             return _service.GetByZanr(zanr);
         }
 
-        [HttpPost]
-        public void Add(Model.Film film)
-        {
-            _service.Add(film);
-        }
-
-        [HttpPut("{id}")]
-        public Model.Film Update(int id, FilmInsertRequest film)
-        {
-            return _service.Update(id, film);
-        }
-
-        [HttpDelete("{id}")]
-        public bool Delete(int id)
-        {
-            return _service.Remove(id);
-        }
     }
 }

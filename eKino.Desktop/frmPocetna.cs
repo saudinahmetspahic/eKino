@@ -16,7 +16,6 @@ namespace eKino.Desktop
 {
     public partial class frmPocetna : Form
     {
-        private ApiService _korisnikApiService = new ApiService("Korisnik");
         private bool DropDownListeSakrivene;
         public frmPocetna()
         {
@@ -27,39 +26,33 @@ namespace eKino.Desktop
 
         private void HideButtons()
         {
-            bttnPaketIzbrisi.Hide();
             bttnPaketDodaj.Hide();
             bttnPaketAktuelno.Hide();
             pnlPaketiDropDownLista.Hide();
 
             bttnFilmAktuelno.Hide();
             bttnFilmDodaj.Hide();
-            bttnFilmIzbrisi.Hide();
             pnlFilmoviDropDownLista.Hide();
         }
 
         private void ShowPaketButtons()
         {
-            bttnPaketIzbrisi.Size = bttnPaketi.Size;
-            bttnPaketIzbrisi.Show();
             bttnPaketDodaj.Size = bttnPaketi.Size;
             bttnPaketDodaj.Show();
             bttnPaketAktuelno.Size = bttnPaketi.Size;
             bttnPaketAktuelno.Show();
-            var visina = bttnPaketIzbrisi.Size.Height + bttnPaketDodaj.Size.Height + bttnPaketAktuelno.Size.Height + 1;
+            var visina = bttnPaketDodaj.Size.Height + bttnPaketAktuelno.Size.Height + 1;
             pnlPaketiDropDownLista.Size = new Size(bttnPaketi.Size.Width, visina);
             pnlPaketiDropDownLista.Show();
         }
 
         private void ShowFilmButtons()
         {
-            bttnFilmAktuelno.Size = bttnPaketi.Size;
-            bttnFilmIzbrisi.Show();
             bttnFilmDodaj.Size = bttnPaketi.Size;
             bttnFilmDodaj.Show();
             bttnFilmAktuelno.Size = bttnPaketi.Size;
             bttnFilmAktuelno.Show();
-            var visina = bttnFilmIzbrisi.Size.Height + bttnFilmDodaj.Size.Height + bttnFilmAktuelno.Size.Height + 1;
+            var visina = bttnFilmDodaj.Size.Height + bttnFilmAktuelno.Size.Height + 1;
             pnlFilmoviDropDownLista.Size = new Size(bttnFilmovi.Size.Width, visina);
             pnlFilmoviDropDownLista.Location = new Point(tblMeni.Location.X + tblMeni.Width - bttnFilmovi.Width - 1, pnlFilmoviDropDownLista.Location.Y);
             pnlFilmoviDropDownLista.Show();
@@ -75,7 +68,7 @@ namespace eKino.Desktop
             else
             {
                 HideButtons();
-                DropDownListeSakrivene = true;
+                ShowPaketButtons();
             }
         }
 
@@ -89,21 +82,84 @@ namespace eKino.Desktop
             else
             {
                 HideButtons();
-                DropDownListeSakrivene = true;
+                ShowFilmButtons();
             }
         }
 
         private void bttnFilmDodaj_Click(object sender, EventArgs e)
         {
             var frmFilmDodaj = new frmFilmDodaj();
+            ZatvoriProzore();
+            frmFilmDodaj.MdiParent = this;
+            pnlPozadina.Hide();
             frmFilmDodaj.Show();
+            HideButtons();
         }
 
         private void rpbAvatar_Click(object sender, EventArgs e)
         {
             frmAccountInfo frm = new frmAccountInfo();
+            ZatvoriProzore();
+            frm.MdiParent = this;
+            pnlPozadina.Hide();
             frm.Show();
-            this.Hide();
+        }
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            HideButtons();
+        }
+
+        private void roundPictureBox1_Click(object sender, EventArgs e)
+        {
+            HideButtons();
+            ZatvoriProzore();
+            pnlPozadina.Show();
+        }
+
+        private void bttnFilmAktuelno_Click(object sender, EventArgs e)
+        {
+            var frmFilmPregled = new frmFilmPregled();
+            ZatvoriProzore();
+            frmFilmPregled.MdiParent = this;
+            pnlPozadina.Hide();
+            frmFilmPregled.Show();
+            HideButtons();
+        }
+
+        private void frmPocetna_Click(object sender, EventArgs e)
+        {
+            HideButtons();
+        }
+
+        private void bttnRezervacije_Click(object sender, EventArgs e)
+        {
+            var frm = new frmRezervacijaPregled();
+            ZatvoriProzore();
+            frm.MdiParent = this;
+            pnlPozadina.Hide();
+            frm.Show();
+            HideButtons();
+        }
+
+        private void bttnPaketAktuelno_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPaketPregled();
+            ZatvoriProzore();
+            frm.MdiParent = this;
+            pnlPozadina.Hide();
+            frm.Show();
+            HideButtons();
+        }
+
+        private void ZatvoriProzore()
+        {
+            var children = this.MdiChildren;
+            foreach (var child in children)
+            {
+                child.Close();  
+            }
         }
     }
 }

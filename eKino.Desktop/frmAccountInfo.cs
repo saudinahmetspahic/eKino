@@ -33,14 +33,16 @@ namespace eKino.Desktop
             ApiService.Sifra = "";
             frmLogin frm = new frmLogin();
             frm.Show();
-            this.Close();
+            this.MdiParent.Close();
+            //this.Close();
         }
 
         private void bttnUredi_Click(object sender, EventArgs e)
         {
             frmUrediAccount frm = new frmUrediAccount();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void frmAccountInfo_Load(object sender, EventArgs e)
@@ -73,13 +75,6 @@ namespace eKino.Desktop
                 lblNajpopularnijiKomentar.Text = "[Likes: " + maxReakcija.ToString() + "] Komentar: " + kom;
                 lblUloga.Text = _ulogaService.GetById<Uloga>(k.UlogaId).NazivUloge;
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmPocetna frm = new frmPocetna();
-            frm.Show();
-            this.Hide();
         }
     }
 }

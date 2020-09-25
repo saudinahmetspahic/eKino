@@ -12,8 +12,12 @@ namespace eKino.API.Database
         public DateTime DatumRodjenja { get; set; }
         public string Biografija { get; set; }
 
+        [ForeignKey(nameof(UlogaId))]
+        public int UlogaId { get; set; }
+        public Uloga Uloga { get; set; }
+
         [ForeignKey(nameof(GradId))]
         public int? GradId { get; set; }
-        public virtual Grad Grad { get; set; }        
+        public virtual Grad Grad { get; set; }
     }
 }

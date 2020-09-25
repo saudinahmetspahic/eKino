@@ -58,11 +58,17 @@ namespace eKino.API.Migrations
                     b.Property<DateTime>("DatumIzlaska")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Link")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Slika")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("TipId")
                         .HasColumnType("int");
@@ -247,6 +253,9 @@ namespace eKino.API.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("DataOcijena")
+                        .HasColumnType("int");
+
                     b.Property<int>("FilmId")
                         .HasColumnType("int");
 
@@ -254,9 +263,6 @@ namespace eKino.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("KomentatorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Ocijena1")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -290,9 +296,14 @@ namespace eKino.API.Migrations
                     b.Property<string>("Prezime")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UlogaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GradId");
+
+                    b.HasIndex("UlogaId");
 
                     b.ToTable("Osoba");
                 });
@@ -314,9 +325,6 @@ namespace eKino.API.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("MaxOcijena")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinOcijena")
                         .HasColumnType("int");
 
                     b.Property<string>("Opis")
@@ -360,6 +368,9 @@ namespace eKino.API.Migrations
                     b.Property<DateTime>("DatumProjekcije")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DvoranaId")
+                        .HasColumnType("int");
+
                     b.Property<int>("FilmId")
                         .HasColumnType("int");
 
@@ -367,6 +378,8 @@ namespace eKino.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DvoranaId");
 
                     b.HasIndex("FilmId");
 
@@ -636,6 +649,12 @@ namespace eKino.API.Migrations
                     b.HasOne("eKino.API.Database.Grad", "Grad")
                         .WithMany()
                         .HasForeignKey("GradId");
+
+                    b.HasOne("eKino.API.Database.Uloga", "Uloga")
+                        .WithMany()
+                        .HasForeignKey("UlogaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("eKino.API.Database.ProdukcijskaKuca", b =>
@@ -647,6 +666,12 @@ namespace eKino.API.Migrations
 
             modelBuilder.Entity("eKino.API.Database.Projekcija", b =>
                 {
+                    b.HasOne("eKino.API.Database.Dvorana", "Dvorana")
+                        .WithMany()
+                        .HasForeignKey("DvoranaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("eKino.API.Database.Film", "Film")
                         .WithMany()
                         .HasForeignKey("FilmId")

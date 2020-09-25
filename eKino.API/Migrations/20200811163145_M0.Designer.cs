@@ -81,7 +81,7 @@ namespace eKino.API.Migrations
                     b.ToTable("Film");
                 });
 
-            modelBuilder.Entity("eKino.API.Database.FilmGlumci", b =>
+            modelBuilder.Entity("eKino.API.Database.FilmGlumciController", b =>
                 {
                     b.Property<int>("FilmId")
                         .HasColumnType("int");
@@ -93,10 +93,10 @@ namespace eKino.API.Migrations
 
                     b.HasIndex("GlumacId");
 
-                    b.ToTable("FilmGlumci");
+                    b.ToTable("FilmGlumciController");
                 });
 
-            modelBuilder.Entity("eKino.API.Database.FilmProdukcijskeKuce", b =>
+            modelBuilder.Entity("eKino.API.Database.FilmProdukcijskeKuceService", b =>
                 {
                     b.Property<int>("FilmId")
                         .HasColumnType("int");
@@ -108,7 +108,7 @@ namespace eKino.API.Migrations
 
                     b.HasIndex("ProdukcijskaKucaId");
 
-                    b.ToTable("FilmProdukcijskeKuce");
+                    b.ToTable("FilmProdukcijskeKuceService");
                 });
 
             modelBuilder.Entity("eKino.API.Database.FilmScenaristi", b =>
@@ -513,7 +513,7 @@ namespace eKino.API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("eKino.API.Database.FilmGlumci", b =>
+            modelBuilder.Entity("eKino.API.Database.FilmGlumciController", b =>
                 {
                     b.HasOne("eKino.API.Database.Film", "Film")
                         .WithMany()
@@ -528,7 +528,7 @@ namespace eKino.API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("eKino.API.Database.FilmProdukcijskeKuce", b =>
+            modelBuilder.Entity("eKino.API.Database.FilmProdukcijskeKuceService", b =>
                 {
                     b.HasOne("eKino.API.Database.Film", "Film")
                         .WithMany()

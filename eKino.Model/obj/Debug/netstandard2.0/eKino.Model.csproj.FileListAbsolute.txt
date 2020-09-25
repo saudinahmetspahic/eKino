@@ -37,9 +37,9 @@ C:\Users\saudi\Source\Repos\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\bin\Debug\netstandard2.0\eKino.Model.deps.json
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\bin\Debug\netstandard2.0\eKino.Model.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\bin\Debug\netstandard2.0\eKino.Model.pdb
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csprojAssemblyReference.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.AssemblyInfoInputs.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.AssemblyInfo.cs
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csproj.CoreCompileInputs.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csprojAssemblyReference.cache
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csproj.CoreCompileInputs.cache

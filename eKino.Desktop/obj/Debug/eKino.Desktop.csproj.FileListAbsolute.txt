@@ -541,3 +541,8 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\D
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.csproj.CopyComplete
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.exe
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmFilmPregled.resources
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\System.Drawing.Common.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmFilmDetalji.resources
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmRezervacijaPregled.resources
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmPaketPregled.resources

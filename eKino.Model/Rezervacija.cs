@@ -6,6 +6,7 @@ namespace eKino.Model
 {
     public class Rezervacija
     {
+        public int Id { get; set; }
         public DateTime DatumKreirnja { get; set; }
 
         public int? ProjekcijaId { get; set; }

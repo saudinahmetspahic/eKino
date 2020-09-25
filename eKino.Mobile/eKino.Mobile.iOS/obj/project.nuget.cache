@@ -1,15 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "cHUs2CDhoqUSJpxJtCO2tDivrT8leqEEMVeYEbNCuOJMLOUgdIGX+OE/ixXea1Nxj8VkjWDxNXj9/i5ZfGeAMQ==",
+  "dgSpecHash": "jUwRbJx34uSFffKbjnRVSMH72S248ft4BS+gg42hQnxo6BBjy4J0PAZJoydnrVF8vEHX1V0ffiVAvoN0eWT57g==",
   "success": true,
   "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp.forms\\3.4.6\\libvlcsharp.forms.3.4.6.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\videolan.libvlc.ios\\3.3.10\\videolan.libvlc.ios.3.3.10.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
   ],
   "logs": []
 }
