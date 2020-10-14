@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace eKino.Desktop
@@ -31,13 +32,13 @@ namespace eKino.Desktop
         /// </summary>
         /// 
 
-        private System.Drawing.Point _point = new System.Drawing.Point(24, 35);
+        private System.Drawing.Point _point = new System.Drawing.Point(24, 35); // (24, 35)
         public void ResetPoint()
         {
-            _point.X = 24;
+            _point.X = this.Width / 2 - 100; //24;
             _point.Y = 35;
         }
-        public void DodajPaket(int index, string naziv, string paketocijena)
+        public void DodajPaket(int paketId, int index, string naziv, string paketocijena, double cijena)
         {
             var tblPaket = new TableLayoutPanel();
             var tblPaketPodTabela = new TableLayoutPanel();
@@ -53,12 +54,13 @@ namespace eKino.Desktop
             tblPaket.Controls.Add(lblNazivPaketa, 0, 0);
             tblPaket.ForeColor = System.Drawing.Color.Black;
             tblPaket.Location = _point;
-            tblPaket.Name = "tblPaket" + index;
+            tblPaket.Name = paketId.ToString();
             tblPaket.RowCount = 2;
             tblPaket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tblPaket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            tblPaket.MinimumSize = new System.Drawing.Size(400, 130); 
+            tblPaket.MinimumSize = new System.Drawing.Size(400, 130);
             tblPaket.TabIndex = 0;
+            tblPaket.Click += paket_Click;
 
             tblPaketPodTabela.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
@@ -69,22 +71,24 @@ namespace eKino.Desktop
             tblPaketPodTabela.Controls.Add(lblIndex, 0, 0);
             tblPaketPodTabela.Controls.Add(lblPaketOcijena, 1, 0);
             tblPaketPodTabela.Location = new System.Drawing.Point(3, 48);
-            tblPaketPodTabela.Name = "tblPaketPodTabela" + index;
+            tblPaketPodTabela.Name = paketId.ToString();
             tblPaketPodTabela.RowCount = 1;
             tblPaketPodTabela.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tblPaketPodTabela.Size = new System.Drawing.Size(553, 82);
             tblPaketPodTabela.TabIndex = 0;
+            tblPaketPodTabela.Click += paket_Click;
 
             lblNazivPaketa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
            | System.Windows.Forms.AnchorStyles.Left)));
             lblNazivPaketa.AutoSize = true;
             lblNazivPaketa.Location = new System.Drawing.Point(3, 0);
-            lblNazivPaketa.Name = "lblNazivPaketa" + index;
+            lblNazivPaketa.Name = paketId.ToString();
             lblNazivPaketa.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
             lblNazivPaketa.Size = new System.Drawing.Size(47, 45);
             lblNazivPaketa.TabIndex = 1;
             lblNazivPaketa.Text = naziv;
             lblNazivPaketa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblNazivPaketa.Click += paket_Click;
 
             lblIndex.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
@@ -92,22 +96,24 @@ namespace eKino.Desktop
             lblIndex.AutoSize = true;
             lblIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblIndex.Location = new System.Drawing.Point(3, 0);
-            lblIndex.Name = "lblIndex" + index;
+            lblIndex.Name = paketId.ToString();
             lblIndex.Size = new System.Drawing.Size(280, 82);
             lblIndex.TabIndex = 0;
-            lblIndex.Text = index.ToString() + "#";
+            lblIndex.Text = index.ToString() + "#  " + (cijena != 0 ? cijena + "KM" : "Free!");
+            tblPaketPodTabela.Click += paket_Click;
 
             lblPaketOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             lblPaketOcijena.AutoSize = true;
             lblPaketOcijena.Location = new System.Drawing.Point(289, 0);
-            lblPaketOcijena.Name = "lblPaketOcijena" + index;
+            lblPaketOcijena.Name = paketId.ToString();
             lblPaketOcijena.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
             lblPaketOcijena.Size = new System.Drawing.Size(261, 82);
             lblPaketOcijena.TabIndex = 1;
             lblPaketOcijena.Text = paketocijena;
             lblPaketOcijena.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            lblPaketOcijena.Click += paket_Click;
 
             this.Controls.Add(tblPaket);
             _point.Y += tblPaket.Height + 10;
@@ -140,6 +146,7 @@ namespace eKino.Desktop
             this.button1.TabIndex = 2;
             this.button1.Text = "Dodaj paket";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPaketPregled
             // 

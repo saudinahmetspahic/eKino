@@ -25,17 +25,23 @@ namespace eKino.API.Mapper
             CreateMap<API.Database.Korisnik, Model.Korisnik>().ReverseMap();
             CreateMap<API.Database.Korisnik, Model.Requests.KorisnikInsertRequest>().ReverseMap();
             CreateMap<API.Database.Korisnik, Model.Requests.OsobaInsertRequest>().ReverseMap();
+            CreateMap<API.Database.KorisnikPaket, Model.KorisnikPaket>().ReverseMap();
+            CreateMap<API.Database.KorisnikPaket, KorisnikPaketInsertRequest>().ReverseMap();
             CreateMap<API.Database.Osoba, Model.Requests.OsobaInsertRequest>().ReverseMap();
             CreateMap<API.Database.Osoba, Model.Osoba>().ReverseMap();
 
             CreateMap<API.Database.Grad, Model.Grad>().ReverseMap();
             CreateMap<API.Database.Uloga, Model.Uloga>().ReverseMap();
             CreateMap<API.Database.Paket, Model.Paket>().ReverseMap();
+            CreateMap<API.Database.Paket, PaketInsertRequest>().ReverseMap();
             CreateMap<API.Database.Ocijena, Model.Ocijena>().ReverseMap();
+            CreateMap<API.Database.Ocijena, OcijenaInsertRequest>().ReverseMap();
             CreateMap<API.Database.Rezervacija, Model.Rezervacija>().ReverseMap();
             CreateMap<API.Database.Rezervacija, RezervacijaInsertRequest>().ReverseMap();
             CreateMap<API.Database.Komentar, Model.Komentar>().ReverseMap();
+            CreateMap<API.Database.Komentar, KomentarInsertRequest>().ReverseMap();
             CreateMap<API.Database.KomentarReakcija, Model.KomentarReakcija>().ReverseMap();
+            CreateMap<API.Database.KomentarReakcija, KomentarReakcijaInsertRequest>().ReverseMap();
             CreateMap<API.Database.Tip, Model.Tip>().ReverseMap();
             CreateMap<API.Database.Zanr, Model.Zanr>().ReverseMap();
             CreateMap<API.Database.Dvorana, Model.Dvorana>().ReverseMap();

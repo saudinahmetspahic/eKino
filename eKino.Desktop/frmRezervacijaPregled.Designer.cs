@@ -240,7 +240,6 @@
             this.Controls.Add(this.dgvListaRezervacija);
             this.MinimumSize = new System.Drawing.Size(1032, 511);
             this.Name = "frmRezervacijaPregled";
-            this.Text = "frmRezervacijaPregled";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRezervacijaPregled_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRezervacija)).EndInit();

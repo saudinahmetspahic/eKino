@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:helper="clr-namespace:eKino.Mobile.Helper;assembly=eKino.Mobile" 
+             xmlns:viewModels="clr-namespace:eKino.Mobile.ViewModels"
+             x:Class="eKino.Mobile.Views.PocetniPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="MediumSpringGreen"
+                  HeightRequest="80" 
+                  VerticalOptions="Start">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="50">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="{helper:ImageHelper eKino.Mobile.Images.imgMeni.png}"
+                   Grid.Row="0"
+                   Grid.Column="0">
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MeniIcon_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="eKino"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   TextColor="Black"
+                   FontSize="23"
+                   FontAttributes="Bold"></Label>
+                <Image Source="{helper:ImageHelper eKino.Mobile.Images.imgAvatar.png}"
+                       Grid.Row="0"
+                       Grid.Column="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AvatarIcon_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <Image x:Name="iconToShow" 
+                   IsVisible="true"
+                   Source="{helper:ImageHelper eKino.Mobile.Images.imgPozadina.png}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"></Image>
+
+            <Grid x:Name="gridToShow" Margin="25" IsVisible="false">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" TextColor="LightSlateGray" Text="Paketi" Margin="0, 10, 0, 0"></Label>
+                <Label Grid.Row="1" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" FontAttributes="Bold" Text="AKTUELNO" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="2" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" FontAttributes="Bold" Text="DODAJ" VerticalTextAlignment="Center"></Label>
+
+                <Label Grid.Row="3" Grid.ColumnSpan="2" TextColor="LightSlateGray" FontSize="30" Text="Projekcije"  Margin="0, 10, 0, 0"></Label>
+                <Label Grid.Row="4" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="AKTUELNO" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="5" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="DODAJ" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+
+                <Label Grid.Row="6" Grid.ColumnSpan="2" TextColor="LightSlateGray" FontSize="30" Text="Filmovi"  Margin="0, 10, 0, 0"></Label>
+                <Label Grid.Row="7" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="AKTUELNO" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="8" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="DODAJ" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

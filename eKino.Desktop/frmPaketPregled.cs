@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace eKino.Desktop
     public partial class frmPaketPregled : Form
     {
         private readonly ApiService _paketiService = new ApiService("Paket");
+
 
         public frmPaketPregled()
         {
@@ -33,7 +35,9 @@ namespace eKino.Desktop
                 {
                     if (i + 1 == o)
                     {
-                        maxocijena += " i " + (i + 1).ToString() + " ★";
+                        if (i + 1 != 1)
+                            maxocijena += " i ";
+                        maxocijena += (i + 1).ToString() + " ★";
                     }
                     else
                     {
@@ -42,9 +46,34 @@ namespace eKino.Desktop
                         maxocijena += (i + 1).ToString();
                     }
                 }
-                DodajPaket(index, paket.Opis, maxocijena);
+                DodajPaket(paket.Id, index, paket.Opis, maxocijena, paket.Cijena ?? 0);
                 index++;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPaketDodaj();
+            frm.MdiParent = this.MdiParent;
+            this.Hide();
+            frm.Show();
+            this.Close();
+        }
+
+        private void paket_Click(object sender, EventArgs e)
+        {
+            int paketId = 0;
+            if (sender is Label)
+                paketId = Int32.Parse(((Label)sender).Name);
+            else
+                paketId = Int32.Parse(((TableLayoutPanel)sender).Name);
+            if (paketId <= 0)
+                return;
+            var frm = new frmPaketDetalji(paketId);
+            frm.MdiParent = this.MdiParent;
+            this.Hide();
+            frm.Show();
+            this.Close();
         }
     }
 }

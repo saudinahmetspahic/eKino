@@ -1,4 +1,5 @@
 ﻿using eKino.Model;
+using eKino.Model.Requests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace eKino.Desktop
         private readonly ApiService _filmService = new ApiService("Film");
         private readonly ApiService _zanrService = new ApiService("Zanr");
         private readonly ApiService _tipService = new ApiService("Tip");
+        private readonly ApiService _ocijenaService = new ApiService("Ocijena");
 
         private List<Film> _filmovi;
         private List<Zanr> _zanrovi;
@@ -96,7 +98,7 @@ namespace eKino.Desktop
             //tbl_inside.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single; // izbrisati
 
             tblListaFilmova.Controls.Add(tbl);
-            tbl.Dock = DockStyle.Fill;            
+            tbl.Dock = DockStyle.Fill;
             img.Click += new EventHandler(PrikaziDetaljeFilma);
             img.Name = film.Id.ToString(); // cuva id filma zbog onclick eventa
 
@@ -112,19 +114,52 @@ namespace eKino.Desktop
             frm.Show();
         }
 
-        private void frmFilmPregled_Load(object sender, EventArgs e)
+        private void UcitajFilmove(List<Film> filmovi)
         {
-            _filmovi = _filmService.Get<List<Film>>();
-            var count = (_filmovi.Count > 8 ? 8 : _filmovi.Count);
-            if(_filmovi.Count <= 8)
+            var count = (filmovi.Count > 8 ? 8 : filmovi.Count);
+            if (filmovi.Count <= 8)
             {
                 bttnBack.Visible = false;
                 bttnNext.Visible = false;
             }
+            else
+            {
+                bttnBack.Visible = true;
+                bttnNext.Visible = true;
+            }
             for (int i = 0; i < count; i++)
             {
-                DodajFilm(_filmovi[i]);
+                DodajFilm(filmovi[i]);
             }
+        }
+
+        private void frmFilmPregled_Load(object sender, EventArgs e)
+        {
+            _filmovi = _filmService.Get<List<Film>>();
+            UcitajFilmove(_filmovi);
+
+            var kategorije = _tipovi;
+            kategorije.Insert(0, new Tip { Id = 0, NazivTipa = "Odaberi kategoriju" });
+            cbxKategorijaFilter.DataSource = kategorije;
+            cbxKategorijaFilter.DisplayMember = "NazivTipa";
+            cbxKategorijaFilter.ValueMember = "Id";
+
+            var zanrovi = _zanrovi;
+            zanrovi.Insert(0, new Zanr { Id = 0, NazivZanra = "Odaberi zanr" });
+            cbxZanrFilter.DataSource = zanrovi;
+            cbxZanrFilter.DisplayMember = "NazivZanra";
+            cbxZanrFilter.ValueMember = "Id";
+
+            cbxPopularnoFilter.DataSource = new[] {
+                new{ Id = 0, Opis = "Odaberi ocijenu"},
+                new{ Id = 1, Opis = "★☆☆☆☆ (1)" },
+                new{ Id = 2, Opis = "★★☆☆☆ (2)" },
+                new{ Id = 3, Opis = "★★★☆☆ (3)" },
+                new{ Id = 4, Opis = "★★★★☆ (4)" },
+                new{ Id = 5, Opis = "★★★★★ (5)" }
+            };
+            cbxPopularnoFilter.ValueMember = "Id";
+            cbxPopularnoFilter.DisplayMember = "Opis";
         }
 
         private void bttnBack_Click(object sender, EventArgs e)
@@ -153,6 +188,39 @@ namespace eKino.Desktop
             {
                 DodajFilm(_filmovi[i]);
             }
+        }
+
+        private void bttnFiltriraj_Click(object sender, EventArgs e)
+        {
+            var filmovi = _filmovi;
+            if (!string.IsNullOrEmpty(txtNazivFilter.Text))
+            {
+                filmovi = filmovi.Where(w => w.Naziv.Contains(txtNazivFilter.Text)).ToList();
+            }
+            if ((int)cbxKategorijaFilter.SelectedValue > 0)
+            {
+                filmovi = filmovi.Where(w => w.TipId == (int)cbxKategorijaFilter.SelectedValue).ToList();
+            }
+            if ((int)cbxZanrFilter.SelectedValue > 0)
+            {
+                filmovi = filmovi.Where(w => w.ZanrId == (int)cbxZanrFilter.SelectedValue).ToList();
+            }
+            if ((int)cbxPopularnoFilter.SelectedValue > 0)
+            {
+                var ocijenjeniFilmovi = _ocijenaService.Get<List<Ocijena>>().GroupBy(g => g.FilmId);
+                foreach (var f in ocijenjeniFilmovi)
+                {
+                    var ocijena = f.Average(a => a.DataOcijena);
+                    if (ocijena != (int)cbxPopularnoFilter.SelectedValue)
+                    {
+                        filmovi = filmovi.Except(_filmovi.Where(w => w.Id == f.Select(s => s.FilmId).FirstOrDefault())).ToList();
+                    }
+                }
+
+            }
+
+            tblListaFilmova.Controls.Clear();
+            UcitajFilmove(filmovi);
         }
     }
 }

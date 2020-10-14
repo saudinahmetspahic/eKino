@@ -209,6 +209,7 @@
             this.bttnPaketDodaj.TabIndex = 6;
             this.bttnPaketDodaj.Text = "Dodaj";
             this.bttnPaketDodaj.UseVisualStyleBackColor = false;
+            this.bttnPaketDodaj.Click += new System.EventHandler(this.bttnPaketDodaj_Click);
             // 
             // pnlFilmoviDropDownLista
             // 

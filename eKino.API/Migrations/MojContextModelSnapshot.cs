@@ -26,8 +26,11 @@ namespace eKino.API.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<short>("BrojSjedista")
-                        .HasColumnType("smallint");
+                    b.Property<int>("BrojKolona")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BrojRedova")
+                        .HasColumnType("int");
 
                     b.Property<int>("GradId")
                         .HasColumnType("int");
@@ -233,13 +236,20 @@ namespace eKino.API.Migrations
 
             modelBuilder.Entity("eKino.API.Database.KorisnikPaket", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("KorisnikId")
                         .HasColumnType("int");
 
                     b.Property<int>("PaketId")
                         .HasColumnType("int");
 
-                    b.HasKey("KorisnikId", "PaketId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("KorisnikId");
 
                     b.HasIndex("PaketId");
 
@@ -258,9 +268,6 @@ namespace eKino.API.Migrations
 
                     b.Property<int>("FilmId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Komentar")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("KomentatorId")
                         .HasColumnType("int");
@@ -415,6 +422,12 @@ namespace eKino.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("ProjekcijaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SjedisteKolona")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SjedisteRed")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

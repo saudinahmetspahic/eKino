@@ -29,6 +29,8 @@ namespace eKino.Desktop
         private readonly ApiService _gradService = new ApiService("Grad");
         private readonly ApiService _ulogaService = new ApiService("Uloga");
         private readonly ApiService _dvoranaService = new ApiService("Dvorana");
+        private readonly ApiService _komentarService = new ApiService("Komentar");
+        private readonly ApiService _komentarReakcijaService = new ApiService("KomentarReakcija");
         private int _filmId;
         public frmFilmDetalji(int FilmId)
         {
@@ -128,7 +130,19 @@ namespace eKino.Desktop
             }
 
             //komentari
-
+            var komentari = _komentarService.Get<List<Komentar>>(new KomentarSearchRequest { FilmId = _filmId });
+            var counter = 0;
+            foreach (var komentar in komentari)
+            {
+                var komentator = _korisnikService.GetById<Korisnik>(komentar.KomentatorId);
+                var reakcije = _komentarReakcijaService.Get<List<KomentarReakcija>>(new KomentarReakcijaSearchRequest { KomentarId = komentar.Id });
+                var likes = reakcije.Where(w => w.Reakcija == Model.ReakcijaTip.Like).Count();
+                var dislikes = reakcije.Where(w => w.Reakcija == Model.ReakcijaTip.Dislike).Count();
+                DodajKomentar(komentar.Id, komentator.Ime + " " + komentator.Prezime, komentar.SadrzajKomentara, likes, dislikes);
+                counter++;
+                if (counter >= 10)
+                    break;
+            }
         }
 
 
@@ -156,6 +170,9 @@ namespace eKino.Desktop
             tblDodavanjeGlumca.Visible = false;
             tblDodajPrKucu.Visible = false;
             tblDodajProjekciju.Visible = false;
+            tblZaOcjenjivanjeFilma.Visible = false;
+            tblZaDodavanjeKomentara.Visible = false;
+            tblLikeAndDislike.Visible = false;
         }
 
         private void bttnDodajGlumcaOdustani_Click(object sender, EventArgs e)
@@ -375,7 +392,7 @@ namespace eKino.Desktop
         {
             if (!string.IsNullOrEmpty(lblProjekcija.Text)) // ako je vec dodana projekcija
                 return;
- 
+
             OcistiTextBoxove();
             tblDodajProjekciju.Visible = true;
         }
@@ -386,7 +403,7 @@ namespace eKino.Desktop
         }
 
         private void bttnDodajProjekcijuDodaj_Click(object sender, EventArgs e)
-        {         
+        {
             var g = new ProjekcijaInsertRequest
             {
                 CijenaUlaznice = Int32.Parse(txtCijenaProjekcije.Text),
@@ -400,5 +417,116 @@ namespace eKino.Desktop
             lblProjekcija.Text = g.DatumProjekcije.ToString("dd/MM/yyyy") + " - " + g.CijenaUlaznice.ToString() + "KM - " + g.Opis;
             OcistiTextBoxove();
         }
+
+        private void bttnDodajKomentar_Click(object sender, EventArgs e)
+        {
+            OcistiTextBoxove();
+            tblZaDodavanjeKomentara.Visible = true;
+        }
+
+        private void bttnOcijeniFilm_Click(object sender, EventArgs e)
+        {
+            OcistiTextBoxove();
+            tblZaOcjenjivanjeFilma.Visible = true;
+        }
+
+        private void tblZaOcjenjivanjeFilma_VisibleChanged(object sender, EventArgs e)
+        {
+            if (tblZaOcjenjivanjeFilma.Visible == true)
+            {
+                var ocijene = new[] {
+                    new{ Id = 1, Ocijena = "★☆☆☆☆ (1)" },
+                    new{ Id = 2, Ocijena = "★★☆☆☆ (2)" },
+                    new{ Id = 3, Ocijena = "★★★☆☆ (3)" },
+                    new{ Id = 4, Ocijena = "★★★★☆ (4)" },
+                    new{ Id = 5, Ocijena = "★★★★★ (5)" }
+                };
+                cbxListOcijena.DataSource = ocijene;
+                cbxListOcijena.DisplayMember = "Ocijena";
+                cbxListOcijena.ValueMember = "Id";
+            }
+        }
+
+        private void bttnPotvrdiOcijenu_Click(object sender, EventArgs e)
+        {
+            var ocijena = (int)cbxListOcijena.SelectedValue;
+            var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+            if (_ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { FilmId = _filmId, KorisnikId = komentator.Id }).Count() > 0)
+                return;
+            _ocijenaService.Add(new OcijenaInsertRequest
+            {
+                DataOcijena = ocijena,
+                FilmId = _filmId,
+                KomentatorId = komentator.Id,
+            });
+            OcistiTextBoxove();
+        }
+
+        private void bttnOdustaniOdOcijenjivanja_Click(object sender, EventArgs e)
+        {
+            OcistiTextBoxove();
+        }
+
+        private void bttnPotvrdiKomentar_Click(object sender, EventArgs e)
+        {
+            var komentar = txtKomentar.Text;
+            var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+            _komentarService.Add(new KomentarInsertRequest
+            {
+                FilmId = _filmId,
+                KomentatorId = komentator.Id,
+                SadrzajKomentara = komentar
+            });
+            OcistiTextBoxove();
+        }
+
+        private void bttnOdustaniOdKomentara_Click(object sender, EventArgs e)
+        {
+            OcistiTextBoxove();
+        }
+
+        private void ZatvoriTblLikeAndDislike(object sender, EventArgs e)
+        {
+            tblLikeAndDislike.Visible = false;
+        }
+
+        private void KomentarClick_Click(object sender, EventArgs e)
+        {
+            tblLikeAndDislike.Visible = true;
+            tblLikeAndDislike.Name = ((Label)sender).Name;
+            var timer = new Timer();
+            timer.Interval = 5000;
+            timer.Tick += ZatvoriTblLikeAndDislike;
+        }
+
+        private void OcijeniKomentar(int komentarId, Model.Requests.ReakcijaTip reakcija)
+        {
+            var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+            if (_komentarReakcijaService.Get<List<KomentarReakcija>>(new KomentarReakcijaSearchRequest { KorisnikId = komentator.Id, KomentarId = komentarId }).Count() > 0)
+                return;
+
+            _komentarReakcijaService.Add(new KomentarReakcijaInsertRequest
+            {
+                KomentarId = komentarId,
+                KorisnikId = komentator.Id,
+                Reakcija = reakcija
+            });
+            OcistiTextBoxove();
+        }
+
+        private void bttnLike_Click(object sender, EventArgs e)
+        {
+            var komentarId = Int32.Parse(tblLikeAndDislike.Name);
+            OcijeniKomentar(komentarId, Model.Requests.ReakcijaTip.Like);
+            OcistiTextBoxove();
+        }
+
+        private void bttnDislike_Click(object sender, EventArgs e)
+        {
+            var komentarId = Int32.Parse(tblLikeAndDislike.Name);
+            OcijeniKomentar(komentarId, Model.Requests.ReakcijaTip.Dislike);
+            OcistiTextBoxove();
+        }
     }
 }
+

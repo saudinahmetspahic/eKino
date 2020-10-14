@@ -17,6 +17,7 @@ namespace eKino.Desktop
     {
         private readonly ApiService _korisnikService = new ApiService("Korisnik");
         private readonly ApiService _paketService = new ApiService("Paket");
+        private readonly ApiService _korisnikPaketService = new ApiService("KorisnikPaket");
         private readonly ApiService _ocijenaService = new ApiService("Ocijena");
         private readonly ApiService _rezervacijaService = new ApiService("Rezervacija");
         private readonly ApiService _ulogaService = new ApiService("Uloga");
@@ -56,15 +57,16 @@ namespace eKino.Desktop
                 lblImePrezime.Text = k.Ime + " " + k.Prezime;
                 lblDatumRegistracije.Text = k.DatumRegistracije.ToString("dd-MM-yyyy");
                 var search = new KorisnikPaketSearchRequest { KorisnikId = k.Id };
-                lblPaket.Text = _paketService.Get<List<Paket>>(search).FirstOrDefault()?.Opis ?? "-";
+                var kp =_korisnikPaketService.Get<List<KorisnikPaket>>(search).FirstOrDefault();
+                lblPaket.Text = _paketService.GetById<Paket>(kp?.PaketId ?? 0)?.Opis ?? "-";
                 lblBrojOcijena.Text = _ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
                 lblBrojRezervacija.Text = _rezervacijaService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
-                var komentari = _komentarService.Get<List<Komentar>>(new KomentarSerchRequest { KomentatorId = k.Id });
+                var komentari = _komentarService.Get<List<Komentar>>(new KomentarSearchRequest { KomentatorId = k.Id });
                 var maxReakcija = 0;
                 string kom = "";
                 foreach (var komentar in komentari)
                 {
-                    var reakcije = _komentarReakcijaService.Get<List<KomentarReakcija>>(new KomentarReakcijaSearch { KomentarId = komentar.Id, Reakcija = Model.Requests.ReakcijaTip.Like });
+                    var reakcije = _komentarReakcijaService.Get<List<KomentarReakcija>>(new KomentarReakcijaSearchRequest { KomentarId = komentar.Id, Reakcija = Model.Requests.ReakcijaTip.Like });
                     int brojReakcija = reakcije.Count;
                     if(brojReakcija >= maxReakcija)
                     {
@@ -72,9 +74,17 @@ namespace eKino.Desktop
                         kom = komentar.SadrzajKomentara;
                     }
                 }
-                lblNajpopularnijiKomentar.Text = "[Likes: " + maxReakcija.ToString() + "] Komentar: " + kom;
+                lblNajpopularnijiKomentar.Text = "[" + maxReakcija.ToString() + " 👍] Komentar: " + kom;
                 lblUloga.Text = _ulogaService.GetById<Uloga>(k.UlogaId).NazivUloge;
             }
+        }
+
+        private void bttnIzvjestaj_Click(object sender, EventArgs e)
+        {
+            var frm = new frmIzvjestaj();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            this.Close();
         }
     }
 }

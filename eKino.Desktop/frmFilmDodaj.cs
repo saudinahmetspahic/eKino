@@ -17,26 +17,24 @@ namespace eKino.Desktop
 {
     public partial class frmFilmDodaj : Form
     {
+        private readonly ApiService _korisnikService = new ApiService("Korisnik");
         private readonly ApiService _filmService = new ApiService("Film");
         private readonly ApiService _projekcijaService = new ApiService("Projekcija");
         private readonly ApiService _zanrService = new ApiService("Zanr");
         private readonly ApiService _tipService = new ApiService("Tip");
         private readonly ApiService _dvoranaService = new ApiService("Dvorana");
+        private readonly ApiService _ocijenaService = new ApiService("Ocijena");
 
-       // private byte[] _slika;
-        //C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\Images\imgInitial.jpg
         public frmFilmDodaj()
         {
             InitializeComponent();
-
-           // _slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(@".\eKino.Model\Images\imgInitial.jpg"), "jpg");
         }
 
         private void bttnDodaj_Click(object sender, EventArgs e)
         {
 
             byte[] slika = null;
-            if(!string.IsNullOrEmpty(txtSlikaNaziv.Text))
+            if (!string.IsNullOrEmpty(txtSlikaNaziv.Text))
                 slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(txtSlikaNaziv.Text), ".jpg");
             else
                 slika = ImageHelper.GetImage("imgInitial.jpg");
@@ -65,6 +63,13 @@ namespace eKino.Desktop
                 };
                 _projekcijaService.Add(projekcija);
             }
+
+            _ocijenaService.Add(new OcijenaInsertRequest
+            {
+                DataOcijena = Int32.Parse(txtOcijena.Text),
+                FilmId = film.Id,
+                KomentatorId = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault().Id
+            });
 
             var form = new frmPocetna();
             form.Show();

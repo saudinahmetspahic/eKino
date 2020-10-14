@@ -9,6 +9,9 @@ namespace eKino.Model
         public int Id { get; set; }
         public DateTime DatumKreirnja { get; set; }
 
+        public int SjedisteRed { get; set; }
+        public int SjedisteKolona { get; set; }
+
         public int? ProjekcijaId { get; set; }
         //public virtual Projekcija Projekcija { get; set; }
 

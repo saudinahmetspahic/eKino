@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eKino.Mobile.Android", "eKi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eKino.Mobile.iOS", "eKino.Mobile\eKino.Mobile.iOS\eKino.Mobile.iOS.csproj", "{4BBCDD73-40DC-44FC-8094-FF39A9E2362E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eKino.Mobile", "eKino.Mobile\eKino.Mobile\eKino.Mobile.csproj", "{67CFA5AA-FF5B-494F-88E7-5DD68FE72A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eKino.Mobile", "eKino.Mobile\eKino.Mobile\eKino.Mobile.csproj", "{67CFA5AA-FF5B-494F-88E7-5DD68FE72A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,7 +109,9 @@ Global
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}.Release|x64.Build.0 = Release|Any CPU
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}.Release|x86.ActiveCfg = Release|Any CPU
 		{12C1F16B-4E14-42A9-8D23-D8E2B1486D88}.Release|x86.Build.0 = Release|Any CPU
-		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|Any CPU.Build.0 = Debug|x64
+		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|Any CPU.Deploy.0 = Debug|x64
 		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|ARM.ActiveCfg = Debug|ARM
 		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|ARM.Build.0 = Debug|ARM
 		{C08BCD7C-23E4-40AA-A184-A263CF84E08B}.Debug|ARM.Deploy.0 = Debug|ARM

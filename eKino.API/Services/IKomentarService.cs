@@ -8,6 +8,6 @@ namespace eKino.API.Services
 {
     public interface IKomentarService
     {
-        public List<Model.Komentar> Get(KomentarSerchRequest search);
+        public List<Model.Komentar> Get(KomentarSearchRequest search);
     }
 }

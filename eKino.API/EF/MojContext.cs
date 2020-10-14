@@ -14,6 +14,7 @@ namespace eKino.API.EF
         {
         }
 
+      
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // kompozitni kljuc
@@ -28,9 +29,9 @@ namespace eKino.API.EF
             modelBuilder.Entity<FilmScenaristi>()
                 .HasKey(c => new { c.FilmId, c.ScenaristId });
 
-            // kompozitni kljuc
-            modelBuilder.Entity<KorisnikPaket>()
-                .HasKey(c => new { c.KorisnikId, c.PaketId });
+            // kompozitni kljuc - dodan primarni kljuc zbog api-a
+            //modelBuilder.Entity<KorisnikPaket>()
+            //    .HasKey(c => new { c.KorisnikId, c.PaketId });
 
             // kompozitni kljuc
             modelBuilder.Entity<ProjekcijaDvorana>()

@@ -8,6 +8,7 @@ namespace eKino.Model
 {
     public static class ImageConvertor
     {
+
         public static Image ConvertByteArrayToImage(byte[] byteArrayIn)
         {
             using (MemoryStream ms = new MemoryStream(byteArrayIn))

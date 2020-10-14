@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.props')" />
+  <Import Project="..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,6 +48,24 @@
     <Reference Include="LibVLCSharp.Forms, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LibVLCSharp.Forms.3.4.6\lib\netstandard2.0\LibVLCSharp.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -86,13 +104,13 @@
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.4.0.0.497661\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.8.0.1534\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.4.0.0.497661\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.8.0.1534\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.4.0.0.497661\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.8.0.1534\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -121,11 +139,29 @@
     <Compile Include="frmFilmPregled.Designer.cs">
       <DependentUpon>frmFilmPregled.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzvjestaj.Designer.cs">
+      <DependentUpon>frmIzvjestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaketDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaketDetalji.Designer.cs">
+      <DependentUpon>frmPaketDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaketDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaketDodaj.Designer.cs">
+      <DependentUpon>frmPaketDodaj.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPaketPregled.cs">
       <SubType>Form</SubType>
@@ -145,6 +181,12 @@
     <Compile Include="frmPocetna.Designer.cs">
       <DependentUpon>frmPocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRezervacijaDodavanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRezervacijaDodavanje.Designer.cs">
+      <DependentUpon>frmRezervacijaDodavanje.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRezervacijaPregled.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,10 +199,21 @@
     <Compile Include="frmUrediAccount.Designer.cs">
       <DependentUpon>frmUrediAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Izvjestaji\rptFilmovi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvjestaji\rptFilmovi.Designer.cs">
+      <DependentUpon>rptFilmovi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_170200DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_170200DataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmAccountInfo.resx">
       <DependentUpon>frmAccountInfo.cs</DependentUpon>
@@ -174,8 +227,17 @@
     <EmbeddedResource Include="frmFilmPregled.resx">
       <DependentUpon>frmFilmPregled.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmIzvjestaj.resx">
+      <DependentUpon>frmIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaketDetalji.resx">
+      <DependentUpon>frmPaketDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaketDodaj.resx">
+      <DependentUpon>frmPaketDodaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPaketPregled.resx">
       <DependentUpon>frmPaketPregled.cs</DependentUpon>
@@ -186,11 +248,18 @@
     <EmbeddedResource Include="frmPocetna.resx">
       <DependentUpon>frmPocetna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRezervacijaDodavanje.resx">
+      <DependentUpon>frmRezervacijaDodavanje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRezervacijaPregled.resx">
       <DependentUpon>frmRezervacijaPregled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUrediAccount.resx">
       <DependentUpon>frmUrediAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvjestaji\rptFilmovi.rdlc" />
+    <EmbeddedResource Include="Izvjestaji\rptFilmovi.resx">
+      <DependentUpon>rptFilmovi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -211,6 +280,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_170200DataSet.xsc">
+      <DependentUpon>_170200DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_170200DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_170200DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_170200DataSet.xss">
+      <DependentUpon>_170200DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -221,18 +301,22 @@
       <Name>eKino.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.props'))" />
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.targets'))" />
-  </Target>
-  <Import Project="..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.0.0.497661\build\Xamarin.Forms.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.8.0.1534\build\Xamarin.Forms.targets')" />
 </Project>

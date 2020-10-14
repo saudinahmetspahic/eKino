@@ -8,6 +8,8 @@ namespace eKino.API.Database
     {
         public int Id { get; set; }
         public DateTime DatumKreirnja { get; set; }
+        public int SjedisteRed { get; set; }
+        public int SjedisteKolona { get; set; }
 
         [ForeignKey(nameof(ProjekcijaId))]
         public int? ProjekcijaId { get; set; }

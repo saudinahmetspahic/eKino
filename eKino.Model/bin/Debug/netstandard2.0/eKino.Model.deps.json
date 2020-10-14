@@ -14,7 +14,8 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.7.0"
+          "System.Drawing.Common": "4.7.0",
+          "Xamarin.Forms": "4.8.0.1534"
         },
         "runtime": {
           "eKino.Model.dll": {}
@@ -31,7 +32,7 @@
       "LibVLCSharp.Forms/3.4.6": {
         "dependencies": {
           "LibVLCSharp": "3.4.6",
-          "Xamarin.Forms": "3.2.0.871581"
+          "Xamarin.Forms": "4.8.0.1534"
         },
         "runtime": {
           "lib/netstandard2.0/LibVLCSharp.Forms.dll": {
@@ -147,19 +148,19 @@
           }
         }
       },
-      "Xamarin.Forms/3.2.0.871581": {
+      "Xamarin.Forms/4.8.0.1534": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "fileVersion": "4.8.0.384"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.8.0.384"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "fileVersion": "4.8.0.384"
           }
         }
       }
@@ -269,12 +270,12 @@
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
     },
-    "Xamarin.Forms/3.2.0.871581": {
+    "Xamarin.Forms/4.8.0.1534": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PI+BD/fzCvpH/iKlLd6N8z+gN3ZrhOaoaLg4JmMF0eaLhrWinlzNFLYo+QsNCoIE0biSa7GU88YcyNiCoQO+7Q==",
-      "path": "xamarin.forms/3.2.0.871581",
-      "hashPath": "xamarin.forms.3.2.0.871581.nupkg.sha512"
+      "sha512": "sha512-h5S4nWRBYUNgbs2FtxkSLISh2FUBdLGZ0yVR0KP8utNMTOiRUhWcLzuJf3w4NYtboWFFUx/dyqZpi+aCcIMvSg==",
+      "path": "xamarin.forms/4.8.0.1534",
+      "hashPath": "xamarin.forms.4.8.0.1534.nupkg.sha512"
     }
   }
 }

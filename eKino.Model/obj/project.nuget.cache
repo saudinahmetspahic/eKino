@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1WDCa30uP8I3+WLGgafbU2awAqyeJzBL0roeM3bs+w6OopvngCky74wY8CG6KvLrM9iG+MRZoNvPHbTKPTvaOg==",
+  "dgSpecHash": "h/7GCRWKj5AtWp+KKnk5R2zY5aKewg0FXPhQqscQ/mU1BZteiVotY57xQuYjhZdVXY9ytMnmxtz6MlaEFiqkRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+  "projectFilePath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp.forms\\3.4.6\\libvlcsharp.forms.3.4.6.nupkg.sha512",
@@ -18,7 +18,7 @@
     "C:\\Users\\saudi\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\3.2.0.871581\\xamarin.forms.3.2.0.871581.nupkg.sha512"
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.8.0.1534\\xamarin.forms.4.8.0.1534.nupkg.sha512"
   ],
   "logs": []
 }

@@ -8,10 +8,13 @@ namespace eKino.Model
     {
         public int Id { get; set; }
         public string Naziv { get; set; }
-        public short BrojSjedista { get; set; }
+        public int BrojRedova { get; set; }
+        public int BrojKolona { get; set; }
         public DateTime Pocetak_RadnogVremena { get; set; }
         public DateTime Kraj_RadnogVremena { get; set; }
         public int GradId { get; set; }
-        public string Info { get { return Naziv + " (" + BrojSjedista + " sj.)"; } set { } }
+
+        private string _Info;
+        public string Info { get { return string.IsNullOrEmpty(_Info) == true ? Naziv + " (" + BrojRedova + "r/" + BrojKolona + "k)" : _Info; } set { _Info = value; } }
     }
 }

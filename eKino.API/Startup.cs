@@ -44,40 +44,40 @@ namespace eKino.API
 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 
-                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "basic",
-                    In = ParameterLocation.Header,
-                    Description = "Basic Authorization header using the Bearer scheme."
-                });
+                //c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                //{
+                //    Name = "Authorization",
+                //    Type = SecuritySchemeType.Http,
+                //    Scheme = "basic",
+                //    In = ParameterLocation.Header,
+                //    Description = "Basic Authorization header using the Bearer scheme."
+                //});
 
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "basic"
-                            }
-                        },
-                        new string[] {}
-                    }
-                });
+                //c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                //{
+                //    {
+                //        new OpenApiSecurityScheme
+                //        {
+                //            Reference = new OpenApiReference
+                //            {
+                //                Type = ReferenceType.SecurityScheme,
+                //                Id = "basic"
+                //            }
+                //        },
+                //        new string[] {}
+                //    }
+                //});
+
+                c.CustomSchemaIds(i => i.FullName);
             });
 
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IFilmService, FilmService>();
             services.AddScoped<IGradService, GradService>();
-            services.AddScoped<IKorisnikService, KorisnikService>();
+            //services.AddScoped<IKorisnikService, KorisnikService>();
             services.AddScoped<IUlogaService, UlogaService>();
             services.AddScoped<IOcijenaService, OcijenaService>();
-            services.AddScoped<IKomentarService, KomentarService>();
-            services.AddScoped<IKomentarReakcijaService, KomentarReakcijaService>();
 
             services.AddScoped<IService<Model.Korisnik, KorisnikSearchRequest>, KorisnikService>();
             services.AddScoped<IService<Model.Tip, TipSearchRequest>, TipService>();
@@ -94,6 +94,9 @@ namespace eKino.API
             services.AddScoped<ICRUDService<Model.ProdukcijskaKuca, ProdukcijskaKucaSearchRequest, ProdukcijskaKucaInsertRequest, ProdukcijskaKucaInsertRequest>, ProdukcijskaKucaService>();
             services.AddScoped<ICRUDService<Model.Rezervacija, RezervacijaSearchRequest, RezervacijaInsertRequest, RezervacijaInsertRequest>, RezervacijaService>();
             services.AddScoped<ICRUDService<Model.Paket, PaketSearchRequest, PaketInsertRequest, PaketInsertRequest>, PaketService>();
+            services.AddScoped<ICRUDService<Model.Komentar, KomentarSearchRequest, KomentarInsertRequest, KomentarInsertRequest>, KomentarService>();
+            services.AddScoped<ICRUDService<Model.KomentarReakcija, KomentarReakcijaSearchRequest, KomentarReakcijaInsertRequest, KomentarReakcijaInsertRequest>, KomentarReakcijaService>();
+            services.AddScoped<ICRUDService<Model.KorisnikPaket, KorisnikPaketSearchRequest, KorisnikPaketInsertRequest, KorisnikPaketInsertRequest>, KorisnikPaketService>();
 
             services.AddDbContext<MojContext>(option => option.UseSqlServer(Configuration.GetConnectionString("connectionString")));
         }
@@ -117,7 +120,7 @@ namespace eKino.API
 
             app.UseAuthentication();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

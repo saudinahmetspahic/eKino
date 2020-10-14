@@ -48,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbxVrsta = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtOcijena = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxDvorana = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,9 +57,11 @@
             this.bttnDodaj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtOcijena = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -90,12 +91,12 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.cbxVrsta, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtOcijena, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.cbxDvorana, 1, 11);
             this.tableLayoutPanel1.Controls.Add(this.label5, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(76, 24);
+            this.tableLayoutPanel1.Controls.Add(this.txtOcijena, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(70, 24);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(907, 355);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(907, 355);
@@ -300,16 +301,6 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Ocijena (1-5)";
             // 
-            // txtOcijena
-            // 
-            this.txtOcijena.Location = new System.Drawing.Point(452, 24);
-            this.txtOcijena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOcijena.MaximumSize = new System.Drawing.Size(500, 4);
-            this.txtOcijena.MinimumSize = new System.Drawing.Size(300, 20);
-            this.txtOcijena.Name = "txtOcijena";
-            this.txtOcijena.Size = new System.Drawing.Size(375, 22);
-            this.txtOcijena.TabIndex = 14;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -410,8 +401,30 @@
             this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1054, 389);
+            this.panel1.Size = new System.Drawing.Size(1042, 389);
             this.panel1.TabIndex = 4;
+            // 
+            // txtOcijena
+            // 
+            this.txtOcijena.Location = new System.Drawing.Point(452, 25);
+            this.txtOcijena.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtOcijena.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtOcijena.Name = "txtOcijena";
+            this.txtOcijena.Size = new System.Drawing.Size(372, 22);
+            this.txtOcijena.TabIndex = 29;
+            this.txtOcijena.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmFilmDodaj
             // 
@@ -433,6 +446,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,7 +465,6 @@
         private System.Windows.Forms.Label labProjekcijaCijenaUlaznice;
         private System.Windows.Forms.Label labProjekcijaBrojKarata;
         private System.Windows.Forms.Label labFilmUpload;
-        private System.Windows.Forms.TextBox txtOcijena;
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.TextBox txtProjekcijaCijenaUlaznice;
         private System.Windows.Forms.TextBox txtLink;
@@ -469,5 +482,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label txtSlikaNaziv;
         private System.Windows.Forms.Button bttnSlikaDodaj;
+        private System.Windows.Forms.NumericUpDown txtOcijena;
     }
 }

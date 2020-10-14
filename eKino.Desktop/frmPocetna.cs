@@ -161,5 +161,15 @@ namespace eKino.Desktop
                 child.Close();  
             }
         }
+
+        private void bttnPaketDodaj_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPaketDodaj();
+            ZatvoriProzore();
+            frm.MdiParent = this;
+            pnlPozadina.Hide();
+            frm.Show();
+            HideButtons();
+        }
     }
 }

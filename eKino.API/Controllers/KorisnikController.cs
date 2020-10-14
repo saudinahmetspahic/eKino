@@ -19,70 +19,28 @@ namespace eKino.API.Controllers
     [ApiController]
     public class KorisnikController : BaseCRUDController<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest>
     {
-        private readonly IKorisnikService _service = null;
-        //private readonly ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, object> _CRUDService = null;
-        public KorisnikController(IKorisnikService service, ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest> _CRUDService) : base(_CRUDService)
+        public KorisnikController(ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest> _CRUDService) : base(_CRUDService)
         {
-            _service = service;
         }
 
-        // GET: api/<KorisnikController>
-        //[HttpGet]
-        //public List<Model.Korisnik> Get([FromQuery]KorisnikSearchRequest request)
+        //[HttpGet("PoEmailu/{email}")]
+        //public Model.Korisnik GetByEmail(string email)
         //{
-        //    return _service.Get(request);
+        //    return _service.GetByEmail(email);
         //}
 
-        // GET api/<KorisnikController>/5
-        //[HttpGet("{id}")]
-        //public Model.Korisnik Get(int id)
+        //[HttpGet("PoImenu/{ime}")]
+        //public Model.Korisnik GetByIme(string ime)
         //{
-        //    return _service.GetById(id);
+        //    return _service.GetByIme(ime);
         //}
 
-        //[HttpGet]
-        //public List<Model.Korisnik> Get([FromQuery]KorisnikSearchRequest request)
+        //[HttpGet("PoPrezimenu/{prezime}")]
+        //public Model.Korisnik GetByPrezime(string prezime)
         //{
-        //    return _service.Get(request);
+        //    return _service.GetByIme(prezime);
         //}
 
-        [HttpGet("PoEmailu/{email}")]
-        public Model.Korisnik GetByEmail(string email)
-        {
-            return _service.GetByEmail(email);
-        }
-
-        [HttpGet("PoImenu/{ime}")]
-        public Model.Korisnik GetByIme(string ime)
-        {
-            return _service.GetByIme(ime);
-        }
-
-        [HttpGet("PoPrezimenu/{prezime}")]
-        public Model.Korisnik GetByPrezime(string prezime)
-        {
-            return _service.GetByIme(prezime);
-        }
-
-        // POST api/<KorisnikController>
-        //[HttpPost]
-        //public void Post(KorisnikInsertRequest korisnik)
-        //{
-        //    _service.Add(korisnik);
-        //}
-
-        // PUT api/<KorisnikController>/5
-        //[HttpPut("{id}")]
-        //public Model.Korisnik Put(int id, KorisnikInsertRequest korisnik)
-        //{
-        //    return _service.Update(id, korisnik);
-        //}
-
-        // DELETE api/<KorisnikController>/5
-        //[HttpDelete("{id}")]
-        //public bool Delete(int id)
-        //{
-        //    return _service.Remove(id);
-        //}
+     
     }
 }

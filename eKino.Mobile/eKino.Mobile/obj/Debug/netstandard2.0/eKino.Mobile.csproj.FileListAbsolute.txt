@@ -72,5 +72,12 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\ref\eKino.Mobile.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\RegistracijaPage.xaml.g.cs
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\bin\Debug\netstandard2.0\eKino.Model.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\bin\Debug\netstandard2.0\eKino.Model.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.csproj.CopyComplete
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.csproj.CoreCompileInputs.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\PocetniPage.xaml.g.cs
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\AccountPage.xaml.g.cs

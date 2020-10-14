@@ -1,4 +1,6 @@
-﻿namespace eKino.Desktop
+﻿using System.Drawing;
+
+namespace eKino.Desktop
 {
     partial class frmFilmDetalji
     {
@@ -26,6 +28,39 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+
+
+        private void DodajKomentar(int KomentarId, string ImeKomentatora, string Komentar, int Likes, int Dislikes)
+        {
+            //this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20));
+            //this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150));
+
+            var lblIme = new System.Windows.Forms.Label();
+            lblIme.Text = ImeKomentatora + " (" + Likes.ToString() + "👍 | " + Dislikes.ToString() + " 👎)";
+
+            var lblText = new System.Windows.Forms.Label();
+            lblText.Text = Komentar;
+
+            this.tblKomentari.Controls.Add(lblIme);
+            this.tblKomentari.Controls.Add(lblText);
+
+            //lblIme.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            //lblText.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblIme.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblIme.BackColor = Color.FromArgb(168, 170, 173);
+            lblIme.TextAlign = ContentAlignment.BottomLeft;
+            lblText.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblText.AutoSize = true;
+            lblText.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+
+            lblIme.Name = KomentarId.ToString();
+            lblIme.Click += KomentarClick_Click;
+            lblText.Name = KomentarId.ToString();
+            lblText.Click += KomentarClick_Click;
+        }
+
+
         private void InitializeComponent()
         {
             this.pbxSlika = new System.Windows.Forms.PictureBox();
@@ -57,7 +92,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.lblOpis = new System.Windows.Forms.Label();
-            this.tblKomentari = new System.Windows.Forms.TableLayoutPanel();
             this.tblOcijena = new System.Windows.Forms.TableLayoutPanel();
             this.lblOcijena5 = new System.Windows.Forms.Label();
             this.lblOcijena4 = new System.Windows.Forms.Label();
@@ -104,6 +138,28 @@
             this.bttnDodajProjekcijuOdustani = new System.Windows.Forms.Button();
             this.bttnDodajProjekcijuDodaj = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.tblKomentari = new System.Windows.Forms.TableLayoutPanel();
+            this.bttnOcijeniFilm = new System.Windows.Forms.Button();
+            this.bttnDodajKomentar = new System.Windows.Forms.Button();
+            this.tblZaOcjenjivanjeFilma = new System.Windows.Forms.TableLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cbxListOcijena = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.bttnPotvrdiOcijenu = new System.Windows.Forms.Button();
+            this.bttnOdustaniOdOcijenjivanja = new System.Windows.Forms.Button();
+            this.tblZaDodavanjeKomentara = new System.Windows.Forms.TableLayoutPanel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtKomentar = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.bttnPotvrdiKomentar = new System.Windows.Forms.Button();
+            this.bttnOdustaniOdKomentara = new System.Windows.Forms.Button();
+            this.tblLikeAndDislike = new System.Windows.Forms.TableLayoutPanel();
+            this.bttnLike = new System.Windows.Forms.Button();
+            this.bttnDislike = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSlika)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -115,12 +171,19 @@
             this.tblDodavanjeGlumca.SuspendLayout();
             this.tblDodajPrKucu.SuspendLayout();
             this.tblDodajProjekciju.SuspendLayout();
+            this.tblZaOcjenjivanjeFilma.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tblZaDodavanjeKomentara.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tblLikeAndDislike.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbxSlika
             // 
             this.pbxSlika.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbxSlika.Location = new System.Drawing.Point(176, 21);
+            this.pbxSlika.Location = new System.Drawing.Point(135, 21);
             this.pbxSlika.Name = "pbxSlika";
             this.pbxSlika.Size = new System.Drawing.Size(329, 230);
             this.pbxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +213,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 7);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(176, 273);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(135, 273);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -462,15 +525,16 @@
             // 
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.54545F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.45454F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.59925F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.40075F));
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblOpis, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(534, 21);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(488, 21);
+            this.tableLayoutPanel2.MaximumSize = new System.Drawing.Size(267, 230);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(220, 230);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(267, 230);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // label9
@@ -486,45 +550,32 @@
             // lblOpis
             // 
             this.lblOpis.AutoSize = true;
-            this.lblOpis.Location = new System.Drawing.Point(56, 0);
+            this.lblOpis.Location = new System.Drawing.Point(57, 0);
             this.lblOpis.Name = "lblOpis";
             this.lblOpis.Size = new System.Drawing.Size(54, 17);
             this.lblOpis.TabIndex = 1;
             this.lblOpis.Text = "label10";
             // 
-            // tblKomentari
-            // 
-            this.tblKomentari.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tblKomentari.AutoScroll = true;
-            this.tblKomentari.ColumnCount = 1;
-            this.tblKomentari.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.09091F));
-            this.tblKomentari.Location = new System.Drawing.Point(534, 289);
-            this.tblKomentari.Name = "tblKomentari";
-            this.tblKomentari.RowCount = 1;
-            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblKomentari.Size = new System.Drawing.Size(220, 265);
-            this.tblKomentari.TabIndex = 3;
-            // 
             // tblOcijena
             // 
             this.tblOcijena.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tblOcijena.ColumnCount = 5;
-            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
-            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblOcijena.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblOcijena.Controls.Add(this.lblOcijena5, 4, 0);
             this.tblOcijena.Controls.Add(this.lblOcijena4, 3, 0);
             this.tblOcijena.Controls.Add(this.lblOcijena3, 2, 0);
             this.tblOcijena.Controls.Add(this.lblOcijena2, 1, 0);
             this.tblOcijena.Controls.Add(this.lblOcijena1, 0, 0);
-            this.tblOcijena.Location = new System.Drawing.Point(177, 569);
+            this.tblOcijena.Location = new System.Drawing.Point(136, 569);
+            this.tblOcijena.MaximumSize = new System.Drawing.Size(618, 56);
             this.tblOcijena.Name = "tblOcijena";
             this.tblOcijena.RowCount = 1;
-            this.tblOcijena.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblOcijena.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tblOcijena.Size = new System.Drawing.Size(578, 56);
+            this.tblOcijena.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblOcijena.Size = new System.Drawing.Size(618, 56);
             this.tblOcijena.TabIndex = 4;
             // 
             // lblOcijena5
@@ -532,9 +583,9 @@
             this.lblOcijena5.AutoSize = true;
             this.lblOcijena5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena5.Location = new System.Drawing.Point(461, 0);
+            this.lblOcijena5.Location = new System.Drawing.Point(495, 0);
             this.lblOcijena5.Name = "lblOcijena5";
-            this.lblOcijena5.Size = new System.Drawing.Size(114, 56);
+            this.lblOcijena5.Size = new System.Drawing.Size(120, 56);
             this.lblOcijena5.TabIndex = 4;
             this.lblOcijena5.Text = "☆";
             this.lblOcijena5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -544,9 +595,9 @@
             this.lblOcijena4.AutoSize = true;
             this.lblOcijena4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena4.Location = new System.Drawing.Point(346, 0);
+            this.lblOcijena4.Location = new System.Drawing.Point(372, 0);
             this.lblOcijena4.Name = "lblOcijena4";
-            this.lblOcijena4.Size = new System.Drawing.Size(109, 56);
+            this.lblOcijena4.Size = new System.Drawing.Size(117, 56);
             this.lblOcijena4.TabIndex = 3;
             this.lblOcijena4.Text = "☆";
             this.lblOcijena4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -556,9 +607,9 @@
             this.lblOcijena3.AutoSize = true;
             this.lblOcijena3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena3.Location = new System.Drawing.Point(229, 0);
+            this.lblOcijena3.Location = new System.Drawing.Point(249, 0);
             this.lblOcijena3.Name = "lblOcijena3";
-            this.lblOcijena3.Size = new System.Drawing.Size(111, 56);
+            this.lblOcijena3.Size = new System.Drawing.Size(117, 56);
             this.lblOcijena3.TabIndex = 2;
             this.lblOcijena3.Text = "☆";
             this.lblOcijena3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -568,9 +619,9 @@
             this.lblOcijena2.AutoSize = true;
             this.lblOcijena2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena2.Location = new System.Drawing.Point(114, 0);
+            this.lblOcijena2.Location = new System.Drawing.Point(126, 0);
             this.lblOcijena2.Name = "lblOcijena2";
-            this.lblOcijena2.Size = new System.Drawing.Size(109, 56);
+            this.lblOcijena2.Size = new System.Drawing.Size(117, 56);
             this.lblOcijena2.TabIndex = 1;
             this.lblOcijena2.Text = "☆";
             this.lblOcijena2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -582,7 +633,7 @@
             this.lblOcijena1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOcijena1.Location = new System.Drawing.Point(3, 0);
             this.lblOcijena1.Name = "lblOcijena1";
-            this.lblOcijena1.Size = new System.Drawing.Size(105, 56);
+            this.lblOcijena1.Size = new System.Drawing.Size(117, 56);
             this.lblOcijena1.TabIndex = 0;
             this.lblOcijena1.Text = "☆";
             this.lblOcijena1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -592,7 +643,7 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(88, 21);
+            this.button1.Location = new System.Drawing.Point(47, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 66);
             this.button1.TabIndex = 5;
@@ -622,7 +673,7 @@
             this.tblDodavanjeGlumca.Controls.Add(this.txtPrezime, 1, 3);
             this.tblDodavanjeGlumca.Controls.Add(this.bttnDodajGlumcaOdustani, 0, 7);
             this.tblDodavanjeGlumca.Controls.Add(this.bttnDodajGlumcaDodaj, 1, 7);
-            this.tblDodavanjeGlumca.Location = new System.Drawing.Point(660, 406);
+            this.tblDodavanjeGlumca.Location = new System.Drawing.Point(578, 489);
             this.tblDodavanjeGlumca.Name = "tblDodavanjeGlumca";
             this.tblDodavanjeGlumca.RowCount = 8;
             this.tblDodavanjeGlumca.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -793,7 +844,7 @@
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(574, 269);
+            this.label17.Location = new System.Drawing.Point(533, 269);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(85, 18);
             this.label17.TabIndex = 11;
@@ -815,7 +866,7 @@
             this.tblDodajPrKucu.Controls.Add(this.cbxKucaGrad, 1, 3);
             this.tblDodajPrKucu.Controls.Add(this.bttnDodajPrKucuOdustani, 0, 4);
             this.tblDodajPrKucu.Controls.Add(this.bttnDodajPrKucuDodaj, 1, 4);
-            this.tblDodajPrKucu.Location = new System.Drawing.Point(659, 585);
+            this.tblDodajPrKucu.Location = new System.Drawing.Point(577, 668);
             this.tblDodajPrKucu.Name = "tblDodajPrKucu";
             this.tblDodajPrKucu.RowCount = 5;
             this.tblDodajPrKucu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
@@ -954,7 +1005,7 @@
             this.tblDodajProjekciju.Controls.Add(this.bttnDodajProjekcijuOdustani, 0, 5);
             this.tblDodajProjekciju.Controls.Add(this.bttnDodajProjekcijuDodaj, 1, 5);
             this.tblDodajProjekciju.Controls.Add(this.label26, 0, 0);
-            this.tblDodajProjekciju.Location = new System.Drawing.Point(659, 530);
+            this.tblDodajProjekciju.Location = new System.Drawing.Point(577, 613);
             this.tblDodajProjekciju.Name = "tblDodajProjekciju";
             this.tblDodajProjekciju.RowCount = 6;
             this.tblDodajProjekciju.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
@@ -1094,23 +1145,364 @@
             this.label26.Text = "Nova projekcija";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // tblKomentari
+            // 
+            this.tblKomentari.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tblKomentari.AutoScroll = true;
+            this.tblKomentari.ColumnCount = 1;
+            this.tblKomentari.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.09091F));
+            this.tblKomentari.Location = new System.Drawing.Point(488, 289);
+            this.tblKomentari.MaximumSize = new System.Drawing.Size(266, 265);
+            this.tblKomentari.Name = "tblKomentari";
+            this.tblKomentari.RowCount = 20;
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblKomentari.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblKomentari.Size = new System.Drawing.Size(266, 265);
+            this.tblKomentari.TabIndex = 3;
+            // 
+            // bttnOcijeniFilm
+            // 
+            this.bttnOcijeniFilm.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bttnOcijeniFilm.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.bttnOcijeniFilm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnOcijeniFilm.Location = new System.Drawing.Point(135, 645);
+            this.bttnOcijeniFilm.Name = "bttnOcijeniFilm";
+            this.bttnOcijeniFilm.Size = new System.Drawing.Size(314, 39);
+            this.bttnOcijeniFilm.TabIndex = 14;
+            this.bttnOcijeniFilm.Text = "Ocijeni film";
+            this.bttnOcijeniFilm.UseVisualStyleBackColor = false;
+            this.bttnOcijeniFilm.Click += new System.EventHandler(this.bttnOcijeniFilm_Click);
+            // 
+            // bttnDodajKomentar
+            // 
+            this.bttnDodajKomentar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bttnDodajKomentar.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.bttnDodajKomentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnDodajKomentar.Location = new System.Drawing.Point(466, 645);
+            this.bttnDodajKomentar.Name = "bttnDodajKomentar";
+            this.bttnDodajKomentar.Size = new System.Drawing.Size(288, 39);
+            this.bttnDodajKomentar.TabIndex = 15;
+            this.bttnDodajKomentar.Text = "Dodaj komentar";
+            this.bttnDodajKomentar.UseVisualStyleBackColor = false;
+            this.bttnDodajKomentar.Click += new System.EventHandler(this.bttnDodajKomentar_Click);
+            // 
+            // tblZaOcjenjivanjeFilma
+            // 
+            this.tblZaOcjenjivanjeFilma.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tblZaOcjenjivanjeFilma.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblZaOcjenjivanjeFilma.ColumnCount = 1;
+            this.tblZaOcjenjivanjeFilma.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblZaOcjenjivanjeFilma.Controls.Add(this.label25, 0, 0);
+            this.tblZaOcjenjivanjeFilma.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tblZaOcjenjivanjeFilma.Location = new System.Drawing.Point(243, 212);
+            this.tblZaOcjenjivanjeFilma.Name = "tblZaOcjenjivanjeFilma";
+            this.tblZaOcjenjivanjeFilma.RowCount = 2;
+            this.tblZaOcjenjivanjeFilma.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.25581F));
+            this.tblZaOcjenjivanjeFilma.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.74419F));
+            this.tblZaOcjenjivanjeFilma.Size = new System.Drawing.Size(368, 129);
+            this.tblZaOcjenjivanjeFilma.TabIndex = 0;
+            this.tblZaOcjenjivanjeFilma.Visible = false;
+            this.tblZaOcjenjivanjeFilma.VisibleChanged += new System.EventHandler(this.tblZaOcjenjivanjeFilma_VisibleChanged);
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(4, 1);
+            this.label25.Name = "label25";
+            this.label25.Padding = new System.Windows.Forms.Padding(3);
+            this.label25.Size = new System.Drawing.Size(360, 24);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Unesite ocjenu za odabrani film";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel7.Controls.Add(this.label27, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.cbxListOcijena, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 1, 1);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 34);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(360, 91);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(21, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 45);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Ocijena";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbxListOcijena
+            // 
+            this.cbxListOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxListOcijena.FormattingEnabled = true;
+            this.cbxListOcijena.Location = new System.Drawing.Point(83, 10);
+            this.cbxListOcijena.Name = "cbxListOcijena";
+            this.cbxListOcijena.Size = new System.Drawing.Size(274, 24);
+            this.cbxListOcijena.TabIndex = 1;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.bttnPotvrdiOcijenu, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.bttnOdustaniOdOcijenjivanja, 1, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(83, 48);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(274, 40);
+            this.tableLayoutPanel8.TabIndex = 2;
+            // 
+            // bttnPotvrdiOcijenu
+            // 
+            this.bttnPotvrdiOcijenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnPotvrdiOcijenu.Location = new System.Drawing.Point(3, 3);
+            this.bttnPotvrdiOcijenu.Name = "bttnPotvrdiOcijenu";
+            this.bttnPotvrdiOcijenu.Size = new System.Drawing.Size(131, 34);
+            this.bttnPotvrdiOcijenu.TabIndex = 0;
+            this.bttnPotvrdiOcijenu.Text = "Potvrdi";
+            this.bttnPotvrdiOcijenu.UseVisualStyleBackColor = true;
+            this.bttnPotvrdiOcijenu.Click += new System.EventHandler(this.bttnPotvrdiOcijenu_Click);
+            // 
+            // bttnOdustaniOdOcijenjivanja
+            // 
+            this.bttnOdustaniOdOcijenjivanja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnOdustaniOdOcijenjivanja.Location = new System.Drawing.Point(140, 3);
+            this.bttnOdustaniOdOcijenjivanja.Name = "bttnOdustaniOdOcijenjivanja";
+            this.bttnOdustaniOdOcijenjivanja.Size = new System.Drawing.Size(131, 34);
+            this.bttnOdustaniOdOcijenjivanja.TabIndex = 1;
+            this.bttnOdustaniOdOcijenjivanja.Text = "Odustani";
+            this.bttnOdustaniOdOcijenjivanja.UseVisualStyleBackColor = true;
+            this.bttnOdustaniOdOcijenjivanja.Click += new System.EventHandler(this.bttnOdustaniOdOcijenjivanja_Click);
+            // 
+            // tblZaDodavanjeKomentara
+            // 
+            this.tblZaDodavanjeKomentara.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tblZaDodavanjeKomentara.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblZaDodavanjeKomentara.ColumnCount = 1;
+            this.tblZaDodavanjeKomentara.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblZaDodavanjeKomentara.Controls.Add(this.label28, 0, 0);
+            this.tblZaDodavanjeKomentara.Controls.Add(this.tableLayoutPanel9, 0, 1);
+            this.tblZaDodavanjeKomentara.Location = new System.Drawing.Point(235, 226);
+            this.tblZaDodavanjeKomentara.Name = "tblZaDodavanjeKomentara";
+            this.tblZaDodavanjeKomentara.RowCount = 2;
+            this.tblZaDodavanjeKomentara.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.11594F));
+            this.tblZaDodavanjeKomentara.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.88406F));
+            this.tblZaDodavanjeKomentara.Size = new System.Drawing.Size(379, 188);
+            this.tblZaDodavanjeKomentara.TabIndex = 16;
+            this.tblZaDodavanjeKomentara.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(4, 1);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(371, 18);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Unesite vaš komentar";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.75F));
+            this.tableLayoutPanel9.Controls.Add(this.label29, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.txtKomentar, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 1);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(4, 38);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.86301F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.13699F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(371, 146);
+            this.tableLayoutPanel9.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(43, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(69, 101);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Komentar";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtKomentar
+            // 
+            this.txtKomentar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKomentar.Location = new System.Drawing.Point(118, 10);
+            this.txtKomentar.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.txtKomentar.Name = "txtKomentar";
+            this.txtKomentar.Size = new System.Drawing.Size(250, 81);
+            this.txtKomentar.TabIndex = 1;
+            this.txtKomentar.Text = "";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel10.Controls.Add(this.bttnPotvrdiKomentar, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.bttnOdustaniOdKomentara, 1, 0);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(118, 104);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(250, 39);
+            this.tableLayoutPanel10.TabIndex = 2;
+            // 
+            // bttnPotvrdiKomentar
+            // 
+            this.bttnPotvrdiKomentar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnPotvrdiKomentar.Location = new System.Drawing.Point(3, 3);
+            this.bttnPotvrdiKomentar.Name = "bttnPotvrdiKomentar";
+            this.bttnPotvrdiKomentar.Size = new System.Drawing.Size(122, 33);
+            this.bttnPotvrdiKomentar.TabIndex = 0;
+            this.bttnPotvrdiKomentar.Text = "Potvrdi";
+            this.bttnPotvrdiKomentar.UseVisualStyleBackColor = true;
+            this.bttnPotvrdiKomentar.Click += new System.EventHandler(this.bttnPotvrdiKomentar_Click);
+            // 
+            // bttnOdustaniOdKomentara
+            // 
+            this.bttnOdustaniOdKomentara.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnOdustaniOdKomentara.Location = new System.Drawing.Point(131, 3);
+            this.bttnOdustaniOdKomentara.Name = "bttnOdustaniOdKomentara";
+            this.bttnOdustaniOdKomentara.Size = new System.Drawing.Size(116, 33);
+            this.bttnOdustaniOdKomentara.TabIndex = 1;
+            this.bttnOdustaniOdKomentara.Text = "Odustani";
+            this.bttnOdustaniOdKomentara.UseVisualStyleBackColor = true;
+            this.bttnOdustaniOdKomentara.Click += new System.EventHandler(this.bttnOdustaniOdKomentara_Click);
+            // 
+            // tblLikeAndDislike
+            // 
+            this.tblLikeAndDislike.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tblLikeAndDislike.ColumnCount = 1;
+            this.tblLikeAndDislike.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLikeAndDislike.Controls.Add(this.bttnLike, 0, 0);
+            this.tblLikeAndDislike.Controls.Add(this.bttnDislike, 0, 1);
+            this.tblLikeAndDislike.Location = new System.Drawing.Point(760, 289);
+            this.tblLikeAndDislike.Name = "tblLikeAndDislike";
+            this.tblLikeAndDislike.RowCount = 2;
+            this.tblLikeAndDislike.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLikeAndDislike.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLikeAndDislike.Size = new System.Drawing.Size(63, 115);
+            this.tblLikeAndDislike.TabIndex = 17;
+            this.tblLikeAndDislike.Visible = false;
+            // 
+            // bttnLike
+            // 
+            this.bttnLike.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnLike.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.bttnLike.Location = new System.Drawing.Point(3, 3);
+            this.bttnLike.Name = "bttnLike";
+            this.bttnLike.Size = new System.Drawing.Size(57, 51);
+            this.bttnLike.TabIndex = 0;
+            this.bttnLike.Text = "👍";
+            this.bttnLike.UseVisualStyleBackColor = true;
+            this.bttnLike.Click += new System.EventHandler(this.bttnLike_Click);
+            // 
+            // bttnDislike
+            // 
+            this.bttnDislike.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttnDislike.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnDislike.ForeColor = System.Drawing.Color.Red;
+            this.bttnDislike.Location = new System.Drawing.Point(3, 60);
+            this.bttnDislike.Name = "bttnDislike";
+            this.bttnDislike.Size = new System.Drawing.Size(57, 52);
+            this.bttnDislike.TabIndex = 1;
+            this.bttnDislike.Text = "👎";
+            this.bttnDislike.UseVisualStyleBackColor = true;
+            this.bttnDislike.Click += new System.EventHandler(this.bttnDislike_Click);
+            // 
             // frmFilmDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(990, 747);
+            this.ClientSize = new System.Drawing.Size(908, 830);
+            this.Controls.Add(this.tblLikeAndDislike);
+            this.Controls.Add(this.tblZaDodavanjeKomentara);
+            this.Controls.Add(this.tblZaOcjenjivanjeFilma);
             this.Controls.Add(this.tblDodajProjekciju);
             this.Controls.Add(this.tblDodajPrKucu);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tblDodavanjeGlumca);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tblOcijena);
             this.Controls.Add(this.tblKomentari);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pbxSlika);
-            this.MinimumSize = new System.Drawing.Size(856, 679);
+            this.Controls.Add(this.bttnDodajKomentar);
+            this.Controls.Add(this.bttnOcijeniFilm);
+            this.Controls.Add(this.tblOcijena);
+            this.MinimumSize = new System.Drawing.Size(922, 768);
             this.Name = "frmFilmDetalji";
             this.Text = "frmFilmDetalji";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1136,6 +1528,17 @@
             this.tblDodajPrKucu.PerformLayout();
             this.tblDodajProjekciju.ResumeLayout(false);
             this.tblDodajProjekciju.PerformLayout();
+            this.tblZaOcjenjivanjeFilma.ResumeLayout(false);
+            this.tblZaOcjenjivanjeFilma.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tblZaDodavanjeKomentara.ResumeLayout(false);
+            this.tblZaDodavanjeKomentara.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tblLikeAndDislike.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1157,7 +1560,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblOpis;
-        private System.Windows.Forms.TableLayoutPanel tblKomentari;
         private System.Windows.Forms.TableLayoutPanel tblOcijena;
         private System.Windows.Forms.Label lblOcijena1;
         private System.Windows.Forms.Label lblOcijena5;
@@ -1219,5 +1621,27 @@
         private System.Windows.Forms.Button bttnDodajProjekcijuOdustani;
         private System.Windows.Forms.Button bttnDodajProjekcijuDodaj;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TableLayoutPanel tblKomentari;
+        private System.Windows.Forms.Button bttnOcijeniFilm;
+        private System.Windows.Forms.Button bttnDodajKomentar;
+        private System.Windows.Forms.TableLayoutPanel tblZaOcjenjivanjeFilma;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox cbxListOcijena;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Button bttnPotvrdiOcijenu;
+        private System.Windows.Forms.Button bttnOdustaniOdOcijenjivanja;
+        private System.Windows.Forms.TableLayoutPanel tblZaDodavanjeKomentara;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.RichTextBox txtKomentar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Button bttnPotvrdiKomentar;
+        private System.Windows.Forms.Button bttnOdustaniOdKomentara;
+        private System.Windows.Forms.TableLayoutPanel tblLikeAndDislike;
+        private System.Windows.Forms.Button bttnLike;
+        private System.Windows.Forms.Button bttnDislike;
     }
 }

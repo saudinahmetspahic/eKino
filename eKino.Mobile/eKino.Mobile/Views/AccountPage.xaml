@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:eKino.Mobile.ViewModels"
+             x:Class="eKino.Mobile.Views.AccountPage"
+             NavigationPage.BackButtonTitle="Pocetna">
+    <ContentPage.BindingContext>
+        <vm:StatistikaViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Command="{Binding OdjaviSe_Button}" Text="Odjavi se" Padding="20" BackgroundColor="SpringGreen" FontAttributes="Bold" TextColor="White" FontSize="18"></Button>
+            <Button Command="{Binding Uredi_Button}" Text="Uredi" Padding="20" Margin="0,0,0, 50" BackgroundColor="SpringGreen" FontAttributes="Bold" TextColor="White" FontSize="18"></Button>
+
+            <Label Text="Statistika" HorizontalTextAlignment="center" Margin="10" FontSize="18" TextColor="DarkSeaGreen" FontAttributes="Bold"></Label>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Ime i prezime:"></Label>
+                <Label Grid.Row="1" Grid.Column="0" Text="Datum registracije:"></Label>
+                <Label Grid.Row="2" Grid.Column="0" Text="Paket:"></Label>
+                <Label Grid.Row="3" Grid.Column="0" Text="Broj rezervacija:"></Label>
+                <Label Grid.Row="4" Grid.Column="0" Text="Najpopularniji komentar:"></Label>
+                <Label Grid.Row="5" Grid.Column="0" Text="Broj ocijena:"></Label>
+                <Label Grid.Row="6" Grid.Column="0" Text="Uloga:"></Label>
+
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding ImePrezime}"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DatumRegistracije}"></Label>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Paket}"></Label>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding BrojRezervacija}"></Label>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding NajpopKomentar}"></Label>
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding BrojOcijena}"></Label>
+                <Label Grid.Row="6" Grid.Column="1" Text="{Binding Uloga}"></Label>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

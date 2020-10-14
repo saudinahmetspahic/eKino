@@ -8,7 +8,6 @@ namespace eKino.API.Database
     {
         public int Id { get; set; }
         public int DataOcijena { get; set; }
-        public string Komentar { get; set; }
 
         [ForeignKey(nameof(KomentatorId))]
         public int KomentatorId { get; set; }

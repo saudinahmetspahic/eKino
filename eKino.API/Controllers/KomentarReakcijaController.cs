@@ -12,19 +12,10 @@ namespace eKino.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KomentarReakcijaController : ControllerBase
+    public class KomentarReakcijaController : BaseCRUDController<Model.KomentarReakcija, KomentarReakcijaSearchRequest, KomentarReakcijaInsertRequest, KomentarReakcijaInsertRequest>
     {
-        private readonly IKomentarReakcijaService _service;
-
-        public KomentarReakcijaController(IKomentarReakcijaService service)
+        public KomentarReakcijaController(ICRUDService<KomentarReakcija, KomentarReakcijaSearchRequest, KomentarReakcijaInsertRequest, KomentarReakcijaInsertRequest> service) : base(service)
         {
-            _service = service;
-        }
-
-        [HttpGet]
-        public List<KomentarReakcija> Get([FromQuery]KomentarSerchRequest search)
-        {
-            return _service.Get(search);
         }
     }
 }

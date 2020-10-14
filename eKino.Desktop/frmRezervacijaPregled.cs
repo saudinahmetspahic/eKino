@@ -61,12 +61,14 @@ namespace eKino.Desktop
                     Film = filmovi.Where(w => w.Id == p.FilmId).Select(s => s.Naziv).FirstOrDefault(),
                     Dvorana = dvorane.Where(w => w.Id == p.DvoranaId).Select(s => s.Naziv).FirstOrDefault(),
                     Cijena = p.CijenaUlaznice,
-                    DatumProjekcije = p.DatumProjekcije
+                    DatumProjekcije = p.DatumProjekcije,
+                    Sjediste = (Convert.ToChar(r.SjedisteRed + 65)).ToString() + "/" + (r.SjedisteKolona + 1)
                 });
                 i++;
             }
+            source.OrderBy(o => 4);
             dgvListaRezervacija.DataSource = source;
-            if(dgvListaRezervacija.ColumnCount > 0) // pravi bug kad je lista prazna (nema kolona u tabeli)
+            if (dgvListaRezervacija.ColumnCount > 0) // pravi bug kad je lista prazna (nema kolona u tabeli)
                 dgvListaRezervacija.Columns[0].Visible = false;
         }
 
@@ -99,22 +101,31 @@ namespace eKino.Desktop
 
         private void bttnDodajRezervaciju_Click(object sender, EventArgs e)
         {
-            var k = _kupciService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
             var p = _projekcijeService.GetById<Projekcija>((int)cbxListaProjZaDodavanjePrez.SelectedValue);
-            foreach (var rez in rezervacije) // vec dodana rezervacija
+            if (p != null)
             {
-                if (rez.ProjekcijaId == p.Id)
-                    return;
+                var frm = new frmRezervacijaDodavanje(p);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+                this.Close();
             }
-            var r = new RezervacijaInsertRequest
-            {
-                DatumKreirnja = DateTime.Now,
-                ProjekcijaId = p.Id,
-                KupacId = k.Id
-            };
-            _rezervacijeService.Add(r);
-            rezervacije = _rezervacijeService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id });
-            PopuniTabelu();
+
+            //var k = _kupciService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+            //var p = _projekcijeService.GetById<Projekcija>((int)cbxListaProjZaDodavanjePrez.SelectedValue);
+            //foreach (var rez in rezervacije) // vec dodana rezervacija
+            //{
+            //    if (rez.ProjekcijaId == p.Id)
+            //        return;
+            //}
+            //var r = new RezervacijaInsertRequest
+            //{
+            //    DatumKreirnja = DateTime.Now,
+            //    ProjekcijaId = p.Id,
+            //    KupacId = k.Id                
+            //};
+            //_rezervacijeService.Add(r);
+            //rezervacije = _rezervacijeService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id });
+            //PopuniTabelu();
         }
 
         private void dgvListaRezervacija_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

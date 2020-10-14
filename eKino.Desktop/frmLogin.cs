@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using eKino.Model.Requests;
 using Flurl.Http;
+using eKino.Desktop.Izvjestaji;
 
 namespace eKino.Desktop
 {
@@ -31,7 +32,7 @@ namespace eKino.Desktop
                 var r = _apiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
                 if (r.Count == 1)
                 {
-                    frmPocetna frm = new frmPocetna();
+                    var frm = new frmPocetna();
                     frm.Show();
                     this.Hide();
                 }

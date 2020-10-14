@@ -338,3 +338,5 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csproj.CoreCompileInputs.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json

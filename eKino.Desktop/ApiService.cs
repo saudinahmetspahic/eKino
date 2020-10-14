@@ -28,7 +28,6 @@ namespace eKino.Desktop
 
         public T Add<T>(T x)
         {
-            //$"{Settings.Default.ApiUrl}/{_route}".WithBasicAuth(Email, Sifra).PostJsonAsync(x);
 
             try
             {
@@ -77,17 +76,17 @@ namespace eKino.Desktop
             {
                 if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    MessageBox.Show("Wrong username or password.", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Pogresan email ili sifra.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Forbidden)
                 {
-                    MessageBox.Show("Forbidden.", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Zabranjen pristup.", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 throw;
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Unknown error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nepoznata greska", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
         }

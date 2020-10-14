@@ -4,10 +4,17 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "eKino.Mobile.Android.dll" comes first in this list. */
 		"eKino.Mobile.Android.dll",
 		"eKino.Mobile.dll",
+		"Flurl.dll",
+		"Flurl.Http.dll",
 		"FormsViewGroup.dll",
 		"LibVLCSharp.Android.AWindow.dll",
 		"LibVLCSharp.dll",
 		"LibVLCSharp.Forms.dll",
+		"Microsoft.AspNetCore.Http.Abstractions.dll",
+		"Microsoft.AspNetCore.Http.Features.dll",
+		"Microsoft.Extensions.Primitives.dll",
+		"Newtonsoft.Json.dll",
+		"System.Text.Encodings.Web.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
@@ -50,6 +57,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"eKino.Model.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

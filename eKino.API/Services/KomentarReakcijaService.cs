@@ -9,22 +9,23 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class KomentarReakcijaService : IKomentarReakcijaService
+    public class KomentarReakcijaService : BaseCRUDService<Model.KomentarReakcija, KomentarReakcijaSearchRequest, Database.KomentarReakcija, KomentarReakcijaInsertRequest, KomentarReakcijaInsertRequest>
     {
-        private readonly MojContext _context = null;
-        private readonly IMapper _mapper = null;
-        public KomentarReakcijaService(MojContext context, IMapper mapper)
+        public KomentarReakcijaService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
-        public List<KomentarReakcija> Get(KomentarSerchRequest search) // KomentarSerchRequest
+
+        public override List<KomentarReakcija> Get(KomentarReakcijaSearchRequest search) 
         {
             var query = _context.KomentarReakcija.AsQueryable();
 
-            if (search?.KomentatorId != null)
+            if (search?.KomentarId > 0)
             {
-                query = query.Where(x => x.Komentar.KomentatorId == search.KomentatorId);
+                query = query.Where(x => x.KomentarId == search.KomentarId);
+            }
+            if (search?.KorisnikId > 0)
+            {
+                query = query.Where(x => x.KorisnikId == search.KorisnikId);
             }
 
             var result = query.ToList();

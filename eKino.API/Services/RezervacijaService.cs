@@ -19,9 +19,13 @@ namespace eKino.API.Services
         {
             var query = _context.Rezervacija.AsQueryable();
 
-            if (search?.KorisnikId != null)
+            if (search?.KorisnikId > 0)
             {
                 query = query.Where(x => x.KupacId == search.KorisnikId);
+            }
+            if(search?.ProjekcijaId > 0)
+            {
+                query = query.Where(w => w.ProjekcijaId == search.ProjekcijaId);
             }
 
             var result = query.ToList();

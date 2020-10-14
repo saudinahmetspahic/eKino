@@ -1,17 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "jHxluoLufk8wrzFdbs2NkhZnoyenk8B4+y/e8P73RaTOTJZG88sqsfMQS+7NhFf+VXRF9SupCkcaUR136bsbGg==",
+  "dgSpecHash": "Iw6OgimLek+9a9zTIqXrsaJE+YJODQOMfCYBuxydXZrGRFg3MjHKOPBebC9FWBcjasEyr7Zly4Iqs+33tttpiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
+  "projectFilePath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\saudi\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp.forms\\3.4.6\\libvlcsharp.forms.3.4.6.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.8.0.1534\\xamarin.forms.4.8.0.1534.nupkg.sha512"
   ],
   "logs": []
 }

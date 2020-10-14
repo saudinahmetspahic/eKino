@@ -15,20 +15,18 @@ namespace eKino.API.Services
 {
     public class KorisnikService 
         :
-        BaseCRUDService<Model.Korisnik, KorisnikSearchRequest, Database.Korisnik, KorisnikInsertRequest, KorisnikInsertRequest>,
-        IKorisnikService
+        BaseCRUDService<Model.Korisnik, KorisnikSearchRequest, Database.Korisnik, KorisnikInsertRequest, KorisnikInsertRequest>
+       // IKorisnikService
     {
       
         public KorisnikService(MojContext context, IMapper mapper) : base(context, mapper)
         {
         }
-
-
-        public void Add(KorisnikInsertRequest korisnik)
+        public override Model.Korisnik Insert(KorisnikInsertRequest korisnik)
         {
             var k = _mapper.Map<Database.Korisnik>(korisnik);
 
-            if(korisnik.Password != korisnik.PasswordPotvrda)
+            if (korisnik.Password != korisnik.PasswordPotvrda)
             {
                 throw new Exception("Passwordi se ne slažu");
             }
@@ -38,6 +36,7 @@ namespace eKino.API.Services
 
             _context.Korisnik.Add(k);
             _context.SaveChanges();
+            return _mapper.Map<Model.Korisnik>(k);
         }
 
         public override Model.Korisnik Authenticate(KorisnikLoginRequest request)
