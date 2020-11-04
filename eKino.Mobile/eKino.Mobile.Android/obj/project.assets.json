@@ -107,6 +107,43 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "PayPal.Forms/2.18.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
+          "Xamarin.Forms": "3.4.0.1029999",
+          "Xamarin.PayPal.Android": "2.18.1"
+        },
+        "compile": {
+          "lib/MonoAndroid10/PayPal.Forms.Abstractions.dll": {},
+          "lib/MonoAndroid10/PayPal.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/PayPal.Forms.Abstractions.dll": {},
+          "lib/MonoAndroid10/PayPal.Forms.dll": {}
+        }
+      },
+      "Square.OkHttp3/3.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Square.OkIO": "1.11.0"
+        },
+        "compile": {
+          "lib/MonoAndroid/Square.OkHttp3.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/Square.OkHttp3.dll": {}
+        }
+      },
+      "Square.OkIO/1.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid/Square.OkIO.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/Square.OkIO.dll": {}
+        }
+      },
       "System.Buffers/4.4.0": {
         "type": "package",
         "compile": {
@@ -975,6 +1012,28 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.PayPal.Android/2.18.1": {
+        "type": "package",
+        "dependencies": {
+          "Square.OkHttp3": "3.5.0",
+          "Xamarin.PayPal.Android.CardIO": "2.0.1"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Xamarin.PayPal.Android.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Xamarin.PayPal.Android.dll": {}
+        }
+      },
+      "Xamarin.PayPal.Android.CardIO/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10/Xamarin.PayPal.Android.CardIO.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Xamarin.PayPal.Android.CardIO.dll": {}
+        }
+      },
       "eKino.Mobile/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -984,6 +1043,7 @@
           "LibVLCSharp": "3.4.6",
           "LibVLCSharp.Forms": "3.4.6",
           "Newtonsoft.Json": "12.0.2",
+          "PayPal.Forms": "2.18.6",
           "System.Drawing.Common": "4.7.0",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.8.0.1534",
@@ -1189,6 +1249,53 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "PayPal.Forms/2.18.6": {
+      "sha512": "WmTBbDTSVl8GlELpHYuiIwZk5WKqrn9MvdCG/xxH9Mq86/q9mgyfJJEiJVmAxPJHGpN1VizA1Lmhqy7dGbJiKw==",
+      "type": "package",
+      "path": "paypal.forms/2.18.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/PayPal.Forms.Abstractions.dll",
+        "lib/MonoAndroid10/PayPal.Forms.dll",
+        "lib/Xamarin.iOS10/PayPal.Forms.Abstractions.dll",
+        "lib/Xamarin.iOS10/PayPal.Forms.dll",
+        "lib/netstandard1.0/PayPal.Forms.Abstractions.dll",
+        "lib/netstandard1.0/PayPal.Forms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/PayPal.Forms.Abstractions.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/PayPal.Forms.dll",
+        "paypal.forms.2.18.6.nupkg.sha512",
+        "paypal.forms.nuspec"
+      ]
+    },
+    "Square.OkHttp3/3.5.0": {
+      "sha512": "3oy8Gqf2drckI22TrGPLqzkXzAc1n4CaHO0/SFDjLhfgRS8GmaoD2YddmtCt9nSMZ2SWgvKruJvS/OTTb8ssnQ==",
+      "type": "package",
+      "path": "square.okhttp3/3.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid/Square.OkHttp3.dll",
+        "square.okhttp3.3.5.0.nupkg.sha512",
+        "square.okhttp3.nuspec"
+      ]
+    },
+    "Square.OkIO/1.11.0": {
+      "sha512": "RY+E9Lqvf79hsBWQKepC1dqSJ27Ig6VyHHE+82cojnUsAT/JmyIKJR+SreU0IDqStzteuJnlmz/LqcPunzPYOQ==",
+      "type": "package",
+      "path": "square.okio/1.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid/Square.OkIO.dll",
+        "square.okio.1.11.0.nupkg.sha512",
+        "square.okio.nuspec"
       ]
     },
     "System.Buffers/4.4.0": {
@@ -2548,6 +2655,30 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.PayPal.Android/2.18.1": {
+      "sha512": "YecI7Dcm1oDtMHDEDgMu5F1XTl1F2Kt/hioNlP6XzqYVDLDgY0+DqJPDLAblR24KFwCvkc/tQksyUTJp1U19DQ==",
+      "type": "package",
+      "path": "xamarin.paypal.android/2.18.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Xamarin.PayPal.Android.dll",
+        "xamarin.paypal.android.2.18.1.nupkg.sha512",
+        "xamarin.paypal.android.nuspec"
+      ]
+    },
+    "Xamarin.PayPal.Android.CardIO/2.0.1": {
+      "sha512": "by/sVV8aFy5ZsGAGLzmxUMvzw0ipYx9mtxswT/bYjHMfK5Z64+8A6Pnv7TShoiFWk7id5JilmbsOE/beDqUBjg==",
+      "type": "package",
+      "path": "xamarin.paypal.android.cardio/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Xamarin.PayPal.Android.CardIO.dll",
+        "xamarin.paypal.android.cardio.2.0.1.nupkg.sha512",
+        "xamarin.paypal.android.cardio.nuspec"
+      ]
+    },
     "eKino.Mobile/1.0.0": {
       "type": "project",
       "path": "../eKino.Mobile/eKino.Mobile.csproj",
@@ -2563,6 +2694,7 @@
     "MonoAndroid,Version=v9.0": [
       "LibVLCSharp >= 3.4.6",
       "LibVLCSharp.Forms >= 3.4.6",
+      "PayPal.Forms >= 2.18.6",
       "System.Drawing.Common >= 4.7.0",
       "VideoLAN.LibVLC.Android >= 3.2.0",
       "Xamarin.Essentials >= 1.3.1",
@@ -2577,11 +2709,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
+      "projectUniqueName": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
       "projectName": "eKino.Mobile.Android",
-      "projectPath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
+      "projectPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
       "packagesPath": "C:\\Users\\saudi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\obj\\",
+      "outputPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2602,8 +2734,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj": {
-              "projectPath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj"
+            "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj": {
+              "projectPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj"
             }
           }
         }
@@ -2619,6 +2751,10 @@
           "LibVLCSharp.Forms": {
             "target": "Package",
             "version": "[3.4.6, )"
+          },
+          "PayPal.Forms": {
+            "target": "Package",
+            "version": "[2.18.6, )"
           },
           "System.Drawing.Common": {
             "target": "Package",

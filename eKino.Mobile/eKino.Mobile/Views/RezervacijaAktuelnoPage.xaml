@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eKino.Mobile.Views.ProjekcijaAktuelnoPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Rezervacije"
+                HorizontalOptions="CenterAndExpand"
+                Margin="20"
+                FontSize="17"/>
+            <Grid Margin="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="AButton" Padding="5" Clicked="Aktivne_Clicked" Text="Aktivne" Grid.Column="0" Grid.Row="0" BackgroundColor="Green" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" ></Button>
+                <Button x:Name="NButton" Padding="5" Clicked="Neaktivne_Clicked" Text="Neaktivne" Grid.Column="1" Grid.Row="0" BackgroundColor="Green" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"></Button>
+            </Grid>
+            <ScrollView Orientation="Vertical">
+                <Grid x:Name="mainGrid">
+
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:helper="clr-namespace:eKino.Mobile.Helper"
+             x:Class="eKino.Mobile.Views.RezervacijaDodajPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Dodaj rezervaciju"
+                HorizontalOptions="CenterAndExpand"
+                Margin="20"
+                FontSize="17"/>
+            <Frame BorderColor="LightGray" Margin="10, 3" CornerRadius="20" HasShadow="false">
+                <StackLayout Margin="2">
+                    <Label Margin="10, 0, 0, 0" FontAttributes="Bold" FontSize="15" Text="Kreiraj rezervaciju/e za projekciju"></Label>
+                    <Picker Title="Odaberi projekciju" ItemsSource="{Binding ProjekcijeList}" SelectedItem="{Binding OdabranaProjekcija}" ItemDisplayBinding="{Binding Opis}" SelectedIndexChanged="PickerPromjenaProjekcije"></Picker>
+                </StackLayout>
+            </Frame>
+
+            <Frame>
+                <StackLayout>
+                    <Grid x:Name="OutsideGrid" IsVisible="false">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="1" Source="{helper:ImageHelper eKino.Mobile.Images.imgKinoE.png}"></Image>
+                        
+                        <Label Grid.Row="2" Grid.Column="0" Text="R/K" FontSize="13"></Label>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <Label Margin="15, 0, 0, 0" FontSize="11" VerticalOptions="EndAndExpand" Text="Broj rezervacija"></Label>
+            <Label Margin="15, 0, 0, 0" FontSize="11" VerticalOptions="End" x:Name="BrojRezervacijaText"></Label>
+            <Label Margin="15, 0, 0, 0" FontSize="11" VerticalOptions="End" Text="Ukupna cijena"></Label>
+            <Label Margin="15, 0, 0, 5" FontSize="11" VerticalOptions="End" x:Name="UkupnaCijenaText"></Label>
+            
+            <Button Clicked="Ponisti_Clicked" TextColor="White" FontAttributes="Bold" BackgroundColor="Red" VerticalOptions="End" Text="Poništi"></Button>
+            <Button Clicked="Dodaj_Clicked" TextColor="White" FontAttributes="Bold" BackgroundColor="SpringGreen" VerticalOptions="End" Text="Dodaj"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:shared="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
+             x:Class="eKino.Mobile.Views.FilmGeldajPage"
+             NavigationPage.HasBackButton="false"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+
+    <shared:MediaPlayerElement x:Name="myvideo"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"></shared:MediaPlayerElement>
+
+</ContentPage>

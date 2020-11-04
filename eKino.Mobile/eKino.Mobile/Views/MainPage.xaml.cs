@@ -52,5 +52,7 @@ namespace eKino.Mobile.Views
                 IsPresented = false;
             }
         }
+
+        
     }
 }

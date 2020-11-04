@@ -31,7 +31,7 @@ namespace eKino.Mobile.Views
         {
             ApiService.Email = string.Empty;
             ApiService.Sifra = string.Empty;
-            Navigation.PopToRootAsync();
+            Navigation.PopAsync();
             Navigation.PushAsync(new LoginPage());
         }    
         

@@ -54,14 +54,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSlikaNaziv = new System.Windows.Forms.Label();
             this.bttnSlikaDodaj = new System.Windows.Forms.Button();
+            this.txtOcijena = new System.Windows.Forms.NumericUpDown();
             this.bttnDodaj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtOcijena = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -365,6 +365,28 @@
             this.bttnSlikaDodaj.UseVisualStyleBackColor = true;
             this.bttnSlikaDodaj.Click += new System.EventHandler(this.bttnSlikaDodaj_Click);
             // 
+            // txtOcijena
+            // 
+            this.txtOcijena.Location = new System.Drawing.Point(452, 25);
+            this.txtOcijena.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtOcijena.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtOcijena.Name = "txtOcijena";
+            this.txtOcijena.Size = new System.Drawing.Size(372, 22);
+            this.txtOcijena.TabIndex = 29;
+            this.txtOcijena.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // bttnDodaj
             // 
             this.bttnDodaj.AutoSize = true;
@@ -404,28 +426,6 @@
             this.panel1.Size = new System.Drawing.Size(1042, 389);
             this.panel1.TabIndex = 4;
             // 
-            // txtOcijena
-            // 
-            this.txtOcijena.Location = new System.Drawing.Point(452, 25);
-            this.txtOcijena.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.txtOcijena.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtOcijena.Name = "txtOcijena";
-            this.txtOcijena.Size = new System.Drawing.Size(372, 22);
-            this.txtOcijena.TabIndex = 29;
-            this.txtOcijena.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // frmFilmDodaj
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
@@ -445,8 +445,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

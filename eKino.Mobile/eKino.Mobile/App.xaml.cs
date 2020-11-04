@@ -29,5 +29,6 @@ namespace eKino.Mobile
         protected override void OnResume()
         {
         }
+
     }
 }

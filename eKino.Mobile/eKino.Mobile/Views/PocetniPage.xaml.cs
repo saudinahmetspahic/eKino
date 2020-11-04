@@ -29,11 +29,13 @@ namespace eKino.Mobile.Views
             {
                 iconToShow.IsVisible = false;
                 gridToShow.IsVisible = true;
+                mainStack.BackgroundColor = Color.Gray;
             }
             else
             {
                 iconToShow.IsVisible = true;
                 gridToShow.IsVisible = false;
+                mainStack.BackgroundColor = Color.White;
             }
         }
 
@@ -41,5 +43,33 @@ namespace eKino.Mobile.Views
         {
             await Navigation.PushAsync(new AccountPage());
         }
+
+
+
+        private async void PaketAktuelno_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PaketAktuelnoPage());
+        }
+
+        private async void PaketDodaj_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PaketDodajPage());
+        }
+
+        private async void ProjekcijaAktuelno_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProjekcijaAktuelnoPage());
+        }
+
+        private async void ProjekcijaDodaj_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RezervacijaDodajPage());
+        }
+
+        private async void FilmAktuelno_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FilmAktuelnoPage());
+        }
+
     }
 }

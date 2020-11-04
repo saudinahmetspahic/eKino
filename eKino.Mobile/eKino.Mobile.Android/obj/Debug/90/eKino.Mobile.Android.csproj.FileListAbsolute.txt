@@ -1949,3 +1949,15 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShapeRenderer_2.java
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShapeView.java
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewCellRenderer_ViewCellContainer_TapGestureListener.java
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\PayPal.Forms.Abstractions.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\PayPal.Forms.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\Square.OkHttp3.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\Square.OkIO.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\System.Threading.Tasks.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\Xamarin.PayPal.Android.CardIO.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\assets\Xamarin.PayPal.Android.dll
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\crc64e9db98a0d7058662\CallExtensions_ActionCallback.java
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\okhttp3\OkHttpClient$Builder_AuthenticatorImpl.java
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\okhttp3\OkHttpClient$Builder_DnsImpl.java
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\okhttp3\OkHttpClient$Builder_HostnameVerifierImpl.java
+C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.Android\obj\Debug\90\android\src\okhttp3\OkHttpClient$Builder_InterceptorImpl.java

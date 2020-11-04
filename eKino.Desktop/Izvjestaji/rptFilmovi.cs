@@ -27,11 +27,11 @@ namespace eKino.Desktop.Izvjestaji
 
         private void rptFilmovi_Load(object sender, EventArgs e)
         {
-            var rds = new ReportDataSource("dsFilmovi", Filmovi_Result);
+            var rds = new ReportDataSource("DataSet1", Filmovi_Result);
 
             this.reportViewer1.LocalReport.DataSources.Add(rds);
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("Tip", TipId.ToString()));
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("Zanr", ZanrId.ToString()));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TipId", TipId.ToString()));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("ZanrId", ZanrId.ToString()));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("DatumOd", DatumOd.ToString()));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("DatumDo", DatumDo.ToString()));
             this.reportViewer1.RefreshReport();

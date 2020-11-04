@@ -25,7 +25,7 @@ namespace eKino.Desktop.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44321/api")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1:5000/api")]
         public string ApiUrl {
             get {
                 return ((string)(this["ApiUrl"]));

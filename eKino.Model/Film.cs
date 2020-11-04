@@ -13,5 +13,6 @@ namespace eKino.Model
         public string Opis { get; set; }
         public DateTime DatumIzlaska { get; set; }
         public byte[] Slika { get; set; }
+        public string Link { get; set; }
     }
 }

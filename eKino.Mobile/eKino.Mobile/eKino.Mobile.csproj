@@ -12,12 +12,14 @@
 
   <ItemGroup>
     <None Remove="Images\imgAvatar.png" />
+    <None Remove="Images\imgKinoE.png" />
     <None Remove="Images\imgMeni.png" />
     <None Remove="Images\imgPozadina.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\imgAvatar.png" />
+    <EmbeddedResource Include="Images\imgKinoE.png" />
     <EmbeddedResource Include="Images\imgMeni.png" />
     <EmbeddedResource Include="Images\imgPozadina.png" />
   </ItemGroup>
@@ -28,6 +30,7 @@
     <PackageReference Include="LibVLCSharp" Version="3.4.6" />
     <PackageReference Include="LibVLCSharp.Forms" Version="3.4.6" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="PayPal.Forms" Version="2.18.6" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
@@ -41,6 +44,12 @@
     <Compile Update="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\RezervacijaDodajPage.xaml.cs">
+      <DependentUpon>RezervacijaDodajPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RezervacijaAktuelnoPage.xaml.cs">
+      <DependentUpon>RezervacijaAktuelnoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -50,10 +59,31 @@
     <EmbeddedResource Update="Views\AccountUrediPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\FilmAktuelnoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FilmDetaljiPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FilmGeldajPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\PaketAktuelnoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PaketDetaljiPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PocetniPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RezervacijaDodajPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RezervacijaAktuelnoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RegistracijaPage.xaml">

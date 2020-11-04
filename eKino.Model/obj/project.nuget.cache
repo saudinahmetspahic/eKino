@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h/7GCRWKj5AtWp+KKnk5R2zY5aKewg0FXPhQqscQ/mU1BZteiVotY57xQuYjhZdVXY9ytMnmxtz6MlaEFiqkRQ==",
+  "dgSpecHash": "127T6JOiTcOkmLVLz/m5jBKP1dK3ZJhfOhIkapdJ+0eLyP2U9+l1t6DOnJw7y7qLRjyffsYAf/0lvR4s4HlB7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
+  "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp.forms\\3.4.6\\libvlcsharp.forms.3.4.6.nupkg.sha512",

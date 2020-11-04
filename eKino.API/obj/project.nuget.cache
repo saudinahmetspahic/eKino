@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7V/Vmk+sr5GizJiUGzvqh0UvUe+Lou9A/m91mlzkDSC78oy8SgHvWis+mvMi5yRl00rCk7xz298bjS7o0oAwZA==",
+  "dgSpecHash": "pFvCFmKPtM/VOhQWO0JuQLB6MPVa/eoVGaQLkoItrhN4MlX9g+iY81PzPxIO6cYSSfiBrD8ELbDdrMPILLS/Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
+  "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.API\\eKino.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saudi\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.0\\automapper.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",

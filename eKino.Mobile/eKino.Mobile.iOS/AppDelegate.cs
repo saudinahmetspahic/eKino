@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using PayPal.Forms;
+using PayPal.Forms.Abstractions;
 using UIKit;
 
 namespace eKino.Mobile.iOS
@@ -23,6 +25,28 @@ namespace eKino.Mobile.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            var config = new PayPalConfiguration(PayPalEnvironment.NoNetwork, "AeQ87rcFB6R-vIzWr0oGlHPEjzcauiS8_jl4NgmThKk-vaoEwz0seUoPIwVeyWNMTpBpTv_OHHuh8Nn_")
+            {
+                //If you want to accept credit cards
+                AcceptCreditCards = true,
+                //Your business name
+                MerchantName = "Test Store",
+                //Your privacy policy Url
+                MerchantPrivacyPolicyUri = "https://www.example.com/privacy",
+                //Your user agreement Url
+                MerchantUserAgreementUri = "https://www.example.com/legal",
+                // OPTIONAL - ShippingAddressOption (Both, None, PayPal, Provided)
+                ShippingAddressOption = ShippingAddressOption.Both,
+                // OPTIONAL - Language: Default languege for PayPal Plug-In
+                Language = "es",
+                // OPTIONAL - PhoneCountryCode: Default phone country code for PayPal Plug-In
+                PhoneCountryCode = "52",
+            };
+            //iOS
+            CrossPayPalManager.Init(config);
+
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

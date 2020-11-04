@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z0brg3UgBI3uJMQwOkmzqhtZgtVNSk29zeaa7bxtDqxsTbdQJeHpp9RCNtJvQ3H6Wui6QnLg8XUlYGBnBE9dIw==",
+  "dgSpecHash": "gxua8QJPR4zruGsrfmtE8OFY7ohb9UZpyCjAl14qnxZcBwg/sv4qgcGacrU5JgLydrEcVYwsSiPSQo8dk/Hisg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
+  "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.iOS\\eKino.Mobile.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saudi\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
@@ -12,6 +12,7 @@
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\paypal.forms\\2.18.6\\paypal.forms.2.18.6.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
@@ -21,7 +22,8 @@
     "C:\\Users\\saudi\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\videolan.libvlc.ios\\3.3.10\\videolan.libvlc.ios.3.3.10.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.8.0.1534\\xamarin.forms.4.8.0.1534.nupkg.sha512"
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.forms\\4.8.0.1534\\xamarin.forms.4.8.0.1534.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\xamarin.paypal.ios\\2.18.0\\xamarin.paypal.ios.2.18.0.nupkg.sha512"
   ],
   "logs": []
 }

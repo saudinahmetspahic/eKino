@@ -7,7 +7,7 @@
              NavigationPage.HasNavigationBar="false">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="mainStack">
             <Grid BackgroundColor="MediumSpringGreen"
                   HeightRequest="80" 
                   VerticalOptions="Start">
@@ -20,7 +20,8 @@
 
                 <Image Source="{helper:ImageHelper eKino.Mobile.Images.imgMeni.png}"
                    Grid.Row="0"
-                   Grid.Column="0">
+                   Grid.Column="0"
+                       Margin="3">
 
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="MeniIcon_Tapped"></TapGestureRecognizer>
@@ -36,7 +37,8 @@
                    FontAttributes="Bold"></Label>
                 <Image Source="{helper:ImageHelper eKino.Mobile.Images.imgAvatar.png}"
                        Grid.Row="0"
-                       Grid.Column="2">
+                       Grid.Column="2"
+                       Margin="1">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="AvatarIcon_Tapped"></TapGestureRecognizer>
                     </Image.GestureRecognizers>
@@ -49,34 +51,52 @@
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"></Image>
 
-            <Grid x:Name="gridToShow" Margin="25" IsVisible="false">
+            <Grid x:Name="gridToShow" BackgroundColor="LightGray" VerticalOptions="CenterAndExpand" IsVisible="false">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="15"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" TextColor="LightSlateGray" Text="Paketi" Margin="0, 10, 0, 0"></Label>
-                <Label Grid.Row="1" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" FontAttributes="Bold" Text="AKTUELNO" VerticalTextAlignment="Center"></Label>
-                <Label Grid.Row="2" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" FontAttributes="Bold" Text="DODAJ" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontAttributes="Bold" TextColor="White" BackgroundColor="Gray" Text="Paketi" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label Margin="10" Grid.Row="1" Grid.Column="1" TextColor="White" FontSize="24" FontAttributes="Bold" Text="AKTUELNO" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PaketAktuelno_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Margin="10" Grid.Row="2" Grid.Column="1" TextColor="White" FontSize="24" FontAttributes="Bold" Text="DODAJ" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PaketDodaj_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
 
-                <Label Grid.Row="3" Grid.ColumnSpan="2" TextColor="LightSlateGray" FontSize="30" Text="Projekcije"  Margin="0, 10, 0, 0"></Label>
-                <Label Grid.Row="4" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="AKTUELNO" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
-                <Label Grid.Row="5" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="DODAJ" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="3" Grid.ColumnSpan="2" FontSize="30" FontAttributes="Bold" TextColor="White" BackgroundColor="Gray" Text="Rezervacije" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label Margin="10" Grid.Row="4" Grid.Column="1" TextColor="White" FontSize="24" Text="AKTUELNO" FontAttributes="Bold" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ProjekcijaAktuelno_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Margin="10" Grid.Row="5" Grid.Column="1" TextColor="White" FontSize="24" Text="DODAJ" FontAttributes="Bold" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ProjekcijaDodaj_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
 
-                <Label Grid.Row="6" Grid.ColumnSpan="2" TextColor="LightSlateGray" FontSize="30" Text="Filmovi"  Margin="0, 10, 0, 0"></Label>
-                <Label Grid.Row="7" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="AKTUELNO" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
-                <Label Grid.Row="8" Grid.Column="1" TextColor="LightSlateGray" FontSize="20" Text="DODAJ" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="6" Grid.ColumnSpan="2" FontSize="30" FontAttributes="Bold" TextColor="White" BackgroundColor="Gray" Text="Filmovi" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label Margin="10" Grid.Row="7" Grid.Column="1" TextColor="White" FontSize="24" Text="AKTUELNO" FontAttributes="Bold" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FilmAktuelno_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
 
             </Grid>
 

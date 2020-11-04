@@ -210,10 +210,13 @@
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_170200DataSet.Designer.cs">
+    <Compile Include="_170200DataSet2.cs">
+      <DependentUpon>_170200DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_170200DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>_170200DataSet.xsd</DependentUpon>
+      <DependentUpon>_170200DataSet2.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmAccountInfo.resx">
       <DependentUpon>frmAccountInfo.cs</DependentUpon>
@@ -257,7 +260,7 @@
     <EmbeddedResource Include="frmUrediAccount.resx">
       <DependentUpon>frmUrediAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Izvjestaji\rptFilmovi.rdlc" />
+    <EmbeddedResource Include="Izvjestaji\Report1.rdlc" />
     <EmbeddedResource Include="Izvjestaji\rptFilmovi.resx">
       <DependentUpon>rptFilmovi.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +274,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\eKino.Model.Film.datasource" />
+    <None Include="Properties\DataSources\eKino.Model.Tip.datasource" />
+    <None Include="Properties\DataSources\eKino.Model.Zanr.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -280,16 +286,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="_170200DataSet.xsc">
-      <DependentUpon>_170200DataSet.xsd</DependentUpon>
+    <None Include="_170200DataSet2.xsc">
+      <DependentUpon>_170200DataSet2.xsd</DependentUpon>
     </None>
-    <None Include="_170200DataSet.xsd">
+    <None Include="_170200DataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_170200DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>_170200DataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="_170200DataSet.xss">
-      <DependentUpon>_170200DataSet.xsd</DependentUpon>
+    <None Include="_170200DataSet2.xss">
+      <DependentUpon>_170200DataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

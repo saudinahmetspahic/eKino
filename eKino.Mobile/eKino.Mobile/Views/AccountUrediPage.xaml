@@ -1,12 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="eKino.Mobile.Views.AccountUrediPage">
+             x:Class="eKino.Mobile.Views.AccountUrediPage"
+             NavigationPage.BackButtonTitle="Odustani">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label HorizontalOptions="Center" Margin="20" FontSize="20" FontAttributes="Bold"  Text="Uredjivanje accounta"></Label>
+       
+            <Grid Margin="20, 15, 20, 0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="0" FontSize="17" Text="Ime:"></Label>
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="1" FontSize="17" Text="Prezime:"></Label>
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="2" FontSize="17" Text="Email:"></Label>
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="3" FontSize="17" Text="Datum rodjenja:"></Label>
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="4" FontSize="17" Text="Grad:"></Label>
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="5" FontSize="17" Text="Lozinka:"></Label>
+                <Label VerticalTextAlignment="Center" Margin="0,0,0,5" Grid.Column="0" Grid.Row="6" FontSize="17" Text="Potvrda lozinke:"></Label>
+                                                                     
+                <Entry x:Name="Ime" Margin="0,0,0,5" Grid.Column="1" Grid.Row="0" FontSize="18" Text="{Binding Ime}"></Entry>
+                <Entry x:Name="Prezime" Margin="0,0,0,5" Grid.Column="1" Grid.Row="1" FontSize="18" Text="{Binding Prezime}"></Entry>
+                <Entry x:Name="Email" Margin="0,0,0,5" Grid.Column="1" Grid.Row="2" FontSize="18" Text="{Binding Email}"></Entry>
+                <DatePicker x:Name="DatumRodjenja" Margin="0,0,0,5" Grid.Column="1" Grid.Row="3" FontSize="18" Date="{Binding DatumRodjenja}"></DatePicker>
+                <Picker x:Name="Gradovi" ItemsSource="{Binding Gradovi}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding OdabraniGrad}" Margin="0,0,0,5" Grid.Column="1" Grid.Row="4" FontSize="18"></Picker>
+                <Entry x:Name="Lozinka" Margin="0,0,0,5" Grid.Column="1" Grid.Row="5" FontSize="18"></Entry>
+                <Entry x:Name="PotvrdaLozinka" Margin="0,0,0,5" Grid.Column="1" Grid.Row="6" FontSize="18"></Entry>
+                <Label Grid.Column="1" Grid.Row="7" Text="Ostavite prazno polje za lozinku, ukoliko je ne želite mjenjati."></Label>
+            </Grid>
+    
+            <Button Clicked="SnimiButton_Clicked" VerticalOptions="EndAndExpand" Padding="20" FontAttributes="Bold" FontSize="20" BackgroundColor="SpringGreen" TextColor="White" Text="Snimi"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

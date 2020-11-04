@@ -36,6 +36,7 @@ namespace eKino.Desktop
         {
             _filmId = FilmId;
             InitializeComponent();
+            //this.AutoValidate = AutoValidate.Disable;
         }
 
         private void frmFilmDetalji_Load(object sender, EventArgs e)

@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.IO;
+using Xamarin.Forms;
 
 namespace eKino.Model
 {
     public static class ImageConvertor
     {
-
-        public static Image ConvertByteArrayToImage(byte[] byteArrayIn)
+        public static Xamarin.Forms.ImageSource ConvertByteArrayToImageForXamarin(byte[] byteArrayIn)
+        {
+            var stream1 = new MemoryStream(byteArrayIn);
+            return ImageSource.FromStream(() => stream1);
+        }
+        public static System.Drawing.Image ConvertByteArrayToImage(byte[] byteArrayIn)
         {
             using (MemoryStream ms = new MemoryStream(byteArrayIn))
             {
-                return Image.FromStream(ms);
+                return System.Drawing.Image.FromStream(ms);
             }
         }
-        public static byte[] ConvertImageToByteArray(Image image, string extension)
+        public static byte[] ConvertImageToByteArray(System.Drawing.Image image, string extension)
         {
             using (var memoryStream = new MemoryStream())
             {

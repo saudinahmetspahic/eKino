@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eKino.Mobile.Views.PaketDodajPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Dodaj paket"
+                HorizontalOptions="CenterAndExpand"
+                Margin="20"
+                FontSize="17"/>
+            <Grid Margin="15, 50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="0" Text="Opis" ></Label>
+                <Label FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="0" Text="Datum isteka" ></Label>
+                <Label FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Row="2" Grid.Column="0" Text="Ocijena filma (1-5)" ></Label>
+                <Label FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Row="3" Grid.Column="0" Text="Cijena paketa" ></Label>
+
+                <Entry x:Name="Opis" Grid.Row="0" Grid.Column="1" MaxLength="150"></Entry>
+                <DatePicker x:Name="DatumIsteka" Grid.Row="1" Grid.Column="1"></DatePicker>
+                <Entry x:Name="MaxOcijena" Grid.Row="2" Grid.Column="1"></Entry>
+                <Entry x:Name="CijenaPaketa" Grid.Row="3" Grid.Column="1"></Entry>
+            </Grid>
+            <Button  Text="Dodaj" FontSize="20" Padding="15" TextColor="white" FontAttributes="Bold" BackgroundColor="SpringGreen" Clicked="DodajPaket_Clicked" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

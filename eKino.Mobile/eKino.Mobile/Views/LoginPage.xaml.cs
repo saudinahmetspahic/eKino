@@ -52,7 +52,7 @@ namespace eKino.Mobile.Views
             Content = mainStack;
         }
 
-        private async void Login_Clicked(object sender, EventArgs e)
+        private void Login_Clicked(object sender, EventArgs e)
         {
             ApiService.Email = email.Text;
             ApiService.Sifra = pass.Text;
@@ -61,12 +61,12 @@ namespace eKino.Mobile.Views
                 var r = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
                 if (r.Count == 1)
                 {
-                    await Navigation.PopToRootAsync();
-                    await Navigation.PushAsync(new PocetniPage());
+                    Application.Current.MainPage = new NavigationPage(new PocetniPage());
                 }
             }
             catch (Exception ex)
             {
+                Application.Current.MainPage.DisplayAlert("Error", "Pogresan email ili sifa.", "Ok");
             }
         }
     }

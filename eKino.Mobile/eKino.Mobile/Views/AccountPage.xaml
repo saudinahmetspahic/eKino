@@ -9,8 +9,8 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Button Command="{Binding OdjaviSe_Button}" Text="Odjavi se" Padding="20" BackgroundColor="SpringGreen" FontAttributes="Bold" TextColor="White" FontSize="18"></Button>
-            <Button Command="{Binding Uredi_Button}" Text="Uredi" Padding="20" Margin="0,0,0, 50" BackgroundColor="SpringGreen" FontAttributes="Bold" TextColor="White" FontSize="18"></Button>
+            <Button Clicked="OdjaviSe_Button" Text="Odjavi se" Padding="20" BackgroundColor="SpringGreen" FontAttributes="Bold" TextColor="White" FontSize="18"></Button>
+            <Button Clicked="Uredi_Button" Text="Uredi" Padding="20" Margin="0,0,0, 50" BackgroundColor="SpringGreen" FontAttributes="Bold" TextColor="White" FontSize="18"></Button>
 
             <Label Text="Statistika" HorizontalTextAlignment="center" Margin="10" FontSize="18" TextColor="DarkSeaGreen" FontAttributes="Bold"></Label>
 
@@ -41,7 +41,7 @@
                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding DatumRegistracije}"></Label>
                 <Label Grid.Row="2" Grid.Column="1" Text="{Binding Paket}"></Label>
                 <Label Grid.Row="3" Grid.Column="1" Text="{Binding BrojRezervacija}"></Label>
-                <Label Grid.Row="4" Grid.Column="1" Text="{Binding NajpopKomentar}"></Label>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding NajpopKomentar}" LineBreakMode="WordWrap"></Label>
                 <Label Grid.Row="5" Grid.Column="1" Text="{Binding BrojOcijena}"></Label>
                 <Label Grid.Row="6" Grid.Column="1" Text="{Binding Uloga}"></Label>
 

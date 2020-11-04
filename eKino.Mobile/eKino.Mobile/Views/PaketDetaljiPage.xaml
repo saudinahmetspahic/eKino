@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModels="clr-namespace:eKino.Mobile.ViewModels"
+             x:Class="eKino.Mobile.Views.PaketDetaljiPage">
+    <!--<ContentPage.BindingContext>
+        <viewModels:PaketDetaljiViewModel />
+    </ContentPage.BindingContext>-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Paket - detalji"
+                HorizontalOptions="CenterAndExpand"
+                   Margin="20"
+                   FontSize="17"/>
+            <Frame x:Name="MsgFrame" BorderColor="blue" CornerRadius="30" Margin="20, 0" Padding="10" BackgroundColor="LightBlue" IsVisible="false">
+                <Label x:Name="Msg" FontAttributes="Bold" TextColor="Blue" HorizontalTextAlignment="Center" ></Label>
+            </Frame>
+            <Grid Margin="10" VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="Datum kreiranja" Grid.Column="0" Grid.Row="0"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="Datum isteka" Grid.Column="0" Grid.Row="1"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="Maksimalna ocijana filma" Grid.Column="0" Grid.Row="2"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="Cijena paketa" Grid.Column="0" Grid.Row="3"></Label>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="Opis" Grid.Column="0" Grid.Row="4"></Label>
+
+                <DatePicker IsEnabled="False" x:Name="DatumKreiranja" Grid.Column="1" Grid.Row="0" Date="{Binding DatumKreiranja}"></DatePicker>
+                <DatePicker x:Name="DatumIsteka" Grid.Column="1" Grid.Row="1" Date="{Binding DatumIsteka}"></DatePicker>
+                <Entry x:Name="MaxOcijena" Grid.Column="1" Grid.Row="2" Text="{Binding MaxOcijena}"></Entry>
+                <Entry x:Name="CijenaPaketa" Grid.Column="1" Grid.Row="3" Text="{Binding Cijena}"></Entry>
+                <Label x:Name="Opis" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="4" Text="{Binding Opis}"></Label>
+            </Grid>
+
+            <Grid HeightRequest="50" VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="IzbrisiButton" Clicked="IzbrisiPaket_Clicked" CornerRadius="25" Margin="3" FontAttributes="Bold" TextColor="white" BackgroundColor="OrangeRed" Grid.Column="0" Text="Izbrisi"></Button>
+                <Button x:Name="SnimiButton" Clicked="SnimiIzmjene_Clicked" CornerRadius="25" Margin="3" FontAttributes="Bold" TextColor="white" BackgroundColor="SpringGreen" Grid.Column="1" Text="Snimi"></Button>
+            </Grid>
+            <Button Clicked="KupiPaket_Clicked" FontAttributes="Bold" TextColor="white" HeightRequest="50" VerticalOptions="End" BackgroundColor="SpringGreen" Text="Kupi"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

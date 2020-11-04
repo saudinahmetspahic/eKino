@@ -123,6 +123,22 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "PayPal.Forms/2.18.6": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "12.0.1",
+          "Xamarin.Forms": "3.4.0.1029999"
+        },
+        "compile": {
+          "lib/netstandard1.0/PayPal.Forms.Abstractions.dll": {},
+          "lib/netstandard1.0/PayPal.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/PayPal.Forms.Abstractions.dll": {},
+          "lib/netstandard1.0/PayPal.Forms.dll": {}
+        }
+      },
       "System.Buffers/4.4.0": {
         "type": "package",
         "compile": {
@@ -566,6 +582,25 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "PayPal.Forms/2.18.6": {
+      "sha512": "WmTBbDTSVl8GlELpHYuiIwZk5WKqrn9MvdCG/xxH9Mq86/q9mgyfJJEiJVmAxPJHGpN1VizA1Lmhqy7dGbJiKw==",
+      "type": "package",
+      "path": "paypal.forms/2.18.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/PayPal.Forms.Abstractions.dll",
+        "lib/MonoAndroid10/PayPal.Forms.dll",
+        "lib/Xamarin.iOS10/PayPal.Forms.Abstractions.dll",
+        "lib/Xamarin.iOS10/PayPal.Forms.dll",
+        "lib/netstandard1.0/PayPal.Forms.Abstractions.dll",
+        "lib/netstandard1.0/PayPal.Forms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/PayPal.Forms.Abstractions.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/PayPal.Forms.dll",
+        "paypal.forms.2.18.6.nupkg.sha512",
+        "paypal.forms.nuspec"
       ]
     },
     "System.Buffers/4.4.0": {
@@ -1165,6 +1200,7 @@
       "LibVLCSharp.Forms >= 3.4.6",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
+      "PayPal.Forms >= 2.18.6",
       "System.Drawing.Common >= 4.7.0",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.8.0.1534",
@@ -1178,11 +1214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
+      "projectUniqueName": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
       "projectName": "eKino.Mobile",
-      "projectPath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
+      "projectPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\eKino.Mobile.csproj",
       "packagesPath": "C:\\Users\\saudi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\obj\\",
+      "outputPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1202,8 +1238,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
-              "projectPath": "C:\\Users\\saudi\\source\\repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj"
+            "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
+              "projectPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj"
             }
           }
         }
@@ -1243,6 +1279,10 @@
             "target": "Package",
             "version": "[12.0.2, )"
           },
+          "PayPal.Forms": {
+            "target": "Package",
+            "version": "[2.18.6, )"
+          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[4.7.0, )"
@@ -1266,7 +1306,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

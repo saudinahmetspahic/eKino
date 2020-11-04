@@ -14,6 +14,10 @@ public class MonoPackageManager_Resources {
 		"Microsoft.AspNetCore.Http.Features.dll",
 		"Microsoft.Extensions.Primitives.dll",
 		"Newtonsoft.Json.dll",
+		"PayPal.Forms.Abstractions.dll",
+		"PayPal.Forms.dll",
+		"Square.OkHttp3.dll",
+		"Square.OkIO.dll",
 		"System.Text.Encodings.Web.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
@@ -57,6 +61,8 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"Xamarin.PayPal.Android.CardIO.dll",
+		"Xamarin.PayPal.Android.dll",
 		"eKino.Model.dll",
 	};
 	public static String[] Dependencies = new String[]{
