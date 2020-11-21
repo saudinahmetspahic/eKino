@@ -1,5 +1,5 @@
 ﻿using System;
-
+using eKino.Mobile;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -7,8 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using LibVLCSharp.Forms.Shared;
-using PayPal.Forms;
-using PayPal.Forms.Abstractions;
+using Android.Content;
+
 
 namespace eKino.Mobile.Droid
 {
@@ -26,25 +26,9 @@ namespace eKino.Mobile.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            var config = new PayPalConfiguration(PayPalEnvironment.NoNetwork, "AeQ87rcFB6R-vIzWr0oGlHPEjzcauiS8_jl4NgmThKk-vaoEwz0seUoPIwVeyWNMTpBpTv_OHHuh8Nn_")
-            {
-                //If you want to accept credit cards
-                AcceptCreditCards = true,
-                //Your business name
-                MerchantName = "eKino",
-                //Your privacy policy Url
-                MerchantPrivacyPolicyUri = "https://www.example.com/privacy",
-                //Your user agreement Url
-                MerchantUserAgreementUri = "https://www.example.com/legal",
-                // OPTIONAL - ShippingAddressOption (Both, None, PayPal, Provided)
-                ShippingAddressOption = ShippingAddressOption.Both,
-                // OPTIONAL - Language: Default languege for PayPal Plug-In
-                Language = "es",
-                // OPTIONAL - PhoneCountryCode: Default phone country code for PayPal Plug-In
-                PhoneCountryCode = "52",
-            };
-            //Android
-            CrossPayPalManager.Init(config, this);
+
+            var intent = new Intent(this, typeof(NotificationSender));
+            StartService(intent);
 
             LoadApplication(new App());
         }
@@ -54,5 +38,15 @@ namespace eKino.Mobile.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        public override ComponentName StartService(Intent service)
+        {
+            return base.StartService(service);
+        }
+        public override bool StopService(Intent name)
+        {
+            return base.StopService(name);
+        }
+
     }
 }

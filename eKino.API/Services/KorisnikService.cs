@@ -16,12 +16,12 @@ namespace eKino.API.Services
     public class KorisnikService 
         :
         BaseCRUDService<Model.Korisnik, KorisnikSearchRequest, Database.Korisnik, KorisnikInsertRequest, KorisnikInsertRequest>
-       // IKorisnikService
     {
       
         public KorisnikService(MojContext context, IMapper mapper) : base(context, mapper)
         {
         }
+
         public override Model.Korisnik Insert(KorisnikInsertRequest korisnik)
         {
             var k = _mapper.Map<Database.Korisnik>(korisnik);
@@ -138,7 +138,6 @@ namespace eKino.API.Services
                 k.Prezime = korisnik.Prezime;
                 k.Email = korisnik.Email;
                 k.GradId = korisnik.GradId;
-                k.UlogaId = korisnik.UlogaId;
                 k.DatumRodjenja = korisnik.DatumRodjenja;
                 _context.Korisnik.Update(k);
                 _context.SaveChanges();

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.ModelBinding;
@@ -23,6 +24,7 @@ namespace eKino.Desktop
         public frmUrediAccount()
         {
             InitializeComponent();
+            this.AutoValidate = AutoValidate.Disable;
         }
 
         private void frmUrediAccount_Load(object sender, EventArgs e)
@@ -44,14 +46,6 @@ namespace eKino.Desktop
                 var grad = gradLista.Where(w => w.Id == _korisnik.GradId).Select(s => s.Naziv).FirstOrDefault();
                 var index = cbxGrad.FindString(grad);
                 cbxGrad.SelectedIndex = index;
-                var ulogaLista = _ulogaService.Get<List<Uloga>>(null);
-                ulogaLista.Insert(0, new Uloga { Id = 0, NazivUloge = "Odaberi ulogu" });
-                cbxUloga.DataSource = ulogaLista;
-                cbxUloga.DisplayMember = "NazivUloge";
-                cbxUloga.ValueMember = "Id";
-                var uloga = ulogaLista.Where(w => w.Id == _korisnik.UlogaId).Select(s => s.NazivUloge).FirstOrDefault();
-                var indexU = cbxUloga.FindString(uloga);
-                cbxUloga.SelectedIndex = indexU;
                 dtpDatumRodjenja.Value = _korisnik.DatumRodjenja;
             }
             else
@@ -68,34 +62,99 @@ namespace eKino.Desktop
 
         private void bttnSnimi_Click(object sender, EventArgs e)
         {
-            if (txtLozinka.Text != txtLozinkaPotvrda.Text)
+            if (this.ValidateChildren())
             {
-                var r = System.Windows.Forms.MessageBox.Show("Lozinka", "Greska: Lozinke se ne poklapaju.", MessageBoxButtons.OK);
-                if (r.Equals(MessageBoxResult.OK))
-                    return;
+                if (txtLozinka.Text != txtLozinkaPotvrda.Text)
+                {
+                    var r = System.Windows.Forms.MessageBox.Show("Lozinka", "Greska: Lozinke se ne poklapaju.", MessageBoxButtons.OK);
+                    if (r.Equals(MessageBoxResult.OK))
+                        return;
+                }
+                _korisnikService.Update<Model.Korisnik>(_korisnik.Id, new KorisnikInsertRequest
+                {
+                    Ime = txtIme.Text,
+                    Prezime = txtPrezime.Text,
+                    Email = txtEmail.Text,
+                    GradId = cbxGrad.SelectedIndex,
+                    DatumRodjenja = dtpDatumRodjenja.Value,
+                    DatumRegistracije = _korisnik.DatumRegistracije,
+                    Password = txtLozinka.Text,
+                    PasswordPotvrda = txtLozinkaPotvrda.Text
+                });
+                if (!string.IsNullOrEmpty(txtLozinka.Text))
+                {
+                    frmLogin frmL = new frmLogin();
+                    frmL.Show();
+                    this.MdiParent.Close();
+                    this.Close();
+                }
+                else
+                {
+                    frmPocetna frmP = new frmPocetna();
+                    frmP.Show();
+                    this.MdiParent.Close();
+                    this.Close();
+                }
             }
-            _korisnikService.Update<Model.Korisnik>(_korisnik.Id, new KorisnikInsertRequest
+        }
+
+        private void txtIme_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtIme.Text))
             {
-                Ime = txtIme.Text,
-                Prezime = txtPrezime.Text,
-                Email = txtEmail.Text,
-                GradId = cbxGrad.SelectedIndex,
-                UlogaId = cbxUloga.SelectedIndex,
-                DatumRodjenja = dtpDatumRodjenja.Value,
-                DatumRegistracije = _korisnik.DatumRegistracije,
-                Password = txtLozinka.Text,
-                PasswordPotvrda = txtLozinkaPotvrda.Text
-            });
-            if (!string.IsNullOrEmpty(txtLozinka.Text))
-            {
-                frmLogin frmL = new frmLogin();
-                frmL.Show();
-                this.Hide();
-                return;
+                e.Cancel = true;
+                errorProvider.SetError(txtIme, Messages.Text_Ime);
             }
-            frmPocetna frm = new frmPocetna();
-            frm.Show();
-            this.Hide();
+        }
+
+        private void txtPrezime_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPrezime.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtPrezime, Messages.Text_Prezime);
+            }
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtEmail, Messages.Text_Email);
+            }
+            else
+            {
+                try
+                {
+                    MailAddress mail = new MailAddress(txtEmail.Text);
+                }
+                catch (Exception)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(txtEmail, Messages.Text_Email);
+                }
+            }
+        }
+
+        private void txtLozinka_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtLozinka.Text) && (txtLozinka.Text.Length < 6 || txtLozinka.Text.Length > 15))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtLozinka, Messages.Text_Sifra);
+            }
+        }
+
+        private void txtLozinkaPotvrda_Validating(object sender, CancelEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtLozinka.Text) && 
+               !string.IsNullOrEmpty(txtLozinkaPotvrda.Text) &&
+               txtLozinka.Text != txtLozinkaPotvrda.Text)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtLozinkaPotvrda, Messages.Text_Sifra_Potvrda);
+            }
         }
     }
 }

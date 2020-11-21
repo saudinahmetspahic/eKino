@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bttnLogin = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.labKorisnickoIme = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.txtSifra = new System.Windows.Forms.TextBox();
             this.bttnRegistracija = new System.Windows.Forms.Button();
             this.labNaslov = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnLogin
@@ -55,6 +58,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(509, 28);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // labKorisnickoIme
             // 
@@ -106,6 +110,10 @@
             this.labNaslov.TabIndex = 8;
             this.labNaslov.Text = "eKino";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -125,6 +133,7 @@
             this.Name = "frmLogin";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +148,7 @@
         private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.Button bttnRegistracija;
         private System.Windows.Forms.Label labNaslov;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 

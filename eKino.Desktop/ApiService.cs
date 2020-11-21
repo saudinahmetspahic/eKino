@@ -32,9 +32,7 @@ namespace eKino.Desktop
             try
             {
                 var url = $"{Properties.Settings.Default.ApiUrl}/{_route}";
-
                 var result = url.WithBasicAuth(Email, Sifra).PostJsonAsync(x).ReceiveJson<T>();
-
                 return result.Result;
             }
             catch (FlurlHttpException ex)
@@ -51,26 +49,19 @@ namespace eKino.Desktop
             }
         }
 
-        public T Get<T>(object search = null, bool auth = true) // async pravi probleme
+        public T Get<T>(object search = null) // async pravi probleme
         {
             try
             {
                 var s = $"{Settings.Default.ApiUrl}/{_route}";
-                if(search != null)
+                if (search != null)
                 {
                     s += "?";
                     s += search.ToQueryString();
                 }
-                        
 
-                Task<T> result;
-                if(auth)
-                    result = s.WithBasicAuth(Email, Sifra).GetJsonAsync<T>();
-                else
-                    result = s.GetJsonAsync<T>();
-
-                var r = result.Result;
-                return r;
+                var result = s.WithBasicAuth(Email, Sifra).GetJsonAsync<T>();
+                return result.Result;
             }
             catch (FlurlHttpException ex)
             {
@@ -84,7 +75,7 @@ namespace eKino.Desktop
                 }
                 throw;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Nepoznata greska", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;

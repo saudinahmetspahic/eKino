@@ -8,11 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eKino.Model.Requests;
+using eKino.API.Util;
 
 namespace eKino.API.Services
 {
-    public class FilmService 
-        : 
+    public class FilmService
+        :
         BaseCRUDService<Model.Film, FilmSearchRequest, Database.Film, FilmInsertRequest, FilmInsertRequest>,
         IFilmService
     {
@@ -26,7 +27,7 @@ namespace eKino.API.Services
 
         //public IEnumerable<Model.Film> Get()
         //{
-           
+
         //    return _mapper.Map<IEnumerable<Film>>(_context.Film.ToList());
         //}
 
@@ -39,6 +40,12 @@ namespace eKino.API.Services
         {
             var zanrID = _context.Zanr.Where(w => w.NazivZanra == zanr).Select(s => s.Id).SingleOrDefault();
             return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.ZanrId == zanrID));
+        }
+
+        public IEnumerable<Film> GetPreporuceneFilmove(int filmId)
+        {
+            var r = new Recommender(_context, _mapper);
+            return _mapper.Map<IEnumerable<Model.Film>>(r.GetSlicneFilmove(filmId));
         }
 
         //public Model.Film GetById(int id)
@@ -73,6 +80,6 @@ namespace eKino.API.Services
         //    return _mapper.Map<Model.Film>(entity);
         //}
 
-       
+
     }
 }

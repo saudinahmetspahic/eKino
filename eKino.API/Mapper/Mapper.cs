@@ -49,6 +49,8 @@ namespace eKino.API.Mapper
             CreateMap<API.Database.ProdukcijskaKuca, ProdukcijskaKucaInsertRequest>().ReverseMap();
             CreateMap<API.Database.Projekcija, Model.Projekcija>().ReverseMap();
             CreateMap<API.Database.Projekcija, ProjekcijaInsertRequest>().ReverseMap();
+            CreateMap<API.Database.Uloga, Model.Uloga>().ReverseMap();
+            CreateMap<API.Database.Uloga, Model.Requests.UlogaSearchRequest>().ReverseMap();
         }
     }
 }

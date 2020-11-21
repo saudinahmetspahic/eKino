@@ -63,6 +63,7 @@ namespace eKino.Desktop
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbxSlika = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDatum = new System.Windows.Forms.Label();
@@ -127,8 +128,8 @@ namespace eKino.Desktop
             this.bttnDodajPrKucuOdustani = new System.Windows.Forms.Button();
             this.bttnDodajPrKucuDodaj = new System.Windows.Forms.Button();
             this.tblDodajProjekciju = new System.Windows.Forms.TableLayoutPanel();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.dtpDatumProjekcije = new System.Windows.Forms.DateTimePicker();
@@ -144,22 +145,23 @@ namespace eKino.Desktop
             this.tblZaOcjenjivanjeFilma = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.cbxListOcijena = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.bttnPotvrdiOcijenu = new System.Windows.Forms.Button();
             this.bttnOdustaniOdOcijenjivanja = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cbxListOcijena = new System.Windows.Forms.ComboBox();
             this.tblZaDodavanjeKomentara = new System.Windows.Forms.TableLayoutPanel();
-            this.label28 = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label29 = new System.Windows.Forms.Label();
             this.txtKomentar = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.bttnPotvrdiKomentar = new System.Windows.Forms.Button();
             this.bttnOdustaniOdKomentara = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             this.tblLikeAndDislike = new System.Windows.Forms.TableLayoutPanel();
             this.bttnLike = new System.Windows.Forms.Button();
             this.bttnDislike = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSlika)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -178,12 +180,13 @@ namespace eKino.Desktop
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tblLikeAndDislike.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxSlika
             // 
             this.pbxSlika.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbxSlika.Location = new System.Drawing.Point(135, 21);
+            this.pbxSlika.Location = new System.Drawing.Point(304, 21);
             this.pbxSlika.Name = "pbxSlika";
             this.pbxSlika.Size = new System.Drawing.Size(329, 230);
             this.pbxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,7 +216,7 @@ namespace eKino.Desktop
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 7);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(135, 273);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(216, 273);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -224,16 +227,16 @@ namespace eKino.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(329, 281);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 281);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblDatum
             // 
             this.lblDatum.AutoSize = true;
             this.lblDatum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDatum.Location = new System.Drawing.Point(148, 75);
+            this.lblDatum.Location = new System.Drawing.Point(186, 75);
             this.lblDatum.Name = "lblDatum";
-            this.lblDatum.Size = new System.Drawing.Size(178, 35);
+            this.lblDatum.Size = new System.Drawing.Size(228, 35);
             this.lblDatum.TabIndex = 7;
             this.lblDatum.Text = "label8";
             this.lblDatum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -253,9 +256,9 @@ namespace eKino.Desktop
             // 
             this.lblTip.AutoSize = true;
             this.lblTip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTip.Location = new System.Drawing.Point(148, 50);
+            this.lblTip.Location = new System.Drawing.Point(186, 50);
             this.lblTip.Name = "lblTip";
-            this.lblTip.Size = new System.Drawing.Size(178, 25);
+            this.lblTip.Size = new System.Drawing.Size(228, 25);
             this.lblTip.TabIndex = 5;
             this.lblTip.Text = "label6";
             this.lblTip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,9 +278,9 @@ namespace eKino.Desktop
             // 
             this.lblZanr.AutoSize = true;
             this.lblZanr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblZanr.Location = new System.Drawing.Point(148, 25);
+            this.lblZanr.Location = new System.Drawing.Point(186, 25);
             this.lblZanr.Name = "lblZanr";
-            this.lblZanr.Size = new System.Drawing.Size(178, 25);
+            this.lblZanr.Size = new System.Drawing.Size(228, 25);
             this.lblZanr.TabIndex = 3;
             this.lblZanr.Text = "label4";
             this.lblZanr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,9 +289,9 @@ namespace eKino.Desktop
             // 
             this.lblNaziv.AutoSize = true;
             this.lblNaziv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNaziv.Location = new System.Drawing.Point(148, 0);
+            this.lblNaziv.Location = new System.Drawing.Point(186, 0);
             this.lblNaziv.Name = "lblNaziv";
-            this.lblNaziv.Size = new System.Drawing.Size(178, 25);
+            this.lblNaziv.Size = new System.Drawing.Size(228, 25);
             this.lblNaziv.TabIndex = 1;
             this.lblNaziv.Text = "label2";
             this.lblNaziv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,9 +322,9 @@ namespace eKino.Desktop
             // 
             this.lblProjekcija.AutoSize = true;
             this.lblProjekcija.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProjekcija.Location = new System.Drawing.Point(148, 224);
+            this.lblProjekcija.Location = new System.Drawing.Point(186, 224);
             this.lblProjekcija.Name = "lblProjekcija";
-            this.lblProjekcija.Size = new System.Drawing.Size(178, 57);
+            this.lblProjekcija.Size = new System.Drawing.Size(228, 57);
             this.lblProjekcija.TabIndex = 14;
             // 
             // pnlGlumci
@@ -332,11 +335,11 @@ namespace eKino.Desktop
             this.pnlGlumci.AutoSize = true;
             this.pnlGlumci.ColumnCount = 1;
             this.pnlGlumci.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlGlumci.Location = new System.Drawing.Point(148, 113);
+            this.pnlGlumci.Location = new System.Drawing.Point(186, 113);
             this.pnlGlumci.Name = "pnlGlumci";
             this.pnlGlumci.RowCount = 1;
             this.pnlGlumci.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlGlumci.Size = new System.Drawing.Size(178, 33);
+            this.pnlGlumci.Size = new System.Drawing.Size(228, 33);
             this.pnlGlumci.TabIndex = 15;
             // 
             // pnlScenaristi
@@ -347,11 +350,11 @@ namespace eKino.Desktop
             this.pnlScenaristi.AutoSize = true;
             this.pnlScenaristi.ColumnCount = 1;
             this.pnlScenaristi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlScenaristi.Location = new System.Drawing.Point(148, 152);
+            this.pnlScenaristi.Location = new System.Drawing.Point(186, 152);
             this.pnlScenaristi.Name = "pnlScenaristi";
             this.pnlScenaristi.RowCount = 1;
             this.pnlScenaristi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlScenaristi.Size = new System.Drawing.Size(178, 32);
+            this.pnlScenaristi.Size = new System.Drawing.Size(228, 32);
             this.pnlScenaristi.TabIndex = 16;
             // 
             // pnlPrKuce
@@ -362,11 +365,11 @@ namespace eKino.Desktop
             this.pnlPrKuce.AutoSize = true;
             this.pnlPrKuce.ColumnCount = 1;
             this.pnlPrKuce.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlPrKuce.Location = new System.Drawing.Point(148, 190);
+            this.pnlPrKuce.Location = new System.Drawing.Point(186, 190);
             this.pnlPrKuce.Name = "pnlPrKuce";
             this.pnlPrKuce.RowCount = 1;
             this.pnlPrKuce.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.pnlPrKuce.Size = new System.Drawing.Size(178, 31);
+            this.pnlPrKuce.Size = new System.Drawing.Size(228, 31);
             this.pnlPrKuce.TabIndex = 17;
             // 
             // tableLayoutPanel3
@@ -380,7 +383,7 @@ namespace eKino.Desktop
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(130, 33);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(142, 33);
             this.tableLayoutPanel3.TabIndex = 18;
             // 
             // label2
@@ -392,14 +395,14 @@ namespace eKino.Desktop
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 33);
+            this.label2.Size = new System.Drawing.Size(104, 33);
             this.label2.TabIndex = 0;
             this.label2.Text = "Glumci";
             // 
             // bttnDodajGlumca
             // 
             this.bttnDodajGlumca.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bttnDodajGlumca.Location = new System.Drawing.Point(101, 3);
+            this.bttnDodajGlumca.Location = new System.Drawing.Point(113, 3);
             this.bttnDodajGlumca.Name = "bttnDodajGlumca";
             this.bttnDodajGlumca.Size = new System.Drawing.Size(26, 26);
             this.bttnDodajGlumca.TabIndex = 6;
@@ -418,13 +421,13 @@ namespace eKino.Desktop
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(130, 32);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(147, 32);
             this.tableLayoutPanel4.TabIndex = 19;
             // 
             // bttnDodajScenaristu
             // 
             this.bttnDodajScenaristu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bttnDodajScenaristu.Location = new System.Drawing.Point(100, 3);
+            this.bttnDodajScenaristu.Location = new System.Drawing.Point(114, 3);
             this.bttnDodajScenaristu.Name = "bttnDodajScenaristu";
             this.bttnDodajScenaristu.Size = new System.Drawing.Size(27, 26);
             this.bttnDodajScenaristu.TabIndex = 7;
@@ -441,7 +444,7 @@ namespace eKino.Desktop
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 32);
+            this.label4.Size = new System.Drawing.Size(103, 32);
             this.label4.TabIndex = 8;
             this.label4.Text = "Scenaristi";
             // 
@@ -456,13 +459,13 @@ namespace eKino.Desktop
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(130, 31);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(147, 31);
             this.tableLayoutPanel5.TabIndex = 20;
             // 
             // bttnDodajPrKucu
             // 
             this.bttnDodajPrKucu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bttnDodajPrKucu.Location = new System.Drawing.Point(100, 3);
+            this.bttnDodajPrKucu.Location = new System.Drawing.Point(115, 3);
             this.bttnDodajPrKucu.Name = "bttnDodajPrKucu";
             this.bttnDodajPrKucu.Size = new System.Drawing.Size(27, 25);
             this.bttnDodajPrKucu.TabIndex = 8;
@@ -479,7 +482,7 @@ namespace eKino.Desktop
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 31);
+            this.label6.Size = new System.Drawing.Size(104, 31);
             this.label6.TabIndex = 9;
             this.label6.Text = "Prod. kuce";
             // 
@@ -494,13 +497,13 @@ namespace eKino.Desktop
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(130, 51);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(147, 51);
             this.tableLayoutPanel6.TabIndex = 21;
             // 
             // bttnDodajProjekciju
             // 
             this.bttnDodajProjekciju.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bttnDodajProjekciju.Location = new System.Drawing.Point(100, 3);
+            this.bttnDodajProjekciju.Location = new System.Drawing.Point(115, 3);
             this.bttnDodajProjekciju.Name = "bttnDodajProjekciju";
             this.bttnDodajProjekciju.Size = new System.Drawing.Size(27, 28);
             this.bttnDodajProjekciju.TabIndex = 9;
@@ -517,7 +520,7 @@ namespace eKino.Desktop
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 51);
+            this.label8.Size = new System.Drawing.Size(104, 51);
             this.label8.TabIndex = 10;
             this.label8.Text = "Projekcija";
             // 
@@ -529,7 +532,7 @@ namespace eKino.Desktop
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.40075F));
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblOpis, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(488, 21);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(657, 21);
             this.tableLayoutPanel2.MaximumSize = new System.Drawing.Size(267, 230);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -570,12 +573,11 @@ namespace eKino.Desktop
             this.tblOcijena.Controls.Add(this.lblOcijena3, 2, 0);
             this.tblOcijena.Controls.Add(this.lblOcijena2, 1, 0);
             this.tblOcijena.Controls.Add(this.lblOcijena1, 0, 0);
-            this.tblOcijena.Location = new System.Drawing.Point(136, 569);
-            this.tblOcijena.MaximumSize = new System.Drawing.Size(618, 56);
+            this.tblOcijena.Location = new System.Drawing.Point(216, 569);
             this.tblOcijena.Name = "tblOcijena";
             this.tblOcijena.RowCount = 1;
             this.tblOcijena.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblOcijena.Size = new System.Drawing.Size(618, 56);
+            this.tblOcijena.Size = new System.Drawing.Size(707, 56);
             this.tblOcijena.TabIndex = 4;
             // 
             // lblOcijena5
@@ -583,9 +585,9 @@ namespace eKino.Desktop
             this.lblOcijena5.AutoSize = true;
             this.lblOcijena5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena5.Location = new System.Drawing.Point(495, 0);
+            this.lblOcijena5.Location = new System.Drawing.Point(567, 0);
             this.lblOcijena5.Name = "lblOcijena5";
-            this.lblOcijena5.Size = new System.Drawing.Size(120, 56);
+            this.lblOcijena5.Size = new System.Drawing.Size(137, 56);
             this.lblOcijena5.TabIndex = 4;
             this.lblOcijena5.Text = "☆";
             this.lblOcijena5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -595,9 +597,9 @@ namespace eKino.Desktop
             this.lblOcijena4.AutoSize = true;
             this.lblOcijena4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena4.Location = new System.Drawing.Point(372, 0);
+            this.lblOcijena4.Location = new System.Drawing.Point(426, 0);
             this.lblOcijena4.Name = "lblOcijena4";
-            this.lblOcijena4.Size = new System.Drawing.Size(117, 56);
+            this.lblOcijena4.Size = new System.Drawing.Size(135, 56);
             this.lblOcijena4.TabIndex = 3;
             this.lblOcijena4.Text = "☆";
             this.lblOcijena4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -607,9 +609,9 @@ namespace eKino.Desktop
             this.lblOcijena3.AutoSize = true;
             this.lblOcijena3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena3.Location = new System.Drawing.Point(249, 0);
+            this.lblOcijena3.Location = new System.Drawing.Point(285, 0);
             this.lblOcijena3.Name = "lblOcijena3";
-            this.lblOcijena3.Size = new System.Drawing.Size(117, 56);
+            this.lblOcijena3.Size = new System.Drawing.Size(135, 56);
             this.lblOcijena3.TabIndex = 2;
             this.lblOcijena3.Text = "☆";
             this.lblOcijena3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -619,9 +621,9 @@ namespace eKino.Desktop
             this.lblOcijena2.AutoSize = true;
             this.lblOcijena2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOcijena2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcijena2.Location = new System.Drawing.Point(126, 0);
+            this.lblOcijena2.Location = new System.Drawing.Point(144, 0);
             this.lblOcijena2.Name = "lblOcijena2";
-            this.lblOcijena2.Size = new System.Drawing.Size(117, 56);
+            this.lblOcijena2.Size = new System.Drawing.Size(135, 56);
             this.lblOcijena2.TabIndex = 1;
             this.lblOcijena2.Text = "☆";
             this.lblOcijena2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -633,7 +635,7 @@ namespace eKino.Desktop
             this.lblOcijena1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOcijena1.Location = new System.Drawing.Point(3, 0);
             this.lblOcijena1.Name = "lblOcijena1";
-            this.lblOcijena1.Size = new System.Drawing.Size(117, 56);
+            this.lblOcijena1.Size = new System.Drawing.Size(135, 56);
             this.lblOcijena1.TabIndex = 0;
             this.lblOcijena1.Text = "☆";
             this.lblOcijena1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -643,7 +645,7 @@ namespace eKino.Desktop
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(47, 21);
+            this.button1.Location = new System.Drawing.Point(216, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 66);
             this.button1.TabIndex = 5;
@@ -673,7 +675,7 @@ namespace eKino.Desktop
             this.tblDodavanjeGlumca.Controls.Add(this.txtPrezime, 1, 3);
             this.tblDodavanjeGlumca.Controls.Add(this.bttnDodajGlumcaOdustani, 0, 7);
             this.tblDodavanjeGlumca.Controls.Add(this.bttnDodajGlumcaDodaj, 1, 7);
-            this.tblDodavanjeGlumca.Location = new System.Drawing.Point(578, 489);
+            this.tblDodavanjeGlumca.Location = new System.Drawing.Point(918, 341);
             this.tblDodavanjeGlumca.Name = "tblDodavanjeGlumca";
             this.tblDodavanjeGlumca.RowCount = 8;
             this.tblDodavanjeGlumca.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -703,12 +705,12 @@ namespace eKino.Desktop
             // 
             // cbxListGlumaca
             // 
-            this.cbxListGlumaca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbxListGlumaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxListGlumaca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxListGlumaca.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxListGlumaca.FormattingEnabled = true;
             this.cbxListGlumaca.Location = new System.Drawing.Point(126, 3);
             this.cbxListGlumaca.Name = "cbxListGlumaca";
-            this.cbxListGlumaca.Size = new System.Drawing.Size(189, 24);
+            this.cbxListGlumaca.Size = new System.Drawing.Size(156, 24);
             this.cbxListGlumaca.TabIndex = 1;
             // 
             // lblNoviNaslov
@@ -782,40 +784,45 @@ namespace eKino.Desktop
             // 
             this.dtpDatum.Location = new System.Drawing.Point(126, 168);
             this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(189, 22);
+            this.dtpDatum.Size = new System.Drawing.Size(156, 22);
             this.dtpDatum.TabIndex = 10;
             // 
             // cbxGrad
             // 
-            this.cbxGrad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxGrad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxGrad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxGrad.FormattingEnabled = true;
             this.cbxGrad.Location = new System.Drawing.Point(126, 208);
             this.cbxGrad.Name = "cbxGrad";
-            this.cbxGrad.Size = new System.Drawing.Size(189, 24);
+            this.cbxGrad.Size = new System.Drawing.Size(156, 24);
             this.cbxGrad.TabIndex = 11;
             // 
             // txtBiografija
             // 
-            this.txtBiografija.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBiografija.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtBiografija.Location = new System.Drawing.Point(126, 248);
             this.txtBiografija.Name = "txtBiografija";
-            this.txtBiografija.Size = new System.Drawing.Size(189, 45);
+            this.txtBiografija.Size = new System.Drawing.Size(156, 45);
             this.txtBiografija.TabIndex = 12;
             this.txtBiografija.Text = "";
+            this.txtBiografija.Validating += new System.ComponentModel.CancelEventHandler(this.txtBiografija_Validating);
             // 
             // txtIme
             // 
             this.txtIme.Location = new System.Drawing.Point(126, 88);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(189, 22);
+            this.txtIme.Size = new System.Drawing.Size(156, 22);
             this.txtIme.TabIndex = 13;
+            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // txtPrezime
             // 
             this.txtPrezime.Location = new System.Drawing.Point(126, 128);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(189, 22);
+            this.txtPrezime.Size = new System.Drawing.Size(156, 22);
             this.txtPrezime.TabIndex = 14;
+            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // bttnDodajGlumcaOdustani
             // 
@@ -844,7 +851,7 @@ namespace eKino.Desktop
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(533, 269);
+            this.label17.Location = new System.Drawing.Point(702, 269);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(85, 18);
             this.label17.TabIndex = 11;
@@ -866,7 +873,7 @@ namespace eKino.Desktop
             this.tblDodajPrKucu.Controls.Add(this.cbxKucaGrad, 1, 3);
             this.tblDodajPrKucu.Controls.Add(this.bttnDodajPrKucuOdustani, 0, 4);
             this.tblDodajPrKucu.Controls.Add(this.bttnDodajPrKucuDodaj, 1, 4);
-            this.tblDodajPrKucu.Location = new System.Drawing.Point(577, 668);
+            this.tblDodajPrKucu.Location = new System.Drawing.Point(919, 520);
             this.tblDodajPrKucu.Name = "tblDodajPrKucu";
             this.tblDodajPrKucu.RowCount = 5;
             this.tblDodajPrKucu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
@@ -907,13 +914,14 @@ namespace eKino.Desktop
             // 
             // cbxListKuca
             // 
-            this.cbxListKuca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxListKuca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxListKuca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxListKuca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxListKuca.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxListKuca.FormattingEnabled = true;
             this.cbxListKuca.Location = new System.Drawing.Point(135, 3);
             this.cbxListKuca.Name = "cbxListKuca";
-            this.cbxListKuca.Size = new System.Drawing.Size(180, 24);
+            this.cbxListKuca.Size = new System.Drawing.Size(146, 24);
             this.cbxListKuca.TabIndex = 2;
             // 
             // label19
@@ -942,23 +950,24 @@ namespace eKino.Desktop
             // 
             // txtKucaNaziv
             // 
-            this.txtKucaNaziv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKucaNaziv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtKucaNaziv.Location = new System.Drawing.Point(135, 64);
             this.txtKucaNaziv.Name = "txtKucaNaziv";
-            this.txtKucaNaziv.Size = new System.Drawing.Size(180, 22);
+            this.txtKucaNaziv.Size = new System.Drawing.Size(146, 22);
             this.txtKucaNaziv.TabIndex = 5;
+            this.txtKucaNaziv.Validating += new System.ComponentModel.CancelEventHandler(this.txtKucaNaziv_Validating);
             // 
             // cbxKucaGrad
             // 
-            this.cbxKucaGrad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxKucaGrad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxKucaGrad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxKucaGrad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxKucaGrad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxKucaGrad.FormattingEnabled = true;
             this.cbxKucaGrad.Location = new System.Drawing.Point(135, 89);
             this.cbxKucaGrad.Name = "cbxKucaGrad";
-            this.cbxKucaGrad.Size = new System.Drawing.Size(180, 24);
+            this.cbxKucaGrad.Size = new System.Drawing.Size(146, 24);
             this.cbxKucaGrad.TabIndex = 6;
             // 
             // bttnDodajPrKucuOdustani
@@ -994,8 +1003,8 @@ namespace eKino.Desktop
             this.tblDodajProjekciju.ColumnCount = 2;
             this.tblDodajProjekciju.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.25157F));
             this.tblDodajProjekciju.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.74843F));
-            this.tblDodajProjekciju.Controls.Add(this.label21, 0, 1);
             this.tblDodajProjekciju.Controls.Add(this.label22, 0, 2);
+            this.tblDodajProjekciju.Controls.Add(this.label21, 0, 1);
             this.tblDodajProjekciju.Controls.Add(this.label23, 0, 3);
             this.tblDodajProjekciju.Controls.Add(this.label24, 0, 4);
             this.tblDodajProjekciju.Controls.Add(this.dtpDatumProjekcije, 1, 1);
@@ -1005,7 +1014,7 @@ namespace eKino.Desktop
             this.tblDodajProjekciju.Controls.Add(this.bttnDodajProjekcijuOdustani, 0, 5);
             this.tblDodajProjekciju.Controls.Add(this.bttnDodajProjekcijuDodaj, 1, 5);
             this.tblDodajProjekciju.Controls.Add(this.label26, 0, 0);
-            this.tblDodajProjekciju.Location = new System.Drawing.Point(577, 613);
+            this.tblDodajProjekciju.Location = new System.Drawing.Point(917, 466);
             this.tblDodajProjekciju.Name = "tblDodajProjekciju";
             this.tblDodajProjekciju.RowCount = 6;
             this.tblDodajProjekciju.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
@@ -1020,18 +1029,6 @@ namespace eKino.Desktop
             this.tblDodajProjekciju.Visible = false;
             this.tblDodajProjekciju.VisibleChanged += new System.EventHandler(this.tblDodajProjekciju_VisibleChanged);
             // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(3, 43);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(121, 17);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Datum";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label22
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1042,7 +1039,19 @@ namespace eKino.Desktop
             this.label22.Size = new System.Drawing.Size(121, 17);
             this.label22.TabIndex = 1;
             this.label22.Text = "Cijena";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(3, 43);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(121, 17);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Datum";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label23
             // 
@@ -1054,7 +1063,7 @@ namespace eKino.Desktop
             this.label23.Size = new System.Drawing.Size(121, 17);
             this.label23.TabIndex = 2;
             this.label23.Text = "Dvorana";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label24
             // 
@@ -1066,44 +1075,47 @@ namespace eKino.Desktop
             this.label24.Size = new System.Drawing.Size(121, 17);
             this.label24.TabIndex = 3;
             this.label24.Text = "Opis";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // dtpDatumProjekcije
             // 
             this.dtpDatumProjekcije.Location = new System.Drawing.Point(130, 46);
             this.dtpDatumProjekcije.Name = "dtpDatumProjekcije";
-            this.dtpDatumProjekcije.Size = new System.Drawing.Size(185, 22);
+            this.dtpDatumProjekcije.Size = new System.Drawing.Size(153, 22);
             this.dtpDatumProjekcije.TabIndex = 4;
             // 
             // cbxDvoranaProjekcije
             // 
-            this.cbxDvoranaProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxDvoranaProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxDvoranaProjekcije.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDvoranaProjekcije.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxDvoranaProjekcije.FormattingEnabled = true;
             this.cbxDvoranaProjekcije.Location = new System.Drawing.Point(130, 98);
             this.cbxDvoranaProjekcije.Name = "cbxDvoranaProjekcije";
-            this.cbxDvoranaProjekcije.Size = new System.Drawing.Size(185, 24);
+            this.cbxDvoranaProjekcije.Size = new System.Drawing.Size(153, 24);
             this.cbxDvoranaProjekcije.TabIndex = 5;
             // 
             // txtCijenaProjekcije
             // 
-            this.txtCijenaProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCijenaProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCijenaProjekcije.Location = new System.Drawing.Point(130, 72);
             this.txtCijenaProjekcije.Name = "txtCijenaProjekcije";
-            this.txtCijenaProjekcije.Size = new System.Drawing.Size(185, 22);
+            this.txtCijenaProjekcije.Size = new System.Drawing.Size(153, 22);
             this.txtCijenaProjekcije.TabIndex = 6;
+            this.txtCijenaProjekcije.Validating += new System.ComponentModel.CancelEventHandler(this.txtCijenaProjekcije_Validating);
             // 
             // txtOpisProjekcije
             // 
-            this.txtOpisProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOpisProjekcije.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtOpisProjekcije.Location = new System.Drawing.Point(130, 126);
             this.txtOpisProjekcije.Name = "txtOpisProjekcije";
-            this.txtOpisProjekcije.Size = new System.Drawing.Size(185, 45);
+            this.txtOpisProjekcije.Size = new System.Drawing.Size(153, 45);
             this.txtOpisProjekcije.TabIndex = 7;
             this.txtOpisProjekcije.Text = "";
+            this.txtOpisProjekcije.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpisProjekcije_Validating);
             // 
             // bttnDodajProjekcijuOdustani
             // 
@@ -1151,7 +1163,7 @@ namespace eKino.Desktop
             this.tblKomentari.AutoScroll = true;
             this.tblKomentari.ColumnCount = 1;
             this.tblKomentari.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.09091F));
-            this.tblKomentari.Location = new System.Drawing.Point(488, 289);
+            this.tblKomentari.Location = new System.Drawing.Point(657, 289);
             this.tblKomentari.MaximumSize = new System.Drawing.Size(266, 265);
             this.tblKomentari.Name = "tblKomentari";
             this.tblKomentari.RowCount = 20;
@@ -1183,9 +1195,9 @@ namespace eKino.Desktop
             this.bttnOcijeniFilm.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bttnOcijeniFilm.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.bttnOcijeniFilm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnOcijeniFilm.Location = new System.Drawing.Point(135, 645);
+            this.bttnOcijeniFilm.Location = new System.Drawing.Point(222, 645);
             this.bttnOcijeniFilm.Name = "bttnOcijeniFilm";
-            this.bttnOcijeniFilm.Size = new System.Drawing.Size(314, 39);
+            this.bttnOcijeniFilm.Size = new System.Drawing.Size(366, 39);
             this.bttnOcijeniFilm.TabIndex = 14;
             this.bttnOcijeniFilm.Text = "Ocijeni film";
             this.bttnOcijeniFilm.UseVisualStyleBackColor = false;
@@ -1196,9 +1208,9 @@ namespace eKino.Desktop
             this.bttnDodajKomentar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bttnDodajKomentar.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.bttnDodajKomentar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnDodajKomentar.Location = new System.Drawing.Point(466, 645);
+            this.bttnDodajKomentar.Location = new System.Drawing.Point(594, 645);
             this.bttnDodajKomentar.Name = "bttnDodajKomentar";
-            this.bttnDodajKomentar.Size = new System.Drawing.Size(288, 39);
+            this.bttnDodajKomentar.Size = new System.Drawing.Size(329, 39);
             this.bttnDodajKomentar.TabIndex = 15;
             this.bttnDodajKomentar.Text = "Dodaj komentar";
             this.bttnDodajKomentar.UseVisualStyleBackColor = false;
@@ -1212,7 +1224,7 @@ namespace eKino.Desktop
             this.tblZaOcjenjivanjeFilma.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblZaOcjenjivanjeFilma.Controls.Add(this.label25, 0, 0);
             this.tblZaOcjenjivanjeFilma.Controls.Add(this.tableLayoutPanel7, 0, 1);
-            this.tblZaOcjenjivanjeFilma.Location = new System.Drawing.Point(243, 212);
+            this.tblZaOcjenjivanjeFilma.Location = new System.Drawing.Point(412, 212);
             this.tblZaOcjenjivanjeFilma.Name = "tblZaOcjenjivanjeFilma";
             this.tblZaOcjenjivanjeFilma.RowCount = 2;
             this.tblZaOcjenjivanjeFilma.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.25581F));
@@ -1244,9 +1256,9 @@ namespace eKino.Desktop
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 1, 1);
             this.tableLayoutPanel7.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.cbxListOcijena, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 1, 1);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 34);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
@@ -1254,27 +1266,6 @@ namespace eKino.Desktop
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(360, 91);
             this.tableLayoutPanel7.TabIndex = 1;
-            // 
-            // label27
-            // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(21, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(56, 45);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Ocijena";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbxListOcijena
-            // 
-            this.cbxListOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxListOcijena.FormattingEnabled = true;
-            this.cbxListOcijena.Location = new System.Drawing.Point(83, 10);
-            this.cbxListOcijena.Name = "cbxListOcijena";
-            this.cbxListOcijena.Size = new System.Drawing.Size(274, 24);
-            this.cbxListOcijena.TabIndex = 1;
             // 
             // tableLayoutPanel8
             // 
@@ -1319,15 +1310,38 @@ namespace eKino.Desktop
             this.bttnOdustaniOdOcijenjivanja.UseVisualStyleBackColor = true;
             this.bttnOdustaniOdOcijenjivanja.Click += new System.EventHandler(this.bttnOdustaniOdOcijenjivanja_Click);
             // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(21, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 45);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Ocijena";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbxListOcijena
+            // 
+            this.cbxListOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxListOcijena.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxListOcijena.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbxListOcijena.FormattingEnabled = true;
+            this.cbxListOcijena.Location = new System.Drawing.Point(83, 10);
+            this.cbxListOcijena.Name = "cbxListOcijena";
+            this.cbxListOcijena.Size = new System.Drawing.Size(274, 24);
+            this.cbxListOcijena.TabIndex = 1;
+            // 
             // tblZaDodavanjeKomentara
             // 
             this.tblZaDodavanjeKomentara.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tblZaDodavanjeKomentara.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tblZaDodavanjeKomentara.ColumnCount = 1;
             this.tblZaDodavanjeKomentara.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblZaDodavanjeKomentara.Controls.Add(this.label28, 0, 0);
             this.tblZaDodavanjeKomentara.Controls.Add(this.tableLayoutPanel9, 0, 1);
-            this.tblZaDodavanjeKomentara.Location = new System.Drawing.Point(235, 226);
+            this.tblZaDodavanjeKomentara.Controls.Add(this.label28, 0, 0);
+            this.tblZaDodavanjeKomentara.Location = new System.Drawing.Point(407, 231);
             this.tblZaDodavanjeKomentara.Name = "tblZaDodavanjeKomentara";
             this.tblZaDodavanjeKomentara.RowCount = 2;
             this.tblZaDodavanjeKomentara.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.11594F));
@@ -1335,19 +1349,6 @@ namespace eKino.Desktop
             this.tblZaDodavanjeKomentara.Size = new System.Drawing.Size(379, 188);
             this.tblZaDodavanjeKomentara.TabIndex = 16;
             this.tblZaDodavanjeKomentara.Visible = false;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(4, 1);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(371, 18);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Unesite vaš komentar";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel9
             // 
@@ -1382,31 +1383,29 @@ namespace eKino.Desktop
             // 
             // txtKomentar
             // 
-            this.txtKomentar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKomentar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtKomentar.Location = new System.Drawing.Point(118, 10);
             this.txtKomentar.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtKomentar.Name = "txtKomentar";
-            this.txtKomentar.Size = new System.Drawing.Size(250, 81);
+            this.txtKomentar.Size = new System.Drawing.Size(224, 81);
             this.txtKomentar.TabIndex = 1;
             this.txtKomentar.Text = "";
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel10.Controls.Add(this.bttnPotvrdiKomentar, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.bttnOdustaniOdKomentara, 1, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(118, 104);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(250, 39);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(224, 39);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // bttnPotvrdiKomentar
@@ -1416,24 +1415,38 @@ namespace eKino.Desktop
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bttnPotvrdiKomentar.Location = new System.Drawing.Point(3, 3);
             this.bttnPotvrdiKomentar.Name = "bttnPotvrdiKomentar";
-            this.bttnPotvrdiKomentar.Size = new System.Drawing.Size(122, 33);
+            this.bttnPotvrdiKomentar.Size = new System.Drawing.Size(110, 33);
             this.bttnPotvrdiKomentar.TabIndex = 0;
             this.bttnPotvrdiKomentar.Text = "Potvrdi";
             this.bttnPotvrdiKomentar.UseVisualStyleBackColor = true;
             this.bttnPotvrdiKomentar.Click += new System.EventHandler(this.bttnPotvrdiKomentar_Click);
+            this.bttnPotvrdiKomentar.Validating += new System.ComponentModel.CancelEventHandler(this.bttnPotvrdiKomentar_Validating);
             // 
             // bttnOdustaniOdKomentara
             // 
             this.bttnOdustaniOdKomentara.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttnOdustaniOdKomentara.Location = new System.Drawing.Point(131, 3);
+            this.bttnOdustaniOdKomentara.Location = new System.Drawing.Point(119, 3);
             this.bttnOdustaniOdKomentara.Name = "bttnOdustaniOdKomentara";
-            this.bttnOdustaniOdKomentara.Size = new System.Drawing.Size(116, 33);
+            this.bttnOdustaniOdKomentara.Size = new System.Drawing.Size(102, 33);
             this.bttnOdustaniOdKomentara.TabIndex = 1;
             this.bttnOdustaniOdKomentara.Text = "Odustani";
             this.bttnOdustaniOdKomentara.UseVisualStyleBackColor = true;
             this.bttnOdustaniOdKomentara.Click += new System.EventHandler(this.bttnOdustaniOdKomentara_Click);
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(4, 1);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(371, 18);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Unesite vaš komentar";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tblLikeAndDislike
             // 
@@ -1442,7 +1455,7 @@ namespace eKino.Desktop
             this.tblLikeAndDislike.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblLikeAndDislike.Controls.Add(this.bttnLike, 0, 0);
             this.tblLikeAndDislike.Controls.Add(this.bttnDislike, 0, 1);
-            this.tblLikeAndDislike.Location = new System.Drawing.Point(760, 289);
+            this.tblLikeAndDislike.Location = new System.Drawing.Point(929, 289);
             this.tblLikeAndDislike.Name = "tblLikeAndDislike";
             this.tblLikeAndDislike.RowCount = 2;
             this.tblLikeAndDislike.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1481,19 +1494,23 @@ namespace eKino.Desktop
             this.bttnDislike.UseVisualStyleBackColor = true;
             this.bttnDislike.Click += new System.EventHandler(this.bttnDislike_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmFilmDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(908, 830);
+            this.ClientSize = new System.Drawing.Size(1227, 721);
+            this.Controls.Add(this.tblDodajProjekciju);
+            this.Controls.Add(this.tblDodavanjeGlumca);
+            this.Controls.Add(this.tblDodajPrKucu);
             this.Controls.Add(this.tblLikeAndDislike);
             this.Controls.Add(this.tblZaDodavanjeKomentara);
             this.Controls.Add(this.tblZaOcjenjivanjeFilma);
-            this.Controls.Add(this.tblDodajProjekciju);
-            this.Controls.Add(this.tblDodajPrKucu);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.tblDodavanjeGlumca);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tblKomentari);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -1539,6 +1556,7 @@ namespace eKino.Desktop
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tblLikeAndDislike.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1643,5 +1661,6 @@ namespace eKino.Desktop
         private System.Windows.Forms.TableLayoutPanel tblLikeAndDislike;
         private System.Windows.Forms.Button bttnLike;
         private System.Windows.Forms.Button bttnDislike;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

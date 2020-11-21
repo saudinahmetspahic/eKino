@@ -28,53 +28,56 @@ namespace eKino.Desktop
         public frmFilmDodaj()
         {
             InitializeComponent();
+            this.AutoValidate = AutoValidate.Disable;
         }
 
         private void bttnDodaj_Click(object sender, EventArgs e)
         {
-
-            byte[] slika = null;
-            if (!string.IsNullOrEmpty(txtSlikaNaziv.Text))
-                slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(txtSlikaNaziv.Text), ".jpg");
-            else
-                slika = ImageHelper.GetImage("imgInitial.jpg");
-
-            var film = new FilmInsertRequest
+            if (this.ValidateChildren())
             {
-                DatumIzlaska = dtpDatumIzlaska.Value,
-                Naziv = txtNazivFilma.Text,
-                Opis = txtOpis.Text,
-                TipId = cbxVrsta.SelectedIndex,
-                ZanrId = cbxZanr.SelectedIndex,
-                Link = txtLink.Text,
-                Slika = slika
-            };
-            _filmService.Add(film);
+                byte[] slika = null;
+                if (!string.IsNullOrEmpty(txtSlikaNaziv.Text))
+                    slika = ImageConvertor.ConvertImageToByteArray(Image.FromFile(txtSlikaNaziv.Text), ".jpg");
+                else
+                    slika = ImageHelper.GetImage("imgInitial.jpg");
 
-            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) && !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) && cbxDvorana.SelectedIndex != 0)
-            {
-                var projekcija = new ProjekcijaInsertRequest
+                var film = new FilmInsertRequest
                 {
-                    DatumProjekcije = dtpDatumProjekcije.Value,
-                    CijenaUlaznice = double.Parse(txtProjekcijaCijenaUlaznice.Text),
-                    FilmId = film.Id,
-                    Opis = "Film: " + film.Naziv + " Opis: " + film.Opis,
-                    DvoranaId = cbxDvorana.SelectedIndex
+                    DatumIzlaska = dtpDatumIzlaska.Value,
+                    Naziv = txtNazivFilma.Text,
+                    Opis = txtOpis.Text,
+                    TipId = cbxVrsta.SelectedIndex,
+                    ZanrId = cbxZanr.SelectedIndex,
+                    Link = txtLink.Text,
+                    Slika = slika
                 };
-                _projekcijaService.Add(projekcija);
+                _filmService.Add(film);
+
+                if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) && !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) && cbxDvorana.SelectedIndex != 0)
+                {
+                    var projekcija = new ProjekcijaInsertRequest
+                    {
+                        DatumProjekcije = dtpDatumProjekcije.Value,
+                        CijenaUlaznice = double.Parse(txtProjekcijaCijenaUlaznice.Text),
+                        FilmId = film.Id,
+                        Opis = "Film: " + film.Naziv + " Opis: " + film.Opis,
+                        DvoranaId = cbxDvorana.SelectedIndex
+                    };
+                    _projekcijaService.Add(projekcija);
+                }
+
+                _ocijenaService.Add(new OcijenaInsertRequest
+                {
+                    DataOcijena = Int32.Parse(txtOcijena.Text),
+                    FilmId = film.Id,
+                    KomentatorId = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault().Id
+                });
+
+                var form = new frmPocetna();
+                form.Show();
+                this.MdiParent.Close();
+                this.Close();
             }
-
-            _ocijenaService.Add(new OcijenaInsertRequest
-            {
-                DataOcijena = Int32.Parse(txtOcijena.Text),
-                FilmId = film.Id,
-                KomentatorId = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault().Id
-            });
-
-            var form = new frmPocetna();
-            form.Show();
-            this.MdiParent.Close();
-            this.Close();
         }
 
         private void frmFilmDodaj_Load(object sender, EventArgs e)
@@ -116,5 +119,55 @@ namespace eKino.Desktop
             }
         }
 
+        private void txtNazivFilma_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNazivFilma.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtNazivFilma, Messages.Text_Naziv);
+            }
+        }
+
+        private void txtOpis_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtOpis.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtOpis, Messages.Text_Opis);
+            }
+        }
+
+        private void txtLink_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtLink.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtLink, Messages.Text_Link);
+            }
+        }
+
+        private void txtProjekcijaCijenaUlaznice_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text))
+            {
+                if (!int.TryParse(txtProjekcijaCijenaUlaznice.Text, out var i))
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(txtProjekcijaCijenaUlaznice, Messages.Int_CijenaProjekcije);
+                }
+            }
+        }
+
+        private void txtProjekcijaBrojKarata_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text))
+            {
+                if (!int.TryParse(txtProjekcijaBrojKarata.Text, out var i) || i < 10)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(txtProjekcijaBrojKarata, Messages.Int_BrojKarata);
+                }
+            }
+        }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using Xamarin.Forms;
 using eKino.Mobile.Services;
 using eKino.Mobile.Views;
+using Android.App;
 
 namespace eKino.Mobile
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
 
         public App()
@@ -16,10 +17,7 @@ namespace eKino.Mobile
         }
 
         protected override void OnStart()
-        {
-            
-         
-
+        {      
         }
 
         protected override void OnSleep()

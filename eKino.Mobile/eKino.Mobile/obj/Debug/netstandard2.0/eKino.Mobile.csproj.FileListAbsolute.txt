@@ -88,5 +88,9 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\FilmAktuelnoPage.xaml.g.cs
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\FilmDetaljiPage.xaml.g.cs
 C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\FilmGeldajPage.xaml.g.cs
-C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.csproj.CoreCompileInputs.cache
-C:\Users\saudi\source\repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\eKino.Mobile.csproj.CoreCompileInputs.cache
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile\obj\Debug\netstandard2.0\Views\PaketKupi.xaml.g.cs

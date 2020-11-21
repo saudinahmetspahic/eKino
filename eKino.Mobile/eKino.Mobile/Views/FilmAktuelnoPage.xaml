@@ -10,17 +10,16 @@
                 FontSize="17"/>
 
 
-            <Grid >
+            <!--<Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
 
                 <ScrollView Orientation="Vertical"  Grid.Row="0" Grid.Column="0">
-                    <Grid x:Name="filmoviGrid">
+                    <Grid x:Name="filmoviGrid" HorizontalOptions="FillAndExpand">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
@@ -41,7 +40,7 @@
                     </Grid>
                 </ScrollView>
 
-                <Frame BorderColor="SpringGreen" Grid.Row="0" Grid.Column="1">
+                <!--<Frame BorderColor="SpringGreen" Grid.Row="0" Grid.Column="1">
                     <Grid x:Name="preporukaGrid">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -60,9 +59,9 @@
                         </Grid.RowDefinitions>
 
                     </Grid>
-                </Frame>
+                </Frame>-->
 
-            </Grid>
+            <!--</Grid>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -11,11 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xamarin.Forms.Xaml;
+using eKino.Model.Requests;
+using System.Net.Mail;
+using System.Net;
+using System.Threading;
 
 namespace eKino.Desktop
 {
     public partial class frmPocetna : Form
     {
+        //private ApiService _korisnikApiService = new ApiService("Korisnik");
+        //private ApiService _rezervacijeApiService = new ApiService("Rezervacija");
+        //private ApiService _projekcijaApiService = new ApiService("Projekcija");
         private bool DropDownListeSakrivene;
         public frmPocetna()
         {
@@ -158,7 +165,7 @@ namespace eKino.Desktop
             var children = this.MdiChildren;
             foreach (var child in children)
             {
-                child.Close();  
+                child.Close();
             }
         }
 
@@ -171,5 +178,55 @@ namespace eKino.Desktop
             frm.Show();
             HideButtons();
         }
+
+
+        //private async Task Alarm_Timer()
+        //{
+        //    try
+        //    {
+        //        var k = _korisnikApiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+        //        var rezervacije = _rezervacijeApiService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id });
+
+        //        string mail = "* Rezeracije \n";
+        //        int count = 0;
+        //        foreach (var r in rezervacije)
+        //        {
+        //            var p = _projekcijaApiService.GetById<Projekcija>((int)r.ProjekcijaId);
+        //            if (p.DatumProjekcije.AddHours(24).CompareTo(DateTime.Now) >= 0)
+        //            {
+        //                mail += " [" + p.DatumProjekcije + "] " + p.Opis + "\n";
+        //                count++;
+        //            }
+        //        }
+
+        //        var smtpClient = new SmtpClient("app_alarm@hotmail.com")
+        //        {
+        //            Port = 587,
+        //            Credentials = new NetworkCredential("app_alarm@hotmail.com", "Alarm12345"),
+        //            EnableSsl = true,
+        //        };
+        //        smtpClient.Send("app_alarm@hotmail.com", k.Email, count + " projekcija u naredna 24 sata", mail);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        MessageBox.Show(e.Message, "Error");
+        //        //await Task.Delay(10000);
+        //    }
+
+        //    //await Task.Delay(20000); // 1h = 3600000
+        //}
+
+        //private async void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    BackgroundWorker worker = sender as BackgroundWorker;
+
+
+        //    while (worker.CancellationPending != true)
+        //    {
+        //        await Alarm_Timer();
+        //        System.Threading.Thread.Sleep(20000);
+        //    }
+        //    e.Cancel = true;
+        //}
     }
 }

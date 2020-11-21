@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPocetna));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tblMeni = new System.Windows.Forms.TableLayoutPanel();
@@ -44,6 +45,7 @@
             this.bttnFilmAktuelno = new System.Windows.Forms.Button();
             this.bttnFilmDodaj = new System.Windows.Forms.Button();
             this.pnlPozadina = new System.Windows.Forms.Panel();
+            this.notyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.tblMeni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rpbAvatar)).BeginInit();
@@ -256,6 +258,13 @@
             this.pnlPozadina.Size = new System.Drawing.Size(804, 464);
             this.pnlPozadina.TabIndex = 11;
             // 
+            // notyIcon
+            // 
+            this.notyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notyIcon.Icon")));
+            this.notyIcon.Text = "notification";
+            this.notyIcon.Visible = true;
+            // 
             // frmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,5 +309,6 @@
         private System.Windows.Forms.Button bttnFilmAktuelno;
         private System.Windows.Forms.Button bttnFilmDodaj;
         private System.Windows.Forms.Panel pnlPozadina;
+        private System.Windows.Forms.NotifyIcon notyIcon;
     }
 }

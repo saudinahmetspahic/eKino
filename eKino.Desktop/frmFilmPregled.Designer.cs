@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tblListaFilmova = new System.Windows.Forms.TableLayoutPanel();
-            this.tblPreporukaFilmova = new System.Windows.Forms.TableLayoutPanel();
             this.bttnBack = new System.Windows.Forms.Button();
             this.bttnNext = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,31 +51,19 @@
             this.tblListaFilmova.ColumnCount = 2;
             this.tblListaFilmova.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblListaFilmova.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblListaFilmova.Location = new System.Drawing.Point(242, 12);
+            this.tblListaFilmova.Location = new System.Drawing.Point(339, 25);
             this.tblListaFilmova.Name = "tblListaFilmova";
             this.tblListaFilmova.RowCount = 1;
             this.tblListaFilmova.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tblListaFilmova.Size = new System.Drawing.Size(518, 544);
+            this.tblListaFilmova.Size = new System.Drawing.Size(518, 521);
             this.tblListaFilmova.TabIndex = 0;
-            // 
-            // tblPreporukaFilmova
-            // 
-            this.tblPreporukaFilmova.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tblPreporukaFilmova.ColumnCount = 1;
-            this.tblPreporukaFilmova.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPreporukaFilmova.Location = new System.Drawing.Point(766, 12);
-            this.tblPreporukaFilmova.Name = "tblPreporukaFilmova";
-            this.tblPreporukaFilmova.RowCount = 1;
-            this.tblPreporukaFilmova.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPreporukaFilmova.Size = new System.Drawing.Size(294, 603);
-            this.tblPreporukaFilmova.TabIndex = 1;
             // 
             // bttnBack
             // 
             this.bttnBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bttnBack.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.bttnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnBack.Location = new System.Drawing.Point(242, 562);
+            this.bttnBack.Location = new System.Drawing.Point(339, 552);
             this.bttnBack.Name = "bttnBack";
             this.bttnBack.Size = new System.Drawing.Size(259, 52);
             this.bttnBack.TabIndex = 2;
@@ -89,7 +76,7 @@
             this.bttnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bttnNext.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.bttnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnNext.Location = new System.Drawing.Point(498, 562);
+            this.bttnNext.Location = new System.Drawing.Point(595, 552);
             this.bttnNext.Name = "bttnNext";
             this.bttnNext.Size = new System.Drawing.Size(262, 52);
             this.bttnNext.TabIndex = 3;
@@ -112,7 +99,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cbxZanrFilter, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.cbxPopularnoFilter, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.bttnFiltriraj, 0, 8);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(66, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -192,6 +179,8 @@
             // 
             this.cbxKategorijaFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxKategorijaFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxKategorijaFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxKategorijaFilter.FormattingEnabled = true;
             this.cbxKategorijaFilter.Location = new System.Drawing.Point(3, 108);
             this.cbxKategorijaFilter.Name = "cbxKategorijaFilter";
@@ -202,6 +191,8 @@
             // 
             this.cbxZanrFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxZanrFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxZanrFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxZanrFilter.FormattingEnabled = true;
             this.cbxZanrFilter.Location = new System.Drawing.Point(3, 202);
             this.cbxZanrFilter.Name = "cbxZanrFilter";
@@ -212,6 +203,8 @@
             // 
             this.cbxPopularnoFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxPopularnoFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPopularnoFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxPopularnoFilter.FormattingEnabled = true;
             this.cbxPopularnoFilter.Location = new System.Drawing.Point(3, 296);
             this.cbxPopularnoFilter.Name = "cbxPopularnoFilter";
@@ -233,13 +226,12 @@
             // 
             // frmFilmPregled
             // 
-            this.ClientSize = new System.Drawing.Size(1302, 627);
+            this.ClientSize = new System.Drawing.Size(969, 627);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.bttnBack);
             this.Controls.Add(this.bttnNext);
-            this.Controls.Add(this.tblPreporukaFilmova);
             this.Controls.Add(this.tblListaFilmova);
-            this.MinimumSize = new System.Drawing.Size(860, 674);
+            this.MinimumSize = new System.Drawing.Size(987, 674);
             this.Name = "frmFilmPregled";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmFilmPregled_Load);
@@ -273,7 +265,6 @@
         //private System.Windows.Forms.Label lblPreporukaZanr;
         //private System.Windows.Forms.Label lblPreporukaTrajanje;
         private System.Windows.Forms.TableLayoutPanel tblListaFilmova;
-        private System.Windows.Forms.TableLayoutPanel tblPreporukaFilmova;
         private System.Windows.Forms.Button bttnBack;
         private System.Windows.Forms.Button bttnNext;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

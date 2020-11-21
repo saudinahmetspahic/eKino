@@ -33,6 +33,7 @@ namespace eKino.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistracija));
             this.bttnRegistrujSe = new System.Windows.Forms.Button();
             this.labIme = new System.Windows.Forms.Label();
@@ -52,7 +53,9 @@ namespace eKino.Desktop
             this.txtSifraPotvrda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bttnLogin = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnRegistrujSe
@@ -81,6 +84,7 @@ namespace eKino.Desktop
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(323, 22);
             this.txtIme.TabIndex = 2;
+            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // labRegistracijaNaslov
             // 
@@ -98,6 +102,7 @@ namespace eKino.Desktop
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(323, 22);
             this.txtPrezime.TabIndex = 5;
+            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // labPrezime
             // 
@@ -125,6 +130,7 @@ namespace eKino.Desktop
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(323, 22);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // labEmail
             // 
@@ -154,6 +160,7 @@ namespace eKino.Desktop
             this.txtSifra.PasswordChar = '*';
             this.txtSifra.Size = new System.Drawing.Size(323, 22);
             this.txtSifra.TabIndex = 13;
+            this.txtSifra.Validating += new System.ComponentModel.CancelEventHandler(this.txtSifra_Validating);
             // 
             // labSifra
             // 
@@ -185,6 +192,7 @@ namespace eKino.Desktop
             // cbGrad
             // 
             this.cbGrad.DisplayMember = "Naziv";
+            this.cbGrad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbGrad.FormattingEnabled = true;
             this.cbGrad.Location = new System.Drawing.Point(443, 300);
@@ -200,6 +208,7 @@ namespace eKino.Desktop
             this.txtSifraPotvrda.PasswordChar = '*';
             this.txtSifraPotvrda.Size = new System.Drawing.Size(323, 22);
             this.txtSifraPotvrda.TabIndex = 18;
+            this.txtSifraPotvrda.Validating += new System.ComponentModel.CancelEventHandler(this.txtSifraPotvrda_Validating);
             // 
             // label2
             // 
@@ -220,6 +229,10 @@ namespace eKino.Desktop
             this.bttnLogin.Text = "Logiraj se";
             this.bttnLogin.UseVisualStyleBackColor = true;
             this.bttnLogin.Click += new System.EventHandler(this.bttnLogin_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmRegistracija
             // 
@@ -248,6 +261,7 @@ namespace eKino.Desktop
             this.Text = "frmRegistracija";
             this.Load += new System.EventHandler(this.frmRegistracija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +287,6 @@ namespace eKino.Desktop
         private System.Windows.Forms.TextBox txtSifraPotvrda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bttnLogin;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -50,13 +50,13 @@
               "target": "Package",
               "version": "[3.4.6, )"
             },
-            "PayPal.Forms": {
-              "target": "Package",
-              "version": "[2.18.6, )"
-            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[4.7.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             },
             "VideoLAN.LibVLC.Android": {
               "target": "Package",
@@ -100,6 +100,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {
               "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj": {
                 "projectPath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Model\\eKino.Model.csproj"
@@ -115,6 +116,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Flurl": {
               "target": "Package",
@@ -142,13 +144,17 @@
               "target": "Package",
               "version": "[12.0.2, )"
             },
-            "PayPal.Forms": {
+            "Stripe.net": {
               "target": "Package",
-              "version": "[2.18.6, )"
+              "version": "[39.23.0, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[4.7.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -156,7 +162,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1534, )"
+              "version": "[4.8.0.1687, )"
+            },
+            "XamarinFastEntry.Behaviors": {
+              "target": "Package",
+              "version": "[1.1.1, )"
             }
           },
           "imports": [
@@ -169,7 +179,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -199,6 +209,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -210,6 +221,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "LibVLCSharp": {
               "target": "Package",
@@ -237,6 +249,10 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.8.0.1534, )"
@@ -252,7 +268,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

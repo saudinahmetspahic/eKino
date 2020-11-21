@@ -1,10 +1,8 @@
+eKino.Mobile
 FormsViewGroup
 LibVLCSharp.Android.AWindow
 LibVLCSharp
 LibVLCSharp.Forms
-PayPal.Forms
-Square.OkHttp3
-Square.OkIO
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common
@@ -45,5 +43,3 @@ Xamarin.Android.Support.ViewPager
 Xamarin.Essentials
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
-Xamarin.PayPal.Android.CardIO
-Xamarin.PayPal.Android

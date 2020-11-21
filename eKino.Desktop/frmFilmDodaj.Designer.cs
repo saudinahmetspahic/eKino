@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.labDatum = new System.Windows.Forms.Label();
@@ -58,10 +59,12 @@
             this.bttnDodaj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -206,6 +209,7 @@
             this.txtNazivFilma.Name = "txtNazivFilma";
             this.txtNazivFilma.Size = new System.Drawing.Size(311, 22);
             this.txtNazivFilma.TabIndex = 2;
+            this.txtNazivFilma.Validating += new System.ComponentModel.CancelEventHandler(this.txtNazivFilma_Validating);
             // 
             // txtOpis
             // 
@@ -217,6 +221,7 @@
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(311, 36);
             this.txtOpis.TabIndex = 17;
+            this.txtOpis.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpis_Validating);
             // 
             // txtProjekcijaCijenaUlaznice
             // 
@@ -227,6 +232,7 @@
             this.txtProjekcijaCijenaUlaznice.Name = "txtProjekcijaCijenaUlaznice";
             this.txtProjekcijaCijenaUlaznice.Size = new System.Drawing.Size(375, 22);
             this.txtProjekcijaCijenaUlaznice.TabIndex = 18;
+            this.txtProjekcijaCijenaUlaznice.Validating += new System.ComponentModel.CancelEventHandler(this.txtProjekcijaCijenaUlaznice_Validating);
             // 
             // txtLink
             // 
@@ -237,6 +243,7 @@
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(311, 22);
             this.txtLink.TabIndex = 19;
+            this.txtLink.Validating += new System.ComponentModel.CancelEventHandler(this.txtLink_Validating);
             // 
             // txtProjekcijaBrojKarata
             // 
@@ -247,6 +254,7 @@
             this.txtProjekcijaBrojKarata.Name = "txtProjekcijaBrojKarata";
             this.txtProjekcijaBrojKarata.Size = new System.Drawing.Size(375, 22);
             this.txtProjekcijaBrojKarata.TabIndex = 20;
+            this.txtProjekcijaBrojKarata.Validating += new System.ComponentModel.CancelEventHandler(this.txtProjekcijaBrojKarata_Validating);
             // 
             // dtpDatumIzlaska
             // 
@@ -258,6 +266,7 @@
             // cbxZanr
             // 
             this.cbxZanr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxZanr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxZanr.FormattingEnabled = true;
             this.cbxZanr.Location = new System.Drawing.Point(6, 133);
             this.cbxZanr.Name = "cbxZanr";
@@ -283,6 +292,7 @@
             // cbxVrsta
             // 
             this.cbxVrsta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVrsta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxVrsta.FormattingEnabled = true;
             this.cbxVrsta.Location = new System.Drawing.Point(6, 327);
             this.cbxVrsta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -313,6 +323,7 @@
             // cbxDvorana
             // 
             this.cbxDvorana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDvorana.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxDvorana.FormattingEnabled = true;
             this.cbxDvorana.Location = new System.Drawing.Point(452, 328);
             this.cbxDvorana.Name = "cbxDvorana";
@@ -426,6 +437,10 @@
             this.panel1.Size = new System.Drawing.Size(1042, 389);
             this.panel1.TabIndex = 4;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmFilmDodaj
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
@@ -447,6 +462,7 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,5 +499,6 @@
         private System.Windows.Forms.Label txtSlikaNaziv;
         private System.Windows.Forms.Button bttnSlikaDodaj;
         private System.Windows.Forms.NumericUpDown txtOcijena;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

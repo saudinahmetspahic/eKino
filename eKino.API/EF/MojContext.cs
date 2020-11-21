@@ -14,7 +14,10 @@ namespace eKino.API.EF
         {
         }
 
-      
+        public MojContext()
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // kompozitni kljuc

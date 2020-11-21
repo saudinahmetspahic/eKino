@@ -11,6 +11,7 @@ namespace eKino.Mobile.ViewModels
 {
     public class FilmDetaljiViewModel : BaseViewModel
     {
+        private readonly ApiService _preporukafilmService;
         private readonly ApiService _filmService = new ApiService("Film");
         private readonly ApiService _korisnikService = new ApiService("Korisnik");
         private readonly ApiService _osobeService = new ApiService("Osoba");
@@ -32,6 +33,7 @@ namespace eKino.Mobile.ViewModels
         public FilmDetaljiViewModel(int filmId = 0)
         {
             Film = _filmService.GetById<Film>(filmId);
+            _preporukafilmService = new ApiService("Film/RecommendedFilmovi/" + filmId);
             InitCommand = new Command(() => { Init(); });
         }
         public void Init()
@@ -79,7 +81,22 @@ namespace eKino.Mobile.ViewModels
             }
 
             Link = Film.Link;
+
+            //sistem preporuke
+            var preporuceniFilmovi = _preporukafilmService.Get<List<Film>>();
+            for (int i = 0; i < (preporuceniFilmovi.Count > 5 ? 5 : preporuceniFilmovi.Count); i++)
+            {
+                PreporuceniFilmoviList.Add(new PreporuceniFilmovi
+                {
+                    FilmId = preporuceniFilmovi[i].Id,
+                    NazivFilma = preporuceniFilmovi[i].Naziv,
+                    Opis = preporuceniFilmovi[i].Opis,
+                    Slika = ImageConvertor.ConvertByteArrayToImageForXamarin(preporuceniFilmovi[i].Slika)
+                });
+            }
         }
+
+        public List<PreporuceniFilmovi> PreporuceniFilmoviList { get; set; } = new List<PreporuceniFilmovi>();
 
         private string _link;
         public string Link

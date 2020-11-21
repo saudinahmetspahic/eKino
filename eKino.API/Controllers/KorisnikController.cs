@@ -23,6 +23,7 @@ namespace eKino.API.Controllers
         {
         }
 
+        
         //[HttpGet("PoEmailu/{email}")]
         //public Model.Korisnik GetByEmail(string email)
         //{

@@ -142,6 +142,8 @@
             this.cbxListaProjZaDodavanjePrez.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxListaProjZaDodavanjePrez.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxListaProjZaDodavanjePrez.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxListaProjZaDodavanjePrez.FormattingEnabled = true;
             this.cbxListaProjZaDodavanjePrez.Location = new System.Drawing.Point(158, 3);
             this.cbxListaProjZaDodavanjePrez.Name = "cbxListaProjZaDodavanjePrez";

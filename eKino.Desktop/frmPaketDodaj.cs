@@ -18,25 +18,29 @@ namespace eKino.Desktop
         public frmPaketDodaj()
         {
             InitializeComponent();
+            this.AutoValidate = AutoValidate.Disable;
         }
 
 
         private void bttnPaketDodaj_Click(object sender, EventArgs e)
         {
-            var paket = new PaketInsertRequest
+            if (this.ValidateChildren())
             {
-                Cijena = (double)nudCijena.Value,
-                DatumIsteka = dtpDatumIsteka.Value,
-                DatumKreiranja = DateTime.Now,
-                Opis = txtOpis.Text,
-                MaxOcijena = cbxOcijena.SelectedIndex
-            };
-            _paketService.Add(paket);
+                var paket = new PaketInsertRequest
+                {
+                    Cijena = (double)nudCijena.Value,
+                    DatumIsteka = dtpDatumIsteka.Value,
+                    DatumKreiranja = DateTime.Now,
+                    Opis = txtOpis.Text,
+                    MaxOcijena = cbxOcijena.SelectedIndex
+                };
+                _paketService.Add(paket);
 
-            var frm = new frmPaketPregled();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-            this.Close();
+                var frm = new frmPaketPregled();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+                this.Close();
+            }
         }
 
         private void frmPaketDodaj_Load(object sender, EventArgs e)
@@ -53,6 +57,15 @@ namespace eKino.Desktop
             cbxOcijena.DataSource = ocijene;
             cbxOcijena.ValueMember = "Id";
             cbxOcijena.DisplayMember = "Opis";
+        }
+            
+        private void txtOpis_Validating(object sender, CancelEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtOpis.Text) && txtOpis.Text.Length < 15)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtOpis, Messages.Text_Opis_15_K);
+            }
         }
     }
 }

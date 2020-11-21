@@ -266,7 +266,6 @@ C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\ne
 C:\Users\A1\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\fr\LibVLCSharp.Forms.resources.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\eKino.API.exe
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\eKino.API.deps.json
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\eKino.API.runtimeconfig.json
@@ -338,5 +337,4 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.csproj.CoreCompileInputs.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\eKino.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\eKino.API.styles.css

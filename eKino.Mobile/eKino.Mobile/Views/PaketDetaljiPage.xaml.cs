@@ -1,21 +1,17 @@
-﻿using eKino.Mobile.Helper;
-using eKino.Mobile.ViewModels;
+﻿using eKino.Mobile.ViewModels;
 using eKino.Model;
 using eKino.Model.Requests;
-using PayPal.Forms;
-using PayPal.Forms.Abstractions;
+using Stripe;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Application = Xamarin.Forms.Application;
 
 namespace eKino.Mobile.Views
 {
@@ -78,36 +74,12 @@ namespace eKino.Mobile.Views
             });
         }
 
-
-
-        /// <summary>
-        /// PayPal placanje
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        private static int PAYPAL_REQUEST_CODE = 7171;
-        private static PayPalConfiguration configuration = new PayPalConfiguration(PayPalEnvironment.Sandbox, eKino.Mobile.Helper.PayPal.Client_ID);
-
-        private async void KupiPaket_Clicked(object sender, EventArgs e)
+        private void KupiPaket_Clicked(object sender, EventArgs e)
         {
-            var cijena = model.Cijena;
-            var result = await CrossPayPalManager.Current.Buy(new PayPalItem("Test Product", new Decimal(cijena), "BAM"), new Decimal(0));
-            if (result.Status == PayPalStatus.Cancelled)
-            {
-                await Application.Current.MainPage.DisplayAlert("Greska", "Odbijeno", "Ok");
-            }
-            else if (result.Status == PayPalStatus.Error)
-            {
-                await Application.Current.MainPage.DisplayAlert("Greska", "Nepoznata greska", "Ok");
-            }
-            else if (result.Status == PayPalStatus.Successful)
-            {
-                await Application.Current.MainPage.DisplayAlert("Potvrda", "Placanje uspiješno.", "Ok");
-            }
-
-            
-
+            Navigation.PushAsync(new PaketKupi(model.PaketId, model.Cijena));
         }
+
+
+
     }
 }

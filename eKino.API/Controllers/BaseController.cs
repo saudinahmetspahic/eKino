@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eKino.API.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<TModel, TSearch> : ControllerBase
@@ -19,6 +18,7 @@ namespace eKino.API.Controllers
         {
             _service = service;
         }
+
 
         [HttpGet]
         public List<TModel> Get([FromQuery] TSearch search)

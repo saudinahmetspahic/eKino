@@ -3,6 +3,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "eKino.Mobile.Android.dll" comes first in this list. */
 		"eKino.Mobile.Android.dll",
+		"eKino.Model.dll",
 		"eKino.Mobile.dll",
 		"Flurl.dll",
 		"Flurl.Http.dll",
@@ -12,12 +13,14 @@ public class MonoPackageManager_Resources {
 		"LibVLCSharp.Forms.dll",
 		"Microsoft.AspNetCore.Http.Abstractions.dll",
 		"Microsoft.AspNetCore.Http.Features.dll",
+		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Microsoft.Extensions.Primitives.dll",
 		"Newtonsoft.Json.dll",
-		"PayPal.Forms.Abstractions.dll",
-		"PayPal.Forms.dll",
-		"Square.OkHttp3.dll",
-		"Square.OkIO.dll",
+		"Stripe.net.dll",
+		"System.Configuration.ConfigurationManager.dll",
+		"System.Security.AccessControl.dll",
+		"System.Security.Permissions.dll",
+		"System.Security.Principal.Windows.dll",
 		"System.Text.Encodings.Web.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
@@ -61,9 +64,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
-		"Xamarin.PayPal.Android.CardIO.dll",
-		"Xamarin.PayPal.Android.dll",
-		"eKino.Model.dll",
+		"XamarinFastEntry.Behaviors.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

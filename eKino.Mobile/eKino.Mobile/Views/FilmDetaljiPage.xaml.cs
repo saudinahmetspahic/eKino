@@ -17,7 +17,6 @@ namespace eKino.Mobile.Views
     public partial class FilmDetaljiPage : ContentPage
     {
         private readonly ApiService _korisnikService = new ApiService("Korisnik");
-        private readonly ApiService _filmService = new ApiService("Film");
         private readonly ApiService _ocijenaService = new ApiService("Ocijena");
         private readonly ApiService _komentarReakcijaService = new ApiService("KomentarReakcija");
         private readonly ApiService _komentarService = new ApiService("Komentar");
@@ -38,7 +37,10 @@ namespace eKino.Mobile.Views
             base.OnAppearing();
             model.Init();
             PrikaziDetalje();
+            listViewPreporuka.ItemsSource = model.PreporuceniFilmoviList;
         }
+
+
 
         private void PrikaziDetalje()
         {
@@ -184,12 +186,19 @@ namespace eKino.Mobile.Views
         {
             var kpaket = _korisnikPaketService.Get<List<KorisnikPaket>>(new KorisnikPaketSearchRequest { KorisnikId = _korisnik.Id }).FirstOrDefault();
             var paket = _paketService.GetById<Paket>(kpaket.PaketId);
-            if (paket.MaxOcijena >= model.Ocijena)
-                Navigation.PushAsync(new FilmGeldajPage(model.Link));
-            else
-                Application.Current.MainPage.DisplayAlert("Paket", "Nemate potrebni paket za gledanje ovog filma.", "Ok");
+            if (paket != null)
+            {
+                if (paket.MaxOcijena >= model.Ocijena && paket.DatumIsteka.Value.CompareTo(DateTime.Now) > 0)
+                    Navigation.PushAsync(new FilmGeldajPage(model.Link));
+                else Application.Current.MainPage.DisplayAlert("Paket", "Vas paket je istekao ili nije dovoljan za gledanje ovog filma", "Ok");
+            }
+            else Application.Current.MainPage.DisplayAlert("Paket", "Nemate potrebni paket za gledanje ovog filma.", "Ok");
         }
 
-      
+        private void ImageCell_Tapped(object sender, EventArgs e)
+        {
+            var fId = int.Parse(((ImageCell)sender).AutomationId);
+            Navigation.PushAsync(new FilmDetaljiPage(fId));
+        }
     }
 }

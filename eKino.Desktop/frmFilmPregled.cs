@@ -160,6 +160,9 @@ namespace eKino.Desktop
             };
             cbxPopularnoFilter.ValueMember = "Id";
             cbxPopularnoFilter.DisplayMember = "Opis";
+
+            //sistem preporuke
+
         }
 
         private void bttnBack_Click(object sender, EventArgs e)

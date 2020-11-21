@@ -52,7 +52,7 @@
                 <Button x:Name="IzbrisiButton" Clicked="IzbrisiPaket_Clicked" CornerRadius="25" Margin="3" FontAttributes="Bold" TextColor="white" BackgroundColor="OrangeRed" Grid.Column="0" Text="Izbrisi"></Button>
                 <Button x:Name="SnimiButton" Clicked="SnimiIzmjene_Clicked" CornerRadius="25" Margin="3" FontAttributes="Bold" TextColor="white" BackgroundColor="SpringGreen" Grid.Column="1" Text="Snimi"></Button>
             </Grid>
-            <Button Clicked="KupiPaket_Clicked" FontAttributes="Bold" TextColor="white" HeightRequest="50" VerticalOptions="End" BackgroundColor="SpringGreen" Text="Kupi"></Button>
+            <Button Clicked="KupiPaket_Clicked" FontAttributes="Bold" TextColor="white" HeightRequest="50" VerticalOptions="End" BackgroundColor="SpringGreen" Text="Kupi paket"></Button>
 
         </StackLayout>
     </ContentPage.Content>

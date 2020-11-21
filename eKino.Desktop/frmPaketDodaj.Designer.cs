@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,8 +39,10 @@
             this.cbxOcijena = new System.Windows.Forms.ComboBox();
             this.nudCijena = new System.Windows.Forms.NumericUpDown();
             this.bttnPaketDodaj = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCijena)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -124,6 +127,7 @@
             this.txtOpis.Size = new System.Drawing.Size(426, 92);
             this.txtOpis.TabIndex = 5;
             this.txtOpis.Text = "";
+            this.txtOpis.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpis_Validating);
             // 
             // dtpDatumIsteka
             // 
@@ -140,6 +144,8 @@
             this.cbxOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxOcijena.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOcijena.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxOcijena.FormattingEnabled = true;
             this.cbxOcijena.Location = new System.Drawing.Point(240, 152);
             this.cbxOcijena.Name = "cbxOcijena";
@@ -176,6 +182,10 @@
             this.bttnPaketDodaj.UseVisualStyleBackColor = false;
             this.bttnPaketDodaj.Click += new System.EventHandler(this.bttnPaketDodaj_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmPaketDodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,6 +200,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCijena)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +217,6 @@
         private System.Windows.Forms.ComboBox cbxOcijena;
         private System.Windows.Forms.NumericUpDown nudCijena;
         private System.Windows.Forms.Button bttnPaketDodaj;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

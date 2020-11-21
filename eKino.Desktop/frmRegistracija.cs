@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
 using System.Windows.Forms.VisualStyles;
 using System.IO;
+using System.Net.Mail;
 
 namespace eKino.Desktop
 {
@@ -25,26 +26,32 @@ namespace eKino.Desktop
         public frmRegistracija()
         {
             InitializeComponent();
+            this.AutoValidate = AutoValidate.Disable;
         }
 
         private void bttnRegistrujSe_Click(object sender, EventArgs e)
         {
-            var korisnik = new KorisnikInsertRequest
+            if (this.ValidateChildren())
             {
-                DatumRegistracije = DateTime.Now,
-                DatumRodjenja = dtpDatumRodjenja.Value,
-                Email = txtEmail.Text,
-                Password = txtSifra.Text,
-                PasswordPotvrda = txtSifraPotvrda.Text,
-                Ime = txtIme.Text,
-                Prezime = txtPrezime.Text,
-                UlogaId = _ulogaApiService.GetByName<Uloga>("User").Id,
-                GradId = cbGrad.SelectedIndex
-            };
-            _korisnikApiService.Add(korisnik);
-            var loginForma = new frmLogin();
-            loginForma.Show();
-            Hide();
+                var korisnik = new KorisnikInsertRequest
+                {
+                    DatumRegistracije = DateTime.Now,
+                    DatumRodjenja = dtpDatumRodjenja.Value,
+                    Email = txtEmail.Text,
+                    Password = txtSifra.Text,
+                    PasswordPotvrda = txtSifraPotvrda.Text,
+                    Ime = txtIme.Text,
+                    Prezime = txtPrezime.Text, 
+                    UlogaId = _ulogaApiService.Get<List<Uloga>>(new UlogaSearchRequest { NazivUloge = "User" }).FirstOrDefault().Id,
+                    GradId = cbGrad.SelectedIndex
+                };
+                ApiService.Email = "admin@app.com";
+                ApiService.Sifra = "Admin12345";
+                _korisnikApiService.Add(korisnik);
+                var loginForma = new frmLogin();
+                loginForma.Show();
+                Hide();
+            }
         }
 
         private void bttnLogin_Click(object sender, EventArgs e)
@@ -65,13 +72,72 @@ namespace eKino.Desktop
             }
         }
 
-        private async void frmRegistracija_Load(object sender, EventArgs e)
+        private void frmRegistracija_Load(object sender, EventArgs e)
         {
-            var lista = _gradApiService.Get<List<Grad>>(false);
+            var lista = _gradApiService.Get<List<Grad>>();
             lista.Insert(0, new Grad { Id = 0, Naziv = "Odaberi" });
             cbGrad.DataSource = lista;
             cbGrad.ValueMember = "Id";
             cbGrad.DisplayMember = "Naziv";
+        }
+
+        private void txtIme_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtIme.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtIme, Messages.Text_Ime);
+            }
+        }
+
+        private void txtPrezime_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPrezime.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtPrezime, Messages.Text_Prezime);
+            }
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtEmail, Messages.Text_Email);
+            }
+            else
+            {
+                try
+                {
+                    MailAddress mail = new MailAddress(txtEmail.Text);
+                }
+                catch (Exception)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(txtEmail, Messages.Text_Email);
+                }
+            }
+        }
+
+        private void txtSifra_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSifra.Text) || txtSifra.Text.Length < 6 || txtSifra.Text.Length > 15)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtSifra, Messages.Text_Sifra);
+            }
+        }
+
+        private void txtSifraPotvrda_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSifra.Text) &&
+               !string.IsNullOrEmpty(txtSifraPotvrda.Text) &&
+               txtSifra.Text != txtSifraPotvrda.Text)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtSifraPotvrda, Messages.Text_Sifra_Potvrda);
+            }
         }
     }
 }

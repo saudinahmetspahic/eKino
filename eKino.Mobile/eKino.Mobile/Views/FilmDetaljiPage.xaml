@@ -49,7 +49,7 @@
 
                         <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Image}"></Image>
                         <Button Clicked="GledajFilm_Clicked" BackgroundColor="SpringGreen" TextColor="white" FontSize="17" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Gledaj film"></Button>
-                        
+
                         <Label FontSize="18" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" Text="Naziv filma: "></Label>
                         <Label FontSize="18" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" Text="Zanr: "></Label>
                         <Label FontSize="18" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" Text="Tip:"></Label>
@@ -105,6 +105,18 @@
                         <Button Grid.Column="1" Clicked="DodajKomentar_Clicked" BackgroundColor="SpringGreen" TextColor="white" FontAttributes="Bold" FontSize="18" Padding="3" Text="Dodaj komentar"></Button>
                     </Grid>
 
+                    <Label Margin="10,25,0,0" Text="Preporuceni filmovi"></Label>
+                    <ListView Margin="20" x:Name="listViewPreporuka" HorizontalOptions="CenterAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell AutomationId="{Binding FilmId}"
+                                           Tapped="ImageCell_Tapped"
+                                           Text="{Binding NazivFilma}"
+                                           Detail="{Binding Opis}"
+                                           ImageSource="{Binding Slika}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

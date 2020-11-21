@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using eKino.Model.Requests;
 using Flurl.Http;
 using eKino.Desktop.Izvjestaji;
+using System.Net.Mail;
 
 namespace eKino.Desktop
 {
@@ -25,20 +26,25 @@ namespace eKino.Desktop
 
         private void bttnLogin_Click(object sender, EventArgs e)
         {
-            ApiService.Email = txtEmail.Text;
-            ApiService.Sifra = txtSifra.Text;
-            try
+            if (this.ValidateChildren())
             {
-                var r = _apiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
-                if (r.Count == 1)
+                ApiService.Email = txtEmail.Text;
+                ApiService.Sifra = txtSifra.Text;
+                try
                 {
-                    var frm = new frmPocetna();
-                    frm.Show();
-                    this.Hide();
+                    var r = _apiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
+                    if (r.Count == 1)
+                    {
+                        var frm = new frmPocetna();
+                        frm.Show();
+                        this.Hide();
+
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception)
+                {
+                    MessageBox.Show("Login", "Uneseni su neispravni podaci.", MessageBoxButtons.OK);
+                }
             }
         }
 
@@ -47,6 +53,27 @@ namespace eKino.Desktop
             frmRegistracija forma = new frmRegistracija();
             forma.Show();
             this.Hide();
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtEmail, Messages.Text_Email);
+            }
+            else
+            {
+                try
+                {
+                    MailAddress mail = new MailAddress(txtEmail.Text);
+                }
+                catch (Exception)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(txtEmail, Messages.Text_Email);
+                }
+            }
         }
     }
 }
