@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eKino.Mobile.Views.FilmPrijavi">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Prijavi kršenje autorskih prava"
+                HorizontalOptions="CenterAndExpand" 
+                   Margin="20"
+                   FontSize="17"/>
+
+            <Label Margin="20,5,20,0" FontSize="16" FontAttributes="Bold" Text="Naziv filma"></Label>
+            <Label Margin="20,5,20,0" FontSize="16" Text="{Binding NazivFilma}"></Label>
+            <Label Margin="20,5,20,0" FontSize="16" FontAttributes="Bold" Text="Opis"></Label>
+            <Entry x:Name="TxtOpis" Margin="20,5,20,0" FontSize="16" Placeholder="Unsite objašnjenje"></Entry>
+            <Label Margin="20,5,20,0" FontSize="16" FontAttributes="Bold" Text="Autor"></Label>
+            <Entry x:Name="TxtAutor" Margin="20,5,20,0" FontSize="16" Placeholder="Unesite ime (pravog)vlasnika autorskih prava"></Entry>
+            <Label Margin="20,5,20,0" FontSize="16" FontAttributes="Bold" Text="Email (poželjno)"></Label>
+            <Entry x:Name="TxtEmail" Margin="20,5,20,0" FontSize="16" Placeholder="Unesite email (pravog)vlasnika autorskih prava"></Entry>
+            <Label Margin="20,5,20,0" FontSize="16" FontAttributes="Bold" Text="Tel. (poželjno)"></Label>
+            <Entry x:Name="TxtTel" Margin="20,5,20,0" FontSize="16" Placeholder="Unesite tel. broj (pravog)vlasnika aut. prava"></Entry>
+
+            <Label Margin="20,25,20,0" Text="Hvala na pomoci!"></Label>
+
+            <Button Clicked="PrijaviFilm_Clicked" VerticalOptions="EndAndExpand" FontSize="18" FontAttributes="Bold" Text="Prijavi" BackgroundColor="MediumSpringGreen"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

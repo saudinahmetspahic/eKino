@@ -64,6 +64,7 @@ namespace eKino.API.EF
         public DbSet<Zanr> Zanr { get; set; }
         public DbSet<Zaposlenik> Zaposlenik { get; set; }
         public DbSet<Uloga> Uloga { get; set; }
+        public DbSet<Prijava> Prijava { get; set; }
 
 
 

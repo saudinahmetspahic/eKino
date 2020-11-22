@@ -17,23 +17,6 @@ namespace eKino.API.Services
         {
         }
 
-        //public override List<Model.Paket> Get(KorisnikPaketSearchRequest search)
-        //{
-        //    var query = _context.KorisnikPaket.AsQueryable();
-
-        //    if (search?.KorisnikId != null)
-        //    {
-        //        query = query.Include(i => i.Paket).Where(x => x.KorisnikId == search.KorisnikId);
-        //    }
-
-        //    if (search?.PaketId != null)
-        //    {
-        //        query = query.Include(i => i.Korisnik).Where(x => x.PaketId == search.PaketId);
-        //    }
-
-        //    var result = query.ToList();
-        //    return _mapper.Map<List<Model.Paket>>(result);
-        //}
 
     }
 }

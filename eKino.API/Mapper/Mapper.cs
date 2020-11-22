@@ -31,7 +31,6 @@ namespace eKino.API.Mapper
             CreateMap<API.Database.Osoba, Model.Osoba>().ReverseMap();
 
             CreateMap<API.Database.Grad, Model.Grad>().ReverseMap();
-            CreateMap<API.Database.Uloga, Model.Uloga>().ReverseMap();
             CreateMap<API.Database.Paket, Model.Paket>().ReverseMap();
             CreateMap<API.Database.Paket, PaketInsertRequest>().ReverseMap();
             CreateMap<API.Database.Ocijena, Model.Ocijena>().ReverseMap();
@@ -51,6 +50,8 @@ namespace eKino.API.Mapper
             CreateMap<API.Database.Projekcija, ProjekcijaInsertRequest>().ReverseMap();
             CreateMap<API.Database.Uloga, Model.Uloga>().ReverseMap();
             CreateMap<API.Database.Uloga, Model.Requests.UlogaSearchRequest>().ReverseMap();
+            CreateMap<API.Database.Prijava, Model.Prijava>().ReverseMap();
+            CreateMap<API.Database.Prijava, Model.Requests.PrijavaInsertRequest>().ReverseMap();
         }
     }
 }

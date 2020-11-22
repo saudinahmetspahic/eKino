@@ -200,5 +200,10 @@ namespace eKino.Mobile.Views
             var fId = int.Parse(((ImageCell)sender).AutomationId);
             Navigation.PushAsync(new FilmDetaljiPage(fId));
         }
+
+        private void Prijavi_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FilmPrijavi(model, _filmId));
+        }
     }
 }

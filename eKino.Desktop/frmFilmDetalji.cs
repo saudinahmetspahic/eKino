@@ -631,6 +631,14 @@ namespace eKino.Desktop
                 errorProvider.SetError(txtOpisProjekcije, Messages.Text_Opis);
             }
         }
+
+        private void bttnPrijave_Click(object sender, EventArgs e)
+        {
+            var frm = new frmFilmPrijava(_filmId);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            this.Close();
+        }
     }
 }
 

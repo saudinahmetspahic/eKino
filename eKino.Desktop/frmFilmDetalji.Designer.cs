@@ -162,6 +162,7 @@ namespace eKino.Desktop
             this.bttnLike = new System.Windows.Forms.Button();
             this.bttnDislike = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bttnPrijave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSlika)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -1498,12 +1499,26 @@ namespace eKino.Desktop
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // bttnPrijave
+            // 
+            this.bttnPrijave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bttnPrijave.BackColor = System.Drawing.Color.LightSalmon;
+            this.bttnPrijave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnPrijave.Location = new System.Drawing.Point(216, 93);
+            this.bttnPrijave.Name = "bttnPrijave";
+            this.bttnPrijave.Size = new System.Drawing.Size(82, 66);
+            this.bttnPrijave.TabIndex = 18;
+            this.bttnPrijave.Text = "Prijave";
+            this.bttnPrijave.UseVisualStyleBackColor = false;
+            this.bttnPrijave.Click += new System.EventHandler(this.bttnPrijave_Click);
+            // 
             // frmFilmDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1227, 721);
+            this.Controls.Add(this.bttnPrijave);
             this.Controls.Add(this.tblDodajProjekciju);
             this.Controls.Add(this.tblDodavanjeGlumca);
             this.Controls.Add(this.tblDodajPrKucu);
@@ -1662,5 +1677,6 @@ namespace eKino.Desktop
         private System.Windows.Forms.Button bttnLike;
         private System.Windows.Forms.Button bttnDislike;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button bttnPrijave;
     }
 }

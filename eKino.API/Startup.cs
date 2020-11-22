@@ -98,6 +98,7 @@ namespace eKino.API
             services.AddScoped<ICRUDService<Model.Komentar, KomentarSearchRequest, KomentarInsertRequest, KomentarInsertRequest>, KomentarService>();
             services.AddScoped<ICRUDService<Model.KomentarReakcija, KomentarReakcijaSearchRequest, KomentarReakcijaInsertRequest, KomentarReakcijaInsertRequest>, KomentarReakcijaService>();
             services.AddScoped<ICRUDService<Model.KorisnikPaket, KorisnikPaketSearchRequest, KorisnikPaketInsertRequest, KorisnikPaketInsertRequest>, KorisnikPaketService>();
+            services.AddScoped<ICRUDService<Model.Prijava, PrijavaSearchRequest, PrijavaInsertRequest, PrijavaInsertRequest>, PrijavaService>();
 
             //services.AddScoped<MojContext, MojContext>();
             services.AddHostedService<EmailNotification>();

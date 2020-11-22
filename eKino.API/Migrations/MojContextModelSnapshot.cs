@@ -345,6 +345,43 @@ namespace eKino.API.Migrations
                     b.ToTable("Paket");
                 });
 
+            modelBuilder.Entity("eKino.API.Database.Prijava", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FilmId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Opis")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PrijavioId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Rijeseno")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Telefon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VlasnikAutPrava")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FilmId");
+
+                    b.HasIndex("PrijavioId");
+
+                    b.ToTable("Prijava");
+                });
+
             modelBuilder.Entity("eKino.API.Database.ProdukcijskaKuca", b =>
                 {
                     b.Property<int>("Id")
@@ -669,6 +706,21 @@ namespace eKino.API.Migrations
                     b.HasOne("eKino.API.Database.Uloga", "Uloga")
                         .WithMany()
                         .HasForeignKey("UlogaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("eKino.API.Database.Prijava", b =>
+                {
+                    b.HasOne("eKino.API.Database.Film", "Film")
+                        .WithMany()
+                        .HasForeignKey("FilmId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eKino.API.Database.Korisnik", "Prijavio")
+                        .WithMany()
+                        .HasForeignKey("PrijavioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -278,6 +278,12 @@
     <Compile Include="frmFilmPregled.Designer.cs">
       <DependentUpon>frmFilmPregled.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFilmPrijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFilmPrijava.Designer.cs">
+      <DependentUpon>frmFilmPrijava.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIzvjestaj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFilmPregled.resx">
       <DependentUpon>frmFilmPregled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFilmPrijava.resx">
+      <DependentUpon>frmFilmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIzvjestaj.resx">
       <DependentUpon>frmIzvjestaj.cs</DependentUpon>
