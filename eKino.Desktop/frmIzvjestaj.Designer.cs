@@ -176,7 +176,7 @@
             this.cbxTip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTip.FormattingEnabled = true;
-            this.cbxTip.Location = new System.Drawing.Point(232, 123);
+            this.cbxTip.Location = new System.Drawing.Point(232, 122);
             this.cbxTip.Name = "cbxTip";
             this.cbxTip.Size = new System.Drawing.Size(688, 30);
             this.cbxTip.TabIndex = 6;
@@ -188,7 +188,7 @@
             this.cbxZanr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxZanr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxZanr.FormattingEnabled = true;
-            this.cbxZanr.Location = new System.Drawing.Point(232, 181);
+            this.cbxZanr.Location = new System.Drawing.Point(232, 180);
             this.cbxZanr.Name = "cbxZanr";
             this.cbxZanr.Size = new System.Drawing.Size(688, 30);
             this.cbxZanr.TabIndex = 7;

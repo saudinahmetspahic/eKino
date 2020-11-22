@@ -19,6 +19,7 @@ namespace eKino.API.Database
         public string Email { get; set; }
         public string LozinkaSalt { get; set; }
         public string LozinkaHash { get; set; }
+        public bool SlanjeEmaila { get; set; }
 
         [ForeignKey(nameof(UlogaId))]
         public int UlogaId { get; set; }

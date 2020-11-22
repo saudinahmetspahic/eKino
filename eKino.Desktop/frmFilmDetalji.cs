@@ -39,6 +39,24 @@ namespace eKino.Desktop
             this.AutoValidate = AutoValidate.Disable;
         }
 
+        private void SetEnable(bool value)
+        {
+            tblDodajPrKucu.Enabled = value;
+            tblDodajProjekciju.Enabled = value;
+            tblDodavanjeGlumca.Enabled = value;
+            tblKomentari.Enabled = value;
+            tblLikeAndDislike.Enabled = value;
+            tblOcijena.Enabled = value;
+            tblZaDodavanjeKomentara.Enabled = value;
+            tblZaOcjenjivanjeFilma.Enabled = value;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            SetEnable(false);
+        }
+
         private void frmFilmDetalji_Load(object sender, EventArgs e)
         {
             var film = _filmService.GetById<Film>(_filmId);
@@ -156,7 +174,9 @@ namespace eKino.Desktop
         {
             lblNoviNaslov.Text = "Novi glumac";
             OcistiTextBoxove();
+            SetEnable(false);
             tblDodavanjeGlumca.Visible = true;
+            tblDodavanjeGlumca.Enabled = true;
         }
 
         private void OcistiTextBoxove()
@@ -183,7 +203,7 @@ namespace eKino.Desktop
 
         private void bttnDodajGlumcaDodaj_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 if (cbxListGlumaca.SelectedIndex != 0)
                 {
@@ -312,7 +332,7 @@ namespace eKino.Desktop
 
         private void bttnDodajPrKucuDodaj_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 if (cbxListKuca.SelectedIndex != 0)
                 {
@@ -380,7 +400,9 @@ namespace eKino.Desktop
         private void bttnDodajPrKucu_Click(object sender, EventArgs e)
         {
             OcistiTextBoxove();
+            SetEnable(false);
             tblDodajPrKucu.Visible = true;
+            tblDodajPrKucu.Enabled = true;
         }
 
         private void tblDodajProjekciju_VisibleChanged(object sender, EventArgs e)
@@ -401,7 +423,9 @@ namespace eKino.Desktop
                 return;
 
             OcistiTextBoxove();
+            SetEnable(false);
             tblDodajProjekciju.Visible = true;
+            tblDodajProjekciju.Enabled = true;
         }
 
         private void bttnDodajProjekcijuOdustani_Click(object sender, EventArgs e)
@@ -411,7 +435,7 @@ namespace eKino.Desktop
 
         private void bttnDodajProjekcijuDodaj_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 var g = new ProjekcijaInsertRequest
                 {
@@ -431,13 +455,17 @@ namespace eKino.Desktop
         private void bttnDodajKomentar_Click(object sender, EventArgs e)
         {
             OcistiTextBoxove();
+            SetEnable(false);
             tblZaDodavanjeKomentara.Visible = true;
+            tblZaDodavanjeKomentara.Enabled = true;
         }
 
         private void bttnOcijeniFilm_Click(object sender, EventArgs e)
         {
             OcistiTextBoxove();
+            SetEnable(false);
             tblZaOcjenjivanjeFilma.Visible = true;
+            tblZaOcjenjivanjeFilma.Enabled = true;
         }
 
         private void tblZaOcjenjivanjeFilma_VisibleChanged(object sender, EventArgs e)
@@ -479,7 +507,7 @@ namespace eKino.Desktop
 
         private void bttnPotvrdiKomentar_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 var komentar = txtKomentar.Text;
                 var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();

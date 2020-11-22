@@ -859,6 +859,3 @@ xamarin.forms.platform.android.appcompat.TabbedPageRenderer;crc64720bb2db43a66fe
 Xamarin.Forms.Platform.Android.AppCompat.ViewRenderer`2, Xamarin.Forms.Platform.Android;crc64720bb2db43a66fe9.ViewRenderer_2
 Xamarin.Forms.Platform.Android.AppCompat.ViewRenderer`2;crc64720bb2db43a66fe9.ViewRenderer_2
 xamarin.forms.platform.android.appcompat.ViewRenderer_2;crc64720bb2db43a66fe9.ViewRenderer_2
-eKino.Mobile.NotificationSender, eKino.Mobile;crc64bfbe5c8d9b8dbf28.NotificationSender
-eKino.Mobile.NotificationSender;crc64bfbe5c8d9b8dbf28.NotificationSender
-ekino.mobile.NotificationSender;crc64bfbe5c8d9b8dbf28.NotificationSender

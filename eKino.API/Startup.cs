@@ -18,6 +18,7 @@ using Microsoft.OpenApi.Models;
 using System.Collections.Generic;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.Swagger;
+using eKino.API.Util;
 
 namespace eKino.API
 {
@@ -98,8 +99,9 @@ namespace eKino.API
             services.AddScoped<ICRUDService<Model.KomentarReakcija, KomentarReakcijaSearchRequest, KomentarReakcijaInsertRequest, KomentarReakcijaInsertRequest>, KomentarReakcijaService>();
             services.AddScoped<ICRUDService<Model.KorisnikPaket, KorisnikPaketSearchRequest, KorisnikPaketInsertRequest, KorisnikPaketInsertRequest>, KorisnikPaketService>();
 
-            services.AddScoped<MojContext, MojContext>();
-            services.AddDbContext<MojContext>(option => option.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            //services.AddScoped<MojContext, MojContext>();
+            services.AddHostedService<EmailNotification>();
+            services.AddDbContext<MojContext>(option => option.UseSqlServer(Configuration.GetConnectionString("cs")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
