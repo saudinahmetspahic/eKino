@@ -676,7 +676,7 @@ namespace eKino.Desktop
             this.tblDodavanjeGlumca.Controls.Add(this.txtPrezime, 1, 3);
             this.tblDodavanjeGlumca.Controls.Add(this.bttnDodajGlumcaOdustani, 0, 7);
             this.tblDodavanjeGlumca.Controls.Add(this.bttnDodajGlumcaDodaj, 1, 7);
-            this.tblDodavanjeGlumca.Location = new System.Drawing.Point(918, 341);
+            this.tblDodavanjeGlumca.Location = new System.Drawing.Point(914, 337);
             this.tblDodavanjeGlumca.Name = "tblDodavanjeGlumca";
             this.tblDodavanjeGlumca.RowCount = 8;
             this.tblDodavanjeGlumca.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
@@ -797,6 +797,7 @@ namespace eKino.Desktop
             this.cbxGrad.Name = "cbxGrad";
             this.cbxGrad.Size = new System.Drawing.Size(156, 24);
             this.cbxGrad.TabIndex = 11;
+            this.cbxGrad.Validating += new System.ComponentModel.CancelEventHandler(this.cbxGrad_Validating);
             // 
             // txtBiografija
             // 
@@ -970,6 +971,7 @@ namespace eKino.Desktop
             this.cbxKucaGrad.Name = "cbxKucaGrad";
             this.cbxKucaGrad.Size = new System.Drawing.Size(146, 24);
             this.cbxKucaGrad.TabIndex = 6;
+            this.cbxKucaGrad.Validating += new System.ComponentModel.CancelEventHandler(this.cbxKucaGrad_Validating);
             // 
             // bttnDodajPrKucuOdustani
             // 
@@ -1096,6 +1098,7 @@ namespace eKino.Desktop
             this.cbxDvoranaProjekcije.Name = "cbxDvoranaProjekcije";
             this.cbxDvoranaProjekcije.Size = new System.Drawing.Size(153, 24);
             this.cbxDvoranaProjekcije.TabIndex = 5;
+            this.cbxDvoranaProjekcije.Validating += new System.ComponentModel.CancelEventHandler(this.cbxDvoranaProjekcije_Validating);
             // 
             // txtCijenaProjekcije
             // 
@@ -1333,6 +1336,7 @@ namespace eKino.Desktop
             this.cbxListOcijena.Name = "cbxListOcijena";
             this.cbxListOcijena.Size = new System.Drawing.Size(274, 24);
             this.cbxListOcijena.TabIndex = 1;
+            this.cbxListOcijena.Validating += new System.ComponentModel.CancelEventHandler(this.cbxListOcijena_Validating);
             // 
             // tblZaDodavanjeKomentara
             // 
@@ -1342,7 +1346,7 @@ namespace eKino.Desktop
             this.tblZaDodavanjeKomentara.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblZaDodavanjeKomentara.Controls.Add(this.tableLayoutPanel9, 0, 1);
             this.tblZaDodavanjeKomentara.Controls.Add(this.label28, 0, 0);
-            this.tblZaDodavanjeKomentara.Location = new System.Drawing.Point(407, 231);
+            this.tblZaDodavanjeKomentara.Location = new System.Drawing.Point(405, 227);
             this.tblZaDodavanjeKomentara.Name = "tblZaDodavanjeKomentara";
             this.tblZaDodavanjeKomentara.RowCount = 2;
             this.tblZaDodavanjeKomentara.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.11594F));
@@ -1392,6 +1396,7 @@ namespace eKino.Desktop
             this.txtKomentar.Size = new System.Drawing.Size(224, 81);
             this.txtKomentar.TabIndex = 1;
             this.txtKomentar.Text = "";
+            this.txtKomentar.Validating += new System.ComponentModel.CancelEventHandler(this.txtKomentar_Validating);
             // 
             // tableLayoutPanel10
             // 
@@ -1421,7 +1426,6 @@ namespace eKino.Desktop
             this.bttnPotvrdiKomentar.Text = "Potvrdi";
             this.bttnPotvrdiKomentar.UseVisualStyleBackColor = true;
             this.bttnPotvrdiKomentar.Click += new System.EventHandler(this.bttnPotvrdiKomentar_Click);
-            this.bttnPotvrdiKomentar.Validating += new System.ComponentModel.CancelEventHandler(this.bttnPotvrdiKomentar_Validating);
             // 
             // bttnOdustaniOdKomentara
             // 

@@ -681,3 +681,4 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\D
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmFilmPrijava.resources
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmAccountUredi.resources

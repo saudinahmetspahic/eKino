@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CBX_Dvorana" xml:space="preserve">
+    <value>Morate odabrati dvoranu.</value>
+  </data>
+  <data name="CBX_Grad" xml:space="preserve">
+    <value>Morate odabrati jedan od gradova</value>
+  </data>
+  <data name="CBX_Ocijena" xml:space="preserve">
+    <value>Morate dodijeliti ocijenu.</value>
+  </data>
+  <data name="CBX_Vrsta" xml:space="preserve">
+    <value>Morate odabrati vrstu.</value>
+  </data>
+  <data name="CBX_Zanr" xml:space="preserve">
+    <value>Morate odabrati zanr.</value>
+  </data>
   <data name="Int_BrojKarata" xml:space="preserve">
     <value>Minimalan broj karata je 10.</value>
   </data>

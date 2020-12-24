@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xy0aDUCyup+IiafRGP+cdwAhUbFOpM9fTXzoxUHAR0Y+zW1vk4oTlJHgdsOtIlNj5HH5ZMp6ag2OVhVjGtvc3g==",
+  "dgSpecHash": "cq1u7FDHfOXYegdC0gR/EcYREdBx61dvtWsvMiSqzm38443wAWi/M88qNZSw1GTPHwjVn7w3gQ8GUk5Uc5FWsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.UWP\\eKino.Mobile.UWP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\saudi\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
@@ -19,6 +20,7 @@
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.netcore.universalwindowsplatform\\6.1.7\\microsoft.netcore.universalwindowsplatform.6.1.7.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.ui.xaml\\2.4.2\\microsoft.ui.xaml.2.4.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",

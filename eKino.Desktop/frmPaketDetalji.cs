@@ -70,23 +70,5 @@ namespace eKino.Desktop
             _paketService.Update<PaketInsertRequest>(_paket.Id, model);
         }
 
-        private void bttnKupiPaket_Click(object sender, EventArgs e)
-        {
-            var korisnik = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
-            var trenutniPaket = _korisnikPaketService.Get<List<KorisnikPaket>>(new KorisnikPaketSearchRequest { KorisnikId = korisnik.Id }).FirstOrDefault();
-            if (trenutniPaket != null)
-            {
-                _korisnikPaketService.Remove(trenutniPaket.Id);
-            }
-            _korisnikPaketService.Add(new KorisnikPaketInsertRequest
-            {
-                KorisnikId = korisnik.Id,
-                PaketId = _paket.Id
-            });
-
-            var frm = new frmPocetna();
-            frm.Show();
-            this.MdiParent.Close();
-        }
     }
 }

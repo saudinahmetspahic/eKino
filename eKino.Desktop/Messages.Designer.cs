@@ -61,6 +61,51 @@ namespace eKino.Desktop {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Morate odabrati dvoranu..
+        /// </summary>
+        internal static string CBX_Dvorana {
+            get {
+                return ResourceManager.GetString("CBX_Dvorana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Morate odabrati jedan od gradova.
+        /// </summary>
+        internal static string CBX_Grad {
+            get {
+                return ResourceManager.GetString("CBX_Grad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Morate dodijeliti ocijenu..
+        /// </summary>
+        internal static string CBX_Ocijena {
+            get {
+                return ResourceManager.GetString("CBX_Ocijena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Morate odabrati vrstu..
+        /// </summary>
+        internal static string CBX_Vrsta {
+            get {
+                return ResourceManager.GetString("CBX_Vrsta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Morate odabrati zanr..
+        /// </summary>
+        internal static string CBX_Zanr {
+            get {
+                return ResourceManager.GetString("CBX_Zanr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minimalan broj karata je 10..
         /// </summary>
         internal static string Int_BrojKarata {

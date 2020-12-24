@@ -40,7 +40,7 @@ namespace eKino.Desktop
 
         private void bttnUredi_Click(object sender, EventArgs e)
         {
-            frmUrediAccount frm = new frmUrediAccount();
+            frmAccountUredi frm = new frmAccountUredi();
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();

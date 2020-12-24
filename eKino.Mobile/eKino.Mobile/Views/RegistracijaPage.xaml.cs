@@ -38,6 +38,12 @@ namespace eKino.Mobile.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            if (Sifra.Text != SifraPotvrda.Text)
+            {
+                await Application.Current.MainPage.DisplayAlert("Greska", "Unijeli ste dvije različite lozinke.", "Ok");
+                return;
+            }
+
             var korisnik = new KorisnikInsertRequest
             {
                 DatumRegistracije = DateTime.Now,

@@ -10,9 +10,9 @@ namespace eKino.Model
         public int DataOcijena { get; set; }
 
         public int KomentatorId { get; set; }
-        public virtual Korisnik Komentator { get; set; }
+        public Korisnik Komentator { get; set; }
 
         public int FilmId { get; set; }
-        public virtual Film Film { get; set; }
+        public Film Film { get; set; }
     }
 }

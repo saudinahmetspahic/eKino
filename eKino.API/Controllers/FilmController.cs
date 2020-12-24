@@ -41,13 +41,13 @@ namespace eKino.API.Controllers
         }
 
 
-        [HttpGet("RecommendedFilmovi/{filmId}")]
-        public IEnumerable<Model.Film> RecommendedFilmovi(string filmId)
+        [HttpGet("RecommendedFilmovi/{korisnikId}")]
+        public IEnumerable<Model.Film> RecommendedFilmovi(string korisnikId)
         {
             //var r = new Recommender();
             //return _mapper.Map<List<Model.Film>>(r.GetSlicneFilmove(int.Parse(filmId)));
 
-            return _service.GetPreporuceneFilmove(int.Parse(filmId));
+            return _service.GetPreporuceneFilmove(int.Parse(korisnikId));
         }
 
     }

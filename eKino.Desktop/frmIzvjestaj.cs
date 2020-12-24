@@ -30,13 +30,13 @@ namespace eKino.Desktop
             dtpDatumOd.Value = DateTime.Now;
 
             var zanrovi = _zanrService.Get<List<Zanr>>();
-            zanrovi.Insert(0, new Zanr { Id = 0, NazivZanra = "Odaberi zanr (opcionalno)" });
+            zanrovi.Insert(0, new Zanr { Id = 0, NazivZanra = "Odaberi zanr" });
             cbxZanr.DataSource = zanrovi;
             cbxZanr.DisplayMember = "NazivZanra";
             cbxZanr.ValueMember = "Id";
 
             var tipovi = _tipService.Get<List<Tip>>();
-            tipovi.Insert(0, new Tip { Id = 0, NazivTipa = "Odaberi tip (opcionalno)" });
+            tipovi.Insert(0, new Tip { Id = 0, NazivTipa = "Odaberi tip" });
             cbxTip.DataSource = tipovi;
             cbxTip.DisplayMember = "NazivTipa";
             cbxTip.ValueMember = "Id";

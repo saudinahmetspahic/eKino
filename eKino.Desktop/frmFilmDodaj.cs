@@ -52,15 +52,18 @@ namespace eKino.Desktop
                     Slika = slika
                 };
                 _filmService.Add(film);
-
+                var dodanifilm = _filmService.Get<List<Film>>(new FilmSearchRequest { Naziv = film.Naziv }).FirstOrDefault();
+                if (dodanifilm == null)
+                    return;
+                
                 if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) && !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) && cbxDvorana.SelectedIndex != 0)
                 {
                     var projekcija = new ProjekcijaInsertRequest
                     {
                         DatumProjekcije = dtpDatumProjekcije.Value,
                         CijenaUlaznice = double.Parse(txtProjekcijaCijenaUlaznice.Text),
-                        FilmId = film.Id,
-                        Opis = "Film: " + film.Naziv + " Opis: " + film.Opis,
+                        FilmId = dodanifilm.Id,
+                        Opis = "Film: " + dodanifilm.Naziv + " Opis: " + dodanifilm.Opis,
                         DvoranaId = cbxDvorana.SelectedIndex
                     };
                     _projekcijaService.Add(projekcija);
@@ -68,8 +71,8 @@ namespace eKino.Desktop
 
                 _ocijenaService.Add(new OcijenaInsertRequest
                 {
-                    DataOcijena = Int32.Parse(txtOcijena.Text),
-                    FilmId = film.Id,
+                    DataOcijena = Int32.Parse(txtOcijena.Text), 
+                    FilmId = dodanifilm.Id,
                     KomentatorId = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault().Id
                 });
 
@@ -166,6 +169,36 @@ namespace eKino.Desktop
                 {
                     e.Cancel = true;
                     errorProvider.SetError(txtProjekcijaBrojKarata, Messages.Int_BrojKarata);
+                }
+            }
+        }
+
+        private void cbxZanr_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxZanr.SelectedIndex == 0)
+            {   
+                e.Cancel = true;
+                errorProvider.SetError(cbxZanr, Messages.CBX_Zanr);
+            }
+        }
+
+        private void cbxVrsta_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxZanr.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(cbxZanr, Messages.CBX_Vrsta);
+            }
+        }
+
+        private void cbxDvorana_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text))
+            {
+                if (cbxDvorana.SelectedIndex == 0)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(cbxDvorana, Messages.CBX_Zanr);
                 }
             }
         }

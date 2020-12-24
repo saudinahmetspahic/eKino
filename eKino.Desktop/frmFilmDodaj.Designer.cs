@@ -272,6 +272,7 @@
             this.cbxZanr.Name = "cbxZanr";
             this.cbxZanr.Size = new System.Drawing.Size(311, 24);
             this.cbxZanr.TabIndex = 23;
+            this.cbxZanr.Validating += new System.ComponentModel.CancelEventHandler(this.cbxZanr_Validating);
             // 
             // dtpDatumProjekcije
             // 
@@ -301,6 +302,7 @@
             this.cbxVrsta.Name = "cbxVrsta";
             this.cbxVrsta.Size = new System.Drawing.Size(311, 24);
             this.cbxVrsta.TabIndex = 21;
+            this.cbxVrsta.Validating += new System.ComponentModel.CancelEventHandler(this.cbxVrsta_Validating);
             // 
             // label6
             // 
@@ -329,6 +331,7 @@
             this.cbxDvorana.Name = "cbxDvorana";
             this.cbxDvorana.Size = new System.Drawing.Size(375, 24);
             this.cbxDvorana.TabIndex = 26;
+            this.cbxDvorana.Validating += new System.ComponentModel.CancelEventHandler(this.cbxDvorana_Validating);
             // 
             // label5
             // 

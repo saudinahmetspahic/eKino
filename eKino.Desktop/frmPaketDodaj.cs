@@ -61,10 +61,19 @@ namespace eKino.Desktop
             
         private void txtOpis_Validating(object sender, CancelEventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtOpis.Text) && txtOpis.Text.Length < 15)
+            if(string.IsNullOrEmpty(txtOpis.Text) || txtOpis.Text.Length < 15)
             {
                 e.Cancel = true;
                 errorProvider.SetError(txtOpis, Messages.Text_Opis_15_K);
+            }
+        }
+            
+        private void cbxOcijena_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxOcijena.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(cbxOcijena, Messages.CBX_Ocijena);
             }
         }
     }

@@ -260,6 +260,12 @@
     <Compile Include="frmAccountInfo.Designer.cs">
       <DependentUpon>frmAccountInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAccountUredi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccountUredi.Designer.cs">
+      <DependentUpon>frmAccountUredi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFilmDetalji.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,12 +344,6 @@
     <Compile Include="frmRezervacijaPregled.Designer.cs">
       <DependentUpon>frmRezervacijaPregled.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUrediAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUrediAccount.Designer.cs">
-      <DependentUpon>frmUrediAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Izvjestaji\rptFilmovi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +370,9 @@
     </Compile>
     <EmbeddedResource Include="frmAccountInfo.resx">
       <DependentUpon>frmAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccountUredi.resx">
+      <DependentUpon>frmAccountUredi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFilmDetalji.resx">
       <DependentUpon>frmFilmDetalji.cs</DependentUpon>
@@ -409,9 +412,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRezervacijaPregled.resx">
       <DependentUpon>frmRezervacijaPregled.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUrediAccount.resx">
-      <DependentUpon>frmUrediAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Izvjestaji\Report1.rdlc" />
     <EmbeddedResource Include="Izvjestaji\rptFilmovi.resx">

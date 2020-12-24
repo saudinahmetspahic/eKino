@@ -33,11 +33,9 @@ namespace eKino.Mobile.Views
 
         private void SnimiButton_Clicked(object sender, EventArgs e)
         {
-            if (Lozinka.Text != PotvrdaLozinka.Text)
-            {
-                Application.Current.MainPage.DisplayAlert("Greska", "Lozinke se ne poklapaju.", "Ok");
+            if (!Validate())
                 return;
-            }
+
             var _korisnik = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
             var req = new KorisnikInsertRequest
             {
@@ -53,6 +51,37 @@ namespace eKino.Mobile.Views
             };
             _korisnikService.Update<Korisnik>(_korisnik.Id, req);
             Navigation.PopAsync();
+        }
+
+        private bool Validate()
+        {
+            if (string.IsNullOrEmpty(Ime.Text))
+            {
+                DisplayAlert("Greska", "Morate unijeti ime.", "Ok");
+                return false;
+            }
+            if (string.IsNullOrEmpty(Prezime.Text))
+            {
+                DisplayAlert("Greska", "Morate unijeti prezime.", "Ok");
+                return false;
+            }
+            if (string.IsNullOrEmpty(Email.Text))
+            {
+                DisplayAlert("Greska", "Morate unijeti email adresu.", "Ok");
+                return false;
+            }
+            if (Gradovi.SelectedIndex == 0)
+            {
+                DisplayAlert("Greska", "Morate odabrati grad.", "Ok");
+                return false;
+            }
+            if (!string.IsNullOrEmpty(Lozinka.Text) && string.Compare(Lozinka.Text, PotvrdaLozinka.Text) == 1)
+            {
+                DisplayAlert("Greska", "Lozinke se ne poklapaju.", "Ok");
+                return false;
+            }
+
+            return true;
         }
     }
 }

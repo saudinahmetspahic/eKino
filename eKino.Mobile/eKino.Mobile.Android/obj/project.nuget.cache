@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "r3hwo7rCb5MxHLovQEpKQRMO0d6PuzvB1LsX2Gq0/8mvARSkscLiDUxQY4PacEaR1hmWIngwMQR1OhxLZS58wg==",
+  "dgSpecHash": "01h8dpqBHnftTAWI7IHJTrFzen6H/xbBHFLUa2eYS2tUSF0UoKv1nBQthnOyazIb0ctdUX8nUt+Vf505+ZpIDA==",
   "success": true,
   "projectFilePath": "C:\\Users\\saudi\\Source\\Repos\\saudinahmetspahic\\RS2-Seminarski\\eKino.Mobile\\eKino.Mobile.Android\\eKino.Mobile.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\saudi\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\libvlcsharp\\3.4.6\\libvlcsharp.3.4.6.nupkg.sha512",
@@ -12,6 +13,7 @@
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\saudi\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\stripe.net\\39.23.0\\stripe.net.39.23.0.nupkg.sha512",
     "C:\\Users\\saudi\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",

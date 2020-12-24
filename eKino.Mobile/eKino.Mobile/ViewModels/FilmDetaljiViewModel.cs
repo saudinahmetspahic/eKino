@@ -33,7 +33,8 @@ namespace eKino.Mobile.ViewModels
         public FilmDetaljiViewModel(int filmId = 0)
         {
             Film = _filmService.GetById<Film>(filmId);
-            _preporukafilmService = new ApiService("Film/RecommendedFilmovi/" + filmId);
+            var k = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+            _preporukafilmService = new ApiService("Film/RecommendedFilmovi/" + k.Id);
             InitCommand = new Command(() => { Init(); });
         }
         public void Init()

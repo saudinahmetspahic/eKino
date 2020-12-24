@@ -7,6 +7,7 @@
         <viewModels:PaketiAktuelnoViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout x:Name="paketiStack">
             <Label Text="Paketi"
                 HorizontalOptions="CenterAndExpand"
@@ -14,5 +15,6 @@
                 FontSize="17"/>
 
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -47,7 +47,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 45);
+            this.label1.Location = new System.Drawing.Point(429, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(403, 20);
             this.label1.TabIndex = 0;
@@ -57,8 +57,8 @@
             // 
             this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.91874F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.08126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.03575F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.96425F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
@@ -101,10 +101,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 56);
+            this.label2.Size = new System.Drawing.Size(262, 56);
             this.label2.TabIndex = 0;
             this.label2.Text = "Datum projekcije od";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,10 +115,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 55);
+            this.label3.Size = new System.Drawing.Size(262, 55);
             this.label3.TabIndex = 1;
             this.label3.Text = "Datum projekcije do";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,10 +129,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 54);
+            this.label4.Size = new System.Drawing.Size(262, 54);
             this.label4.TabIndex = 2;
             this.label4.Text = "Tip";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -143,10 +143,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 63);
+            this.label5.Size = new System.Drawing.Size(262, 63);
             this.label5.TabIndex = 3;
             this.label5.Text = "Zanr";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -155,18 +155,18 @@
             // 
             this.dtpDatumOd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDatumOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDatumOd.Location = new System.Drawing.Point(232, 14);
+            this.dtpDatumOd.Location = new System.Drawing.Point(271, 14);
             this.dtpDatumOd.Name = "dtpDatumOd";
-            this.dtpDatumOd.Size = new System.Drawing.Size(688, 28);
+            this.dtpDatumOd.Size = new System.Drawing.Size(649, 28);
             this.dtpDatumOd.TabIndex = 4;
             // 
             // dtpDatumDo
             // 
             this.dtpDatumDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDatumDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDatumDo.Location = new System.Drawing.Point(232, 69);
+            this.dtpDatumDo.Location = new System.Drawing.Point(271, 69);
             this.dtpDatumDo.Name = "dtpDatumDo";
-            this.dtpDatumDo.Size = new System.Drawing.Size(688, 28);
+            this.dtpDatumDo.Size = new System.Drawing.Size(649, 28);
             this.dtpDatumDo.TabIndex = 5;
             // 
             // cbxTip
@@ -176,9 +176,9 @@
             this.cbxTip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTip.FormattingEnabled = true;
-            this.cbxTip.Location = new System.Drawing.Point(232, 122);
+            this.cbxTip.Location = new System.Drawing.Point(271, 123);
             this.cbxTip.Name = "cbxTip";
-            this.cbxTip.Size = new System.Drawing.Size(688, 30);
+            this.cbxTip.Size = new System.Drawing.Size(649, 30);
             this.cbxTip.TabIndex = 6;
             // 
             // cbxZanr
@@ -188,9 +188,9 @@
             this.cbxZanr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxZanr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxZanr.FormattingEnabled = true;
-            this.cbxZanr.Location = new System.Drawing.Point(232, 180);
+            this.cbxZanr.Location = new System.Drawing.Point(271, 181);
             this.cbxZanr.Name = "cbxZanr";
-            this.cbxZanr.Size = new System.Drawing.Size(688, 30);
+            this.cbxZanr.Size = new System.Drawing.Size(649, 30);
             this.cbxZanr.TabIndex = 7;
             // 
             // frmIzvjestaj

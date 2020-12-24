@@ -50,11 +50,14 @@ namespace eKino.Mobile.Views
         private async void IzbrisiPaket_Clicked(object sender, EventArgs e)
         {
             _paketService.Remove(model.PaketId);
-            await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
 
         private void SnimiIzmjene_Clicked(object sender, EventArgs e)
         {
+            if (!Validation())
+                return;
+
             var m = new PaketInsertRequest
             {
                 Cijena = double.Parse(CijenaPaketa.Text),
@@ -72,6 +75,21 @@ namespace eKino.Mobile.Views
                 Msg.Text = string.Empty;
                 return false; // false zaustavlja timer
             });
+        }
+
+        private bool Validation()
+        {
+            if (!int.TryParse(CijenaPaketa.Text, out int x))
+            {
+                DisplayAlert("Greska", "Cijena paketa se unosi brojem.", "Ok");
+                return false;
+            }
+            if (!int.TryParse(MaxOcijena.Text, out int xx) || xx < 0 || x > 5)
+            {
+                DisplayAlert("Greska", "Maksimalna ocijena se unosi brojem od 1 do 5.", "Ok");
+                return false;
+            }
+            return true;
         }
 
         private void KupiPaket_Clicked(object sender, EventArgs e)

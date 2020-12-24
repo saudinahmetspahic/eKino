@@ -118,45 +118,42 @@
             // 
             // txtOpis
             // 
-            this.txtOpis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOpis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtOpis.Location = new System.Drawing.Point(240, 3);
             this.txtOpis.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(426, 92);
+            this.txtOpis.Size = new System.Drawing.Size(398, 92);
             this.txtOpis.TabIndex = 5;
             this.txtOpis.Text = "";
             this.txtOpis.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpis_Validating);
             // 
             // dtpDatumIsteka
             // 
-            this.dtpDatumIsteka.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDatumIsteka.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dtpDatumIsteka.Location = new System.Drawing.Point(240, 108);
             this.dtpDatumIsteka.Name = "dtpDatumIsteka";
-            this.dtpDatumIsteka.Size = new System.Drawing.Size(426, 22);
+            this.dtpDatumIsteka.Size = new System.Drawing.Size(398, 22);
             this.dtpDatumIsteka.TabIndex = 6;
             // 
             // cbxOcijena
             // 
-            this.cbxOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxOcijena.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxOcijena.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxOcijena.FormattingEnabled = true;
             this.cbxOcijena.Location = new System.Drawing.Point(240, 152);
             this.cbxOcijena.Name = "cbxOcijena";
-            this.cbxOcijena.Size = new System.Drawing.Size(426, 24);
+            this.cbxOcijena.Size = new System.Drawing.Size(398, 24);
             this.cbxOcijena.TabIndex = 7;
+            this.cbxOcijena.Validating += new System.ComponentModel.CancelEventHandler(this.cbxOcijena_Validating);
             // 
             // nudCijena
             // 
-            this.nudCijena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCijena.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.nudCijena.Increment = new decimal(new int[] {
             5,
             0,
@@ -164,7 +161,7 @@
             0});
             this.nudCijena.Location = new System.Drawing.Point(240, 194);
             this.nudCijena.Name = "nudCijena";
-            this.nudCijena.Size = new System.Drawing.Size(426, 22);
+            this.nudCijena.Size = new System.Drawing.Size(398, 22);
             this.nudCijena.TabIndex = 8;
             // 
             // bttnPaketDodaj

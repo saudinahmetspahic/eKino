@@ -177,6 +177,11 @@ namespace eKino.Desktop
             SetEnable(false);
             tblDodavanjeGlumca.Visible = true;
             tblDodavanjeGlumca.Enabled = true;
+
+            txtIme.Enabled = true;
+            txtPrezime.Enabled = true;
+            cbxGrad.Enabled = true;
+            txtBiografija.Enabled = true;
         }
 
         private void OcistiTextBoxove()
@@ -189,10 +194,15 @@ namespace eKino.Desktop
             txtCijenaProjekcije.Text = "";
             txtOpisProjekcije.Text = "";
             tblDodavanjeGlumca.Visible = false;
+            tblDodavanjeGlumca.Enabled = false;
             tblDodajPrKucu.Visible = false;
+            tblDodajPrKucu.Enabled = false;
             tblDodajProjekciju.Visible = false;
+            tblDodajProjekciju.Enabled = false;
             tblZaOcjenjivanjeFilma.Visible = false;
+            tblZaOcjenjivanjeFilma.Enabled = false;
             tblZaDodavanjeKomentara.Visible = false;
+            tblZaDodavanjeKomentara.Enabled = false;
             tblLikeAndDislike.Visible = false;
         }
 
@@ -203,24 +213,25 @@ namespace eKino.Desktop
 
         private void bttnDodajGlumcaDodaj_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren(ValidationConstraints.Enabled))
+            if (cbxListGlumaca.SelectedIndex != 0)
             {
-                if (cbxListGlumaca.SelectedIndex != 0)
+                if (_filmglumciService.Get<List<FilmGlumci>>(new FilmGlumciSearchRequest { FilmId = _filmId, GlumacId = cbxListGlumaca.SelectedIndex }).Select(s => s.GlumacId).ToList().Count != 0)
                 {
-                    if (_filmglumciService.Get<List<FilmGlumci>>(new FilmGlumciSearchRequest { FilmId = _filmId, GlumacId = cbxListGlumaca.SelectedIndex }).Select(s => s.GlumacId).ToList().Count != 0)
-                    {
-                        OcistiTextBoxove();
-                        return;
-                    };
-                    var g = _glumacService.GetById<Osoba>((int)cbxListGlumaca.SelectedValue);
-                    _filmglumciService.Add(new FilmGlumciInsertRequest { FilmId = _filmId, GlumacId = g.Id });
-                    var l = new LinkLabel { Text = g.Ime + " " + g.Prezime };
-                    pnlGlumci.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                    pnlGlumci.Controls.Add(l);
-                    l.Anchor = AnchorStyles.Left;
-                    l.TextAlign = ContentAlignment.MiddleCenter;
-                }
-                else
+                    OcistiTextBoxove();
+                    return;
+                };
+                var g = _glumacService.GetById<Osoba>((int)cbxListGlumaca.SelectedValue);
+                _filmglumciService.Add(new FilmGlumciInsertRequest { FilmId = _filmId, GlumacId = g.Id });
+                var l = new LinkLabel { Text = g.Ime + " " + g.Prezime };
+                pnlGlumci.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                pnlGlumci.Controls.Add(l);
+                l.Anchor = AnchorStyles.Left;
+                l.TextAlign = ContentAlignment.MiddleCenter;
+                OcistiTextBoxove();
+            }
+            else
+            {
+                if (this.ValidateChildren(ValidationConstraints.Enabled))
                 {
                     var g = new OsobaInsertRequest
                     {
@@ -241,9 +252,10 @@ namespace eKino.Desktop
                     pnlGlumci.Controls.Add(l);
                     l.Anchor = AnchorStyles.Left;
                     l.TextAlign = ContentAlignment.MiddleCenter;
+                    OcistiTextBoxove();
                 }
-                OcistiTextBoxove();
             }
+
         }
 
         private void bttnDodajScenaristuDodaj_Click(object sender, EventArgs e)
@@ -263,31 +275,36 @@ namespace eKino.Desktop
                 //l.Dock = DockStyle.Fill;
                 l.Anchor = AnchorStyles.Left;
                 l.TextAlign = ContentAlignment.MiddleCenter;
+                OcistiTextBoxove();
             }
             else
             {
-                var g = new OsobaInsertRequest
+                if (this.ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    Ime = txtIme.Text,
-                    Prezime = txtPrezime.Text,
-                    Biografija = txtBiografija.Text,
-                    DatumRodjenja = dtpDatum.Value,
-                    GradId = (int)cbxGrad.SelectedValue,
-                    UlogaId = _ulogaService.GetByName<Uloga>("Scenarista").Id
-                };
-                var gl = _glumacService.Add<OsobaInsertRequest>(g);
+                    var g = new OsobaInsertRequest
+                    {
+                        Ime = txtIme.Text,
+                        Prezime = txtPrezime.Text,
+                        Biografija = txtBiografija.Text,
+                        DatumRodjenja = dtpDatum.Value,
+                        GradId = (int)cbxGrad.SelectedValue,
+                        UlogaId = _ulogaService.GetByName<Uloga>("Scenarista").Id
+                    };
+                    var gl = _glumacService.Add<OsobaInsertRequest>(g);
 
-                var gId = _glumacService.Get<List<Osoba>>(new OsobaSearchRequest { Ime = g.Ime, Prezime = g.Prezime }).Select(s => s.Id).FirstOrDefault();
-                _filmscenaristiService.Add(new FilmScenaristiInsertRequest { FilmId = _filmId, ScenaristId = gId });
+                    var gId = _glumacService.Get<List<Osoba>>(new OsobaSearchRequest { Ime = g.Ime, Prezime = g.Prezime }).Select(s => s.Id).FirstOrDefault();
+                    _filmscenaristiService.Add(new FilmScenaristiInsertRequest { FilmId = _filmId, ScenaristId = gId });
 
-                var l = new LinkLabel { Text = g.Ime + " " + g.Prezime };
-                pnlScenaristi.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                pnlScenaristi.Controls.Add(l);
-                //l.Dock = DockStyle.Fill;
-                l.Anchor = AnchorStyles.Left;
-                l.TextAlign = ContentAlignment.MiddleCenter;
+                    var l = new LinkLabel { Text = g.Ime + " " + g.Prezime };
+                    pnlScenaristi.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                    pnlScenaristi.Controls.Add(l);
+                    //l.Dock = DockStyle.Fill;
+                    l.Anchor = AnchorStyles.Left;
+                    l.TextAlign = ContentAlignment.MiddleCenter;
+                    OcistiTextBoxove();
+                }
             }
-            OcistiTextBoxove();
+
         }
 
         private void tblDodavanjeGlumca_VisibleChanged(object sender, EventArgs e)
@@ -302,6 +319,7 @@ namespace eKino.Desktop
                     cbxListGlumaca.DisplayMember = "ImePrezime";
                     cbxListGlumaca.ValueMember = "Id";
                     bttnDodajGlumcaDodaj.Click -= bttnDodajScenaristuDodaj_Click;
+                    bttnDodajGlumcaDodaj.Click -= bttnDodajGlumcaDodaj_Click; // uklanja se jer poziva event 2 puta
                     bttnDodajGlumcaDodaj.Click += bttnDodajGlumcaDodaj_Click;
                 }
                 else if (lblNoviNaslov.Text.Contains("scenarista"))
@@ -312,6 +330,7 @@ namespace eKino.Desktop
                     cbxListGlumaca.DisplayMember = "ImePrezime";
                     cbxListGlumaca.ValueMember = "Id";
                     bttnDodajGlumcaDodaj.Click -= bttnDodajGlumcaDodaj_Click;
+                    bttnDodajGlumcaDodaj.Click -= bttnDodajScenaristuDodaj_Click; // uklanja se jer poziva event 2 puta
                     bttnDodajGlumcaDodaj.Click += bttnDodajScenaristuDodaj_Click;
                 }
 
@@ -328,30 +347,37 @@ namespace eKino.Desktop
             lblNoviNaslov.Text = "Novi scenarista";
             OcistiTextBoxove();
             tblDodavanjeGlumca.Visible = true;
+            tblDodavanjeGlumca.Enabled = true;
+
+            txtIme.Enabled = true;
+            txtPrezime.Enabled = true;
+            cbxGrad.Enabled = true;
+            txtBiografija.Enabled = true;
         }
 
         private void bttnDodajPrKucuDodaj_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren(ValidationConstraints.Enabled))
+            if (cbxListKuca.SelectedIndex != 0)
             {
-                if (cbxListKuca.SelectedIndex != 0)
+                var g = _filmprkuceService.Get<List<FilmProdukcijskeKuce>>(new FilmProdukcijskeKuceSearchRequest { FilmId = _filmId, ProdukcijskaKucaId = cbxListKuca.SelectedIndex });
+                if (g.Count != 0)
                 {
-                    var g = _filmprkuceService.Get<List<FilmProdukcijskeKuce>>(new FilmProdukcijskeKuceSearchRequest { FilmId = _filmId, ProdukcijskaKucaId = cbxListKuca.SelectedIndex });
-                    if (g.Count != 0)
-                    {
-                        OcistiTextBoxove();
-                        return;
-                    };
-                    var p = _prkucaService.GetById<ProdukcijskaKuca>((int)cbxListKuca.SelectedValue);
-                    _filmprkuceService.Add(new FilmProdukcijskeKuceInsertRequest { FilmId = _filmId, ProdukcijskaKucaId = p.Id });
-                    var l = new LinkLabel { Text = p.Naziv };
-                    pnlPrKuce.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                    pnlPrKuce.Controls.Add(l);
-                    //l.Dock = DockStyle.Fill;
-                    l.Anchor = AnchorStyles.Left;
-                    l.TextAlign = ContentAlignment.MiddleCenter;
-                }
-                else
+                    OcistiTextBoxove();
+                    return;
+                };
+                var p = _prkucaService.GetById<ProdukcijskaKuca>((int)cbxListKuca.SelectedValue);
+                _filmprkuceService.Add(new FilmProdukcijskeKuceInsertRequest { FilmId = _filmId, ProdukcijskaKucaId = p.Id });
+                var l = new LinkLabel { Text = p.Naziv };
+                pnlPrKuce.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                pnlPrKuce.Controls.Add(l);
+                //l.Dock = DockStyle.Fill;
+                l.Anchor = AnchorStyles.Left;
+                l.TextAlign = ContentAlignment.MiddleCenter;
+                OcistiTextBoxove();
+            }
+            else
+            {
+                if (this.ValidateChildren(ValidationConstraints.Enabled))
                 {
                     var g = new ProdukcijskaKucaInsertRequest
                     {
@@ -369,9 +395,10 @@ namespace eKino.Desktop
                     //l.Dock = DockStyle.Fill;
                     l.Anchor = AnchorStyles.Left;
                     l.TextAlign = ContentAlignment.MiddleCenter;
+                    OcistiTextBoxove();
                 }
-                OcistiTextBoxove();
             }
+
         }
 
         private void bttnDodajPrKucuOdustani_Click(object sender, EventArgs e)
@@ -403,6 +430,9 @@ namespace eKino.Desktop
             SetEnable(false);
             tblDodajPrKucu.Visible = true;
             tblDodajPrKucu.Enabled = true;
+
+            txtKucaNaziv.Enabled = true;
+            cbxKucaGrad.Enabled = true;
         }
 
         private void tblDodajProjekciju_VisibleChanged(object sender, EventArgs e)
@@ -426,6 +456,10 @@ namespace eKino.Desktop
             SetEnable(false);
             tblDodajProjekciju.Visible = true;
             tblDodajProjekciju.Enabled = true;
+
+            txtCijenaProjekcije.Enabled = true;
+            txtOpisProjekcije.Enabled = true;
+            cbxDvoranaProjekcije.Enabled = true;
         }
 
         private void bttnDodajProjekcijuOdustani_Click(object sender, EventArgs e)
@@ -458,6 +492,7 @@ namespace eKino.Desktop
             SetEnable(false);
             tblZaDodavanjeKomentara.Visible = true;
             tblZaDodavanjeKomentara.Enabled = true;
+            txtKomentar.Enabled = true;
         }
 
         private void bttnOcijeniFilm_Click(object sender, EventArgs e)
@@ -466,6 +501,8 @@ namespace eKino.Desktop
             SetEnable(false);
             tblZaOcjenjivanjeFilma.Visible = true;
             tblZaOcjenjivanjeFilma.Enabled = true;
+
+            cbxListOcijena.Enabled = true;
         }
 
         private void tblZaOcjenjivanjeFilma_VisibleChanged(object sender, EventArgs e)
@@ -487,17 +524,20 @@ namespace eKino.Desktop
 
         private void bttnPotvrdiOcijenu_Click(object sender, EventArgs e)
         {
-            var ocijena = (int)cbxListOcijena.SelectedValue;
-            var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
-            if (_ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { FilmId = _filmId, KorisnikId = komentator.Id }).Count() > 0)
-                return;
-            _ocijenaService.Add(new OcijenaInsertRequest
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-                DataOcijena = ocijena,
-                FilmId = _filmId,
-                KomentatorId = komentator.Id,
-            });
-            OcistiTextBoxove();
+                var ocijena = (int)cbxListOcijena.SelectedValue;
+                var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+                if (_ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { FilmId = _filmId, KorisnikId = komentator.Id }).Count() > 0)
+                    return;
+                _ocijenaService.Add(new OcijenaInsertRequest
+                {
+                    DataOcijena = ocijena,
+                    FilmId = _filmId,
+                    KomentatorId = komentator.Id,
+                });
+                OcistiTextBoxove();
+            }
         }
 
         private void bttnOdustaniOdOcijenjivanja_Click(object sender, EventArgs e)
@@ -569,14 +609,15 @@ namespace eKino.Desktop
             OcistiTextBoxove();
         }
 
-        private void bttnPotvrdiKomentar_Validating(object sender, CancelEventArgs e)
+        private void cbxListOcijena_Validating(object sender, CancelEventArgs e)
         {
-            if (txtKomentar.TextLength < 3 || txtKomentar.TextLength > 200)
+            if (cbxListOcijena.SelectedIndex == 0)
             {
                 e.Cancel = true;
-                errorProvider.SetError(txtKomentar, Messages.Text_Length_3_200);
+                errorProvider.SetError(cbxListOcijena, Messages.Text_Length_3_200);
             }
         }
+
 
         private void txtBiografija_Validating(object sender, CancelEventArgs e)
         {
@@ -605,12 +646,39 @@ namespace eKino.Desktop
             }
         }
 
+        private void cbxGrad_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxGrad.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(cbxGrad, Messages.CBX_Grad);
+            }
+        }
+
+        private void cbxKucaGrad_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxKucaGrad.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(cbxKucaGrad, Messages.CBX_Grad);
+            }
+        }
+
         private void txtKucaNaziv_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txtKucaNaziv.Text))
             {
                 e.Cancel = true;
                 errorProvider.SetError(txtKucaNaziv, Messages.Text_PrKuca);
+            }
+        }
+
+        private void cbxDvoranaProjekcije_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxDvoranaProjekcije.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(cbxDvoranaProjekcije, Messages.CBX_Dvorana);
             }
         }
 
@@ -638,6 +706,15 @@ namespace eKino.Desktop
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
+        }
+
+        private void txtKomentar_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtOpisProjekcije.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtOpisProjekcije, Messages.Text_Opis);
+            }
         }
     }
 }

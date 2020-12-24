@@ -40,7 +40,6 @@
             this.nudOcijena = new System.Windows.Forms.NumericUpDown();
             this.nudCijena = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bttnKupiPaket = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.bttnIzmijeni = new System.Windows.Forms.Button();
             this.bttnIzbrisiPaket = new System.Windows.Forms.Button();
@@ -48,7 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudOcijena)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCijena)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -162,19 +160,13 @@
             // 
             // dtpDatumIsteka
             // 
-            this.dtpDatumIsteka.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDatumIsteka.Location = new System.Drawing.Point(269, 52);
             this.dtpDatumIsteka.Name = "dtpDatumIsteka";
-            this.dtpDatumIsteka.Size = new System.Drawing.Size(465, 22);
+            this.dtpDatumIsteka.Size = new System.Drawing.Size(436, 22);
             this.dtpDatumIsteka.TabIndex = 11;
             // 
             // nudOcijena
             // 
-            this.nudOcijena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudOcijena.Location = new System.Drawing.Point(269, 103);
             this.nudOcijena.Maximum = new decimal(new int[] {
             5,
@@ -187,7 +179,7 @@
             0,
             0});
             this.nudOcijena.Name = "nudOcijena";
-            this.nudOcijena.Size = new System.Drawing.Size(465, 22);
+            this.nudOcijena.Size = new System.Drawing.Size(436, 22);
             this.nudOcijena.TabIndex = 12;
             this.nudOcijena.Value = new decimal(new int[] {
             1,
@@ -197,12 +189,9 @@
             // 
             // nudCijena
             // 
-            this.nudCijena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCijena.Location = new System.Drawing.Point(269, 151);
             this.nudCijena.Name = "nudCijena";
-            this.nudCijena.Size = new System.Drawing.Size(465, 22);
+            this.nudCijena.Size = new System.Drawing.Size(436, 22);
             this.nudCijena.TabIndex = 13;
             // 
             // tableLayoutPanel2
@@ -213,28 +202,14 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.bttnKupiPaket, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.bttnIzbrisiPaket, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.bttnIzmijeni, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(269, 332);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(465, 45);
             this.tableLayoutPanel2.TabIndex = 14;
-            // 
-            // bttnKupiPaket
-            // 
-            this.bttnKupiPaket.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttnKupiPaket.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.bttnKupiPaket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnKupiPaket.Location = new System.Drawing.Point(235, 3);
-            this.bttnKupiPaket.Name = "bttnKupiPaket";
-            this.bttnKupiPaket.Size = new System.Drawing.Size(227, 39);
-            this.bttnKupiPaket.TabIndex = 15;
-            this.bttnKupiPaket.Text = "Kupi";
-            this.bttnKupiPaket.UseVisualStyleBackColor = false;
-            this.bttnKupiPaket.Click += new System.EventHandler(this.bttnKupiPaket_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -244,8 +219,6 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.bttnIzmijeni, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.bttnIzbrisiPaket, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 332);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -255,13 +228,14 @@
             // 
             // bttnIzmijeni
             // 
-            this.bttnIzmijeni.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bttnIzmijeni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bttnIzmijeni.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.bttnIzmijeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnIzmijeni.Location = new System.Drawing.Point(133, 3);
+            this.bttnIzmijeni.Location = new System.Drawing.Point(235, 3);
             this.bttnIzmijeni.Name = "bttnIzmijeni";
-            this.bttnIzmijeni.Size = new System.Drawing.Size(122, 39);
+            this.bttnIzmijeni.Size = new System.Drawing.Size(227, 39);
             this.bttnIzmijeni.TabIndex = 14;
             this.bttnIzmijeni.Text = "Sacuvaj";
             this.bttnIzmijeni.UseVisualStyleBackColor = false;
@@ -269,13 +243,14 @@
             // 
             // bttnIzbrisiPaket
             // 
-            this.bttnIzbrisiPaket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bttnIzbrisiPaket.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bttnIzbrisiPaket.BackColor = System.Drawing.Color.Coral;
             this.bttnIzbrisiPaket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnIzbrisiPaket.Location = new System.Drawing.Point(5, 3);
+            this.bttnIzbrisiPaket.Location = new System.Drawing.Point(3, 3);
             this.bttnIzbrisiPaket.Name = "bttnIzbrisiPaket";
-            this.bttnIzbrisiPaket.Size = new System.Drawing.Size(122, 39);
+            this.bttnIzbrisiPaket.Size = new System.Drawing.Size(226, 39);
             this.bttnIzbrisiPaket.TabIndex = 10;
             this.bttnIzbrisiPaket.Text = "Izbrisi";
             this.bttnIzbrisiPaket.UseVisualStyleBackColor = false;
@@ -297,7 +272,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudOcijena)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCijena)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -318,7 +292,6 @@
         private System.Windows.Forms.Button bttnIzbrisiPaket;
         private System.Windows.Forms.Button bttnIzmijeni;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button bttnKupiPaket;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

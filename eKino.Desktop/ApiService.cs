@@ -75,11 +75,11 @@ namespace eKino.Desktop
                 }
                 throw;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Nepoznata greska", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Nepoznata greska", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    throw;
+            //}
         }
 
         public T GetById<T>(int Id)

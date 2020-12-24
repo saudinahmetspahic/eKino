@@ -15,49 +15,36 @@ using System.Windows.Forms;
 
 namespace eKino.Desktop
 {
-    public partial class frmUrediAccount : Form
+    public partial class frmAccountUredi : Form
     {
         private Korisnik _korisnik = null;
         private readonly ApiService _korisnikService = new ApiService("Korisnik");
         private readonly ApiService _gradService = new ApiService("Grad");
         private readonly ApiService _ulogaService = new ApiService("Uloga");
-        public frmUrediAccount()
+        public frmAccountUredi()
         {
             InitializeComponent();
             this.AutoValidate = AutoValidate.Disable;
+            _korisnik = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
+
         }
 
-        private void frmUrediAccount_Load(object sender, EventArgs e)
+        private void frmAccountUredi_Load(object sender, EventArgs e)
         {
-            var req = new KorisnikSearchRequest { Email = ApiService.Email };
-            var k = _korisnikService.Get<List<Korisnik>>(req).FirstOrDefault();
 
-            _korisnik = k;
-            if (k != null)
-            {
-                txtIme.Text = _korisnik.Ime;
-                txtPrezime.Text = _korisnik.Prezime;
-                txtEmail.Text = _korisnik.Email;
-                var gradLista = _gradService.Get<List<Grad>>(null);
-                gradLista.Insert(0, new Grad { Id = 0, Naziv = "Odaberi grad" });
-                cbxGrad.DataSource = gradLista;
-                cbxGrad.DisplayMember = "Naziv";
-                cbxGrad.ValueMember = "Id";
-                var grad = gradLista.Where(w => w.Id == _korisnik.GradId).Select(s => s.Naziv).FirstOrDefault();
-                var index = cbxGrad.FindString(grad);
-                cbxGrad.SelectedIndex = index;
-                dtpDatumRodjenja.Value = _korisnik.DatumRodjenja;
-            }
-            else
-            {
-                var r = System.Windows.Forms.MessageBox.Show("Login", "Niste ulogovani na sistem.", MessageBoxButtons.OK);
-                if (r.Equals(MessageBoxResult.OK))
-                {
-                    frmLogin frm = new frmLogin();
-                    frm.Show();
-                    this.Hide();
-                }
-            }
+            txtIme.Text = _korisnik.Ime;
+            txtPrezime.Text = _korisnik.Prezime;
+            txtEmail.Text = _korisnik.Email;
+            var gradLista = _gradService.Get<List<Grad>>();
+            gradLista.Insert(0, new Grad { Id = 0, Naziv = "Odaberi grad" });
+            cbxGrad.DataSource = gradLista;
+            cbxGrad.DisplayMember = "Naziv";
+            cbxGrad.ValueMember = "Id";
+            var grad = gradLista.Where(w => w.Id == _korisnik.GradId).Select(s => s.Naziv).FirstOrDefault();
+            var index = cbxGrad.FindString(grad);
+            cbxGrad.SelectedIndex = index;
+            dtpDatumRodjenja.Value = _korisnik.DatumRodjenja;
+
         }
 
         private void bttnSnimi_Click(object sender, EventArgs e)
@@ -148,7 +135,7 @@ namespace eKino.Desktop
 
         private void txtLozinkaPotvrda_Validating(object sender, CancelEventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtLozinka.Text) && 
+            if (!string.IsNullOrEmpty(txtLozinka.Text) &&
                !string.IsNullOrEmpty(txtLozinkaPotvrda.Text) &&
                txtLozinka.Text != txtLozinkaPotvrda.Text)
             {
@@ -156,5 +143,15 @@ namespace eKino.Desktop
                 errorProvider.SetError(txtLozinkaPotvrda, Messages.Text_Sifra_Potvrda);
             }
         }
+
+        private void cbxGrad_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbxGrad.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtLozinka, Messages.Text_Sifra);
+            }
+        }
+
     }
 }

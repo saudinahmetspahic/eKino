@@ -22,6 +22,7 @@ namespace eKino.Desktop
         private readonly ApiService _korisnikPaketService = new ApiService("KorisnikPaket");
 
         private Korisnik _korisnik;
+
         private KorisnikPaket _korisnikPaket;
         private List<Sjediste> _zauzetaSjedista = new List<Sjediste>();
         private List<Sjediste> _rezervisanaSjedista = new List<Sjediste>();

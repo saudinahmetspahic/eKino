@@ -37,8 +37,8 @@
                 <Entry x:Name="Email" Margin="0,0,0,5" Grid.Column="1" Grid.Row="2" FontSize="18" Text="{Binding Email}"></Entry>
                 <DatePicker x:Name="DatumRodjenja" Margin="0,0,0,5" Grid.Column="1" Grid.Row="3" FontSize="18" Date="{Binding DatumRodjenja}"></DatePicker>
                 <Picker x:Name="Gradovi" ItemsSource="{Binding Gradovi}" ItemDisplayBinding="{Binding Naziv}" SelectedItem="{Binding OdabraniGrad}" Margin="0,0,0,5" Grid.Column="1" Grid.Row="4" FontSize="18"></Picker>
-                <Entry x:Name="Lozinka" Margin="0,0,0,5" Grid.Column="1" Grid.Row="5" FontSize="18"></Entry>
-                <Entry x:Name="PotvrdaLozinka" Margin="0,0,0,5" Grid.Column="1" Grid.Row="6" FontSize="18"></Entry>
+                <Entry IsPassword="True" x:Name="Lozinka" Margin="0,0,0,5" Grid.Column="1" Grid.Row="5" FontSize="18"></Entry>
+                <Entry IsPassword="True" x:Name="PotvrdaLozinka" Margin="0,0,0,5" Grid.Column="1" Grid.Row="6" FontSize="18"></Entry>
                 <Label Grid.Column="1" Grid.Row="7" Text="Ostavite prazno polje za lozinku, ukoliko je ne želite mjenjati."></Label>
             </Grid>
     

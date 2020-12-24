@@ -14,7 +14,7 @@ namespace eKino.API.Services
         IEnumerable<Film> GetByNaziv(string naziv);
         IEnumerable<Film> GetByZanr(string zanr);
 
-        IEnumerable<Film> GetPreporuceneFilmove(int filmId);
+        IEnumerable<Film> GetPreporuceneFilmove(int korisnikId);
         //Film GetById(int id);
 
         //void Add(Film film);

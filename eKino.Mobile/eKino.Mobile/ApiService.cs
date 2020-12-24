@@ -82,11 +82,11 @@ namespace eKino.Mobile
                 }
                 throw;
             }
-            catch (Exception ex)
-            {
-                Application.Current.MainPage.DisplayAlert("Upozorenje", "Nepoznata greska: " + ex.Message, "Ok");
-                throw;
-            }
+            //catch (Exception ex)
+            //{
+            //    Application.Current.MainPage.DisplayAlert("Upozorenje", "Nepoznata greska: " + ex.Message, "Ok");
+            //    throw;
+            //}
         }
 
         public T GetById<T>(int Id)

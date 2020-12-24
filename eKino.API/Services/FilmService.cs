@@ -17,19 +17,22 @@ namespace eKino.API.Services
         BaseCRUDService<Model.Film, FilmSearchRequest, Database.Film, FilmInsertRequest, FilmInsertRequest>,
         IFilmService
     {
-        //private readonly MojContext _context = null;
-        //private IMapper _mapper = null;
         public FilmService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            //_context = context;
-            //_mapper = mapper;
         }
 
-        //public IEnumerable<Model.Film> Get()
-        //{
+        public override List<Film> Get(FilmSearchRequest search)
+        {
+            var query = _context.Film.AsQueryable();
 
-        //    return _mapper.Map<IEnumerable<Film>>(_context.Film.ToList());
-        //}
+            if (!string.IsNullOrEmpty(search.Naziv))
+            {
+                query = query.Where(w => w.Naziv == search.Naziv);
+            }
+       
+            var result = query.ToList();
+            return _mapper.Map<List<Model.Film>>(result);
+        }
 
         public IEnumerable<Model.Film> GetByNaziv(string naziv)
         {
@@ -42,43 +45,11 @@ namespace eKino.API.Services
             return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.ZanrId == zanrID));
         }
 
-        public IEnumerable<Film> GetPreporuceneFilmove(int filmId)
+        public IEnumerable<Film> GetPreporuceneFilmove(int korisnikId)
         {
             var r = new Recommender(_context, _mapper);
-            return _mapper.Map<IEnumerable<Model.Film>>(r.GetSlicneFilmove(filmId));
+            return _mapper.Map<IEnumerable<Model.Film>>(r.GetPreporuceneFilmove(korisnikId));
         }
-
-        //public Model.Film GetById(int id)
-        //{
-        //    return _mapper.Map<Model.Film>(_context.Film.SingleOrDefault(w => w.Id == id));
-        //}
-
-        //public bool Remove(int id)
-        //{
-        //    var film = _context.Film.SingleOrDefault(w => w.Id == id);
-        //    if (film != null)
-        //    {
-        //        _context.Film.Remove(film);
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        //public void Add(Model.Film film)
-        //{          
-        //    _context.Film.Add(_mapper.Map<Database.Film>(film));
-        //    _context.SaveChanges();
-        //}
-
-        //public Model.Film Update(int id, FilmInsertRequest film)
-        //{
-        //    var entity = _mapper.Map<Database.Film>(film);
-        //    entity.Id = id;
-        //    _context.Film.Update(entity);
-        //    _context.SaveChanges();
-        //    return _mapper.Map<Model.Film>(entity);
-        //}
 
 
     }

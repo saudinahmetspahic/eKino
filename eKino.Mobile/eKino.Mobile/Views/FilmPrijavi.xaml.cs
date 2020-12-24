@@ -28,6 +28,9 @@ namespace eKino.Mobile.Views
 
         private void PrijaviFilm_Clicked(object sender, EventArgs e)
         {
+            if (!Validation())
+                return;
+
             var k = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
             _prijaveService.Add(new PrijavaInsertRequest
             {
@@ -41,6 +44,21 @@ namespace eKino.Mobile.Views
             });
             Application.Current.MainPage.DisplayAlert("Potvrda", "Vasa prijava je zabilježena.", "Ok");
             Navigation.PopAsync();
+        }
+
+        private bool Validation()
+        {
+            if (string.IsNullOrEmpty(TxtOpis.Text))
+            {
+                DisplayAlert("Greska", "Morate unijeti opis.", "Ok");
+                return false;
+            }
+            if (string.IsNullOrEmpty(TxtAutor.Text))
+            {
+                DisplayAlert("Greska", "Morate unijeti ime autora.", "Ok");
+                return false;
+            }
+            return true;
         }
     }
 }

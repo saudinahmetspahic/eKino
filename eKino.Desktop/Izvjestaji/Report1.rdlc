@@ -203,22 +203,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.39722in</Width>
+                  <Width>1.46528in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.39722in</Width>
+                  <Width>1.46528in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.39722in</Width>
+                  <Width>1.46528in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.39722in</Width>
+                  <Width>1.46528in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.39722in</Width>
+                  <Width>1.46528in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.39722in</Width>
+                  <Width>1.46528in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -237,7 +237,7 @@
                                   <Value>Naziv</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Gray</Color>
                                   </Style>
@@ -274,7 +274,7 @@
                                   <Value>Naziv Zanra</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Gray</Color>
                                   </Style>
@@ -311,7 +311,7 @@
                                   <Value>Naziv Tipa</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Gray</Color>
                                   </Style>
@@ -348,7 +348,7 @@
                                   <Value>Broj Projekcija</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Gray</Color>
                                   </Style>
@@ -385,7 +385,7 @@
                                   <Value>Ukupna Zarada</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Gray</Color>
                                   </Style>
@@ -422,7 +422,7 @@
                                   <Value>Ocijena Filma</Value>
                                   <Style>
                                     <FontStyle>Italic</FontStyle>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Gray</Color>
                                   </Style>
@@ -462,7 +462,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Naziv.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -494,7 +496,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NazivZanra.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -526,7 +530,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NazivTipa.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -558,7 +564,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!BrojProjekcija.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -590,7 +598,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!UkupnaZarada.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -622,7 +632,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!OcijenaFilma.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -668,16 +680,20 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <FixedColumnHeaders>true</FixedColumnHeaders>
+            <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>DataSet1</DataSetName>
             <Top>1.43833in</Top>
-            <Left>0.36667in</Left>
-            <Height>0.69167in</Height>
-            <Width>8.38332in</Width>
+            <Left>0.175in</Left>
+            <Height>0.69166in</Height>
+            <Width>8.79999in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
             </Style>
           </Tablix>
           <Chart Name="Chart2">

@@ -42,4 +42,3 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Deb
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csproj.CoreCompileInputs.cache
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.dll
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.pdb
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Model\obj\Debug\netstandard2.0\eKino.Model.csprojAssemblyReference.cache

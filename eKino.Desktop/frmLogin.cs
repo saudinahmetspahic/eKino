@@ -43,7 +43,7 @@ namespace eKino.Desktop
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Login", "Uneseni su neispravni podaci.", MessageBoxButtons.OK);
+                    MessageBox.Show("Uneseni su neispravni podaci.", "Login", MessageBoxButtons.OK);
                 }
             }
         }
