@@ -44,6 +44,8 @@ namespace eKino.Mobile.Views
                 return;
             }
 
+            ApiService.Email = "admin@app.com";
+            ApiService.Sifra = "Admin12345";
             var korisnik = new KorisnikInsertRequest
             {
                 DatumRegistracije = DateTime.Now,
@@ -62,7 +64,7 @@ namespace eKino.Mobile.Views
             if(k != null)
             {
                 await Navigation.PopToRootAsync();
-                await Navigation.PushAsync(new PocetniPage());
+                await Navigation.PushAsync(new LoginPage());
             }
             else
             {
