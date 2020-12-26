@@ -79,7 +79,13 @@ namespace eKino.Desktop
                 bttnDodajScenaristu.Visible = false;
             }
 
-            pbxSlika.Image = ImageConvertor.ConvertByteArrayToImage(film.Slika);
+            PictureBox img;
+            if (!(film.Slika == null || film.Slika.Length == 0))
+                img = new PictureBox { Image = ImageConvertor.ConvertByteArrayToImage(film.Slika) };
+            else
+                img = new PictureBox();
+
+            pbxSlika = img; //ImageConvertor.ConvertByteArrayToImage(film.Slika); 
             lblZanr.Text = _zanrService.GetById<Zanr>(film.ZanrId).NazivZanra;
             lblTip.Text = _tipService.GetById<Tip>(film.TipId).NazivTipa;
             lblOpis.Text = film.Opis;

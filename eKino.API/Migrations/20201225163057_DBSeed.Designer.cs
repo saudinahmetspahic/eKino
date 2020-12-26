@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eKino.API.EF;
 
 namespace eKino.API.Migrations
 {
     [DbContext(typeof(MojContext))]
-    partial class MojContextModelSnapshot : ModelSnapshot
+    [Migration("20201225163057_DBSeed")]
+    partial class DBSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,9 +59,9 @@ namespace eKino.API.Migrations
                             BrojKolona = 8,
                             BrojRedova = 4,
                             GradId = 1,
-                            Kraj_RadnogVremena = new DateTime(2020, 12, 26, 2, 35, 11, 772, DateTimeKind.Local).AddTicks(5631),
+                            Kraj_RadnogVremena = new DateTime(2020, 12, 26, 1, 30, 56, 267, DateTimeKind.Local).AddTicks(13),
                             Naziv = "Dvorana 1",
-                            Pocetak_RadnogVremena = new DateTime(2020, 12, 25, 18, 35, 11, 769, DateTimeKind.Local).AddTicks(874)
+                            Pocetak_RadnogVremena = new DateTime(2020, 12, 25, 17, 30, 56, 262, DateTimeKind.Local).AddTicks(7171)
                         },
                         new
                         {
@@ -67,9 +69,9 @@ namespace eKino.API.Migrations
                             BrojKolona = 9,
                             BrojRedova = 5,
                             GradId = 2,
-                            Kraj_RadnogVremena = new DateTime(2020, 12, 26, 5, 35, 11, 772, DateTimeKind.Local).AddTicks(9370),
+                            Kraj_RadnogVremena = new DateTime(2020, 12, 26, 4, 30, 56, 267, DateTimeKind.Local).AddTicks(4434),
                             Naziv = "Dvorana 2",
-                            Pocetak_RadnogVremena = new DateTime(2020, 12, 25, 21, 35, 11, 772, DateTimeKind.Local).AddTicks(9335)
+                            Pocetak_RadnogVremena = new DateTime(2020, 12, 25, 20, 30, 56, 267, DateTimeKind.Local).AddTicks(4396)
                         },
                         new
                         {
@@ -77,9 +79,9 @@ namespace eKino.API.Migrations
                             BrojKolona = 10,
                             BrojRedova = 6,
                             GradId = 3,
-                            Kraj_RadnogVremena = new DateTime(2020, 12, 26, 8, 35, 11, 772, DateTimeKind.Local).AddTicks(9508),
+                            Kraj_RadnogVremena = new DateTime(2020, 12, 26, 7, 30, 56, 267, DateTimeKind.Local).AddTicks(4574),
                             Naziv = "Dvorana 3",
-                            Pocetak_RadnogVremena = new DateTime(2020, 12, 26, 0, 35, 11, 772, DateTimeKind.Local).AddTicks(9502)
+                            Pocetak_RadnogVremena = new DateTime(2020, 12, 25, 23, 30, 56, 267, DateTimeKind.Local).AddTicks(4566)
                         });
                 });
 
@@ -123,7 +125,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 776, DateTimeKind.Local).AddTicks(3901),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(5785),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 1",
                             Opis = "Kratki opis filma 1, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -133,7 +135,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 2,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(565),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7323),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 2",
                             Opis = "Kratki opis filma 2, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -143,7 +145,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 3,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(802),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7445),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 3",
                             Opis = "Kratki opis filma 3, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -153,7 +155,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 4,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(883),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7494),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 4",
                             Opis = "Kratki opis filma 4, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -163,7 +165,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 5,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(961),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7540),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 5",
                             Opis = "Kratki opis filma 5, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -173,7 +175,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 6,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1047),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7595),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 6",
                             Opis = "Kratki opis filma 6, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -183,7 +185,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 7,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1134),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7641),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 7",
                             Opis = "Kratki opis filma 7, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -193,7 +195,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 8,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1208),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7696),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 8",
                             Opis = "Kratki opis filma 8, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -203,7 +205,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 9,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1321),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7751),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 9",
                             Opis = "Kratki opis filma 9, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -213,7 +215,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 10,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1401),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7800),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 10",
                             Opis = "Kratki opis filma 10, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -223,7 +225,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 11,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1492),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(7847),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 11",
                             Opis = "Kratki opis filma 11, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -233,7 +235,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 12,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1568),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8064),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 12",
                             Opis = "Kratki opis filma 12, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -243,7 +245,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 13,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1648),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8124),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 13",
                             Opis = "Kratki opis filma 13, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -253,7 +255,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 14,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1726),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8167),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 14",
                             Opis = "Kratki opis filma 14, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -263,7 +265,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 15,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1804),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8210),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 15",
                             Opis = "Kratki opis filma 15, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -273,7 +275,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 16,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1881),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8252),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 16",
                             Opis = "Kratki opis filma 16, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -283,7 +285,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 17,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(1981),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8295),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 17",
                             Opis = "Kratki opis filma 17, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -293,7 +295,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 18,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(2100),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8342),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 18",
                             Opis = "Kratki opis filma 18, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -303,7 +305,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 19,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(2241),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8390),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 19",
                             Opis = "Kratki opis filma 19, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -313,7 +315,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 20,
-                            DatumIzlaska = new DateTime(2013, 12, 25, 18, 35, 11, 777, DateTimeKind.Local).AddTicks(2314),
+                            DatumIzlaska = new DateTime(2013, 12, 25, 17, 30, 56, 270, DateTimeKind.Local).AddTicks(8432),
                             Link = "https://ia803206.us.archive.org/5/items/cc-1916-10-02-the-pawnshop-512kb/CC_1916_10_02_ThePawnshop_512kb.mp4",
                             Naziv = "Film 20",
                             Opis = "Kratki opis filma 20, opis radnje i glumaca u filmu. Prikazuje se prilikom ispisa detalja o filmu.",
@@ -1012,13 +1014,13 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 1,
-                            DatumRegistracije = new DateTime(2020, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(134),
-                            DatumRodjenja = new DateTime(1995, 12, 25, 18, 35, 11, 774, DateTimeKind.Local).AddTicks(6587),
+                            DatumRegistracije = new DateTime(2020, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(2662),
+                            DatumRodjenja = new DateTime(1995, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(7959),
                             Email = "admin@mail.com",
                             GradId = 2,
                             Ime = "Admin",
-                            LozinkaHash = "rhU9y15krz72oDSAaAeYiu80a3c=",
-                            LozinkaSalt = "zsoXMab3gROO2GpJdRxC4A==",
+                            LozinkaHash = "",
+                            LozinkaSalt = "",
                             Prezime = "Admin",
                             SlanjeEmaila = true,
                             UlogaId = 1
@@ -1026,13 +1028,13 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 2,
-                            DatumRegistracije = new DateTime(2020, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(1811),
-                            DatumRodjenja = new DateTime(1997, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(1722),
+                            DatumRegistracije = new DateTime(2020, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(4340),
+                            DatumRodjenja = new DateTime(1997, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(4258),
                             Email = "user1@mail.com",
                             GradId = 4,
                             Ime = "Korisnik",
-                            LozinkaHash = "rhU9y15krz72oDSAaAeYiu80a3c=",
-                            LozinkaSalt = "zsoXMab3gROO2GpJdRxC4A==",
+                            LozinkaHash = "",
+                            LozinkaSalt = "",
                             Prezime = "1",
                             SlanjeEmaila = true,
                             UlogaId = 2
@@ -1040,13 +1042,13 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 3,
-                            DatumRegistracije = new DateTime(2020, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(1889),
-                            DatumRodjenja = new DateTime(1997, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(1877),
+                            DatumRegistracije = new DateTime(2020, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(4420),
+                            DatumRodjenja = new DateTime(1997, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(4412),
                             Email = "user2@mail.com",
                             GradId = 3,
                             Ime = "Korisnik",
-                            LozinkaHash = "rhU9y15krz72oDSAaAeYiu80a3c=",
-                            LozinkaSalt = "zsoXMab3gROO2GpJdRxC4A==",
+                            LozinkaHash = "",
+                            LozinkaSalt = "",
                             Prezime = "2",
                             SlanjeEmaila = true,
                             UlogaId = 2
@@ -1054,13 +1056,13 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 4,
-                            DatumRegistracije = new DateTime(2020, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(1951),
-                            DatumRodjenja = new DateTime(1997, 12, 25, 18, 35, 11, 775, DateTimeKind.Local).AddTicks(1940),
+                            DatumRegistracije = new DateTime(2020, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(4473),
+                            DatumRodjenja = new DateTime(1997, 12, 25, 17, 30, 56, 269, DateTimeKind.Local).AddTicks(4465),
                             Email = "user3@mail.com",
                             GradId = 2,
                             Ime = "Korisnik",
-                            LozinkaHash = "rhU9y15krz72oDSAaAeYiu80a3c=",
-                            LozinkaSalt = "zsoXMab3gROO2GpJdRxC4A==",
+                            LozinkaHash = "",
+                            LozinkaSalt = "",
                             Prezime = "3",
                             SlanjeEmaila = true,
                             UlogaId = 2
@@ -1137,142 +1139,72 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 1,
-                            DataOcijena = 1,
-                            FilmId = 1,
-                            KomentatorId = 1
+                            DataOcijena = 2,
+                            FilmId = 2,
+                            KomentatorId = 3
                         },
                         new
                         {
                             Id = 2,
-                            DataOcijena = 1,
-                            FilmId = 2,
-                            KomentatorId = 1
+                            DataOcijena = 3,
+                            FilmId = 4,
+                            KomentatorId = 4
                         },
                         new
                         {
                             Id = 3,
-                            DataOcijena = 1,
-                            FilmId = 3,
-                            KomentatorId = 1
+                            DataOcijena = 4,
+                            FilmId = 6,
+                            KomentatorId = 2
                         },
                         new
                         {
                             Id = 4,
-                            DataOcijena = 1,
-                            FilmId = 4,
-                            KomentatorId = 1
+                            DataOcijena = 5,
+                            FilmId = 8,
+                            KomentatorId = 3
                         },
                         new
                         {
                             Id = 5,
                             DataOcijena = 1,
-                            FilmId = 5,
-                            KomentatorId = 1
+                            FilmId = 10,
+                            KomentatorId = 4
                         },
                         new
                         {
                             Id = 6,
-                            DataOcijena = 1,
-                            FilmId = 6,
-                            KomentatorId = 1
+                            DataOcijena = 2,
+                            FilmId = 12,
+                            KomentatorId = 2
                         },
                         new
                         {
                             Id = 7,
-                            DataOcijena = 1,
-                            FilmId = 7,
-                            KomentatorId = 1
+                            DataOcijena = 3,
+                            FilmId = 14,
+                            KomentatorId = 3
                         },
                         new
                         {
                             Id = 8,
-                            DataOcijena = 1,
-                            FilmId = 8,
-                            KomentatorId = 1
+                            DataOcijena = 4,
+                            FilmId = 16,
+                            KomentatorId = 4
                         },
                         new
                         {
                             Id = 9,
-                            DataOcijena = 1,
-                            FilmId = 9,
-                            KomentatorId = 1
+                            DataOcijena = 5,
+                            FilmId = 18,
+                            KomentatorId = 2
                         },
                         new
                         {
                             Id = 10,
                             DataOcijena = 1,
-                            FilmId = 10,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            DataOcijena = 1,
-                            FilmId = 11,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 12,
-                            DataOcijena = 1,
-                            FilmId = 12,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            DataOcijena = 1,
-                            FilmId = 13,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 14,
-                            DataOcijena = 1,
-                            FilmId = 14,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 15,
-                            DataOcijena = 1,
-                            FilmId = 15,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 16,
-                            DataOcijena = 1,
-                            FilmId = 16,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 17,
-                            DataOcijena = 1,
-                            FilmId = 17,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 18,
-                            DataOcijena = 1,
-                            FilmId = 18,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 19,
-                            DataOcijena = 1,
-                            FilmId = 19,
-                            KomentatorId = 1
-                        },
-                        new
-                        {
-                            Id = 20,
-                            DataOcijena = 1,
                             FilmId = 20,
-                            KomentatorId = 1
+                            KomentatorId = 3
                         });
                 });
 
@@ -1314,7 +1246,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 1,
                             Biografija = "Thomas Cruise Mapother IV, better known by the stage name Tom Cruise, is an American actor and producer. ",
-                            DatumRodjenja = new DateTime(1980, 12, 25, 18, 35, 11, 773, DateTimeKind.Local).AddTicks(8033),
+                            DatumRodjenja = new DateTime(1980, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(2408),
                             GradId = 6,
                             Ime = "Tom",
                             Prezime = "Cruise",
@@ -1324,7 +1256,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 2,
                             Biografija = "Edward Thomas Hardy CBE is an English actor and producer. After studying acting at the Drama Centre London, he made his film debut in Ridley Scott's Black Hawk Down.",
-                            DatumRodjenja = new DateTime(1991, 12, 25, 18, 35, 11, 774, DateTimeKind.Local).AddTicks(277),
+                            DatumRodjenja = new DateTime(1991, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(3754),
                             GradId = 5,
                             Ime = "Tom",
                             Prezime = "Hardy",
@@ -1334,7 +1266,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 3,
                             Biografija = "Scarlett Ingrid Johansson is a Danish-American actress and singer. The world's highest-paid actress since 2018, she has made multiple appearances in the Forbes Celebrity 100.",
-                            DatumRodjenja = new DateTime(1988, 12, 25, 18, 35, 11, 774, DateTimeKind.Local).AddTicks(444),
+                            DatumRodjenja = new DateTime(1988, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(3860),
                             GradId = 4,
                             Ime = "Scarlett",
                             Prezime = "Johansson",
@@ -1344,7 +1276,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 4,
                             Biografija = "Enis Bešlagić is a Bosnian actor. In the 2000s, he starred in several films such as Fuse, Summer in the Golden Valley, Ivko's Feast, Ram za sliku moje domovine and All for Free.",
-                            DatumRodjenja = new DateTime(1984, 12, 25, 18, 35, 11, 774, DateTimeKind.Local).AddTicks(501),
+                            DatumRodjenja = new DateTime(1984, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(3902),
                             GradId = 1,
                             Ime = "Enis",
                             Prezime = "Beslagic",
@@ -1354,7 +1286,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 5,
                             Biografija = "Joel Coen and Ethan Coen, collectively referred to as the Coen Brothers, are American film directors, producers, screenwriters, and editors. Their films span many genres and styles, which they frequently subvert or parody.",
-                            DatumRodjenja = new DateTime(1986, 12, 25, 18, 35, 11, 774, DateTimeKind.Local).AddTicks(550),
+                            DatumRodjenja = new DateTime(1986, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(3943),
                             GradId = 6,
                             Ime = "Ethan",
                             Prezime = "Coen",
@@ -1364,7 +1296,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 6,
                             Biografija = "Christopher Edward Nolan, (born 30 July 1970) is an English-American film director, screenwriter, and producer, who is known for making personal, distinctive films within the Hollywood mainstream.",
-                            DatumRodjenja = new DateTime(1982, 12, 25, 18, 35, 11, 774, DateTimeKind.Local).AddTicks(602),
+                            DatumRodjenja = new DateTime(1982, 12, 25, 17, 30, 56, 268, DateTimeKind.Local).AddTicks(3991),
                             GradId = 4,
                             Ime = "Christopher",
                             Prezime = "Nolan",
@@ -1403,27 +1335,27 @@ namespace eKino.API.Migrations
                         {
                             Id = 1,
                             Cijena = 11.0,
-                            DatumIsteka = new DateTime(2021, 1, 11, 18, 35, 11, 779, DateTimeKind.Local).AddTicks(3035),
-                            DatumKreiranja = new DateTime(2020, 12, 20, 18, 35, 11, 779, DateTimeKind.Local).AddTicks(4643),
-                            MaxOcijena = 1,
+                            DatumIsteka = new DateTime(2021, 1, 11, 17, 30, 56, 272, DateTimeKind.Local).AddTicks(9533),
+                            DatumKreiranja = new DateTime(2020, 12, 20, 17, 30, 56, 273, DateTimeKind.Local).AddTicks(1983),
+                            MaxOcijena = 4,
                             Opis = "Paket 1"
                         },
                         new
                         {
                             Id = 2,
                             Cijena = 24.0,
-                            DatumIsteka = new DateTime(2021, 1, 13, 18, 35, 11, 779, DateTimeKind.Local).AddTicks(7424),
-                            DatumKreiranja = new DateTime(2020, 12, 15, 18, 35, 11, 779, DateTimeKind.Local).AddTicks(7454),
-                            MaxOcijena = 5,
+                            DatumIsteka = new DateTime(2021, 1, 13, 17, 30, 56, 274, DateTimeKind.Local).AddTicks(1249),
+                            DatumKreiranja = new DateTime(2020, 12, 15, 17, 30, 56, 274, DateTimeKind.Local).AddTicks(1328),
+                            MaxOcijena = 3,
                             Opis = "Paket 2"
                         },
                         new
                         {
                             Id = 3,
                             Cijena = 39.0,
-                            DatumIsteka = new DateTime(2021, 1, 15, 18, 35, 11, 779, DateTimeKind.Local).AddTicks(7630),
-                            DatumKreiranja = new DateTime(2020, 12, 10, 18, 35, 11, 779, DateTimeKind.Local).AddTicks(7636),
-                            MaxOcijena = 2,
+                            DatumIsteka = new DateTime(2021, 1, 15, 17, 30, 56, 274, DateTimeKind.Local).AddTicks(1500),
+                            DatumKreiranja = new DateTime(2020, 12, 10, 17, 30, 56, 274, DateTimeKind.Local).AddTicks(1511),
+                            MaxOcijena = 5,
                             Opis = "Paket 3"
                         });
                 });
@@ -1558,7 +1490,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 1,
                             CijenaUlaznice = 8.0,
-                            DatumProjekcije = new DateTime(2020, 12, 26, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(681),
+                            DatumProjekcije = new DateTime(2020, 12, 26, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(1732),
                             DvoranaId = 2,
                             FilmId = 2,
                             Opis = "Projekcija filma 2"
@@ -1567,7 +1499,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 2,
                             CijenaUlaznice = 11.0,
-                            DatumProjekcije = new DateTime(2020, 12, 27, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(5475),
+                            DatumProjekcije = new DateTime(2020, 12, 27, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(7028),
                             DvoranaId = 3,
                             FilmId = 4,
                             Opis = "Projekcija filma 4"
@@ -1576,7 +1508,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 3,
                             CijenaUlaznice = 14.0,
-                            DatumProjekcije = new DateTime(2020, 12, 28, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(5695),
+                            DatumProjekcije = new DateTime(2020, 12, 28, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(7237),
                             DvoranaId = 1,
                             FilmId = 6,
                             Opis = "Projekcija filma 6"
@@ -1585,7 +1517,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 4,
                             CijenaUlaznice = 17.0,
-                            DatumProjekcije = new DateTime(2020, 12, 29, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(5758),
+                            DatumProjekcije = new DateTime(2020, 12, 29, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(7313),
                             DvoranaId = 2,
                             FilmId = 8,
                             Opis = "Projekcija filma 8"
@@ -1594,7 +1526,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 5,
                             CijenaUlaznice = 20.0,
-                            DatumProjekcije = new DateTime(2020, 12, 30, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(5820),
+                            DatumProjekcije = new DateTime(2020, 12, 30, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(7386),
                             DvoranaId = 3,
                             FilmId = 10,
                             Opis = "Projekcija filma 10"
@@ -1603,7 +1535,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 6,
                             CijenaUlaznice = 23.0,
-                            DatumProjekcije = new DateTime(2020, 12, 31, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(5889),
+                            DatumProjekcije = new DateTime(2020, 12, 31, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(7464),
                             DvoranaId = 1,
                             FilmId = 12,
                             Opis = "Projekcija filma 12"
@@ -1612,7 +1544,7 @@ namespace eKino.API.Migrations
                         {
                             Id = 7,
                             CijenaUlaznice = 26.0,
-                            DatumProjekcije = new DateTime(2021, 1, 1, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(5956),
+                            DatumProjekcije = new DateTime(2021, 1, 1, 17, 30, 56, 276, DateTimeKind.Local).AddTicks(7536),
                             DvoranaId = 2,
                             FilmId = 14,
                             Opis = "Projekcija filma 14"
@@ -1705,7 +1637,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 1,
-                            DatumKreirnja = new DateTime(2020, 12, 23, 18, 35, 11, 781, DateTimeKind.Local).AddTicks(9576),
+                            DatumKreirnja = new DateTime(2020, 12, 23, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(1806),
                             KupacId = 4,
                             ProjekcijaId = 3,
                             SjedisteKolona = 1,
@@ -1714,7 +1646,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 2,
-                            DatumKreirnja = new DateTime(2020, 12, 22, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(672),
+                            DatumKreirnja = new DateTime(2020, 12, 22, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(2975),
                             KupacId = 2,
                             ProjekcijaId = 4,
                             SjedisteKolona = 2,
@@ -1723,7 +1655,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 3,
-                            DatumKreirnja = new DateTime(2020, 12, 21, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(748),
+                            DatumKreirnja = new DateTime(2020, 12, 21, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3056),
                             KupacId = 3,
                             ProjekcijaId = 5,
                             SjedisteKolona = 2,
@@ -1732,7 +1664,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 4,
-                            DatumKreirnja = new DateTime(2020, 12, 20, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(782),
+                            DatumKreirnja = new DateTime(2020, 12, 20, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3094),
                             KupacId = 4,
                             ProjekcijaId = 6,
                             SjedisteKolona = 3,
@@ -1741,7 +1673,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 5,
-                            DatumKreirnja = new DateTime(2020, 12, 19, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(816),
+                            DatumKreirnja = new DateTime(2020, 12, 19, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3135),
                             KupacId = 2,
                             ProjekcijaId = 7,
                             SjedisteKolona = 3,
@@ -1750,7 +1682,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 6,
-                            DatumKreirnja = new DateTime(2020, 12, 18, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(853),
+                            DatumKreirnja = new DateTime(2020, 12, 18, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3178),
                             KupacId = 3,
                             ProjekcijaId = 1,
                             SjedisteKolona = 4,
@@ -1759,7 +1691,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 7,
-                            DatumKreirnja = new DateTime(2020, 12, 17, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(886),
+                            DatumKreirnja = new DateTime(2020, 12, 17, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3217),
                             KupacId = 4,
                             ProjekcijaId = 2,
                             SjedisteKolona = 4,
@@ -1768,7 +1700,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 8,
-                            DatumKreirnja = new DateTime(2020, 12, 16, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(918),
+                            DatumKreirnja = new DateTime(2020, 12, 16, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3259),
                             KupacId = 2,
                             ProjekcijaId = 3,
                             SjedisteKolona = 5,
@@ -1777,7 +1709,7 @@ namespace eKino.API.Migrations
                         new
                         {
                             Id = 9,
-                            DatumKreirnja = new DateTime(2020, 12, 15, 18, 35, 11, 782, DateTimeKind.Local).AddTicks(951),
+                            DatumKreirnja = new DateTime(2020, 12, 15, 17, 30, 56, 277, DateTimeKind.Local).AddTicks(3297),
                             KupacId = 3,
                             ProjekcijaId = 4,
                             SjedisteKolona = 5,

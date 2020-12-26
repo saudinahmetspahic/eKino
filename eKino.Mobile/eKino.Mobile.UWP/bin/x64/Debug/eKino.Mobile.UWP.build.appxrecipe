@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\eKino.Mobile.UWP.exe">
       <PackagePath>entrypoint\eKino.Mobile.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\commonservicelocator\2.0.2\lib\netstandard2.0\CommonServiceLocator.dll">
+      <PackagePath>CommonServiceLocator.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\flurl\2.8.2\lib\netstandard2.0\Flurl.dll">
       <PackagePath>Flurl.dll</PackagePath>
     </AppxPackagedFile>
@@ -54,6 +57,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\microsoft.extensions.primitives\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll">
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\uap10.0\GalaSoft.MvvmLight.dll">
+      <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saudi\.nuget\packages\newtonsoft.json\12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>

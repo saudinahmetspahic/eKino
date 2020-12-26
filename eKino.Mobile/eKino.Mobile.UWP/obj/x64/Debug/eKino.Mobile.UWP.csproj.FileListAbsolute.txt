@@ -354,3 +354,11 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\obj\x64\Debug\ProjectArchitectures.txt
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\obj\x64\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160679180000000.json
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885238160000000.json
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\CommonServiceLocator.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\GalaSoft.MvvmLight.dll
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\bin\x64\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Mobile\eKino.Mobile.UWP\obj\x64\Debug\GalaSoft.MvvmLight.Platform.pri.xml

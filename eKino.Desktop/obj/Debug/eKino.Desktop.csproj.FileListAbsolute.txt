@@ -596,7 +596,6 @@ C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\D
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmPocetna.resources
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmRezervacijaDodavanje.resources
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmRezervacijaPregled.resources
-C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.frmUrediAccount.resources
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.Izvjestaji.rptFilmovi.resources
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.Properties.Resources.resources
 C:\Users\saudi\Source\Repos\saudinahmetspahic\RS2-Seminarski\eKino.Desktop\obj\Debug\eKino.Desktop.csproj.GenerateResource.cache

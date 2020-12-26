@@ -179,54 +179,5 @@ namespace eKino.Desktop
             HideButtons();
         }
 
-
-        //private async Task Alarm_Timer()
-        //{
-        //    try
-        //    {
-        //        var k = _korisnikApiService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
-        //        var rezervacije = _rezervacijeApiService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id });
-
-        //        string mail = "* Rezeracije \n";
-        //        int count = 0;
-        //        foreach (var r in rezervacije)
-        //        {
-        //            var p = _projekcijaApiService.GetById<Projekcija>((int)r.ProjekcijaId);
-        //            if (p.DatumProjekcije.AddHours(24).CompareTo(DateTime.Now) >= 0)
-        //            {
-        //                mail += " [" + p.DatumProjekcije + "] " + p.Opis + "\n";
-        //                count++;
-        //            }
-        //        }
-
-        //        var smtpClient = new SmtpClient("app_alarm@hotmail.com")
-        //        {
-        //            Port = 587,
-        //            Credentials = new NetworkCredential("app_alarm@hotmail.com", "Alarm12345"),
-        //            EnableSsl = true,
-        //        };
-        //        smtpClient.Send("app_alarm@hotmail.com", k.Email, count + " projekcija u naredna 24 sata", mail);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        MessageBox.Show(e.Message, "Error");
-        //        //await Task.Delay(10000);
-        //    }
-
-        //    //await Task.Delay(20000); // 1h = 3600000
-        //}
-
-        //private async void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        //{
-        //    BackgroundWorker worker = sender as BackgroundWorker;
-
-
-        //    while (worker.CancellationPending != true)
-        //    {
-        //        await Alarm_Timer();
-        //        System.Threading.Thread.Sleep(20000);
-        //    }
-        //    e.Cancel = true;
-        //}
     }
 }

@@ -253,7 +253,7 @@ namespace eKino.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FilmGlumciController",
+                name: "FilmGlumci",
                 columns: table => new
                 {
                     FilmId = table.Column<int>(nullable: false),
@@ -277,7 +277,7 @@ namespace eKino.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FilmProdukcijskeKuceService",
+                name: "FilmProdukcijskeKuce",
                 columns: table => new
                 {
                     FilmId = table.Column<int>(nullable: false),
@@ -494,12 +494,12 @@ namespace eKino.API.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_FilmGlumci_GlumacId",
-                table: "FilmGlumciController",
+                table: "FilmGlumci",
                 column: "GlumacId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FilmProdukcijskeKuce_ProdukcijskaKucaId",
-                table: "FilmProdukcijskeKuceService",
+                table: "FilmProdukcijskeKuce",
                 column: "ProdukcijskaKucaId");
 
             migrationBuilder.CreateIndex(
@@ -586,10 +586,10 @@ namespace eKino.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FilmGlumciController");
+                name: "FilmGlumci");
 
             migrationBuilder.DropTable(
-                name: "FilmProdukcijskeKuceService");
+                name: "FilmProdukcijskeKuce");
 
             migrationBuilder.DropTable(
                 name: "FilmScenaristi");

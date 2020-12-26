@@ -190,7 +190,7 @@ namespace eKino.Desktop
             this.pbxSlika.Location = new System.Drawing.Point(304, 21);
             this.pbxSlika.Name = "pbxSlika";
             this.pbxSlika.Size = new System.Drawing.Size(329, 230);
-            this.pbxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbxSlika.TabIndex = 0;
             this.pbxSlika.TabStop = false;
             // 

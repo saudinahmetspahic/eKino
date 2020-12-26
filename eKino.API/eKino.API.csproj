@@ -10,6 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Database\Zaposlenik.cs" />
+    <Compile Remove="Migrations\20201225171728_DBSeed_ispravka.cs" />
+    <Compile Remove="Migrations\20201225171728_DBSeed_ispravka.Designer.cs" />
+    <Compile Remove="Migrations\20201225172826_DBSeed_IspravkaOcijene.cs" />
+    <Compile Remove="Migrations\20201225172826_DBSeed_IspravkaOcijene.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="LibVLCSharp" Version="3.4.6" />
     <PackageReference Include="LibVLCSharp.Forms" Version="3.4.6" />

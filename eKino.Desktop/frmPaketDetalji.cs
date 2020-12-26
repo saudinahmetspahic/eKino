@@ -29,7 +29,7 @@ namespace eKino.Desktop
             _paket = _paketService.GetById<Paket>(paketId);
             InitializeComponent();
         }
-
+            
         private void frmPaketDetalji_Load(object sender, EventArgs e)
         {
             if (_paket != null)
@@ -50,6 +50,14 @@ namespace eKino.Desktop
 
         private void bttnIzbrisiPaket_Click(object sender, EventArgs e)
         {
+            var pk = _korisnikPaketService.Get<List<Paket>>(new KorisnikPaketSearchRequest { PaketId = _paket.Id }).ToList();
+            foreach (var p in pk)
+            {
+                _korisnikPaketService.Remove(p.Id);
+            }
+
+            Task.Delay(1000);
+
             _paketService.Remove(_paket.Id);
 
             var frm = new frmPocetna();

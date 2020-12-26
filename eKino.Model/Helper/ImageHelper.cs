@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
 
-namespace eKino.Model.Helper    
+namespace eKino.Model.Helper
 {
     public class ImageHelper
     {
@@ -19,20 +19,27 @@ namespace eKino.Model.Helper
 
         public static byte[] GetImage(string sPath)
         {
-            var s = Directory.GetCurrentDirectory();
-            var c = GetDirectory.TryGetSolutionDirectoryInfo(s);
-            var Path = c.FullName + @"\eKino.Model\Images\" + sPath;
-
             byte[] data = null;
+            try
+            {
+                var s = Directory.GetCurrentDirectory();
+                var c = GetDirectory.TryGetSolutionDirectoryInfo(s);
+                var Path = c.FullName + @"\eKino.Model\Images\" + sPath;
 
-            FileInfo fInfo = new FileInfo(Path);
-            long numBytes = fInfo.Length;
 
-            FileStream fStream = new FileStream(Path, FileMode.Open, FileAccess.Read);
+                FileInfo fInfo = new FileInfo(Path);
+                long numBytes = fInfo.Length;
 
-            BinaryReader br = new BinaryReader(fStream);
+                FileStream fStream = new FileStream(Path, FileMode.Open, FileAccess.Read);
 
-            data = br.ReadBytes((int)numBytes);
+                BinaryReader br = new BinaryReader(fStream);
+
+                data = br.ReadBytes((int)numBytes);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
             return data;
         }

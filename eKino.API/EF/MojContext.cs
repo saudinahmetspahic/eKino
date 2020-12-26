@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eKino.API.EF
 {
-    public class MojContext : DbContext
+    public partial class MojContext : DbContext
     {
         public MojContext(DbContextOptions options)
             : base(options)
@@ -41,6 +41,8 @@ namespace eKino.API.EF
             modelBuilder.Entity<KomentarReakcija>()
                 .HasKey(c => new { c.KomentarId, c.KorisnikId });
 
+
+            OnModelCreatingPartial(modelBuilder);
         }
 
         public DbSet<Dvorana> Dvorana { get; set; }
@@ -62,11 +64,12 @@ namespace eKino.API.EF
         public DbSet<Rezervacija> Rezervacija { get; set; }
         public DbSet<Tip> Tip { get; set; }
         public DbSet<Zanr> Zanr { get; set; }
-        public DbSet<Zaposlenik> Zaposlenik { get; set; }
+        //public DbSet<Zaposlenik> Zaposlenik { get; set; }
         public DbSet<Uloga> Uloga { get; set; }
         public DbSet<Prijava> Prijava { get; set; }
 
 
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
     }
 }
