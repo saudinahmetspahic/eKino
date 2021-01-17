@@ -26,7 +26,7 @@ namespace eKino.Desktop
 
         public frmPaketDetalji(int paketId)
         {
-            _paket = _paketService.GetById<Paket>(paketId);
+            _paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = paketId }).FirstOrDefault(); //_paketService.GetById<Paket>(paketId);
             InitializeComponent();
         }
             
@@ -34,7 +34,8 @@ namespace eKino.Desktop
         {
             if (_paket != null)
             {
-                if(_ulogaService.GetByName<Uloga>("Admin").Id != _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault().UlogaId)
+                // _ulogaService.GetByName<Uloga>("Admin").Id 
+                if(_ulogaService.Get<List<Uloga>>(new UlogaSearchRequest { NazivUloge = "Admin" }).Select(s => s.Id).FirstOrDefault() != _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).Select(s=>s.UlogaId).FirstOrDefault())
                 {
                     nudCijena.ReadOnly = true;
                     nudOcijena.ReadOnly = true;

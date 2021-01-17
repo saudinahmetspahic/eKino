@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOcijena)).BeginInit();
@@ -444,12 +445,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(522, 440);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(228, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Dodavanje projekcije je opcionalno";
+            // 
             // frmFilmDodaj
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 512);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bttnDodaj);
             this.Controls.Add(this.panel1);
@@ -503,5 +515,6 @@
         private System.Windows.Forms.Button bttnSlikaDodaj;
         private System.Windows.Forms.NumericUpDown txtOcijena;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label label7;
     }
 }

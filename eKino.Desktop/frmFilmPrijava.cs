@@ -80,7 +80,7 @@ namespace eKino.Desktop
         {
 
             var prijavaId = (int)dgvPrijave.SelectedRows[0].Cells[0].Value;
-            var prijava = _prijaveService.GetById<Prijava>(prijavaId);
+            var prijava = _prijaveService.Get<List<Prijava>>(new PrijavaSearchRequest { Id = prijavaId }).FirstOrDefault(); // _prijaveService.GetById<Prijava>(prijavaId);
             prijava.Rijeseno = !prijava.Rijeseno;
             _prijaveService.Update<Prijava>(prijavaId, new PrijavaInsertRequest
             {

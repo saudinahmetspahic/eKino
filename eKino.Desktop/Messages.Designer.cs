@@ -88,7 +88,7 @@ namespace eKino.Desktop {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Morate odabrati vrstu..
+        ///   Looks up a localized string similar to Morate odabrati tip..
         /// </summary>
         internal static string CBX_Vrsta {
             get {

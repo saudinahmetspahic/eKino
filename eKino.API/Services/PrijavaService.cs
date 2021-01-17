@@ -19,6 +19,10 @@ namespace eKino.API.Services
         {
             var prijave = _context.Prijava.AsQueryable();
 
+            if(search.Id > 0)
+            {
+                prijave = prijave.Where(w => w.Id == search.Id);
+            }
             if (search.FilmId > 0)
             {
                 prijave = prijave.Where(w => w.FilmId == search.FilmId);

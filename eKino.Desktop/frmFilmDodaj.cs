@@ -52,6 +52,7 @@ namespace eKino.Desktop
                     Slika = slika
                 };
                 _filmService.Add(film);
+                Task.Delay(1000);
                 var dodanifilm = _filmService.Get<List<Film>>(new FilmSearchRequest { Naziv = film.Naziv }).FirstOrDefault();
                 if (dodanifilm == null)
                     return;
@@ -151,7 +152,9 @@ namespace eKino.Desktop
 
         private void txtProjekcijaCijenaUlaznice_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text))
+            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) ||
+                !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) ||
+                cbxDvorana.SelectedIndex != 0)
             {
                 if (!int.TryParse(txtProjekcijaCijenaUlaznice.Text, out var i))
                 {
@@ -163,7 +166,9 @@ namespace eKino.Desktop
 
         private void txtProjekcijaBrojKarata_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text))
+            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) ||
+                !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) ||
+                cbxDvorana.SelectedIndex != 0)
             {
                 if (!int.TryParse(txtProjekcijaBrojKarata.Text, out var i) || i < 10)
                 {
@@ -184,16 +189,18 @@ namespace eKino.Desktop
 
         private void cbxVrsta_Validating(object sender, CancelEventArgs e)
         {
-            if (cbxZanr.SelectedIndex == 0)
+            if (cbxVrsta.SelectedIndex == 0)
             {
                 e.Cancel = true;
-                errorProvider.SetError(cbxZanr, Messages.CBX_Vrsta);
+                errorProvider.SetError(cbxVrsta, Messages.CBX_Vrsta);
             }
         }
 
         private void cbxDvorana_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text))
+            if (!string.IsNullOrEmpty(txtProjekcijaCijenaUlaznice.Text) ||
+                !string.IsNullOrEmpty(txtProjekcijaBrojKarata.Text) ||
+                cbxDvorana.SelectedIndex != 0)
             {
                 if (cbxDvorana.SelectedIndex == 0)
                 {

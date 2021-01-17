@@ -13,31 +13,18 @@ namespace eKino.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UlogaController : ControllerBase
+    public class UlogaController : BaseController<Model.Uloga, UlogaSearchRequest> // : ControllerBase
     {
-     
-        private readonly IUlogaService _ulogaApiService;
-
-        public UlogaController(IUlogaService ulogaApiService)
+        public UlogaController(IService<Uloga, UlogaSearchRequest> service) : base(service)
         {
-            _ulogaApiService = ulogaApiService;
         }
+
+        [AllowAnonymous]
         [HttpGet]
-        public List<Model.Uloga> Get([FromQuery]UlogaSearchRequest search)
+        public override List<Uloga> Get([FromQuery] UlogaSearchRequest search)
         {
-            return _ulogaApiService.Get(search);
+            return base.Get(search);
         }
 
-        [HttpGet("PoNazivu/{name}")]
-        public Model.Uloga GetByName(string name)
-        {
-            return _ulogaApiService.GetByName(name);
-        }
-
-        [HttpGet("{Id}")]
-        public Model.Uloga GetById(int Id)
-        {
-            return _ulogaApiService.GetById(Id);
-        }
     }
 }

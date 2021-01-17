@@ -1,4 +1,5 @@
 ﻿using eKino.API.Database;
+using eKino.Model.Helper;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace eKino.API.EF
             }
 
             modelBuilder.Entity<Uloga>().HasData(new API.Database.Uloga { Id = 1, NazivUloge = "Admin" });
-            modelBuilder.Entity<Uloga>().HasData(new API.Database.Uloga { Id = 2, NazivUloge = "Guest" });
+            modelBuilder.Entity<Uloga>().HasData(new API.Database.Uloga { Id = 2, NazivUloge = "User" });
             modelBuilder.Entity<Uloga>().HasData(new API.Database.Uloga { Id = 3, NazivUloge = "Glumac" });
             modelBuilder.Entity<Uloga>().HasData(new API.Database.Uloga { Id = 4, NazivUloge = "Scenarista" });
 
@@ -43,7 +44,7 @@ namespace eKino.API.EF
             modelBuilder.Entity<Osoba>().HasData(new API.Database.Osoba { Id = 5, GradId = 6, Ime = "Ethan", Prezime = "Coen", UlogaId = 4, Biografija = "Joel Coen and Ethan Coen, collectively referred to as the Coen Brothers, are American film directors, producers, screenwriters, and editors. Their films span many genres and styles, which they frequently subvert or parody.", DatumRodjenja = DateTime.Now.AddYears(-34) });
             modelBuilder.Entity<Osoba>().HasData(new API.Database.Osoba { Id = 6, GradId = 4, Ime = "Christopher", Prezime = "Nolan", UlogaId = 4, Biografija = "Christopher Edward Nolan, (born 30 July 1970) is an English-American film director, screenwriter, and producer, who is known for making personal, distinctive films within the Hollywood mainstream.", DatumRodjenja = DateTime.Now.AddYears(-38) });
 
-  
+
             // pass: "password"
             modelBuilder.Entity<Korisnik>().HasData(new API.Database.Korisnik { Id = 1, GradId = 2, Ime = "Admin", Prezime = "Admin", UlogaId = 1, DatumRodjenja = DateTime.Now.AddYears(-25), Email = "admin@mail.com", LozinkaSalt = "zsoXMab3gROO2GpJdRxC4A==", LozinkaHash = "rhU9y15krz72oDSAaAeYiu80a3c=", SlanjeEmaila = true, DatumRegistracije = DateTime.Now });
             modelBuilder.Entity<Korisnik>().HasData(new API.Database.Korisnik { Id = 2, GradId = 4, Ime = "Korisnik", Prezime = "1", UlogaId = 2, DatumRodjenja = DateTime.Now.AddYears(-23), Email = "user1@mail.com", LozinkaSalt = "zsoXMab3gROO2GpJdRxC4A==", LozinkaHash = "rhU9y15krz72oDSAaAeYiu80a3c=", SlanjeEmaila = true, DatumRegistracije = DateTime.Now });
@@ -63,6 +64,8 @@ namespace eKino.API.EF
             modelBuilder.Entity<Zanr>().HasData(new API.Database.Zanr { Id = 5, NazivZanra = "Sci-Fi" });
 
             // slika moze pravit problem
+            var slika = ImageHelper.GetImage("imgInitial.jpg");
+
             for (int i = 0; i < 20; i++)
             {
                 modelBuilder.Entity<Film>().HasData(new API.Database.Film
@@ -73,7 +76,8 @@ namespace eKino.API.EF
                     Link = link,
                     TipId = (i % 3) + 1,
                     ZanrId = (i % 5) + 1,
-                    DatumIzlaska = DateTime.Now.AddYears(-7)
+                    DatumIzlaska = DateTime.Now.AddYears(-7),
+                    Slika = slika
                 });
 
                 modelBuilder.Entity<Ocijena>().HasData(new API.Database.Ocijena
@@ -132,7 +136,7 @@ namespace eKino.API.EF
             modelBuilder.Entity<KorisnikPaket>().HasData(new API.Database.KorisnikPaket { Id = 2, KorisnikId = 3, PaketId = 2 });
             modelBuilder.Entity<KorisnikPaket>().HasData(new API.Database.KorisnikPaket { Id = 3, KorisnikId = 4, PaketId = 3 });
 
-      
+
 
             modelBuilder.Entity<Prijava>().HasData(new API.Database.Prijava
             {

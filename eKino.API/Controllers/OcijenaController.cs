@@ -12,7 +12,7 @@ namespace eKino.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OcijenaController : BaseCRUDController<Model.Ocijena, OcijenaSearchRequest, OcijenaInsertRequest, OcijenaInsertRequest> //ControllerBase
+    public class OcijenaController : BaseCRUDController<Model.Ocijena, OcijenaSearchRequest, OcijenaInsertRequest, OcijenaInsertRequest>
     {
         public OcijenaController(ICRUDService<Model.Ocijena, OcijenaSearchRequest, OcijenaInsertRequest, OcijenaInsertRequest> service) : base(service)
         {

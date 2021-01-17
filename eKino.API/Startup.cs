@@ -75,15 +75,13 @@ namespace eKino.API
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IFilmService, FilmService>();
-            services.AddScoped<IGradService, GradService>();
-            //services.AddScoped<IKorisnikService, KorisnikService>();
-            services.AddScoped<IUlogaService, UlogaService>();
-            services.AddScoped<IOcijenaService, OcijenaService>();
 
             services.AddScoped<IService<Model.Korisnik, KorisnikSearchRequest>, KorisnikService>();
             services.AddScoped<IService<Model.Tip, TipSearchRequest>, TipService>();
             services.AddScoped<IService<Model.Zanr, ZanrSearchRequest>, ZanrService>();
             services.AddScoped<IService<Model.Dvorana, DvoranaSearchRequest>, DvoranaService>();
+            services.AddScoped<IService<Model.Grad, GradSearchRequest>, GradService>();
+            services.AddScoped<IService<Model.Uloga, UlogaSearchRequest>, UlogaService>();
             services.AddScoped<ICRUDService<Model.Ocijena, OcijenaSearchRequest, OcijenaInsertRequest, OcijenaInsertRequest>, OcijenaService>();
             services.AddScoped<ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest>, KorisnikService>();
             services.AddScoped<ICRUDService<Model.Film, FilmSearchRequest, FilmInsertRequest, FilmInsertRequest>, FilmService>();

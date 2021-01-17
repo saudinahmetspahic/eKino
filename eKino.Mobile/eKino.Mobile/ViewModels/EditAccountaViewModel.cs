@@ -82,6 +82,7 @@ namespace eKino.Mobile.ViewModels
                 Email = _korisnik.Email;
                 DatumRodjenja = _korisnik.DatumRodjenja;               
                 var gradoviList = _gradService.Get<List<Grad>>(null);
+                gradoviList.Insert(0, new Model.Grad { Id = 0, Naziv = "Odaberite grad" });
                 foreach (var g in gradoviList)
                 {
                     Gradovi.Add(g); 

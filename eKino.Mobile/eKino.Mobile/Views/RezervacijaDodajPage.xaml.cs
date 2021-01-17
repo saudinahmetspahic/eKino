@@ -181,7 +181,7 @@ namespace eKino.Mobile.Views
 
             if (_korisnikPaket != null)
             {
-                var paket = _paketService.GetById<Paket>(_korisnikPaket.PaketId);
+                var paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = _korisnikPaket.PaketId }).FirstOrDefault(); // _paketService.GetById<Paket>(_korisnikPaket.PaketId);
                 ukupnaCijena -= (double)(paket.Cijena * 0.1);
                 if (ukupnaCijena < 0)
                     ukupnaCijena = 0;

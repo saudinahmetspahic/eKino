@@ -108,7 +108,7 @@
                     </Grid>
 
                     <Label Margin="10,25,0,0" Text="Preporuceni filmovi"></Label>
-                    <ListView Margin="20" x:Name="listViewPreporuka" HorizontalOptions="CenterAndExpand">
+                    <ListView x:Name="listViewPreporuka" HorizontalOptions="CenterAndExpand">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ImageCell AutomationId="{Binding FilmId}"

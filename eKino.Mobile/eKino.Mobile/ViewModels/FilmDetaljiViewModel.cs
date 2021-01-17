@@ -32,7 +32,7 @@ namespace eKino.Mobile.ViewModels
         }
         public FilmDetaljiViewModel(int filmId = 0)
         {
-            Film = _filmService.GetById<Film>(filmId);
+            Film = _filmService.Get<List<Film>>(new FilmSearchRequest { Id = filmId }).FirstOrDefault(); // _filmService.GetById<Film>(filmId);
             var k = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
             _preporukafilmService = new ApiService("Film/RecommendedFilmovi/" + k.Id);
             InitCommand = new Command(() => { Init(); });
@@ -41,8 +41,8 @@ namespace eKino.Mobile.ViewModels
         {
             Image = ImageConvertor.ConvertByteArrayToImageForXamarin(Film.Slika);
             NazivFilma = Film.Naziv;
-            Zanr = _zanrService.GetById<Zanr>(Film.ZanrId).NazivZanra;
-            Tip = _tipService.GetById<Tip>(Film.TipId).NazivTipa;
+            Zanr = _zanrService.Get<List<Zanr>>(new ZanrSearchRequest { Id = Film.ZanrId }).Select(s => s.NazivZanra).FirstOrDefault(); //_zanrService.GetById<Zanr>(Film.ZanrId).NazivZanra;
+            Tip = _tipService.Get<List<Tip>>(new TipSearchRequest { Id = Film.TipId }).Select(s => s.NazivTipa).FirstOrDefault(); // _tipService.GetById<Tip>(Film.TipId).NazivTipa;
             DatumIzlaska = Film.DatumIzlaska.ToString("dd/MM/yyyy");
             Opis = Film.Opis;
             Projekcija = _projekcijaService.Get<List<Projekcija>>().Where(w => w.FilmId == Film.Id).Select(s => s.Opis).FirstOrDefault();
@@ -50,21 +50,21 @@ namespace eKino.Mobile.ViewModels
             var glumciId = _filmglumciService.Get<List<FilmGlumci>>(new FilmGlumciSearchRequest { FilmId = Film.Id }).Select(s => s.GlumacId);
             foreach (var gId in glumciId)
             {
-                var glumac = _osobeService.GetById<Osoba>(gId);
+                var glumac = _osobeService.Get<List<Osoba>>(new OsobaSearchRequest { OsobaId = gId }).FirstOrDefault(); // _osobeService.GetById<Osoba>(gId);
                 Glumci.Add(glumac.Ime + " " + glumac.Prezime);
             }
 
             var scenaristiId = _filmscenaristiService.Get<List<FilmScenaristi>>(new FilmScenaristiSearchRequest { FilmId = Film.Id }).Select(s => s.ScenaristId);
             foreach (var sId in scenaristiId)
             {
-                var scenarist = _osobeService.GetById<Osoba>(sId);
+                var scenarist = _osobeService.Get<List<Osoba>>(new OsobaSearchRequest { OsobaId = sId }).FirstOrDefault(); // _osobeService.GetById<Osoba>(sId);
                 Scenaristi.Add(scenarist.Ime + " " + scenarist.Prezime);
             }
 
             var produkcijskeKuceId = _filmprkuceService.Get<List<FilmProdukcijskeKuce>>(new FilmProdukcijskeKuceSearchRequest { FilmId = Film.Id }).Select(s => s.ProdukcijskaKucaId);
             foreach (var pkId in produkcijskeKuceId)
             {
-                var prKuca = _prkucaService.GetById<ProdukcijskaKuca>(pkId);
+                var prKuca = _prkucaService.Get<List<ProdukcijskaKuca>>(new ProdukcijskaKucaSearchRequest { Id = pkId }).FirstOrDefault(); // _prkucaService.GetById<ProdukcijskaKuca>(pkId);
                 PrKuce.Add(prKuca.Naziv);
             }
 
@@ -74,7 +74,7 @@ namespace eKino.Mobile.ViewModels
             var komentari = _komentarService.Get<List<Komentar>>(new KomentarSearchRequest { FilmId = Film.Id });
             foreach (var k in komentari)
             {
-                var komentator = _korisnikService.GetById<Korisnik>(k.KomentatorId);
+                var komentator = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Id = k.KomentatorId }).FirstOrDefault(); // _korisnikService.GetById<Korisnik>(k.KomentatorId);
                 var reakcije = _komentarReakcijaService.Get<List<KomentarReakcija>>(new KomentarReakcijaSearchRequest { KomentarId = k.Id });
                 var likes = reakcije.Where(w => w.Reakcija == Model.ReakcijaTip.Like).Count();
                 var dislikes = reakcije.Where(w => w.Reakcija == Model.ReakcijaTip.Dislike).Count();

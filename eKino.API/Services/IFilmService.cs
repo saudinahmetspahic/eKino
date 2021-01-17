@@ -10,17 +10,8 @@ namespace eKino.API.Services
 {
     public interface IFilmService
     {
-        //IEnumerable<Film> Get();
-        IEnumerable<Film> GetByNaziv(string naziv);
-        IEnumerable<Film> GetByZanr(string zanr);
 
         IEnumerable<Film> GetPreporuceneFilmove(int korisnikId);
-        //Film GetById(int id);
 
-        //void Add(Film film);
-
-        //Film Update(int id, FilmInsertRequest film);
-
-        //bool Remove(int id);
     }
 }

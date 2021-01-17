@@ -58,7 +58,7 @@ namespace eKino.Desktop
                             int count = 0;
                             foreach (var r in rezervacije)
                             {
-                                var p = _projekcijaApiService.GetById<Projekcija>((int)r.ProjekcijaId);
+                                var p = _projekcijaApiService.Get<List<Projekcija>>(new ProjekcijaSearchRequest { Id = ((int)r.ProjekcijaId) }).FirstOrDefault(); // _projekcijaApiService.GetById<Projekcija>((int)r.ProjekcijaId);
                                 if (p.DatumProjekcije.AddHours(24).CompareTo(DateTime.Now) >= 0)
                                 {
                                     mail += " ["  + p.DatumProjekcije + "] " + p.Opis + "\n";

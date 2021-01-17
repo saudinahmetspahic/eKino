@@ -19,6 +19,10 @@ namespace eKino.API.Services
         {
             var osobe = _context.Osoba.AsQueryable();
 
+            if(search.OsobaId > 0)
+            {
+                osobe = osobe.Where(w => w.Id == search.OsobaId);
+            }
             if (!string.IsNullOrEmpty(search.Uloga))
             {
                 osobe = osobe.Where(w => w.Uloga.NazivUloge == search.Uloga);

@@ -25,25 +25,18 @@ namespace eKino.API.Services
         {
             var query = _context.Film.AsQueryable();
 
+            if(search.Id > 0)
+            {
+                query = query.Where(w => w.Id == search.Id);
+            }
             if (!string.IsNullOrEmpty(search.Naziv))
             {
                 query = query.Where(w => w.Naziv == search.Naziv);
             }
        
-            var result = query.ToList();
-            return _mapper.Map<List<Model.Film>>(result);
+            return _mapper.Map<List<Model.Film>>(query.ToList());
         }
 
-        public IEnumerable<Model.Film> GetByNaziv(string naziv)
-        {
-            return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.Naziv == naziv));
-        }
-
-        public IEnumerable<Film> GetByZanr(string zanr)
-        {
-            var zanrID = _context.Zanr.Where(w => w.NazivZanra == zanr).Select(s => s.Id).SingleOrDefault();
-            return _mapper.Map<IEnumerable<Model.Film>>(_context.Film.Where(w => w.ZanrId == zanrID));
-        }
 
         public IEnumerable<Film> GetPreporuceneFilmove(int korisnikId)
         {

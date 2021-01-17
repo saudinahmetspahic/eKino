@@ -101,7 +101,7 @@ namespace eKino.Desktop
 
         private void bttnDodajRezervaciju_Click(object sender, EventArgs e)
         {
-            var p = _projekcijeService.GetById<Projekcija>((int)cbxListaProjZaDodavanjePrez.SelectedValue);
+            var p = _projekcijeService.Get<List<Projekcija>>(new ProjekcijaSearchRequest { Id = ((int)cbxListaProjZaDodavanjePrez.SelectedValue) }).FirstOrDefault(); // _projekcijeService.GetById<Projekcija>((int)cbxListaProjZaDodavanjePrez.SelectedValue);
             if (p != null)
             {
                 var frm = new frmRezervacijaDodavanje(p);

@@ -21,7 +21,7 @@ namespace eKino.API.Controllers
 
 
         [HttpGet]
-        public List<TModel> Get([FromQuery] TSearch search)
+        public virtual List<TModel> Get([FromQuery] TSearch search)
         {
             return _service.Get(search);
         }

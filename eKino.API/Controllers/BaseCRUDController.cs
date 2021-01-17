@@ -19,7 +19,7 @@ namespace eKino.API.Controllers
         }
 
         [HttpPost]
-        public void Insert(TInsert request)
+        public virtual void Insert(TInsert request)
         {
             _service.Insert(request);
         }

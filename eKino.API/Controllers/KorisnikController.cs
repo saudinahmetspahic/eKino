@@ -19,29 +19,25 @@ namespace eKino.API.Controllers
     [ApiController]
     public class KorisnikController : BaseCRUDController<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest>
     {
+        ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest> _service;
         public KorisnikController(ICRUDService<Model.Korisnik, KorisnikSearchRequest, KorisnikInsertRequest, KorisnikInsertRequest> _CRUDService) : base(_CRUDService)
         {
+            _service = _CRUDService;
         }
 
-        
-        //[HttpGet("PoEmailu/{email}")]
-        //public Model.Korisnik GetByEmail(string email)
-        //{
-        //    return _service.GetByEmail(email);
-        //}
+        [AllowAnonymous]
+        [HttpPost]
+        public override void Insert(KorisnikInsertRequest request)
+        {
+            _service.Insert(request);
+        }
 
-        //[HttpGet("PoImenu/{ime}")]
-        //public Model.Korisnik GetByIme(string ime)
-        //{
-        //    return _service.GetByIme(ime);
-        //}
+        [AllowAnonymous]
+        [HttpGet]
+        public override List<Model.Korisnik> Get([FromQuery] KorisnikSearchRequest search)
+        {
+            return base.Get(search);
+        }
 
-        //[HttpGet("PoPrezimenu/{prezime}")]
-        //public Model.Korisnik GetByPrezime(string prezime)
-        //{
-        //    return _service.GetByIme(prezime);
-        //}
-
-     
     }
 }

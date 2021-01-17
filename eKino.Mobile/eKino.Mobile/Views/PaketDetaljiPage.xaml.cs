@@ -34,7 +34,7 @@ namespace eKino.Mobile.Views
             model.Init();
 
             var k = _KorisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email }).FirstOrDefault();
-            var u = _ulogaService.GetById<Uloga>(k.UlogaId);
+            var u = _ulogaService.Get<List<Uloga>>(new UlogaSearchRequest { Id = k.UlogaId }).FirstOrDefault(); // _ulogaService.GetById<Uloga>(k.UlogaId);
             if (u != null && u.NazivUloge == "Admin")
             {
                 IzbrisiButton.IsVisible = true;
@@ -84,7 +84,7 @@ namespace eKino.Mobile.Views
                 DisplayAlert("Greska", "Cijena paketa se unosi brojem.", "Ok");
                 return false;
             }
-            if (!int.TryParse(MaxOcijena.Text, out int xx) || xx < 0 || x > 5)
+            if (!int.TryParse(MaxOcijena.Text, out int xx) || xx < 0 || xx > 5)
             {
                 DisplayAlert("Greska", "Maksimalna ocijena se unosi brojem od 1 do 5.", "Ok");
                 return false;

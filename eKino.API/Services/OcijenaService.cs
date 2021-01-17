@@ -2,6 +2,7 @@
 using eKino.API.EF;
 using eKino.Model;
 using eKino.Model.Requests;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class OcijenaService : BaseCRUDService<Model.Ocijena, OcijenaSearchRequest, Database.Ocijena, OcijenaInsertRequest, OcijenaInsertRequest>, IOcijenaService
+    public class OcijenaService : BaseCRUDService<Model.Ocijena, OcijenaSearchRequest, Database.Ocijena, OcijenaInsertRequest, OcijenaInsertRequest>
     {
         public OcijenaService(MojContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<Ocijena> Get(OcijenaSearchRequest search)
+        public override List<Ocijena> Get([FromQuery]OcijenaSearchRequest search)
         {
             var query = _context.Ocijena.AsQueryable();
 

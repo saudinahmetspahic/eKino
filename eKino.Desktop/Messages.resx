@@ -127,7 +127,7 @@
     <value>Morate dodijeliti ocijenu.</value>
   </data>
   <data name="CBX_Vrsta" xml:space="preserve">
-    <value>Morate odabrati vrstu.</value>
+    <value>Morate odabrati tip.</value>
   </data>
   <data name="CBX_Zanr" xml:space="preserve">
     <value>Morate odabrati zanr.</value>

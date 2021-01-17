@@ -70,8 +70,8 @@ namespace eKino.Desktop
             this.label7 = new System.Windows.Forms.Label();
             this.lblTip = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblZanr = new System.Windows.Forms.Label();
             this.lblNaziv = new System.Windows.Forms.Label();
+            this.lblZanr = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblProjekcija = new System.Windows.Forms.Label();
@@ -190,7 +190,7 @@ namespace eKino.Desktop
             this.pbxSlika.Location = new System.Drawing.Point(304, 21);
             this.pbxSlika.Name = "pbxSlika";
             this.pbxSlika.Size = new System.Drawing.Size(329, 230);
-            this.pbxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSlika.TabIndex = 0;
             this.pbxSlika.TabStop = false;
             // 
@@ -205,8 +205,8 @@ namespace eKino.Desktop
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblTip, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblZanr, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblNaziv, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNaziv, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblZanr, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblProjekcija, 1, 7);
@@ -275,27 +275,27 @@ namespace eKino.Desktop
             this.label5.Text = "Tip";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblZanr
-            // 
-            this.lblZanr.AutoSize = true;
-            this.lblZanr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblZanr.Location = new System.Drawing.Point(186, 25);
-            this.lblZanr.Name = "lblZanr";
-            this.lblZanr.Size = new System.Drawing.Size(228, 25);
-            this.lblZanr.TabIndex = 3;
-            this.lblZanr.Text = "label4";
-            this.lblZanr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
             this.lblNaziv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNaziv.Location = new System.Drawing.Point(186, 0);
+            this.lblNaziv.Location = new System.Drawing.Point(186, 25);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(228, 25);
-            this.lblNaziv.TabIndex = 1;
-            this.lblNaziv.Text = "label2";
+            this.lblNaziv.TabIndex = 3;
+            this.lblNaziv.Text = "label4";
             this.lblNaziv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblZanr
+            // 
+            this.lblZanr.AutoSize = true;
+            this.lblZanr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblZanr.Location = new System.Drawing.Point(186, 0);
+            this.lblZanr.Name = "lblZanr";
+            this.lblZanr.Size = new System.Drawing.Size(228, 25);
+            this.lblZanr.TabIndex = 1;
+            this.lblZanr.Text = "label2";
+            this.lblZanr.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -1589,9 +1589,9 @@ namespace eKino.Desktop
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblZanr;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblNaziv;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblZanr;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblProjekcija;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

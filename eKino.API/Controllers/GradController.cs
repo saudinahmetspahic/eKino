@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using eKino.API.Database;
 using eKino.API.Services;
+using eKino.Model;
+using eKino.Model.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,58 +14,63 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eKino.API.Controllers
 {
-    
+
     [Route("api/[controller]")]
     [ApiController]
-    public class GradController : ControllerBase
+    public class GradController : BaseController<Model.Grad, GradSearchRequest> //: ControllerBase
     {
-        private readonly IGradService _service = null;
-        private readonly IMapper _mapper = null;
-        public GradController(IGradService service, IMapper mapper)
+        public GradController(IService<Model.Grad, GradSearchRequest> service) : base(service)
         {
-            _service = service;
-            _mapper = mapper;
-        }
-        // GET: api/<GradController>
-        [HttpGet]
-        public List<Model.Grad> Get()
-        {
-            var g = _service.Get();
-            return g;
         }
 
-        // GET api/<GradController>/5
-        [HttpGet("{id}")]
-        public Model.Grad GetById(int id)
-        {
-            return _service.GetById(id);
-        }
+        //private readonly IGradService _service = null;
+        //private readonly IMapper _mapper = null;
+        //public GradController(IGradService service, IMapper mapper)
+        //{
+        //    _service = service;
+        //    _mapper = mapper;
+        //}
+        //// GET: api/<GradController>
+        //[HttpGet]
+        //public List<Model.Grad> Get()
+        //{
+        //    var g = _service.Get();
+        //    return g;
+        //}
 
-        [HttpGet("PoNazivu/{naziv}")]
-        public Model.Grad GetByNaziv(string naziv)
-        {
-            return _service.GetByNaziv(naziv);
-        }
+        //// GET api/<GradController>/5
+        //[HttpGet("{id}")]
+        //public Model.Grad GetById(int id)
+        //{
+        //    return _service.GetById(id);
+        //}
 
-        // POST api/<GradController>
-        [HttpPost]
-        public void Post(Model.Grad grad)
-        {
-            _service.Add(grad);
-        }
+        //[HttpGet("PoNazivu/{naziv}")]
+        //public Model.Grad GetByNaziv(string naziv)
+        //{
+        //    return _service.GetByNaziv(naziv);
+        //}
 
-        // PUT api/<GradController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, Model.Grad grad)
-        {
-            _service.Update(id, grad); 
-        }
+        //// POST api/<GradController>
+        //[HttpPost]
+        //public void Post(Model.Grad grad)
+        //{
+        //    _service.Add(grad);
+        //}
 
-        // DELETE api/<GradController>/5
-        [HttpDelete("{id}")]
-        public bool Delete(int id)
-        {
-            return _service.Remove(id);
-        }
+        //// PUT api/<GradController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, Model.Grad grad)
+        //{
+        //    _service.Update(id, grad); 
+        //}
+
+        //// DELETE api/<GradController>/5
+        //[HttpDelete("{id}")]
+        //public bool Delete(int id)
+        //{
+        //    return _service.Remove(id);
+        //}
+
     }
 }

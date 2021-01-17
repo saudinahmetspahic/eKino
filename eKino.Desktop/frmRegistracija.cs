@@ -45,8 +45,6 @@ namespace eKino.Desktop
                     UlogaId = _ulogaApiService.Get<List<Uloga>>(new UlogaSearchRequest { NazivUloge = "User" }).FirstOrDefault().Id,
                     GradId = cbGrad.SelectedIndex
                 };
-                ApiService.Email = "admin@app.com";
-                ApiService.Sifra = "Admin12345";
                 _korisnikApiService.Add(korisnik);
                 var loginForma = new frmLogin();
                 loginForma.Show();
@@ -131,12 +129,19 @@ namespace eKino.Desktop
 
         private void txtSifraPotvrda_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtSifra.Text) &&
-               !string.IsNullOrEmpty(txtSifraPotvrda.Text) &&
-               txtSifra.Text != txtSifraPotvrda.Text)
+            if (txtSifra.Text != txtSifraPotvrda.Text)
             {
                 e.Cancel = true;
                 errorProvider.SetError(txtSifraPotvrda, Messages.Text_Sifra_Potvrda);
+            }
+        }
+
+        private void cbGrad_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbGrad.SelectedIndex == 0)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(cbGrad, Messages.CBX_Grad);
             }
         }
     }

@@ -3,6 +3,7 @@ using eKino.API.Database;
 using eKino.API.EF;
 using eKino.Model;
 using eKino.Model.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,11 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class KorisnikService 
+    public class KorisnikService
         :
         BaseCRUDService<Model.Korisnik, KorisnikSearchRequest, Database.Korisnik, KorisnikInsertRequest, KorisnikInsertRequest>
     {
-      
+
         public KorisnikService(MojContext context, IMapper mapper) : base(context, mapper)
         {
         }
@@ -81,46 +82,27 @@ namespace eKino.API.Services
         {
             var query = _context.Korisnik.AsQueryable();
 
-            if(!string.IsNullOrEmpty(request?.Email))
+            if (request.Id > 0)
+            {
+                query = query.Where(w => w.Id == request.Id);
+            }
+            if (!string.IsNullOrEmpty(request?.Email))
             {
                 query = query.Where(w => w.Email == request.Email);
+            }
+            if (!string.IsNullOrEmpty(request?.Ime))
+            {
+                query = query.Where(w => w.Ime == request.Ime);
+            }
+            if (!string.IsNullOrEmpty(request?.Prezime))
+            {
+                query = query.Where(w => w.Prezime == request.Prezime);
             }
 
             var result = query.ToList();
             return _mapper.Map<List<Model.Korisnik>>(result);
         }
 
-        //public Model.Korisnik GetById(int id)
-        //{
-        //    return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Id == id));
-        //}
-
-        public Model.Korisnik GetByEmail(string email)
-        {
-            return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Email == email));
-        }
-
-        public Model.Korisnik GetByIme(string ime)
-        {
-            return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Ime == ime));
-        }
-
-        public Model.Korisnik GetByPrezime(string prezime)
-        {
-            return _mapper.Map<Model.Korisnik>(_context.Korisnik.SingleOrDefault(w => w.Prezime == prezime));
-        }
-
-        //public bool Remove(int id)
-        //{
-        //    var korisnik = _context.Korisnik.SingleOrDefault(w => w.Id == id);
-        //    if(korisnik != null)
-        //    {
-        //        _context.Korisnik.Remove(korisnik);
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    return false;
-        //}
 
         public override Model.Korisnik Update(int id, KorisnikInsertRequest korisnik)
         {

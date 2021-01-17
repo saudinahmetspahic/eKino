@@ -185,7 +185,7 @@ namespace eKino.Mobile.Views
         private void GledajFilm_Clicked(object sender, EventArgs e)
         {
             var kpaket = _korisnikPaketService.Get<List<KorisnikPaket>>(new KorisnikPaketSearchRequest { KorisnikId = _korisnik.Id }).FirstOrDefault();
-            var paket = _paketService.GetById<Paket>(kpaket.PaketId);
+            var paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = kpaket?.PaketId ?? -1 }).FirstOrDefault(); // _paketService.GetById<Paket>(kpaket.PaketId);
             if (paket != null)
             {
                 if (paket.MaxOcijena >= model.Ocijena && paket.DatumIsteka.Value.CompareTo(DateTime.Now) > 0)

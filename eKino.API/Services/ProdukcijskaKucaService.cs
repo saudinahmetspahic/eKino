@@ -19,6 +19,10 @@ namespace eKino.API.Services
         {
             var prKuce = _context.ProdukcijskaKuca.AsQueryable();
 
+            if(search.Id> 0)
+            {
+                prKuce = prKuce.Where(w => w.Id == search.Id);
+            }
             if (!string.IsNullOrEmpty(search.Naziv))
             {
                 prKuce = prKuce.Where(w => w.Naziv == search.Naziv);

@@ -53,7 +53,7 @@ namespace eKino.Desktop
             {
                 if (txtLozinka.Text != txtLozinkaPotvrda.Text)
                 {
-                    var r = System.Windows.Forms.MessageBox.Show("Lozinka", "Greska: Lozinke se ne poklapaju.", MessageBoxButtons.OK);
+                    var r = System.Windows.Forms.MessageBox.Show("Greska: Lozinke se ne poklapaju.", "Lozinka", MessageBoxButtons.OK);
                     if (r.Equals(MessageBoxResult.OK))
                         return;
                 }
@@ -135,9 +135,7 @@ namespace eKino.Desktop
 
         private void txtLozinkaPotvrda_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtLozinka.Text) &&
-               !string.IsNullOrEmpty(txtLozinkaPotvrda.Text) &&
-               txtLozinka.Text != txtLozinkaPotvrda.Text)
+            if (txtLozinka.Text != txtLozinkaPotvrda.Text)
             {
                 e.Cancel = true;
                 errorProvider.SetError(txtLozinkaPotvrda, Messages.Text_Sifra_Potvrda);

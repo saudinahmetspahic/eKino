@@ -27,26 +27,10 @@ namespace eKino.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("PoNazivu/{naziv}")]
-        public IEnumerable<Model.Film> GetByNaziv(string naziv)
-        {
-            return _service.GetByNaziv(naziv);
-        }
-
-
-        [HttpGet("PoZanru/{zanr}")]
-        public IEnumerable<Model.Film> GetByZanr(string zanr)
-        {
-            return _service.GetByZanr(zanr);
-        }
-
 
         [HttpGet("RecommendedFilmovi/{korisnikId}")]
         public IEnumerable<Model.Film> RecommendedFilmovi(string korisnikId)
         {
-            //var r = new Recommender();
-            //return _mapper.Map<List<Model.Film>>(r.GetSlicneFilmove(int.Parse(filmId)));
-
             return _service.GetPreporuceneFilmove(int.Parse(korisnikId));
         }
 

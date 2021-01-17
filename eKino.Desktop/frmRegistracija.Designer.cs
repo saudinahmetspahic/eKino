@@ -200,6 +200,7 @@ namespace eKino.Desktop
             this.cbGrad.Size = new System.Drawing.Size(323, 24);
             this.cbGrad.TabIndex = 16;
             this.cbGrad.ValueMember = "Id";
+            this.cbGrad.Validating += new System.ComponentModel.CancelEventHandler(this.cbGrad_Validating);
             // 
             // txtSifraPotvrda
             // 

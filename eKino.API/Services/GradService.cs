@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using eKino.API.Database;
 using eKino.API.EF;
+using eKino.Model;
+using eKino.Model.Requests;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,59 +12,28 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class GradService : IGradService
+    public class GradService : BaseService<Model.Grad, GradSearchRequest, Database.Grad> 
     {
-        private readonly MojContext _context = null;
-        private readonly IMapper _mapper = null;
-        public GradService(MojContext context, IMapper mapper)
+        public GradService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public void Add(Model.Grad grad)
+        public override List<Model.Grad> Get([FromQuery]GradSearchRequest search)
         {
-            _context.Grad.Add(_mapper.Map<Database.Grad>(grad));
-            _context.SaveChanges();
-        }
+            var gradovi = _context.Grad.AsQueryable();
 
-        public List<Model.Grad> Get()
-        {
-            return _mapper.Map<List<Model.Grad>>(_context.Grad.ToList());
-        }
-
-        public Model.Grad GetById(int id)
-        {
-            return _mapper.Map<Model.Grad>(_context.Grad.SingleOrDefault(w => w.Id == id));
-        }
-
-        public Model.Grad GetByNaziv(string naziv)
-        {
-            return _mapper.Map<Model.Grad>(_context.Grad.SingleOrDefault(w => w.Naziv == naziv));
-        }
-
-        public bool Remove(int id)
-        {
-            var grad = _context.Grad.SingleOrDefault(w => w.Id == id);
-            if(grad != null)
+            if(search.Id > 0)
             {
-                _context.Grad.Remove(grad);
-                _context.SaveChanges();
-                return true;
+                gradovi = gradovi.Where(w => w.Id == search.Id);
             }
-            return false;
+            if (!string.IsNullOrEmpty(search.Naziv))
+            {
+                gradovi = gradovi.Where(w => w.Naziv == search.Naziv);
+            }
+
+            return _mapper.Map<List<Model.Grad>>(gradovi.ToList());
         }
 
-        public Model.Grad Update(int id, Model.Grad grad)
-        {
-            var g = _context.Grad.SingleOrDefault(w => w.Id == id);
-            if(g != null)
-            {
-                g = _mapper.Map<Database.Grad>(grad);
-                _context.SaveChanges();
-                return _mapper.Map<Model.Grad>(g);
-            }
-            return grad;
-        }
+     
     }
 }

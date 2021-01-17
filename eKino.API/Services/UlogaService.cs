@@ -10,21 +10,21 @@ using System.Threading.Tasks;
 
 namespace eKino.API.Services
 {
-    public class UlogaService : IUlogaService
+    public class UlogaService : BaseService<Model.Uloga, UlogaSearchRequest, Database.Uloga>
     {
-        private readonly MojContext _context = null;
-        private readonly IMapper _mapper = null;
-        public UlogaService(MojContext context, IMapper mapper)
+        public UlogaService(MojContext context, IMapper mapper) : base(context, mapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
-        public List<Uloga> Get(UlogaSearchRequest search)
+        public override List<Uloga> Get([FromQuery]UlogaSearchRequest search)
         {
             var uloge = _context.Uloga.AsQueryable();
 
-            if (!string.IsNullOrEmpty(search.NazivUloge))
+            if(search.Id > 0)
+            {
+                uloge = uloge.Where(w => w.Id == search.Id);
+            }
+            if(!string.IsNullOrEmpty(search?.NazivUloge))
             {
                 uloge = uloge.Where(w => w.NazivUloge == search.NazivUloge);
             }
@@ -32,16 +32,6 @@ namespace eKino.API.Services
             return _mapper.Map<List<Uloga>>(uloge.ToList());
         }
 
-        public Model.Uloga GetByName(string name)
-        {
-            var u = _context.Uloga.SingleOrDefault(w => w.NazivUloge == name);
-            return _mapper.Map<Model.Uloga>(u);
-        }
-
-        public Model.Uloga GetById(int Id)
-        {
-            var u = _context.Uloga.SingleOrDefault(w => w.Id == Id);
-            return _mapper.Map<Model.Uloga>(u);
-        }
+     
     }
 }

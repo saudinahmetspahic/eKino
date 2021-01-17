@@ -53,7 +53,7 @@ namespace eKino.Desktop
 
         private void InicirajTabele()
         {
-            var dvorana = _dvoranaService.GetById<Dvorana>(_projekcija.DvoranaId);
+            var dvorana = _dvoranaService.Get<List<Dvorana>>(new DvoranaSearchRequest { Id = _projekcija.DvoranaId }).FirstOrDefault(); //_dvoranaService.GetById<Dvorana>(_projekcija.DvoranaId);
             var sjedista = _rezervacijaService.Get<List<Rezervacija>>(new RezervacijaSearchRequest
             {
                 ProjekcijaId = _projekcija.Id
@@ -80,7 +80,7 @@ namespace eKino.Desktop
             var ukupnaCijena = ((_rezervisanaSjedista.Count() + zauzetaMjesta)  * cijena);
             if(_korisnikPaket != null)
             {
-                var paket = _paketService.GetById<Paket>(_korisnikPaket.PaketId);
+                var paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = _korisnikPaket.PaketId }).FirstOrDefault(); //_paketService.GetById<Paket>(_korisnikPaket.PaketId);
                 ukupnaCijena -= (double)(paket.Cijena * 0.1);
                 if (ukupnaCijena < 0)
                     ukupnaCijena = 0;

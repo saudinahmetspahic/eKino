@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,7 +39,10 @@
             this.dtpDatumDo = new System.Windows.Forms.DateTimePicker();
             this.cbxTip = new System.Windows.Forms.ComboBox();
             this.cbxZanr = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +62,6 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.03575F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.96425F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
@@ -68,6 +70,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dtpDatumDo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbxTip, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbxZanr, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(47, 118);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -80,21 +83,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(923, 326);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(562, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(358, 59);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Kreiraj izvještaj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -104,7 +92,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 56);
+            this.label2.Size = new System.Drawing.Size(261, 56);
             this.label2.TabIndex = 0;
             this.label2.Text = "Datum projekcije od";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,7 +106,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 55);
+            this.label3.Size = new System.Drawing.Size(261, 55);
             this.label3.TabIndex = 1;
             this.label3.Text = "Datum projekcije do";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,7 +120,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(262, 54);
+            this.label4.Size = new System.Drawing.Size(261, 54);
             this.label4.TabIndex = 2;
             this.label4.Text = "Tip";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,52 +134,73 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 63);
+            this.label5.Size = new System.Drawing.Size(261, 63);
             this.label5.TabIndex = 3;
             this.label5.Text = "Zanr";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpDatumOd
             // 
-            this.dtpDatumOd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDatumOd.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpDatumOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDatumOd.Location = new System.Drawing.Point(271, 14);
+            this.dtpDatumOd.Location = new System.Drawing.Point(270, 14);
             this.dtpDatumOd.Name = "dtpDatumOd";
-            this.dtpDatumOd.Size = new System.Drawing.Size(649, 28);
+            this.dtpDatumOd.Size = new System.Drawing.Size(610, 28);
             this.dtpDatumOd.TabIndex = 4;
             // 
             // dtpDatumDo
             // 
-            this.dtpDatumDo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDatumDo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpDatumDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDatumDo.Location = new System.Drawing.Point(271, 69);
+            this.dtpDatumDo.Location = new System.Drawing.Point(270, 69);
             this.dtpDatumDo.Name = "dtpDatumDo";
-            this.dtpDatumDo.Size = new System.Drawing.Size(649, 28);
+            this.dtpDatumDo.Size = new System.Drawing.Size(610, 28);
             this.dtpDatumDo.TabIndex = 5;
             // 
             // cbxTip
             // 
-            this.cbxTip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxTip.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxTip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTip.FormattingEnabled = true;
-            this.cbxTip.Location = new System.Drawing.Point(271, 123);
+            this.cbxTip.Location = new System.Drawing.Point(270, 123);
             this.cbxTip.Name = "cbxTip";
-            this.cbxTip.Size = new System.Drawing.Size(649, 30);
+            this.cbxTip.Size = new System.Drawing.Size(610, 30);
             this.cbxTip.TabIndex = 6;
+            this.cbxTip.Validating += new System.ComponentModel.CancelEventHandler(this.cbxTip_Validating);
             // 
             // cbxZanr
             // 
-            this.cbxZanr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxZanr.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbxZanr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxZanr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxZanr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxZanr.FormattingEnabled = true;
-            this.cbxZanr.Location = new System.Drawing.Point(271, 181);
+            this.cbxZanr.Location = new System.Drawing.Point(270, 181);
             this.cbxZanr.Name = "cbxZanr";
-            this.cbxZanr.Size = new System.Drawing.Size(649, 30);
+            this.cbxZanr.Size = new System.Drawing.Size(610, 30);
             this.cbxZanr.TabIndex = 7;
+            this.cbxZanr.Validating += new System.ComponentModel.CancelEventHandler(this.cbxZanr_Validating);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(270, 264);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(358, 59);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Kreiraj izvještaj";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // frmIzvjestaj
             // 
@@ -207,6 +216,7 @@
             this.Load += new System.EventHandler(this.frmIzvjestaj_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +235,6 @@
         private System.Windows.Forms.DateTimePicker dtpDatumDo;
         private System.Windows.Forms.ComboBox cbxTip;
         private System.Windows.Forms.ComboBox cbxZanr;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using eKino.Model;
+using eKino.Model.Requests;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -25,7 +27,7 @@ namespace eKino.Mobile.ViewModels
 
         public void Init()
         {
-            var paket = _paketService.GetById<Paket>(_paketId);
+            var paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = _paketId }).FirstOrDefault();  // _paketService.GetById<Paket>(_paketId);
             if(paket != null)
             {
                 DatumKreiranja = paket.DatumKreiranja.ToString("dd/MM/yyyy");

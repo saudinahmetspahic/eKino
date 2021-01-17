@@ -71,7 +71,7 @@ namespace eKino.Desktop
             this.tableLayoutPanel1.Controls.Add(this.txtLozinkaPotvrda, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.dtpDatumRodjenja, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.cbxGrad, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(94, 29);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(69, 29);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.16667F));
@@ -182,6 +182,7 @@ namespace eKino.Desktop
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(485, 22);
             this.txtIme.TabIndex = 7;
+            this.txtIme.Validating += new System.ComponentModel.CancelEventHandler(this.txtIme_Validating);
             // 
             // txtPrezime
             // 
@@ -189,6 +190,7 @@ namespace eKino.Desktop
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(485, 22);
             this.txtPrezime.TabIndex = 8;
+            this.txtPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrezime_Validating);
             // 
             // txtEmail
             // 
@@ -196,6 +198,7 @@ namespace eKino.Desktop
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(485, 22);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtLozinka
             // 
@@ -203,6 +206,7 @@ namespace eKino.Desktop
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(485, 22);
             this.txtLozinka.TabIndex = 10;
+            this.txtLozinka.Validating += new System.ComponentModel.CancelEventHandler(this.txtLozinka_Validating);
             // 
             // txtLozinkaPotvrda
             // 
@@ -210,6 +214,7 @@ namespace eKino.Desktop
             this.txtLozinkaPotvrda.Name = "txtLozinkaPotvrda";
             this.txtLozinkaPotvrda.Size = new System.Drawing.Size(485, 22);
             this.txtLozinkaPotvrda.TabIndex = 11;
+            this.txtLozinkaPotvrda.Validating += new System.ComponentModel.CancelEventHandler(this.txtLozinkaPotvrda_Validating);
             // 
             // dtpDatumRodjenja
             // 
@@ -220,12 +225,12 @@ namespace eKino.Desktop
             // 
             // cbxGrad
             // 
-            this.cbxGrad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxGrad.FormattingEnabled = true;
             this.cbxGrad.Location = new System.Drawing.Point(278, 232);
             this.cbxGrad.Name = "cbxGrad";
             this.cbxGrad.Size = new System.Drawing.Size(485, 24);
             this.cbxGrad.TabIndex = 13;
+            this.cbxGrad.Validating += new System.ComponentModel.CancelEventHandler(this.cbxGrad_Validating);
             // 
             // bttnSnimi
             // 
@@ -234,7 +239,7 @@ namespace eKino.Desktop
             this.bttnSnimi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnSnimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnSnimi.ForeColor = System.Drawing.Color.Black;
-            this.bttnSnimi.Location = new System.Drawing.Point(371, 551);
+            this.bttnSnimi.Location = new System.Drawing.Point(346, 551);
             this.bttnSnimi.Name = "bttnSnimi";
             this.bttnSnimi.Size = new System.Drawing.Size(485, 62);
             this.bttnSnimi.TabIndex = 1;
@@ -248,11 +253,12 @@ namespace eKino.Desktop
             // 
             // frmAccountUredi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 668);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(992, 640);
             this.Controls.Add(this.bttnSnimi);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(1010, 687);
             this.Name = "frmAccountUredi";
             this.Text = "frmAccountUredi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

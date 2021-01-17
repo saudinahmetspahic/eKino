@@ -1,8 +1,10 @@
 ﻿using eKino.Mobile.Models;
 using eKino.Model;
+using eKino.Model.Requests;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -26,7 +28,7 @@ namespace eKino.Mobile.ViewModels
         {
             _vrsteKartica.Add(new Item { Id = "pm_card_visa", Text = "Visa" });
             _vrsteKartica.Add(new Item { Id = "pm_card_mastercard", Text = "Mastercard" });
-            Paket = _paketService.GetById<Paket>(_paketId);
+            Paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = _paketId }).FirstOrDefault(); // _paketService.GetById<Paket>(_paketId);
         }
 
         private ObservableCollection<Item> _vrsteKartica = new ObservableCollection<Item>();
@@ -36,9 +38,10 @@ namespace eKino.Mobile.ViewModels
             set { SetProperty(ref _vrsteKartica, value); }
         }
         private Paket _paket;
-        public Paket Paket { 
-            get { return _paket; } 
-            set { SetProperty(ref _paket, value); } 
+        public Paket Paket
+        {
+            get { return _paket; }
+            set { SetProperty(ref _paket, value); }
         }
         public double Cijena
         {

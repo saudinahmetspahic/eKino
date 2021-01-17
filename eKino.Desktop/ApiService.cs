@@ -75,21 +75,12 @@ namespace eKino.Desktop
                 }
                 throw;
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Nepoznata greska", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    throw;
-            //}
         }
 
-        public T GetById<T>(int Id)
-        {
-            var result = $"{Settings.Default.ApiUrl}/{_route}/{Id}";
-            return result.WithBasicAuth(Email, Sifra).GetJsonAsync<T>().Result;
-        }
 
         public T Update<T>(int id, object request)
         {
+
             try
             {
                 var s = $"{Settings.Default.ApiUrl}/{_route}/{id}";
@@ -111,12 +102,6 @@ namespace eKino.Desktop
                 return default(T);
             }
 
-        }
-
-        public T GetByName<T>(string naziv)
-        {
-            var result = $"{Settings.Default.ApiUrl}/{_route}/PoNazivu/{naziv}";
-            return result.WithBasicAuth(Email, Sifra).GetJsonAsync<T>().Result;
         }
 
         public void Remove(int Id)

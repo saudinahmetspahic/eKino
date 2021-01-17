@@ -27,7 +27,7 @@ namespace eKino.Mobile.ViewModels
         }
 
         private string _imePrezime;
-        public string ImePrezime 
+        public string ImePrezime
         {
             get { return _imePrezime; }
             set { SetProperty(ref _imePrezime, value); }
@@ -81,7 +81,7 @@ namespace eKino.Mobile.ViewModels
                 DatumRegistracije = k.DatumRegistracije.ToString("dd-MM-yyyy");
                 var search = new KorisnikPaketSearchRequest { KorisnikId = k.Id };
                 var kp = _korisnikPaketService.Get<List<KorisnikPaket>>(search).FirstOrDefault();
-                Paket = _paketService.GetById<Paket>(kp?.PaketId ?? 0)?.Opis ?? "-";
+                Paket = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = kp?.PaketId ?? 0 }).Select(s => s.Opis).FirstOrDefault() ?? "-"; //_paketService.GetById<Paket>(kp?.PaketId ?? 0)?.Opis ?? "-";
                 BrojOcijena = _ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
                 BrojRezervacija = _rezervacijaService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
                 var komentari = _komentarService.Get<List<Komentar>>(new KomentarSearchRequest { KomentatorId = k.Id });
@@ -98,7 +98,7 @@ namespace eKino.Mobile.ViewModels
                     }
                 }
                 NajpopKomentar = "[" + maxReakcija.ToString() + " 👍] Komentar: " + kom;
-                Uloga = _ulogaService.GetById<Uloga>(k.UlogaId).NazivUloge;
+                Uloga = _ulogaService.Get<List<Uloga>>(new UlogaSearchRequest { Id = k.UlogaId }).Select(s => s.NazivUloge).FirstOrDefault(); // _ulogaService.GetById<Uloga>(k.UlogaId).NazivUloge;
             }
         }
     }

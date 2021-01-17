@@ -52,13 +52,16 @@ namespace eKino.Desktop
             var k = _korisnikService.Get<List<Korisnik>>(req).FirstOrDefault();
 
 
-            if(k != null)
+            if (k != null)
             {
                 lblImePrezime.Text = k.Ime + " " + k.Prezime;
                 lblDatumRegistracije.Text = k.DatumRegistracije.ToString("dd-MM-yyyy");
                 var search = new KorisnikPaketSearchRequest { KorisnikId = k.Id };
-                var kp =_korisnikPaketService.Get<List<KorisnikPaket>>(search).FirstOrDefault();
-                lblPaket.Text = _paketService.GetById<Paket>(kp?.PaketId ?? 0)?.Opis ?? "-";
+                var kp = _korisnikPaketService.Get<List<KorisnikPaket>>(search).FirstOrDefault();
+                if (kp == null)
+                    lblPaket.Text = "-";
+                else
+                    lblPaket.Text = _paketService.Get<List<Paket>>(new PaketSearchRequest { Id = kp.PaketId }).Select(s => s.Opis).FirstOrDefault() ?? "-"; //_paketService.GetById<Paket>(kp?.PaketId ?? 0)?.Opis ?? "-";
                 lblBrojOcijena.Text = _ocijenaService.Get<List<Ocijena>>(new OcijenaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
                 lblBrojRezervacija.Text = _rezervacijaService.Get<List<Rezervacija>>(new RezervacijaSearchRequest { KorisnikId = k.Id })?.Count.ToString();
                 var komentari = _komentarService.Get<List<Komentar>>(new KomentarSearchRequest { KomentatorId = k.Id });
@@ -68,14 +71,14 @@ namespace eKino.Desktop
                 {
                     var reakcije = _komentarReakcijaService.Get<List<KomentarReakcija>>(new KomentarReakcijaSearchRequest { KomentarId = komentar.Id, Reakcija = Model.Requests.ReakcijaTip.Like });
                     int brojReakcija = reakcije.Count;
-                    if(brojReakcija >= maxReakcija)
+                    if (brojReakcija >= maxReakcija)
                     {
                         maxReakcija = brojReakcija;
                         kom = komentar.SadrzajKomentara;
                     }
                 }
                 lblNajpopularnijiKomentar.Text = "[" + maxReakcija.ToString() + " 👍] Komentar: " + kom;
-                lblUloga.Text = _ulogaService.GetById<Uloga>(k.UlogaId).NazivUloge;
+                lblUloga.Text = _ulogaService.Get<List<Uloga>>(new UlogaSearchRequest { Id = k.UlogaId }).Select(s => s.NazivUloge).FirstOrDefault(); //_ulogaService.GetById<Uloga>(k.UlogaId).NazivUloge;
             }
         }
 
