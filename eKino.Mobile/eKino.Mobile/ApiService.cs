@@ -82,18 +82,9 @@ namespace eKino.Mobile
                 }
                 throw;
             }
-            //catch (Exception ex)
-            //{
-            //    Application.Current.MainPage.DisplayAlert("Upozorenje", "Nepoznata greska: " + ex.Message, "Ok");
-            //    throw;
-            //}
+     
         }
 
-        //public T GetById<T>(int Id)
-        //{
-        //    var result = $"{_apiUrl}/{_route}/{Id}";
-        //    return result.WithBasicAuth(Email, Sifra).GetJsonAsync<T>().Result;
-        //}
 
         public T Update<T>(int id, object request)
         {
@@ -119,12 +110,6 @@ namespace eKino.Mobile
             }
 
         }
-
-        //public T GetByName<T>(string naziv)
-        //{
-        //    var result = $"{_apiUrl}/{_route}/PoNazivu/{naziv}";
-        //    return result.WithBasicAuth(Email, Sifra).GetJsonAsync<T>().Result;
-        //}
 
         public void Remove(int Id)
         {

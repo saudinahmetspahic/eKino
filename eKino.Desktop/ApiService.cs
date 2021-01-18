@@ -49,7 +49,7 @@ namespace eKino.Desktop
             }
         }
 
-        public T Get<T>(object search = null) // async pravi probleme
+        public T Get<T>(object search = null)
         {
             try
             {

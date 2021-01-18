@@ -40,10 +40,12 @@ namespace eKino.Desktop
                         this.Hide();
 
                     }
+                    else 
+                        throw new Exception();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Uneseni su neispravni podaci.", "Login", MessageBoxButtons.OK);
+                    MessageBox.Show("Uneseni email ili lozinka su pogresni.", "Login", MessageBoxButtons.OK);
                 }
             }
         }
@@ -73,6 +75,15 @@ namespace eKino.Desktop
                     e.Cancel = true;
                     errorProvider.SetError(txtEmail, Messages.Text_Email);
                 }
+            }
+        }
+
+        private void txtSifra_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSifra.Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(txtSifra, Messages.Text_Sifra);
             }
         }
     }

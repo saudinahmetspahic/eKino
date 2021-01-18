@@ -89,6 +89,7 @@
             this.txtSifra.PasswordChar = '*';
             this.txtSifra.Size = new System.Drawing.Size(509, 28);
             this.txtSifra.TabIndex = 4;
+            this.txtSifra.Validating += new System.ComponentModel.CancelEventHandler(this.txtSifra_Validating);
             // 
             // bttnRegistracija
             // 

@@ -41,7 +41,8 @@ namespace eKino.Mobile.Views
             Button loginButton = new Button() { Text = "Login", VerticalOptions = LayoutOptions.Center };
             loginButton.Clicked += Login_Clicked;
             Button registrationButton = new Button() { Text = "Registracija", VerticalOptions = LayoutOptions.Center };
-            registrationButton.Clicked += async (sender, e) => {
+            registrationButton.Clicked += async (sender, e) =>
+            {
                 await Navigation.PushAsync(new RegistracijaPage());
             };
 
@@ -54,20 +55,40 @@ namespace eKino.Mobile.Views
 
         private void Login_Clicked(object sender, EventArgs e)
         {
+            if (!Validation())
+                return;
+
             ApiService.Email = email.Text;
             ApiService.Sifra = pass.Text;
-            try
+
+            var r = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
+            if (r.Count == 1)
             {
-                var r = _korisnikService.Get<List<Korisnik>>(new KorisnikSearchRequest { Email = ApiService.Email });
-                if (r.Count == 1)
-                {
-                    Application.Current.MainPage = new NavigationPage(new PocetniPage());
-                }
+                Application.Current.MainPage = new NavigationPage(new PocetniPage());
             }
-            catch (Exception ex)
+            else
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Pogresan email ili sifa.", "Ok");
+                Application.Current.MainPage.DisplayAlert("Greska", "Uneseni email ili lozinka su pogresni.", "Ok");
             }
+
+
+        }
+
+        private bool Validation()
+        {
+            if (string.IsNullOrEmpty(email.Text))
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Morate unijeti ispravnu email adresu", "Ok");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(pass.Text))
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Morate unijeti lozinku.", "Ok");
+                return false;
+            }
+
+            return true;
         }
     }
 }

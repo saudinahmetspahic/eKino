@@ -23,54 +23,5 @@ namespace eKino.API.Controllers
         {
         }
 
-        //private readonly IGradService _service = null;
-        //private readonly IMapper _mapper = null;
-        //public GradController(IGradService service, IMapper mapper)
-        //{
-        //    _service = service;
-        //    _mapper = mapper;
-        //}
-        //// GET: api/<GradController>
-        //[HttpGet]
-        //public List<Model.Grad> Get()
-        //{
-        //    var g = _service.Get();
-        //    return g;
-        //}
-
-        //// GET api/<GradController>/5
-        //[HttpGet("{id}")]
-        //public Model.Grad GetById(int id)
-        //{
-        //    return _service.GetById(id);
-        //}
-
-        //[HttpGet("PoNazivu/{naziv}")]
-        //public Model.Grad GetByNaziv(string naziv)
-        //{
-        //    return _service.GetByNaziv(naziv);
-        //}
-
-        //// POST api/<GradController>
-        //[HttpPost]
-        //public void Post(Model.Grad grad)
-        //{
-        //    _service.Add(grad);
-        //}
-
-        //// PUT api/<GradController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, Model.Grad grad)
-        //{
-        //    _service.Update(id, grad); 
-        //}
-
-        //// DELETE api/<GradController>/5
-        //[HttpDelete("{id}")]
-        //public bool Delete(int id)
-        //{
-        //    return _service.Remove(id);
-        //}
-
     }
 }
