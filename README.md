@@ -1,4 +1,4 @@
-# RS2-Seminarski
+# eKino
 Seminarski rad - Razvoj softvera II
 
 
